@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+@@include("_head.html")
+<body>
+    <article id="wrap">
+        @@include("_header.html", { "html": "active" })
+        <main>
+            <section class="notes-wrap">
+                <ul class="notes-list">
+                    <li class="notes-item">
+                        <a href="##">
+                            <hgroup>
+                                <p><span>tag</span></p>
+                                <h2>title</h2>
+                                <time>xx.xx.xxxx</time>
+                            </hgroup>
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        @@include("_footer.html")
+    </article>
+    @@include("_js.html")
+</body>
+</html>

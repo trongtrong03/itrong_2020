@@ -1,0 +1,90 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: block;
+    width: 15rem;
+    height: 100%;
+    background-color: $first;
+    box-shadow: 0 5px 12px 1px rgba(32, 42, 64, 0.25);
+}
+
+.logo {
+    display: block;
+    background-color: $second;
+    margin: 0;
+    padding: 0;
+    a {
+        display: block;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFF;
+        padding: 1.5rem 0;
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            width: 2.25rem;
+            margin-right: .25rem;
+        }
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'Abril Fatface', cursive;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: .25rem;
+            b {
+                display: block;
+                line-height: 1.5;
+                letter-spacing: 5px;
+                font-family: 'Questrial','微軟正黑體', sans-serif;
+                font-size: .675rem;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+nav {
+    padding: 1rem 0;
+    a {
+        display: block;
+        font-size: 1rem;
+        color: $second;
+        @include text-overflow;
+        padding: 1rem;
+        b {
+            font-weight: normal;
+            padding: .25rem;
+        }
+        &:hover,
+        &.active {
+            color: #FFF;
+            b {
+                background-color: $red;
+            }
+        }
+    }
+}
+
+.nav-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    a {
+        flex: 1;
+        line-height: 3rem;
+        text-align: center;
+        font-size: 1rem;
+        color: $second;
+        transition: all .3s ease;
+        &:hover {
+            color: $first;
+            background: $second;
+        }
+    }
+}

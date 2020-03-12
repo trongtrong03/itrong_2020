@@ -1,0 +1,62 @@
+.notes-wrap {
+    max-width: 60rem;
+    background-color: #FFF;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.notes-list {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.notes-item {
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+    transition: transform .3s ease;
+    a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: .5rem;
+        hgroup {
+            flex: 1;
+            color: #888;
+            h2 {
+                line-height: 1.75;
+                font-size: 1.5rem;
+                color: #000;
+                margin: 0;
+                padding: 0;
+                @include text-overflow;
+            }
+            p {
+                font-size: .875rem;
+                span {
+                    &::before {
+                        content: '[';
+                    }
+                    &::after {
+                        content: ']';
+                    }
+                }
+            }
+            time {
+                display: block;
+                font-size: .675rem;
+                &::before {
+                    content: 'published @ ';
+                }
+            }
+        }
+        figure {
+            width: 16%;
+            background-color: #CCC;
+            padding: 0 2%;
+        }
+    }
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
