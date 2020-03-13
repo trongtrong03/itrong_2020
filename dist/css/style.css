@@ -9299,6 +9299,81 @@ footer {
   padding: 1rem;
 }
 
+.notes-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.notes-search::after {
+  content: "\f002";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #DDD;
+}
+
+.notes-search input {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: .25rem;
+  padding-right: 4rem;
+  padding-left: 1rem;
+  transition: all .3s;
+}
+
+.notes-search input::-webkit-input-placeholder {
+  color: #DDD;
+}
+
+.notes-search input::-moz-placeholder {
+  color: #DDD;
+}
+
+.notes-search input:-ms-input-placeholder {
+  color: #DDD;
+}
+
+.notes-search input:-moz-placeholder {
+  color: #DDD;
+}
+
+.notes-search input.placeholder::-webkit-input-placeholder {
+  color: #999;
+}
+
+.notes-search input.placeholder::-moz-placeholder {
+  color: #999;
+}
+
+.notes-search input.placeholder:-ms-input-placeholder {
+  color: #999;
+}
+
+.notes-search input.placeholder:-moz-placeholder {
+  color: #999;
+}
+
+.notes-search input:focus {
+  border-color: #81D8D0;
+}
+
+.notes-search input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.notes-search datalist option {
+  width: 100%;
+}
+
 .notes-list {
   list-style: none;
   margin: 0;
@@ -9308,7 +9383,7 @@ footer {
 .notes-item {
   background-color: #FFF;
   border-bottom: 1px solid #EEE;
-  transition: transform .3s ease;
+  transition: all .3s ease;
 }
 
 .notes-item a {
@@ -9333,6 +9408,7 @@ footer {
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   overflow: hidden;
+  transition: all .3s ease;
 }
 
 .notes-item a hgroup p {
@@ -9347,6 +9423,10 @@ footer {
   content: ']';
 }
 
+.notes-item a hgroup p span:last-child {
+  margin-right: 0;
+}
+
 .notes-item a hgroup time {
   display: block;
   font-size: .675rem;
@@ -9358,12 +9438,21 @@ footer {
 
 .notes-item a figure {
   width: 16%;
-  background-color: #CCC;
-  padding: 0 2%;
+  padding: 0 2% 0 6%;
+}
+
+.notes-item a figure img {
+  display: block;
+  width: 100%;
+  border-radius: .25rem;
 }
 
 .notes-item:hover {
   transform: scale(1.1, 1.1);
+}
+
+.notes-item:hover hgroup h2 {
+  color: #81D8D0;
 }
 
 /*!

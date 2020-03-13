@@ -51,16 +51,26 @@
         </header>
         <main>
             <section class="notes-wrap">
+                <div class="notes-search">
+                    <input type="text" placeholder="Search..." list="data" v-model="query">
+                    <datalist id="data">
+                        <option value="html5">
+                        <option value="svg">
+                    </datalist>
+                </div>
                 <ul class="notes-list">
-                    <li class="notes-item">
-                        <a href="##">
+                    <li class="notes-item" v-for="item in filterHtml">
+                        <a :href="item.href + '.html'">
                             <hgroup>
-                                <p><span>tag</span></p>
-                                <h2>title</h2>
-                                <time>xx.xx.xxxx</time>
+                                <p>
+                                    <span v-if="item.tag1">{{ item.tag1_name }}</span>
+                                    <span v-if="item.tag2">{{ item.tag2_name }}</span>
+                                </p>
+                                <h2>{{ item.title }}</h2>
+                                <time>{{ item.date }}</time>
                             </hgroup>
-                            <figure>
-                                <img src="" alt="">
+                            <figure v-if="item.img">
+                                <img :src="'images/' + item.img_name + '.jpg'">
                             </figure>
                         </a>
                     </li>
@@ -71,6 +81,8 @@
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
     </article>
     <script src="js/jquery.particleground.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-app.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

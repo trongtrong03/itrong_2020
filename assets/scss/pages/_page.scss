@@ -5,6 +5,47 @@
     padding: 1rem;
 }
 
+.notes-search {
+    position: relative;
+    margin-bottom: 1rem;
+    &::after {
+        content: "\f002";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 1.25rem;
+        color: #DDD;
+    }
+    input {
+        display: block;
+        width: 100%;
+        height: 3rem;
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        border-radius: .25rem;
+        padding-right: 4rem;
+        padding-left: 1rem;
+        @include placeholder(#DDD, #999);
+        transition: all .3s;
+        &:focus {
+            border-color: $first;
+        }
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    }
+    datalist {
+        option {
+            width: 100%;
+        }
+    }
+}
+
 .notes-list {
     list-style: none;
     margin: 0;
@@ -14,7 +55,7 @@
 .notes-item {
     background-color: #FFF;
     border-bottom: 1px solid #EEE;
-    transition: transform .3s ease;
+    transition: all .3s ease;
     a {
         display: flex;
         align-items: center;
@@ -30,6 +71,7 @@
                 margin: 0;
                 padding: 0;
                 @include text-overflow;
+                transition: all .3s ease;
             }
             p {
                 font-size: .875rem;
@@ -39,6 +81,9 @@
                     }
                     &::after {
                         content: ']';
+                    }
+                    &:last-child {
+                        margin-right: 0;
                     }
                 }
             }
@@ -52,11 +97,20 @@
         }
         figure {
             width: 16%;
-            background-color: #CCC;
-            padding: 0 2%;
+            padding: 0 2% 0 6%;
+            img {
+                display: block;
+                width: 100%;
+                border-radius: .25rem;
+            }
         }
     }
     &:hover {
         transform: scale(1.1, 1.1);
+        hgroup {
+            h2 {
+                color: $first;
+            }
+        }
     }
 }
