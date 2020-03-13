@@ -7,28 +7,29 @@
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- icon -->
-    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="./images/favicon.ico" rel="shortcut icon">
     <!-- css -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <!-- jquery -->
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="./js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
     <article id="wrap">
         <header>
             <figure class="logo">
-                <a href="index.html">
+                <a href="./index.html">
                     <span>iTrong <b>work studio</b></span>
                 </a>
             </figure>
             <nav>
                 <!-- <a  href="index.html">HOME</a> -->
-                <a  class="active"  href="html.html"><b>HTML</b></a>
-                <a  href="css.html"><b>CSS</b></a>
-                <a  href="javascript.html"><b>JavaScript</b></a>
-                <a  href="misc.html"><b>Miscellaneous Notes</b></a>
-                <a  href="resource.html"><b>Resources</b></a>
+                <a  class="active"  href="./html.html"><b>HTML</b></a>
+                <a  href="./css.html"><b>CSS</b></a>
+                <a  href="./javascript.html"><b>JavaScript</b></a>
+                <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
+                <a  href="./resource.html"><b>Resources</b></a>
             </nav>
+
             <div class="nav-bottom">
                 <a href="#0" title="My Profile">
                     <i class="far fa-user"></i>
@@ -59,15 +60,15 @@
                     </datalist>
                 </div>
                 <ul class="notes-list">
-                    <li class="notes-item" v-for="item in filterHtml">
-                        <a :href="item.href + '.html'">
+                    <li class="notes-item" v-for="item in filterHtml" :key="item.id">
+                        <a :href="'pages/' + item.href + '.html'">
                             <hgroup>
-                                <p>
+                                <h6 class="tags-group">
                                     <span v-if="item.tag1">{{ item.tag1_name }}</span>
                                     <span v-if="item.tag2">{{ item.tag2_name }}</span>
-                                </p>
+                                </h6>
                                 <h2>{{ item.title }}</h2>
-                                <time>{{ item.date }}</time>
+                                <time class="notes-time">{{ item.time }}</time>
                             </hgroup>
                             <figure v-if="item.img">
                                 <img :src="'images/' + item.img_name + '.jpg'">
@@ -80,9 +81,12 @@
         <div class="particles-bg"></div>
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
     </article>
-    <script src="js/jquery.particleground.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/vue-app.js"></script>
-    <script src="js/script.js"></script>
+    <script src="./js/jquery.particleground.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-app.js"></script>
+
+    
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
