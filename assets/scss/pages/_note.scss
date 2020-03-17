@@ -1,3 +1,4 @@
+// 筆記列表
 .notes-wrap {
     max-width: 60rem;
     background-color: #FFF;
@@ -9,7 +10,7 @@
     position: relative;
     margin-bottom: 1rem;
     &::after {
-        content: "\f002";
+        content: '\f002';
         position: absolute;
         top: 0;
         right: 0;
@@ -73,27 +74,6 @@
                 @include text-overflow;
                 transition: all .3s ease;
             }
-            p {
-                font-size: .875rem;
-                span {
-                    &::before {
-                        content: '[';
-                    }
-                    &::after {
-                        content: ']';
-                    }
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
-            }
-            time {
-                display: block;
-                font-size: .675rem;
-                &::before {
-                    content: 'published @ ';
-                }
-            }
         }
         figure {
             width: 16%;
@@ -112,5 +92,31 @@
                 color: $first;
             }
         }
+    }
+}
+
+.notes-tags {
+    line-height: .875rem;
+    font-size: .875rem;
+    color: #AAA;
+    @include clearfix;
+    span {
+        &::before {
+            content: '[';
+        }
+        &::after {
+            content: ']';
+        }
+    }
+}
+
+.notes-time {
+    display: inline-block;
+    font-size: .675rem;
+    &::before {
+        content: 'published @ ';
+    }
+    .page & {
+        float: right;
     }
 }

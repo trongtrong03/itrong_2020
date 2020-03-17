@@ -37,6 +37,23 @@ button {
     border: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
 figure,
 p {
     margin: 0;

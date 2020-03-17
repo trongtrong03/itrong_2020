@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "html": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <span v-if="getHtmlIndex({ h_list, index: 0 }).tag1">{{ getHtmlIndex({ h_list, index: 0 }).tag1_name }}</span>
+                        <span v-if="getHtmlIndex({ h_list, index: 0 }).tag2">{{ getHtmlIndex({ h_list, index: 0 }).tag2_name }}</span>
+                        <time class="notes-time">{{ getHtmlIndex({ h_list, index: 0 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="###">title1</a></li>
+        <li><a href="###">title2</a></li>
+    </ul>
+</div>
+
+<!-- 表格 -->
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0"></div>
+        <div class="t-f1">欄位一</div>
+        <div class="t-f1">欄位二</div>
+    </div>
+    <div>
+        <div class="t-f0">title</div>
+        <div class="t-f1">欄位一</div>
+        <div class="t-f1">欄位一</div>
+    </div>
+</div>
+
+<!-- 步驟 -->
+<p class="text-step">Step1. xxxxx</p>
+<p>xxxxxxxxxxxxxxx</p>
+
+<!-- 標題 -->
+<h2>主標題</h2>
+<h3>副標題</h3>
+<p><em>程式碼片段</em> <b>強調</b> <a href="#0" target="_blank">連結</a></p>
+
+<!-- 圖片 -->
+<figure>
+    <img src="https://via.placeholder.com/640x300.png">
+    <figcaption>description</figcaption>
+</figure>
+
+<!-- 列表 -->
+<div class="text-ul">
+    <ul>
+        <li>item01</li>
+        <li>item02</li>
+        <li>item03</li>
+    </ul>
+</div>
+<div class="text-ol">
+    <ol>
+        <li>item01</li>
+        <li>item02</li>
+        <li>item03</li>
+    </ol>
+</div>
+
+<!-- 重點引用 -->
+<div class="text-quote">
+    quote
+</div>
+
+<!-- 程式碼 -->
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;script&gt;
+&lt;/script&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">
+    /* CSS */
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-scss">
+<pre class="text-pre"><code class="scss">
+    /* SCSS */
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">
+    /* js */
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-jq">
+<pre class="text-pre"><code class="javascript">
+    /* jq */
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-vue">
+<pre class="text-pre"><code class="javascript">
+    /* vue */
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">
+    $git commit -m
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<!-- 參考資料 -->
+
+<!-- Content end -->
+                </div>
+                @@include("../_inside.html")
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

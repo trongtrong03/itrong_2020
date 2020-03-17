@@ -1,17 +1,18 @@
 <header>
     <figure class="logo">
-        <a href="index.html">
+        <a href="@@webRoot/index.html">
             <span>iTrong <b>work studio</b></span>
         </a>
     </figure>
     <nav>
         <!-- <a @@if (context.index==="active" ) { class="active" } href="index.html">HOME</a> -->
-        <a @@if (context.html==="active" ) { class="active" } href="html.html"><b>HTML</b></a>
-        <a @@if (context.css==="active" ) { class="active" } href="css.html"><b>CSS</b></a>
-        <a @@if (context.js==="active" ) { class="active" } href="javascript.html"><b>JavaScript</b></a>
-        <a @@if (context.misc==="active" ) { class="active" } href="misc.html"><b>Miscellaneous Notes</b></a>
-        <a @@if (context.res==="active" ) { class="active" } href="resource.html"><b>Resources</b></a>
+        <a @@if (context.html==="active" ) { class="active" } href="@@webRoot/html.html"><b>HTML</b></a>
+        <a @@if (context.css==="active" ) { class="active" } href="@@webRoot/css.html"><b>CSS</b></a>
+        <a @@if (context.js==="active" ) { class="active" } href="@@webRoot/javascript.html"><b>JavaScript</b></a>
+        <a @@if (context.misc==="active" ) { class="active" } href="@@webRoot/misc.html"><b>Miscellaneous Notes</b></a>
+        <a @@if (context.res==="active" ) { class="active" } href="@@webRoot/resource.html"><b>Resources</b></a>
     </nav>
+
     <div class="nav-bottom">
         <a href="#0" title="My Profile">
             <i class="far fa-user"></i>

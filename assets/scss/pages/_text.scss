@@ -1,0 +1,317 @@
+// 文章風格
+.text-wrap {
+    max-width: 60rem;
+    background-color: #FFF;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.text-head {
+    border-bottom: 1px solid $first;
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+    h1 {
+        display: block;
+        line-height: 1.5;
+        font-size: 2rem;
+        font-weight: normal;
+    }
+}
+
+// side
+.side-bar {
+    // position: sticky;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    // left: 100%;
+    z-index: 5;
+    display: block;
+    width: 4rem;
+    background-color: rgba(220, 220, 220, .3);
+    border-radius: .25rem;
+    box-shadow: 0 0 4px 0 rgba(246, 246, 246, .8);
+    margin: 0;
+    padding: .5rem;
+    // transform: translateX(calc(100% + 1rem));
+    button {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        text-align: center;
+        color: $first;
+        background-color: #FFF;
+        border-radius: .25rem;
+        margin-bottom: .25rem;
+        transition: all .3s;
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:hover {
+            color: $second;
+            background-color: $first;
+        }
+        &#sideHome {
+            &::before {
+                content: '\f015';
+            }
+        }
+        &#sideBack {
+            &::before {
+                content: '\f060';
+            }
+        }
+        &#sideTop {
+            &::before {
+                content: '\f062';
+            }
+        }
+    }
+}
+
+// 目錄
+.text-catalog {
+    margin-bottom: 2rem;
+    &::before {
+        content: 'Article Catalog：';
+        line-height: 2;
+        font-size: 1.25rem;
+        // text-transform: uppercase;
+    }
+    > ul {
+        list-style: none;
+        border: 1px dashed $second;
+        padding: 1rem;
+        li {
+            padding: .25rem 0;
+            &::before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: .25rem;
+                height: .25rem;
+                background: $red;
+                margin-right: .5rem;
+                margin-bottom: .25rem;
+            }
+            a {
+                font-size: 1rem;
+                color: #000;
+                transition: all .3s;
+                &:hover {
+                    color: $first;
+                }
+            }
+        }
+    }
+}
+
+// 格式
+.text-content {
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: .5rem;
+            height: .5rem;
+            background-color: $red;
+            margin-right: .5rem;
+            margin-bottom: .25rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        color: $first;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        line-height: 1.75;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        a {
+            color: $href;
+            text-decoration: underline;
+        }
+    }
+
+    em {
+        font-size: 1rem;
+        font-style: normal;
+        color: #CF5341;
+        background-color: #f9f2f4;
+        border-radius: 4px;
+        padding: 0 .25rem;
+    }
+
+    figure {
+        img {
+            display: block;
+            border: 1px solid #DDD;
+        }
+    }
+
+    figcaption {
+        line-height: 1.5;
+        font-size: .875rem;
+        padding: .25rem 0;
+        &::before {
+            content: '▲';
+            font-size: 80%;
+            margin-right: .25rem;
+        }
+        a {
+            color: $href;
+            text-decoration: underline;
+        }
+    }
+}
+
+// 表格
+.text-flex {
+    border-bottom: 1px solid #F7F7F7;
+    margin-bottom: 1rem;
+    > div {
+        display: flex;
+        > div {
+            padding: 1rem 1rem;
+            &:nth-child(odd) {
+                background-color: #F7F7F7;
+            }
+            &:first-child {
+                background-color: #FFF !important;
+                border-right: 1px solid #F7F7F7;
+            }
+        }
+        &.f-title {
+            > div {
+                color: #FFF;
+                background-color: $first;
+            }
+        }
+    }
+}
+
+.t-f0 {
+    width: 120px;
+}
+
+@for $num from 1 through 9 {
+    .t-f#{$num} {
+        @include word-wrap;
+        flex: $num;
+    }
+}
+
+// 引用
+.text-quote {
+    background-color: #EEE;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+// 列表
+.text-ul {
+    ul {
+        list-style-type: square;
+    }
+}
+
+.text-ul,
+.text-ol {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    ul,
+    ol {
+        list-style-position: inside;
+    }
+    li {
+        line-height: 1.75;
+    }
+}
+
+// 步驟
+.text-step {
+    color: $first;
+    margin-bottom: 0 !important;
+}
+
+// 程式碼
+.text-code {
+    position: relative;
+    background-color: #EEE;
+    &::before {
+        content: '';
+        display: block;
+        line-height: 1.5rem;
+        font-size: .875rem;
+        color: #999;
+        padding-left: .5rem;
+    }
+    &.is-html {
+        &::before {
+            content: 'HTML:';
+        }
+    }
+    &.is-css {
+        &::before {
+            content: 'CSS:';
+        }
+    }
+    &.is-scss {
+        &::before {
+            content: 'SCSS:';
+        }
+    }
+    &.is-js {
+        &::before {
+            content: 'JAVASCRIPT:';
+        }
+    }
+    &.is-jq {
+        &::before {
+            content: 'JQUERY:';
+        }
+    }
+    &.is-vue {
+        &::before {
+            content: 'VUE:';
+        }
+    }
+    &.is-bash {
+        &::before {
+            content: 'BASH:';
+        }
+    }
+}
+
+.text-pre {
+    line-height: 1.75;
+    font-size: .875rem;
+    margin: 0;
+    padding: 0;
+}
+
+.text-copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    display: block;
+    line-height: 1.5rem;
+    font-size: .875rem;
+    color: $first;
+    background-color: $second;
+    padding: 0 .5rem;
+}

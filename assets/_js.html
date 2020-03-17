@@ -1,4 +1,27 @@
-<script src="js/jquery.particleground.js"></script>
-<script src="js/vue.min.js"></script>
-<script src="js/vue-app.js"></script>
-<script src="js/script.js"></script>
+<script src="@@webRoot/js/jquery.particleground.js"></script>
+<script src="@@webRoot/js/vue.min.js"></script>
+<script src="@@webRoot/js/vue-app.js"></script>
+
+@@if (context.inside=== true ) {
+<script src="../js/highlight.pack.js"></script>
+<script src="../js/jquery.copiq.min.js"></script>
+<script>
+    // highlight
+    hljs.initHighlightingOnLoad();
+
+    // copy
+    $('.text-copy').copiq({
+        parent: '.text-code',
+        content: '.text-pre',
+        onSuccess: function($element, source, selection) {
+        $('span', $element).text($element.attr("data-text-copied"));
+            setTimeout(function() {
+                $('span', $element).text($element.attr("data-text"));
+            }, 2000);
+        }
+    });
+</script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+}
+
+<script src="@@webRoot/js/script.js"></script>

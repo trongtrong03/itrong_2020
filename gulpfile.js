@@ -40,6 +40,8 @@ function compileCss()  {
 function compileJs()  {
     return gulp.src([
             'assets/js/jquery-2.1.4.min.js',
+            'assets/js/highlight.pack.js',
+            'assets/js/jquery.copiq.min.js',
             'assets/js/jquery.particleground.js',
             'assets/js/vue.min.js',
             'assets/js/vue-app.js',
@@ -76,7 +78,7 @@ function watch()  {
 }
 
 // 建構任務流程
-const bulid = gulp.series(cleanAll, compileImg, compileHtml, compileCss, compileJs, watch);
+const bulid = gulp.series(compileImg, compileHtml, compileCss, compileJs, watch);
 
 // 執行預設任務
 gulp.task('default', bulid);
