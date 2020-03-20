@@ -55,27 +55,31 @@
                 <div class="search-wrap">
                     <input type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="html5">
+                        <option value="網頁前端">
                         <option value="svg">
                     </datalist>
                 </div>
-                <ul class="notes-list">
-                    <li class="notes-item" v-for="item in filterHtml" :key="item.id">
-                        <a :href="'pages/' + item.href + '.html'">
-                            <hgroup>
-                                <h6 class="tags-group">
-                                    <span v-if="item.tag1">{{ item.tag1_name }}</span>
-                                    <span v-if="item.tag2">{{ item.tag2_name }}</span>
-                                </h6>
-                                <h2>{{ item.title }}</h2>
-                                <time class="notes-time">{{ item.time }}</time>
-                            </hgroup>
-                            <figure v-if="item.img">
-                                <img :src="'images/' + item.img_name + '.jpg'">
-                            </figure>
-                        </a>
-                    </li>
-                </ul>
+                <div class="res-wrap">
+                    <div class="res-switch">
+                        <button class="is-grid" :class="isActive==1 ? 'is-active' : ''" @click="isActive=1"></button>
+                        <button class="is-row" :class="isActive==2 ? 'is-active' : ''" @click="isActive=2"></button>
+                    </div>
+                    <ul class="res-list" :class="isActive==2 ? 'is-row' : ''">
+                        <li class="res-item" v-for="item in filterRes" :key="item.id">
+                            <a :href="item.href" target="_blank">
+                                <figure>
+                                    <img :src="'images/resources/' + item.img_name + '.jpg'" v-if="item.img">
+                                    <img :src="'images/resources/default.png'" v-else>
+                                </figure>
+                                <hgroup>
+                                    <h2>{{ item.title }}</h2>
+                                    <h3>{{ item.desc }}</h3>
+                                    <span>{{ item.tag }}</span>
+                                </hgroup>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
         <div class="particles-bg"></div>
