@@ -21,7 +21,7 @@
 
 // 目錄
 .text-catalog {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     &::before {
         content: 'Article Catalog：';
         line-height: 2;
@@ -58,12 +58,15 @@
 
 // 格式
 .text-content {
+    counter-reset: number;
+
     h2 {
         font-size: 1.5rem;
         font-weight: bold;
         color: #000;
         margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
+        padding: .5rem 0;
         &::before {
             content: '';
             display: inline-block;
@@ -102,6 +105,7 @@
     }
 
     figure {
+        margin-bottom: 1rem;
         img {
             display: block;
             border: 1px solid #DDD;
@@ -174,6 +178,32 @@
     }
 }
 
+// 參考
+.text-refer {
+    margin-top: 6rem;
+    &::before {
+        content: 'References：';
+        display: block;
+        line-height: 2;
+        font-size: 1.25rem;
+    }
+    ul {
+        list-style-position: inside;
+        background-color: #F6F6F6;
+        padding: 1rem;
+    }
+    li {
+        line-height: 1.75;
+    }
+    a {
+        color: $href;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// 項目列表
 .text-ul,
 .text-ol {
     margin-bottom: 1rem;
@@ -189,14 +219,22 @@
 
 // 步驟
 .text-step {
+    line-height: 1.75;
+    font-size: 1rem;
     color: $first;
     margin-bottom: 0 !important;
+    &::before {
+        counter-increment: number;
+        content: "Step" counter(number) ".";
+        margin-right: .5rem;
+    }
 }
 
 // 程式碼
 .text-code {
     position: relative;
     background-color: #EEE;
+    margin-bottom: .25rem;
     &::before {
         content: '';
         display: block;
@@ -238,6 +276,11 @@
     &.is-bash {
         &::before {
             content: 'BASH:';
+        }
+    }
+    &.is-ex {
+        &::before {
+            content: 'EX:';
         }
     }
 }

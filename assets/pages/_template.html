@@ -9,8 +9,6 @@
                 <hgroup class="text-head">
                     <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
                     <h6 class="notes-tags">
-                        <span v-if="getHtmlIndex({ h_list, index: 0 }).tag1">{{ getHtmlIndex({ h_list, index: 0 }).tag1_name }}</span>
-                        <span v-if="getHtmlIndex({ h_list, index: 0 }).tag2">{{ getHtmlIndex({ h_list, index: 0 }).tag2_name }}</span>
                         <time class="notes-time">{{ getHtmlIndex({ h_list, index: 0 }).time }}</time>
                     </h6>
                 </hgroup>
@@ -19,10 +17,22 @@
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="###">title1</a></li>
-        <li><a href="###">title2</a></li>
+        <li><a href="#act1">title1</a></li>
+        <li><a href="#act2">title2</a></li>
     </ul>
 </div>
+
+<!-- 標題 -->
+<h2 id="act1">主標題</h2>
+<h3>副標題</h3>
+<p><em>程式碼片段</em> <strong>強調</strong> <a href="#0" target="_blank">連結</a></p>
+
+<!-- 圖片 -->
+<figure>
+    <img src="https://via.placeholder.com/640x300.png">
+    <img src="@@webRoot/images/剩餘路徑" alt="">
+    <figcaption>description</figcaption>
+</figure>
 
 <!-- 表格 -->
 <div class="text-flex">
@@ -39,19 +49,8 @@
 </div>
 
 <!-- 步驟 -->
-<p class="text-step">Step1. xxxxx</p>
+<h5 class="text-step">Step01. xxxxx</h5>
 <p>xxxxxxxxxxxxxxx</p>
-
-<!-- 標題 -->
-<h2>主標題</h2>
-<h3>副標題</h3>
-<p><em>程式碼片段</em> <b>強調</b> <a href="#0" target="_blank">連結</a></p>
-
-<!-- 圖片 -->
-<figure>
-    <img src="https://via.placeholder.com/640x300.png">
-    <figcaption>description</figcaption>
-</figure>
 
 <!-- 列表 -->
 <div class="text-ul">
@@ -138,7 +137,11 @@
 </div>
 
 <!-- 參考資料 -->
-
+<div class="text-refer">
+    <ul>
+        <li><a href="####" target="_blank">link</a></li>
+    </ul>
+</div>
 <!-- Content end -->
                 </div>
                 @@include("../_aside.html")

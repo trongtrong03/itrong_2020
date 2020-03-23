@@ -1,27 +1,39 @@
 const htmlData = [
     {
         id: 0,
-        href: '_template',
-        title: '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
+        href: 'html_symbollist',
+        title: 'HTML 常用特殊符號編碼對照表',
+        time: '2020.01.30',
+        tag1: false,
+        tag1_name: '',
+        tag2: false,
+        tag2_name: '',
+        img: true,
+        img_name: 'thumb_symbol'
+    },
+    {
+        id: 1,
+        href: 'html_googleform',
+        title: '使用 Google 表單建立簡易的聯絡信件',
         time: '2020.02.02',
         tag1: true,
-        tag1_name: 'xxx1',
-        tag2: true,
-        tag2_name: 'xxx2',
+        tag1_name: '教學',
+        tag2: false,
+        tag2_name: '',
         img: false,
         img_name: ''
     },
     {
-        id: 1,
-        href: '_template',
-        title: '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111',
-        time: '2020.02.02',
+        id: 2,
+        href: 'html_contentmodel',
+        title: '認識 HTML5 的元素分類與內容模型（Content Models）',
+        time: '2020.02.06',
         tag1: true,
-        tag1_name: '111',
-        tag2: true,
-        tag2_name: '222',
-        img: true,
-        img_name: 'img_1'
+        tag1_name: 'HTML5',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
     },
 ]
 
@@ -860,7 +872,7 @@ var wrap = new Vue({
         filterHtml: function() {
             var search = this;
             return this.h_list.filter(function(item) {
-                return item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1;
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 

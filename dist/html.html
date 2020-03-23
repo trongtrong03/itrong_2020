@@ -78,10 +78,10 @@
                 </div>
                 <div class="notes-wrap">
                     <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterHtml" :key="item.id">
+                        <li class="notes-item" v-for="item in filterHtml.reverse()" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
-                                    <h6 class="tags-group">
+                                    <h6 class="notes-tags">
                                         <span v-if="item.tag1">{{ item.tag1_name }}</span>
                                         <span v-if="item.tag2">{{ item.tag2_name }}</span>
                                     </h6>
@@ -89,7 +89,7 @@
                                     <time class="notes-time">{{ item.time }}</time>
                                 </hgroup>
                                 <figure v-if="item.img">
-                                    <img :src="'images/' + item.img_name + '.jpg'">
+                                    <img :src="'images/html/' + item.img_name + '.jpg'">
                                 </figure>
                             </a>
                         </li>

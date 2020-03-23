@@ -9629,7 +9629,6 @@ footer {
 
 .notes-item {
   background-color: #FFF;
-  border-bottom: 1px solid #EEE;
   transition: all .3s ease;
 }
 
@@ -9637,6 +9636,7 @@ footer {
   display: flex;
   align-items: center;
   width: 100%;
+  border-bottom: 1px solid #EEE;
   padding: 1rem .5rem;
 }
 
@@ -9676,7 +9676,11 @@ footer {
   transform: scale(1.1, 1.1);
 }
 
-.notes-item:hover hgroup h2 {
+.notes-item:hover a {
+  border-top: 1px solid #EEE;
+}
+
+.notes-item:hover a hgroup h2 {
   color: #81D8D0;
 }
 
@@ -9688,7 +9692,7 @@ footer {
 
 .notes-tags {
   line-height: .875rem;
-  font-size: .875rem;
+  font-size: .75rem;
   color: #AAA;
   *zoom: 1;
 }
@@ -9703,11 +9707,7 @@ footer {
 }
 
 .notes-tags span::before {
-  content: '[';
-}
-
-.notes-tags span::after {
-  content: ']';
+  content: '#';
 }
 
 .notes-time {
@@ -9745,7 +9745,7 @@ footer {
 }
 
 .text-catalog {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .text-catalog::before {
@@ -9785,12 +9785,17 @@ footer {
   color: #81D8D0;
 }
 
+.text-content {
+  counter-reset: number;
+}
+
 .text-content h2 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #000;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  padding: .5rem 0;
 }
 
 .text-content h2::before {
@@ -9828,6 +9833,10 @@ footer {
   background-color: #f9f2f4;
   border-radius: 4px;
   padding: 0 .25rem;
+}
+
+.text-content figure {
+  margin-bottom: 1rem;
 }
 
 .text-content figure img {
@@ -9947,6 +9956,35 @@ footer {
   list-style-type: square;
 }
 
+.text-refer {
+  margin-top: 6rem;
+}
+
+.text-refer::before {
+  content: 'References：';
+  display: block;
+  line-height: 2;
+  font-size: 1.25rem;
+}
+
+.text-refer ul {
+  list-style-position: inside;
+  background-color: #F6F6F6;
+  padding: 1rem;
+}
+
+.text-refer li {
+  line-height: 1.75;
+}
+
+.text-refer a {
+  color: #40a8c4;
+}
+
+.text-refer a:hover {
+  text-decoration: underline;
+}
+
 .text-ul,
 .text-ol {
   margin-bottom: 1rem;
@@ -9966,13 +10004,22 @@ footer {
 }
 
 .text-step {
+  line-height: 1.75;
+  font-size: 1rem;
   color: #81D8D0;
   margin-bottom: 0 !important;
+}
+
+.text-step::before {
+  counter-increment: number;
+  content: "Step" counter(number) ".";
+  margin-right: .5rem;
 }
 
 .text-code {
   position: relative;
   background-color: #EEE;
+  margin-bottom: .25rem;
 }
 
 .text-code::before {
@@ -10010,6 +10057,10 @@ footer {
 
 .text-code.is-bash::before {
   content: 'BASH:';
+}
+
+.text-code.is-ex::before {
+  content: 'EX:';
 }
 
 .text-pre {

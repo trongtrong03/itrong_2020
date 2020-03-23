@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getHtmlIndex({ h_list, index: 0 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">常用特殊符號</a></li>
+        <li><a href="#act2">數學單位特殊符號</a></li>
+        <li><a href="#act3">貨幣符號</a></li>
+        <li><a href="#act4">方向符號</a></li>
+        <li><a href="#act5">其他特殊符號</a></li>
+        <li><a href="#act6">線上工具</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">常用特殊符號</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">符號</div>
+        <div class="t-f1">編碼</div>
+        <div class="t-f4">說明</div>
+    </div>
+    <div>
+        <div class="t-f0"><</div>
+        <div class="t-f1">&amp;lt;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">></div>
+        <div class="t-f1">&amp;gt;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">&</div>
+        <div class="t-f1">&amp;amp;</div>
+        <div class="t-f4">And</div>
+    </div>
+    <div>
+        <div class="t-f0"> </div>
+        <div class="t-f1">&amp;nbsp;</div>
+        <div class="t-f4">空格</div>
+    </div>
+    <div>
+        <div class="t-f0">"</div>
+        <div class="t-f1">&amp;quot;</div>
+        <div class="t-f4">雙引號</div>
+    </div>
+    <div>
+        <div class="t-f0">©</div>
+        <div class="t-f1">&amp;copy;</div>
+        <div class="t-f4">版權所有</div>
+    </div>
+    <div>
+        <div class="t-f0">®</div>
+        <div class="t-f1">&amp;reg;</div>
+        <div class="t-f4">Registered，已註冊的商標</div>
+    </div>
+    <div>
+        <div class="t-f0">™</div>
+        <div class="t-f1">&amp;trade;</div>
+        <div class="t-f4">Trademark，尚未註冊的商標</div>
+    </div>
+    <div>
+        <div class="t-f0">&lsaquo;</div>
+        <div class="t-f1">&amp;lsaquo;</div>
+        <div class="t-f4">左單尖箭頭</div>
+    </div>
+    <div>
+        <div class="t-f0">&rsaquo;</div>
+        <div class="t-f1">&amp;rsaquo;</div>
+        <div class="t-f4">右單尖箭頭</div>
+    </div>
+    <div>
+        <div class="t-f0">&laquo;</div>
+        <div class="t-f1">&amp;laquo;</div>
+        <div class="t-f4">左雙尖箭頭</div>
+    </div>
+    <div>
+        <div class="t-f0">&raquo;</div>
+        <div class="t-f1">&amp;raquo;</div>
+        <div class="t-f4">右雙尖箭頭</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act2">數學單位特殊符號</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">符號</div>
+        <div class="t-f1">編碼</div>
+        <div class="t-f4">說明</div>
+    </div>
+    <div>
+        <div class="t-f0">×</div>
+        <div class="t-f1">&amp;times;  </div>
+        <div class="t-f4">乘號</div>
+    </div>
+    <div>
+        <div class="t-f0">÷</div>
+        <div class="t-f1">&amp;divide;</div>
+        <div class="t-f4">除號</div>
+    </div>
+    <div>
+        <div class="t-f0">±</div>
+        <div class="t-f1">&amp;plusmn;</div>
+        <div class="t-f4">正負符號</div>
+    </div>
+    <div>
+        <div class="t-f0">∞</div>
+        <div class="t-f1">&amp;infin;</div>
+        <div class="t-f4">無限大</div>
+    </div>
+    <div>
+        <div class="t-f0">°</div>
+        <div class="t-f1">&amp;deg;</div>
+        <div class="t-f4">度數</div>
+    </div>
+    <div>
+        <div class="t-f0">ƒ</div>
+        <div class="t-f1">&amp;fnof;</div>
+        <div class="t-f4">function</div>
+    </div>
+    <div>
+        <div class="t-f0">√</div>
+        <div class="t-f1">&amp;根號</div>
+        <div class="t-f4">radic;</div>
+    </div>
+    <div>
+        <div class="t-f0">≠</div>
+        <div class="t-f1">&amp;ne;</div>
+        <div class="t-f4">不等於</div>
+    </div>
+    <div>
+        <div class="t-f0">≡</div>
+        <div class="t-f1">&amp;相等</div>
+        <div class="t-f4">equiv;</div>
+    </div>
+    <div>
+        <div class="t-f0">≤</div>
+        <div class="t-f1">&amp;le;</div>
+        <div class="t-f4">小於等於</div>
+    </div>
+    <div>
+        <div class="t-f0">≥</div>
+        <div class="t-f1">&amp;ge;</div>
+        <div class="t-f4">大於等於</div>
+    </div>
+    <div>
+        <div class="t-f0">⊥</div>
+        <div class="t-f1">&amp;perp;</div>
+        <div class="t-f4">垂直</div>
+    </div>
+    <div>
+        <div class="t-f0">½</div>
+        <div class="t-f1">&amp;frac12;</div>
+        <div class="t-f4">二分之一</div>
+    </div>
+    <div>
+        <div class="t-f0">¼</div>
+        <div class="t-f1">&amp;frac14;</div>
+        <div class="t-f4">四分之一</div>
+    </div>
+    <div>
+        <div class="t-f0">¾</div>
+        <div class="t-f1">&amp;frac34;</div>
+        <div class="t-f4">四分之三</div>
+    </div>
+    <div>
+        <div class="t-f0">‰</div>
+        <div class="t-f1">&amp;permil;</div>
+        <div class="t-f4">百分符號</div>
+    </div>
+    <div>
+        <div class="t-f0">π</div>
+        <div class="t-f1">&amp;pi;</div>
+        <div class="t-f4">圓周率</div>
+    </div>
+    <div>
+        <div class="t-f0">∴</div>
+        <div class="t-f1">&amp;there4;</div>
+        <div class="t-f4">所以</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act3">貨幣符號</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">符號</div>
+        <div class="t-f1">編碼</div>
+        <div class="t-f4">說明</div>
+    </div>
+    <div>
+        <div class="t-f0">€</div>
+        <div class="t-f1">&amp;euro;</div>
+        <div class="t-f4">歐元</div>
+    </div>
+    <div>
+        <div class="t-f0">¢</div>
+        <div class="t-f1">&amp;cent;</div>
+        <div class="t-f4">美分</div>
+    </div>
+    <div>
+        <div class="t-f0">£</div>
+        <div class="t-f1">&amp;pound;</div>
+        <div class="t-f4">英鎊</div>
+    </div>
+    <div>
+        <div class="t-f0">¥</div>
+        <div class="t-f1">&amp;yen;</div>
+        <div class="t-f4">日圓</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act4">方向符號</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">符號</div>
+        <div class="t-f1">編碼</div>
+        <div class="t-f4">說明</div>
+    </div>
+    <div >
+        <div class="t-f0">↑</div>
+        <div class="t-f1">&amp;uarr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">↓</div>
+        <div class="t-f1">&amp;darr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">←</div>
+        <div class="t-f1">&amp;larr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">→</div>
+        <div class="t-f1">&amp;rarr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">↔</div>
+        <div class="t-f1">&amp;harr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">⇑</div>
+        <div class="t-f1">&amp;uArr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">⇓</div>
+        <div class="t-f1">&amp;dArr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">⇐</div>
+        <div class="t-f1">&amp;lArr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">⇒</div>
+        <div class="t-f1">&amp;rArr;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div >
+        <div class="t-f0">⇔</div>
+        <div class="t-f1">&amp;hArr;</div>
+        <div class="t-f4"></div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act5">其他特殊符號</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">符號</div>
+        <div class="t-f1">編碼</div>
+        <div class="t-f4">說明</div>
+    </div>
+    <div>
+        <div class="t-f0">«</div>
+        <div class="t-f1">&amp;laquo;</div>
+        <div class="t-f4">雙左箭頭</div>
+    </div>
+    <div>
+        <div class="t-f0">»</div>
+        <div class="t-f1">&amp;raquo;</div>
+        <div class="t-f4">雙右箭頭</div>
+    </div>
+    <div>
+        <div class="t-f0">¿</div>
+        <div class="t-f1">&amp;iquest;</div>
+        <div class="t-f4">倒問號</div>
+    </div>
+    <div>
+        <div class="t-f0">§</div>
+        <div class="t-f1">&amp;sect;</div>
+        <div class="t-f4">章節</div>
+    </div>
+    <div>
+        <div class="t-f0">¶</div>
+        <div class="t-f1">&amp;para;</div>
+        <div class="t-f4">段落</div>
+    </div>
+    <div>
+        <div class="t-f0">…</div>
+        <div class="t-f1">&amp;hellip;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">⊕</div>
+        <div class="t-f1">&amp;oplus;</div>
+        <div class="t-f4">邏輯互斥或，與一般的邏輯或（OR）不同，當兩兩數值相同為否，而數值不同時為真</div>
+    </div>
+    <div>
+        <div class="t-f0">∇</div>
+        <div class="t-f1">&amp;nabla;</div>
+        <div class="t-f4">倒三角型</div>
+    </div>
+    <div>
+        <div class="t-f0">¹</div>
+        <div class="t-f1">&amp;sup1;</div>
+        <div class="t-f4">註解1</div>
+    </div>
+    <div>
+        <div class="t-f0">²</div>
+        <div class="t-f1">&amp;sup2;</div>
+        <div class="t-f4">註解2</div>
+    </div>
+    <div>
+        <div class="t-f0">³</div>
+        <div class="t-f1">&amp;sup3;</div>
+        <div class="t-f4">註解3</div>
+    </div>
+    <div>
+        <div class="t-f0">↵</div>
+        <div class="t-f1">&amp;crarr;</div>
+        <div class="t-f4">Enter</div>
+    </div>
+    <div>
+        <div class="t-f0">♠</div>
+        <div class="t-f1">&amp;spades;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">♣</div>
+        <div class="t-f1">&amp;clubs;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">♥</div>
+        <div class="t-f1">&amp;hearts;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">♦</div>
+        <div class="t-f1">&amp;diams;</div>
+        <div class="t-f4"></div>
+    </div>
+    <div>
+        <div class="t-f0">α</div>
+        <div class="t-f1">&amp;alpha;</div>
+        <div class="t-f4">Alpha</div>
+    </div>
+    <div>
+        <div class="t-f0">β</div>
+        <div class="t-f1">&amp;beta;</div>
+        <div class="t-f4">Bata</div>
+    </div>
+    <div>
+        <div class="t-f0">γ</div>
+        <div class="t-f1">&amp;gamma;</div>
+        <div class="t-f4">Gamma</div>
+    </div>
+    <div>
+        <div class="t-f0">Δ</div>
+        <div class="t-f1">&amp;Delta;</div>
+        <div class="t-f4">Delta</div>
+    </div>
+    <div>
+        <div class="t-f0">θ</div>
+        <div class="t-f1">&amp;theta;</div>
+        <div class="t-f4">Theta</div>
+    </div>
+    <div>
+        <div class="t-f0">λ</div>
+        <div class="t-f1">&amp;lambda;</div>
+        <div class="t-f4">Lambda</div>
+    </div>
+    <div>
+        <div class="t-f0">Σ</div>
+        <div class="t-f1">&amp;Sigma;</div>
+        <div class="t-f4">Sigma</div>
+    </div>
+    <div>
+        <div class="t-f0">τ</div>
+        <div class="t-f1">&amp;tau;</div>
+        <div class="t-f4">Tau</div>
+    </div>
+    <div>
+        <div class="t-f0">ω</div>
+        <div class="t-f1">&amp;omega;</div>
+        <div class="t-f4">Omega</div>
+    </div>
+    <div>
+        <div class="t-f0">Ω</div>
+        <div class="t-f1">&amp;Omega;</div>
+        <div class="t-f4">Omega、歐姆</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act6">線上工具</h2>
+<p>網路上也有許多提供特殊符號對應程式碼的線上工具，例如 <a href="https://www.toptal.com/designers/htmlarrows/" target="_blank">HTML Arrows</a> 便是其中之一，它不僅提供 HTML 格式的符號代碼，還有其他格式例如 Unicode、Hex Code，可說是非常便利。</p>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    <button id="sideBack" onclick="javascript:history.back()"></button>
+                    <button id="sideTop"></button>
+                </aside>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

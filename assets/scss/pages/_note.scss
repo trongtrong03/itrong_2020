@@ -9,12 +9,12 @@
 
 .notes-item {
     background-color: #FFF;
-    border-bottom: 1px solid #EEE;
     transition: all .3s ease;
     a {
         display: flex;
         align-items: center;
         width: 100%;
+        border-bottom: 1px solid #EEE;
         padding: 1rem .5rem;
         hgroup {
             // width: calc(100% - 8.5rem);
@@ -45,9 +45,12 @@
     }
     &:hover {
         transform: scale(1.1, 1.1);
-        hgroup {
-            h2 {
-                color: $first;
+        a {
+            border-top: 1px solid #EEE;
+            hgroup {
+                h2 {
+                    color: $first;
+                }
             }
         }
     }
@@ -62,15 +65,12 @@
 
 .notes-tags {
     line-height: .875rem;
-    font-size: .875rem;
+    font-size: .75rem;
     color: #AAA;
     @include clearfix;
     span {
         &::before {
-            content: '[';
-        }
-        &::after {
-            content: ']';
+            content: '#';
         }
     }
 }
