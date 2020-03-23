@@ -3,15 +3,23 @@
 @@include("_head.html")
 <body>
     <article id="wrap">
-        @@include("_header.html", { "html": "active" })
+        @@include("_header.html", { "res": "active" })
         <main>
             <section class="container-wrap">
+                <h1>RESOURCES</h1>
                 <div class="search-wrap">
-                    <input type="text" placeholder="Search..." list="data" v-model="query">
+                    <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="網頁前端">
-                        <option value="svg">
+                        <option value="網頁前端"></option>
+                        <option value="CSS"></option>
+                        <option value="Javascript"></option>
+                        <option value="素材"></option>
+                        <option value="影音"></option>
+                        <option value="教學"></option>
+                        <option value="優化"></option>
+                        <option value="開發工具"></option>
                     </datalist>
+                    <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
                 <div class="res-wrap">
                     <div class="res-switch">
@@ -34,6 +42,7 @@
                         </li>
                     </ul>
                 </div>
+                @@include("_aside.html")
             </section>
         </main>
         @@include("_footer.html")

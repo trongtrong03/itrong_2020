@@ -5,7 +5,10 @@
     <article id="wrap">
         @@include("_header.html", { "index": "active" })
         <main>
-            index
+            <div class="index-wrap">
+                index
+                <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+            </div>
         </main>
         @@include("_footer.html")
     </article>

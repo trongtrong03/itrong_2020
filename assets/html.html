@@ -6,30 +6,35 @@
         @@include("_header.html", { "html": "active" })
         <main>
             <section class="container-wrap">
+                <h1>HTML</h1>
                 <div class="search-wrap">
-                    <input type="text" placeholder="Search..." list="data" v-model="query">
+                    <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="html5">
-                        <option value="svg">
+                        <option value="html5"></option>
+                        <option value="svg"></option>
                     </datalist>
+                    <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
-                <ul class="notes-list">
-                    <li class="notes-item" v-for="item in filterHtml" :key="item.id">
-                        <a :href="'pages/' + item.href + '.html'">
-                            <hgroup>
-                                <h6 class="tags-group">
-                                    <span v-if="item.tag1">{{ item.tag1_name }}</span>
-                                    <span v-if="item.tag2">{{ item.tag2_name }}</span>
-                                </h6>
-                                <h2>{{ item.title }}</h2>
-                                <time class="notes-time">{{ item.time }}</time>
-                            </hgroup>
-                            <figure v-if="item.img">
-                                <img :src="'images/' + item.img_name + '.jpg'">
-                            </figure>
-                        </a>
-                    </li>
-                </ul>
+                <div class="notes-wrap">
+                    <ul class="notes-list">
+                        <li class="notes-item" v-for="item in filterHtml" :key="item.id">
+                            <a :href="'pages/' + item.href + '.html'">
+                                <hgroup>
+                                    <h6 class="tags-group">
+                                        <span v-if="item.tag1">{{ item.tag1_name }}</span>
+                                        <span v-if="item.tag2">{{ item.tag2_name }}</span>
+                                    </h6>
+                                    <h2>{{ item.title }}</h2>
+                                    <time class="notes-time">{{ item.time }}</time>
+                                </hgroup>
+                                <figure v-if="item.img">
+                                    <img :src="'images/' + item.img_name + '.jpg'">
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                @@include("_aside.html")
             </section>
         </main>
         @@include("_footer.html")

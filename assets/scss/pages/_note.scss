@@ -15,11 +15,14 @@
         display: flex;
         align-items: center;
         width: 100%;
-        padding: .5rem;
+        padding: 1rem .5rem;
         hgroup {
+            // width: calc(100% - 8.5rem);
             flex: 1;
+            min-width: 0;  // 使 text-overflow 不會因為 flex 失效
             color: #888;
             h2 {
+                display: block;
                 line-height: 1.75;
                 font-size: 1.5rem;
                 color: #000;
@@ -30,8 +33,9 @@
             }
         }
         figure {
-            width: 16%;
-            padding: 0 2% 0 6%;
+            flex: 1;
+            max-width: 8.5rem;
+            padding: 0 1rem 0 3rem;
             img {
                 display: block;
                 width: 100%;
@@ -44,6 +48,13 @@
         hgroup {
             h2 {
                 color: $first;
+            }
+        }
+    }
+    @include MQ(max-1280) {
+        a {
+            figure {
+                padding-right: 0;
             }
         }
     }

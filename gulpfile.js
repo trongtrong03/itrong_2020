@@ -43,6 +43,7 @@ function compileJs()  {
             'assets/js/highlight.pack.js',
             'assets/js/jquery.copiq.min.js',
             'assets/js/jquery.particleground.js',
+            'assets/js/form-submission-handler.js',
             'assets/js/vue.min.js',
             'assets/js/vue-app.js',
             'assets/js/script.js',

@@ -110,4 +110,9 @@ $screen-240: 240px;
 }
 
 // example
+@include MQ(max-1440) {}
+@include MQ(max-1280) {}
 @include MQ(max-1024) {}
+@include MQ(max-768) {}
+@include MQ(max-480) {}
+@include MQ(max-320) {}

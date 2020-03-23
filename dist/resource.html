@@ -21,43 +21,66 @@
                     <span>iTrong <b>work studio</b></span>
                 </a>
             </figure>
-            <nav>
-                <!-- <a  href="index.html">HOME</a> -->
-                <a  class="active"  href="./html.html"><b>HTML</b></a>
-                <a  href="./css.html"><b>CSS</b></a>
-                <a  href="./javascript.html"><b>JavaScript</b></a>
-                <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
-                <a  href="./resource.html"><b>Resources</b></a>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="./html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="./css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="./javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="./resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
             </nav>
-
-            <div class="nav-bottom">
-                <a href="#0" title="My Profile">
-                    <i class="far fa-user"></i>
-                </a>
-                <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
-                    <i class="fab fa-codepen"></i>
-                </a>
-                <a
-                  class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
-                <a class="msg" href="contact.html" title="Contact me">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </div>
         </header>
         <main>
             <section class="container-wrap">
+                <h1>RESOURCES</h1>
                 <div class="search-wrap">
-                    <input type="text" placeholder="Search..." list="data" v-model="query">
+                    <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="網頁前端">
-                        <option value="svg">
+                        <option value="網頁前端"></option>
+                        <option value="CSS"></option>
+                        <option value="Javascript"></option>
+                        <option value="素材"></option>
+                        <option value="影音"></option>
+                        <option value="教學"></option>
+                        <option value="優化"></option>
+                        <option value="開發工具"></option>
                     </datalist>
+                    <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
                 <div class="res-wrap">
                     <div class="res-switch">
@@ -80,6 +103,11 @@
                         </li>
                     </ul>
                 </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='./index.html'"></button>
+                    <button id="sideBack" onclick="javascript:history.back()"></button>
+                    <button id="sideTop"></button>
+                </aside>
             </section>
         </main>
         <div class="particles-bg"></div>

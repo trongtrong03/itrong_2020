@@ -8,6 +8,11 @@ header {
     height: 100%;
     background-color: $first;
     box-shadow: 0 5px 12px 1px rgba(32, 42, 64, 0.25);
+    @include MQ(max-1024) {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
 }
 
 .logo {
@@ -45,26 +50,59 @@ header {
             }
         }
     }
+    @include MQ(max-1024) {
+        a {
+            padding: .5rem 0;
+            span {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 nav {
-    padding: 1rem 0;
-    a {
+    padding: 1rem 0 3rem;
+    > ul {
         display: block;
-        font-size: 1rem;
-        color: $second;
-        @include text-overflow;
-        padding: 1rem;
-        b {
-            font-weight: normal;
-            padding: .25rem;
+        li {
+            display: block;
         }
-        &:hover,
-        &.active {
-            color: #FFF;
+        a {
+            display: block;
+            font-size: 1rem;
+            color: $second;
+            @include text-overflow;
+            padding: 1rem;
             b {
-                background-color: $red;
+                font-weight: normal;
+                padding: .25rem;
             }
+            &:hover,
+            &.active {
+                color: #FFF;
+                b {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+    @include MQ(max-1024) {
+        position: fixed;
+        top: 0;
+        right: -15rem;
+        z-index: 101;
+        width: 15rem;
+        height: 100%;
+        background-color: $first;
+        padding-top: 4rem;
+        transition: right .3s ease;
+        > ul {
+            height: 100%;
+            @include scrollbar(#FFF);
+        }
+        &.is-active {
+            right: 0;
+            box-shadow: 0 5px 12px 1px rgba(32, 42, 64, 0.25);
         }
     }
 }
@@ -86,5 +124,39 @@ nav {
             color: $first;
             background: $second;
         }
+    }
+}
+
+.nav-btn {
+    position: absolute;
+    top: calc(50% - 2rem);
+    right: 0;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $first;
+    &::before {
+        content: '\f0c9';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+}
+
+.nav-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $second;
+    &::before {
+        content: '\f057';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
     }
 }

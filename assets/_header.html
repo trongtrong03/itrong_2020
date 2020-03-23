@@ -4,32 +4,47 @@
             <span>iTrong <b>work studio</b></span>
         </a>
     </figure>
-    <nav>
-        <!-- <a @@if (context.index==="active" ) { class="active" } href="index.html">HOME</a> -->
-        <a @@if (context.html==="active" ) { class="active" } href="@@webRoot/html.html"><b>HTML</b></a>
-        <a @@if (context.css==="active" ) { class="active" } href="@@webRoot/css.html"><b>CSS</b></a>
-        <a @@if (context.js==="active" ) { class="active" } href="@@webRoot/javascript.html"><b>JavaScript</b></a>
-        <a @@if (context.misc==="active" ) { class="active" } href="@@webRoot/misc.html"><b>Miscellaneous Notes</b></a>
-        <a @@if (context.res==="active" ) { class="active" } href="@@webRoot/resource.html"><b>Resources</b></a>
+    <button class="nav-btn" @click="navActive = !navActive"></button>
+    <nav :class="{ 'is-active' : navActive}">
+        <ul>
+            <li>
+                <a @@if (context.index==="active" ) { class="active" } href="index.html"><b>HOME</b></a>
+            </li>
+            <li>
+                <a @@if (context.html==="active" ) { class="active" } href="@@webRoot/html.html"><b>HTML</b></a>
+            </li>
+            <li>
+                <a @@if (context.css==="active" ) { class="active" } href="@@webRoot/css.html"><b>CSS</b></a>
+            </li>
+            <li>
+                <a @@if (context.js==="active" ) { class="active" } href="@@webRoot/javascript.html"><b>JavaScript</b></a>
+            </li>
+            <li>
+                <a @@if (context.misc==="active" ) { class="active" } href="@@webRoot/misc.html"><b>Miscellaneous Notes</b></a>
+            </li>
+            <li>
+                <a @@if (context.res==="active" ) { class="active" } href="@@webRoot/resource.html"><b>Resources</b></a>
+            </li>
+        </ul>
+        <div class="nav-bottom">
+            <a href="#0" title="My Profile">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+            <a
+              class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+            <a class="msg" href="contact.html" title="Contact me">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+        <button class="nav-close" @click="navActive = !navActive"></button>
     </nav>
-
-    <div class="nav-bottom">
-        <a href="#0" title="My Profile">
-            <i class="far fa-user"></i>
-        </a>
-        <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-        <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
-            <i class="fab fa-codepen"></i>
-        </a>
-        <a
-          class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
-        <a class="msg" href="contact.html" title="Contact me">
-            <i class="far fa-envelope"></i>
-        </a>
-    </div>
 </header>
