@@ -9134,6 +9134,7 @@ a {
 }
 
 a {
+  color: #40a8c4;
   text-decoration: none;
 }
 
@@ -9761,6 +9762,7 @@ footer {
 }
 
 .text-catalog > ul li {
+  line-height: 1.5;
   padding: .25rem 0;
 }
 
@@ -9816,9 +9818,9 @@ footer {
 }
 
 .text-content p {
-  line-height: 1.75;
+  line-height: 2;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  padding: .5rem 0;
 }
 
 .text-content p a {
@@ -9871,7 +9873,8 @@ footer {
 }
 
 .text-flex > div > div {
-  padding: 1rem 1rem;
+  line-height: 2;
+  padding: .5rem 1rem;
 }
 
 .text-flex > div > div:nth-child(odd) {
@@ -9886,6 +9889,10 @@ footer {
 .text-flex > div.f-title > div {
   color: #FFF;
   background-color: #81D8D0;
+}
+
+.text-flex > div.f-title > div:first-child {
+  color: #444;
 }
 
 .t-f0 {
