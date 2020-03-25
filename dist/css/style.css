@@ -9622,6 +9622,24 @@ footer {
   }
 }
 
+.index-wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.index-wrap section {
+  margin-bottom: 10rem;
+}
+
+.index-wrap section > h2 {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  color: #81D8D0;
+  margin-bottom: 2rem;
+}
+
 .notes-list {
   list-style: none;
   margin: 0;
@@ -9694,7 +9712,7 @@ footer {
 .notes-tags {
   line-height: .875rem;
   font-size: .75rem;
-  color: #AAA;
+  color: #81D8D0;
   *zoom: 1;
 }
 
@@ -9814,7 +9832,7 @@ footer {
 .text-content h3 {
   font-size: 1.25rem;
   color: #81D8D0;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .text-content p {
@@ -9843,6 +9861,7 @@ footer {
 
 .text-content figure img {
   display: block;
+  max-width: 100%;
   border: 1px solid #DDD;
 }
 

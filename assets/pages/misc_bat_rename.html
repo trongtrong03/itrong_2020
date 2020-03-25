@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "misc": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getMiscIndex({ m_list, index: 7 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 7 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">操作流程</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">操作流程</h2>
+<h5 class="text-step">開啟記事本</h5>
+<p>輸入「rename *.html *.php」（假設今天要將所有副檔名是 .html 的檔案更改為 .php）。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">rename *.html *.php</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h5 class="text-step">儲存檔案為 .bat 格式</h5>
+<p>自行命名檔案名稱，並將副檔名定義為 .bat 格式。</p>
+<figure>
+    <img src="@@webRoot/images/misc/bat-rename-1.jpg">
+    <figcaption>更改副檔名時系統會跳出警告視窗，請按下「是」。</figcaption>
+</figure>
+<p><br></p>
+
+<h5 class="text-step">將本 bat 檔置入要批次處理檔案的資料夾內。</h5>
+<p>bat 檔與要更改副檔名的檔案們必須都放在同一個資料夾裡。</p>
+<figure>
+    <img src="@@webRoot/images/misc/bat-rename-2.jpg">
+    <figcaption>更改副檔名時系統會跳出警告視窗，請按下「是」。</figcaption>
+</figure>
+<p><br></p>
+
+<h5 class="text-step">點擊 bat 檔執行指令。</h5>
+<p>執行 bat 檔案，資料夾內所有 .html 檔案便會自行更改為 .php 格式。</p>
+<figure>
+    <img src="@@webRoot/images/misc/bat-rename-3.jpg">
+    <figcaption>大功告成。</figcaption>
+</figure>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "misc": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

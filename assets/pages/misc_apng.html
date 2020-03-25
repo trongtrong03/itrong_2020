@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "misc": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getMiscIndex({ m_list, index: 0 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 0 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">簡介</a></li>
+        <li><a href="#act2">推薦工具</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">簡介</h2>
+<p>APNG，全名 Animated Portable Network Graphics，是 PNG 的動畫擴充格式，輸出格式為 .png 或 .apng。</p>
+<p>事實上，APNG 並非 PNG 官方認可的動態格式，官方動態格式定義為 MNG（Multiple-image Network Graphics），不過 MNG 並不受大眾青睞，且瀏覽器也鮮少主動支援。比起 MNG，APNG 更大的對手則是 GIF，兩者功能與製程類似。</p>
+<p>以下是 APNG 與 GIF 的比較簡表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0"></div>
+        <div class="t-f1">APNG</div>
+        <div class="t-f1">GIF</div>
+    </div>
+    <div>
+        <div class="t-f0">起源</div>
+        <div class="t-f1">發展較晚（2008）</div>
+        <div class="t-f1">發展較早（1987）</div>
+    </div>
+    <div>
+        <div class="t-f0">位元色</div>
+        <div class="t-f1">支援 24 位元色</div>
+        <div class="t-f1">支援 8 位元色</div>
+    </div>
+    <div>
+        <div class="t-f0">Alpha</div>
+        <div class="t-f1">支援 Alpha 透明通道</div>
+        <div class="t-f1">不支援 Alpha 透明通道</div>
+    </div>
+    <div>
+        <div class="t-f0">瀏覽器</div>
+        <div class="t-f1">瀏覽器支援較少</div>
+        <div class="t-f1">所有瀏覽器皆支援</div>
+    </div>
+    <div>
+        <div class="t-f0">容量</div>
+        <div class="t-f1">檔案較大</div>
+        <div class="t-f1">輕量</div>
+    </div>
+</div>
+<p><br></p>
+<p>目前幾個主流瀏覽器皆已開始支援 APNG 格式，因此會發現，除了檔案體積外，APNG 幾乎全面勝於 GIF，然而 GIF 已流行多年，加上有「輕量」這極為重要的優勢，APNG 迄今仍難以取代 GIF。</p>
+<p>除了 GIF，APNG 其他的「敵人」還有 Flash，但隨著 Flash 即將銷聲匿跡，這點發展不利的劣勢可望消失。</p>
+<p><br></p>
+
+<h2 id="act2">推薦工具</h2>
+<p>以下推薦兩套軟體，分別製作，以及分解 APNG 的好用工具：</p>
+<p><br></p>
+
+<h3>APNG Disassembler</h3>
+<p>下載連結：<a href="http://apngdis.sourceforge.net/" target="_blank">http://apngdis.sourceforge.net/</a><br>APNG Disassembler 可用來分解 APNG 格式的影像，將影像分解為每一幀。</p>
+<p><br></p>
+
+<h3>APNG Anime Maker</h3>
+<p>下載連結：<a href="http://www.azofreeware.com/2015/03/apng-anime-maker-portable.html" target="_blank">http://www.azofreeware.com/2015/03/apng-anime-maker-portable.html</a><br>APNG Anime Maker 可用來將多張 PNG 合併為一個 APNG 影像，藉以來製作動態圖檔。</p>
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://aotu.io/notes/2016/11/07/apng/index.html" target="_blank">APNG 那些事</a></li>
+        <li><a href="https://www.techbang.com/posts/14598-low-quality-gif-aspect-of-the-network-for-20-years-better-why-apng-failed-to-replace-it" target="_blank">低畫質的 GIF 縱橫網路20年了，更優秀的 APNG 為什麼沒能取代它？</a></li>
+        <li><a href="https://read01.com/zh-tw/3R6oMy.html" target="_blank">APNG Disassembler – 分解導出 APNG 動畫圖片中的幀</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "misc": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

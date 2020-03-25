@@ -61,6 +61,105 @@ const htmlData = [
     },
 ]
 
+const miscData = [
+    {
+        id: 0,
+        href: 'misc_apng',
+        title: '什麼是 APNG？',
+        time: '2017.08.03',
+        tag1: true,
+        tag1_name: '影像',
+        tag2: false,
+        tag2_name: '',
+        img: true,
+        img_name: 'thumb_apng'
+    },
+    {
+        id: 1,
+        href: 'misc_uiux',
+        title: '關於 UI 與 UX 的三兩事',
+        time: '2017.11.01',
+        tag1: true,
+        tag1_name: 'UI/UX',
+        tag2: true,
+        tag2_name: '設計',
+        img: true,
+        img_name: 'thumb_uiux'
+    },
+    {
+        id: 2,
+        href: 'misc_gestalt',
+        title: 'UI 的格式塔心理學（Gestalt psychology）',
+        time: '2017.11.12',
+        tag1: true,
+        tag1_name: 'UI/UX',
+        tag2: true,
+        tag2_name: '設計',
+        img: true,
+        img_name: 'thumb_gestalt'
+    },
+    {
+        id: 3,
+        href: 'misc_heif',
+        title: '什麼是 HEIF？',
+        time: '2017.11.26',
+        tag1: true,
+        tag1_name: '影像',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 4,
+        href: 'misc_gdpr',
+        title: 'GDPR：歐盟一般資料保護規章',
+        time: '2018.11.04',
+        tag1: true,
+        tag1_name: '資安',
+        tag2: true,
+        tag2_name: '網際網路',
+        img: true,
+        img_name: 'thumb_gdpr'
+    },
+    {
+        id: 5,
+        href: 'misc_domain',
+        title: '認識網域（Domain Name）',
+        time: '2018.12.16',
+        tag1: true,
+        tag1_name: '網際網路',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 6,
+        href: 'misc_msdos',
+        title: 'MS-DOS 的基本指令介紹',
+        time: '2019.05.09',
+        tag1: true,
+        tag1_name: 'Windows',
+        tag2: false,
+        tag2_name: '',
+        img: true,
+        img_name: 'thumb_msdos'
+    },
+    {
+        id: 7,
+        href: 'misc_bat_rename',
+        title: '做一個簡易的批次更改副檔名功能執行程式',
+        time: '2019.06.11',
+        tag1: true,
+        tag1_name: 'Windows',
+        tag2: true,
+        tag2_name: '教學',
+        img: false,
+        img_name: ''
+    },
+]
+
 const resData = [
     {
         id: 0,
@@ -870,6 +969,7 @@ var wrap = new Vue({
     el: '#wrap',
     data: {
         h_list: htmlData,
+        m_list: miscData,
         r_list: resData,
         query: "",
         isActive: 1,
@@ -881,6 +981,11 @@ var wrap = new Vue({
         // 取得 h_list 的數據，給分頁指定用
         getHtmlIndex({ h_list = [], index = 0 }) {
             return h_list[index] || {}
+        },
+
+        // 取得 m_list 的數據，給分頁指定用
+        getMiscIndex({ m_list = [], index = 0 }) {
+            return m_list[index] || {}
         },
 
         // 重置搜尋框的值
@@ -896,6 +1001,13 @@ var wrap = new Vue({
         filterHtml: function() {
             var search = this;
             return this.h_list.filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterMisc: function() {
+            var search = this;
+            return this.m_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },

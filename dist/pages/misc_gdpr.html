@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Application</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getMiscIndex({ m_list, index: 4 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 4 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">簡介</a></li>
+        <li><a href="#act2">影響範圍</a></li>
+        <li><a href="#act3">六大原則</a></li>
+        <li><a href="#act4">怎樣算是違反 GDPR？</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">簡介</h2>
+<p>GDPR，全名為「General Data Protection Regulation」，意即歐盟法律中對所有歐盟個人關於數據保護和隱私的規範，於2018 年 5 月 25 日正式開始實施，依照 GDPR 法規，若歐盟公民的個人資料遭到外洩，企業必須在 72 小時內通報，否則將會面臨鉅額的罰款。由於現今網路、交通影響無遠弗屆，資料本身幾乎已無地區性可言，無分企業規模、類別，凡是客戶有接觸到歐盟公民，皆必須遵守 DGPR 規範，可說無人能置身事外。</p>
+<p><br></p>
+
+<h2 id="act2">影響範圍</h2>
+<div class="text-ul">
+    <ul>
+        <li>
+            客戶中有歐盟公民：<br>
+            無論是電商還是旅館、餐廳，只要握有歐盟公民顧客的個資、信用卡資料都算。
+        </li>
+        <li>
+            雇用歐盟員工、歐盟供應商：<br>
+            不分正職、兼職，或是供應商、合作廠商等，只要握有其保險資料、薪資紀錄、聯絡資訊等都算。
+        </li>
+        <li>
+            非營利組織與政府機構：<br>
+            除了一般企業，政府機構與非營利組織同樣也必須遵守，如果志工、會員、贊助者、捐款人、顧問是歐盟公民，所掌握的聯絡資訊、稅捐資料等，都受 GDPR 規範。
+        </li>
+    </ul>
+</div>
+<p><br></p>
+
+<h2 id="act3">六大原則</h2>
+<div class="text-ol">
+    <ol>
+        <li>
+            正確性：<br>
+            個人資料必須確保正確，若出現不正確的個人資料，應訂立合理措施以立即刪除或修改。<br><br>
+        </li>
+        <li>
+            公開透明性：<br>
+            必須以「合法」、「公平」、「透明」手段來蒐集、處理個人資料。<br><br>
+        </li>
+        <li>
+            目的性：<br>
+            必須以明確、合法的目的來蒐集個人資料。<br><br>
+        </li>
+        <li>
+            儲存限制性：<br>
+            不得逾越處理個資目的的必要範圍，並在資料儲存期間做合理保管。<br><br>
+        </li>
+        <li>
+            機密性：<br>
+            必須以資安手段確保個人資料不被破壞或散布。<br><br>
+        </li>
+        <li>
+            最低性：<br>
+            必須在最低限度內蒐集、使用個人資料。
+        </li>
+    </ol>
+</div>
+<p><br></p>
+
+<h2 id="act4">怎樣算是違反 GDPR？</h2>
+<div class="text-ol">
+    <ol>
+        <li>
+            保護不周：<br>
+            不僅僅是企業對客戶個資保護不周導致外流或被竊取，「只要防護不周就算違反」。<br><br>
+        </li>
+        <li>
+            脫離約定目的、缺乏正當性：<br>
+            像是把某活動搜集的個資，用於另一個無關的活動或機構使用。<br><br>
+        </li>
+        <li>
+            未給予當事人應有權利：<br>
+            當事人必須擁有「刪除」、「更正」、「轉移」等權利。
+        </li>
+    </ol>
+</div>
+<p>歐盟是世界最大的經濟體，GDPR 的實施於台灣而言自然也無法坐視不管，其中預計會受影響的行業包括：網路零售、金融保險、航空運輸、旅遊觀光、人力資源、貨物進出口...等。</p>
+<p>而目前台灣個資法對於個人資料收集的同意政策採「推定同意」，即相關單位已提供某客戶個資，若該客戶未表示拒絕，則推定當事人已同意，與 GDPR 「自願、具體聲明同意」的型態並不相符。</p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://eugdpr.org/" target="_blank">EU GDPR.ORG</a></li>
+        <li><a href="https://technews.tw/2018/06/04/eu-gdpr-lazy-bag/" target="_blank">【懶人包】史上最嚴苛 GDPR 來襲，莫急莫慌莫害怕</a></li>
+        <li><a href="https://www.bnext.com.tw/article/49249/gdpr-general-data-protection-regulation-eu-" target="_blank">沒有人是局外人！史上最嚴個資法衝擊全球，帶你搞懂什麼是GDPR</a></li>
+        <li><a href="https://applealmond.com/posts/32639" target="_blank">什麼是GDPR？三分鐘帶你了解「史上最嚴格個資法」相關規定</a></li>
+        <li><a href="https://zh.wikipedia.org/wiki/%E6%AD%90%E7%9B%9F%E4%B8%80%E8%88%AC%E8%B3%87%E6%96%99%E4%BF%9D%E8%AD%B7%E8%A6%8F%E7%AF%84" target="_blank">一般資料保護規範</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../misc.html'"></button>
+                    
+                    <button id="sideTop"></button>
+                </aside>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

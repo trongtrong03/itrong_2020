@@ -37,6 +37,9 @@
                         <a  href="./javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
+                        <a  href="./app.html"><b>Application</b></a>
+                    </li>
+                    <li>
                         <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
                     </li>
                     <li>
@@ -67,8 +70,35 @@
         </header>
         <main>
             <div class="index-wrap">
-                index
-                <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+                <section>
+                    <h2>LASTEST</h2>
+                    <div class="notes-wrap">
+                        <ul class="notes-list">
+                            <li class="notes-item">
+                                <a :href="'pages/' + getHtmlIndex({ h_list, index: 4 }).href + '.html'">
+                                    <hgroup>
+                                        <h2>{{ getHtmlIndex({ h_list, index: 4 }).title }}</h2>
+                                        <time class="notes-time">{{ getHtmlIndex({ h_list, index: 4 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getHtmlIndex({ h_list, index: 4 }).img">
+                                        <img :src="'images/html/' + getHtmlIndex({ h_list, index: 4 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="notes-item">
+                                <a :href="'pages/' + getMiscIndex({ m_list, index: 7 }).href + '.html'">
+                                    <hgroup>
+                                        <h2>{{ getMiscIndex({ m_list, index: 7 }).title }}</h2>
+                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 7 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getMiscIndex({ m_list, index: 7 }).img">
+                                        <img :src="'images/html/' + getMiscIndex({ m_list, index: 7 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </main>
         <div class="particles-bg"></div>

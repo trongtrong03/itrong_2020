@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "misc": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getMiscIndex({ m_list, index: 2 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 2 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">簡介</a></li>
+        <li><a href="#act2">完形法則</a></li>
+        <li><a href="#act3">範例</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">簡介</h2>
+<p>「格式塔理論」（Gestalt Theory）是現代認知主義學習理論的先驅，起源於 20 世紀初的德國，是德文「Gestalt」的直譯，意即「模式、形狀、形式」等，或者說是「動態的整體（dynamic wholes）」。此理論主張人腦的運作原理是整體性的，例如人們對花的認知是包含對其過去的整體印象及經驗，而非單憑其形狀、顏色、大小等個別感官資訊；抑或者單聽「Do 」這個音符不會意識到是什麼曲子，但當耳朵接受到一段完整的熟悉旋律時，就得以判斷出當下聽到的是什麼歌。</p>
+<figure>
+    <img src="@@webRoot/images/misc/gestalt-1.jpg">
+    <figcaption>如果將分散的圓形稍作排列，人腦很難不會不由自主地將它們視為一個群體。</figcaption>
+</figure>
+<p><br></p>
+
+<h2 id="act2">完形法則</h2>
+<p>關於格式塔心理學理論的完形法則，有以下這些要點：</p>
+<div class="text-ul">
+    <ul>
+        <li>Proximity（相近）：距離接近的各部分趨於組成形體。</li>
+        <li>Similarity（相似）：在某方面相似的各部分趨於組成形體。</li>
+        <li>Closure（封閉）：彼此相屬、構成封閉實體的各部分趨於組成形體。</li>
+        <li>Continuity（連續）：透過非常細微的共性將兩個不同環節的部分連接成一個群體，例如橫線或是葉脈。</li>
+        <li>Simplicity（簡單）：具有對稱、規則、平滑的簡單圖形特徵的各部分趨於組成整體。</li>
+    </ul>
+</div>
+<p><br></p>
+
+<h2 id="act3">範例</h2>
+<p>以上是「格式塔理論」的略述，儘管敘述內容可能太過簡化，但或多或少已可理解該理論始終存在於我們的日常感知，當然網頁設計也不例外，接著就來看看一些格式塔之於網頁設計的經典案例。</p>
+<p><br></p>
+
+<h3>範例一：</h3>
+<figure>
+    <img src="@@webRoot/images/misc/gestalt-2.jpg">
+</figure>
+<p>左圖：項目A 因為沒有符號，使用者可能會以為它是標題而非與 B、C、D 項目組成一個群體。<br>右圖：即使四個項目各自存在，但因為格式塔的相似性，很自然而然認為他們是同個群組的資訊。</p>
+<p><br></p>
+
+<h3>範例二：</h3>
+<figure>
+    <img src="@@webRoot/images/misc/gestalt-3.jpg">
+</figure>
+<p>左圖：點擊關閉按鈕，通常會覺得是包含中央矩形區域的整個螢幕。<br>右圖：點擊關閉按鈕，通常會認為只關閉中央矩形區域。</p>
+<p><br></p>
+
+<h3>範例三：</h3>
+<figure>
+    <img src="@@webRoot/images/misc/gestalt-4.jpg">
+</figure>
+<p>左圖：難以辨別夾在兩個文字區域間的圖片究竟與哪一塊有關聯。<br>右圖：將有關聯的圖文排在一起並加上框線，瀏覽者一眼就能分辨資訊群體。</p>
+<p><br></p>
+
+<p>當然，應用於網頁設計的格式塔理論遠遠不僅於以上三個範例，隨著網頁技術發展越來越成熟，使用者對於網頁的直覺與操作也愈發敏感，因此如何兼顧使用者體驗，設計出良好的網頁畫面，格式塔心理學理論遂成為設計師需要去理解的必修項目之一。</p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%BC%8F%E5%A1%94%E5%AD%A6%E6%B4%BE" target="_blank">維基百科</a></li>
+        <li><a href="http://wiki.mbalib.com/zh-tw/%E6%A0%BC%E5%BC%8F%E5%A1%94%E5%BF%83%E7%90%86%E5%AD%A6%E7%90%86%E8%AE%BA" target="_blank">智庫百科</a></li>
+        <li><a href="https://vide.tw/1994" target="_blank">視覺法則 – 格式塔原則</a></li>
+        <li><a href="http://www.books.com.tw/products/0010723121" target="_blank">《打造最強網頁UI/UX設計腦：設計師都該懂的絕佳設計．溝通法則》</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "misc": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
