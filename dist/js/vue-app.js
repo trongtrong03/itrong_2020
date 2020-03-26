@@ -4,8 +4,8 @@ const htmlData = [
         href: 'html_symbollist',
         title: 'HTML 常用特殊符號編碼對照表',
         time: '2020.01.30',
-        tag1: false,
-        tag1_name: '',
+        tag1: true,
+        tag1_name: 'HTML',
         tag2: false,
         tag2_name: '',
         img: true,
@@ -17,7 +17,7 @@ const htmlData = [
         title: '使用 Google 表單建立簡易的聯絡信件',
         time: '2020.02.02',
         tag1: true,
-        tag1_name: '教學',
+        tag1_name: 'HTML',
         tag2: false,
         tag2_name: '',
         img: false,
@@ -58,6 +58,21 @@ const htmlData = [
         tag2_name: '',
         img: true,
         img_name: 'thumb_breadcrumbs'
+    },
+]
+
+const cssData = [
+    {
+        id: 0,
+        href: 'css_compass_install',
+        title: '用 Compass 寫 Sass：簡單介紹與環境安裝',
+        time: '2020.01.12',
+        tag1: true,
+        tag1_name: 'Compass',
+        tag2: true,
+        tag2_name: '安裝',
+        img: true,
+        img_name: 'thumb_compass'
     },
 ]
 
@@ -969,6 +984,7 @@ var wrap = new Vue({
     el: '#wrap',
     data: {
         h_list: htmlData,
+        c_list: cssData,
         m_list: miscData,
         r_list: resData,
         query: "",
@@ -978,12 +994,15 @@ var wrap = new Vue({
     },
 
     methods: {
-        // 取得 h_list 的數據，給分頁指定用
+        // 取得 list 的數據，給分頁指定用
         getHtmlIndex({ h_list = [], index = 0 }) {
             return h_list[index] || {}
         },
 
-        // 取得 m_list 的數據，給分頁指定用
+        getCssIndex({ c_list = [], index = 0 }) {
+            return c_list[index] || {}
+        },
+
         getMiscIndex({ m_list = [], index = 0 }) {
             return m_list[index] || {}
         },
@@ -1001,6 +1020,13 @@ var wrap = new Vue({
         filterHtml: function() {
             var search = this;
             return this.h_list.filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterCss: function() {
+            var search = this;
+            return this.c_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },

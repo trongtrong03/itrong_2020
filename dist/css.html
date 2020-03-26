@@ -28,10 +28,10 @@
                         <a  href="index.html"><b>HOME</b></a>
                     </li>
                     <li>
-                        <a  class="active"  href="./html.html"><b>HTML</b></a>
+                        <a  href="./html.html"><b>HTML</b></a>
                     </li>
                     <li>
-                        <a  href="./css.html"><b>CSS</b></a>
+                        <a  class="active"  href="./css.html"><b>CSS</b></a>
                     </li>
                     <li>
                         <a  href="./javascript.html"><b>JavaScript</b></a>
@@ -70,18 +70,20 @@
         </header>
         <main>
             <section class="container-wrap">
-                <h1>HTML</h1>
+                <h1>CSS</h1>
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="HTML5"></option>
-                        <option value="HTML"></option>
+                        <option value="CSS"></option>
+                        <option value="CSS3"></option>
+                        <option value="SCSS"></option>
+                        <option value="SASS"></option>
                     </datalist>
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
                 <div class="notes-wrap">
                     <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterHtml.reverse()" :key="item.id">
+                        <li class="notes-item" v-for="item in filterCss.reverse()" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
                                     <h6 class="notes-tags">
@@ -92,7 +94,7 @@
                                     <time class="notes-time">{{ item.time }}</time>
                                 </hgroup>
                                 <figure v-if="item.img">
-                                    <img :src="'images/html/' + item.img_name + '.jpg'">
+                                    <img :src="'images/css/' + item.img_name + '.jpg'">
                                 </figure>
                             </a>
                         </li>

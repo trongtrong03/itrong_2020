@@ -9628,16 +9628,50 @@ footer {
   padding-top: 3rem;
 }
 
-.index-wrap section {
-  margin-bottom: 10rem;
-}
-
-.index-wrap section > h2 {
+.index-wrap > h1 {
   display: block;
   text-align: center;
   font-size: 3rem;
   color: #81D8D0;
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
+}
+
+.index-wrap section {
+  margin-bottom: 6rem;
+}
+
+.index-wrap section > h2 {
+  display: block;
+  line-height: 2rem;
+  *zoom: 1;
+}
+
+.index-wrap section > h2:before, .index-wrap section > h2:after {
+  content: "";
+  display: table;
+}
+
+.index-wrap section > h2:after {
+  clear: both;
+}
+
+.index-wrap section > h2 span {
+  font-size: 1rem;
+  color: #FFF;
+  background-color: #444;
+  padding: 0 .75rem;
+  float: left;
+}
+
+.index-wrap section > h2 a {
+  font-size: .875rem;
+  color: #81D8D0;
+  float: right;
+  transition: color .3s;
+}
+
+.index-wrap section > h2 a:hover {
+  color: #444;
 }
 
 .notes-list {

@@ -2,14 +2,35 @@
     max-width: 60rem;
     margin: 0 auto;
     padding-top: 3rem;
+    > h1 {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        color: $first;
+        margin-bottom: 8rem;
+    }
     section {
-        margin-bottom: 10rem;
+        margin-bottom: 6rem;
         > h2 {
             display: block;
-            text-align: center;
-            font-size: 3rem;
-            color: $first;
-            margin-bottom: 2rem;
+            line-height: 2rem;
+            @include clearfix;
+            span {
+                font-size: 1rem;
+                color: #FFF;
+                background-color: $second;
+                padding: 0 .75rem;
+                float: left;
+            }
+            a {
+                font-size: .875rem;
+                color: $first;
+                float: right;
+                transition: color .3s;
+                &:hover {
+                    color: $second;
+                }
+            }
         }
     }
 }

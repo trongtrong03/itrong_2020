@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Application</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getCssIndex({ c_list, index: 0 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getCssIndex({ c_list, index: 0 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">Compass 簡介</a></li>
+        <li><a href="#act2">環境安裝</a></li>
+        <li><a href="#act3">建立 Compass 專案</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">Compass 簡介</h2>
+<p>在正式提到 Compass 之前，筆者得先稍微將話題兜到 Sass 上。假如此刻的你對 Sass 仍處於不甚熟悉的階段，只需知道 Sass 是一套用來更有效開發 CSS 的編譯工具即可。根據書寫規則的不同（顯著差異在於巢狀結構），Sass 又可分為 Sass 與 SCSS 兩種格式，有關 Sass 更多的詳細內容就留待其他篇幅再作介紹。無論開發者選擇哪一種格式（Sass or SCSS），基本都不影響本篇筆記的主角──「Compass」的安裝與使用。</p>
+<p>誠如 Sass 是一套讓 CSS 開發更具效率的工具，Compass 則是一款可以更加簡化 Sass 作業的輔助工具，它不僅可以自動補足部分 CSS 屬性因應不同瀏覽器產生的不同前綴，也提供許多類似 Javascript 的函式，例如 <em>for</em> 迴圈、<em>if</em> 敘述句等，又或者內建 CSS3 函數、Reset 重置表、圖片合併、產出壓縮...林林總總多樣功能，自其正式問世後，很快地成為受諸多網頁前端工程師喜愛的 Sass 開發工具之一。</p>
+<p>唯比較可惜的是 Compass 在 2014 年之後就不再持續維護更新，許多用途放到多年後的現今不是已過時，不然就是有更佳的替代方案，編譯 Sass 的任務也多由 Gulp、Webpack 之類的自動化管理工具取代。既然如此，為什麼還要介紹 Compass 呢？畢竟對許多網頁前端初學者而言，要馬上學會 Gulp、Webpack 這類基於 NodeJS 打造的管理工具並不容易。因此，Compass 即便不再更新，卻仍舊是幫助初學者由淺入深的一個有益門檻。</p>
+<p><br></p>
+
+<h2 id="act2">環境安裝</h2>
+<p>要開始自由自在地使用 Compass 編寫 Sass 之前，我們需要在工作電腦裡下載並安裝以下這些程式：</p>
+<div class="text-ol">
+    <ol>
+        <li>Ruby</li>
+        <li>Sass</li>
+        <li>Compass</li>
+    </ol>
+</div>
+<p><br></p>
+
+<h5 class="text-step">下載 <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a> 並安裝。</h5>
+<figure>
+    <img src="../images/css/compass-1.jpg">
+</figure>
+<p>由於 Sass 是用 Ruby 語言開發的，因此工作電腦必須先安裝 Ruby，據說 Mac 電腦內建 Ruby，所以可以跳過這個步驟，但微軟 Windows 使用者可就不能省略此一步驟了。</p>
+<p>置於下載版本部分，雖說理論上是越新越好，但倘若你有需要另外安裝其他輔助擴充套件（例如之後會撰文介紹的 Autoprefixer 自動前綴工具），則必須考量擴充套件相對 Ruby 版本的相容程度，版本太舊或太新都有可能會導致擴充套件無法順利執行編譯。在這裡筆者選擇的是 2.5.7-1 的版本，此為確保 Autoprefixer 可以正確執行的版本（2.6.5 或許也可以，但 2.7.0 開始就不相容，該套件則不支援 2.4.9 以下的版本）。</p>
+<p><br></p>
+
+<h5 class="text-step">安裝 Sass。</h5>
+<p>呼叫你的終端機或命令提示字元（並非一定要用安裝 Ruby 附帶的 Start Command Prompt with Ruby），輸入下方指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">gem install sass</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果要確認是否有安裝成功，可以輸入 <em>sass -v</em> 來確認 Sass 的版本，若有反饋版本號，即代表 Sass 已成功安裝。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">sass -v</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h5 class="text-step">安裝 Compass。</h5>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">gem install compass</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>和安裝 Sass 差不多，第三步要作的即是將 Compass 也安裝到工作電腦裡，安裝完畢後同樣可以透過輸入 <em>-v</em> 指令查看版本來確認是否有安裝 Compass 成功。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">compass -v</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>Ruby、Sass、Compass 皆分別安裝完畢後，我們就可以開始在自己的工作電腦用 Compass 編譯 Sass 了。</p>
+<p><br></p>
+
+<h2 id="act3">建立 Compass 專案</h2>
+<h5 class="text-step">建立空白資料夾並移動至資料夾內。</h5>
+<p>假設我們在 D 槽建立要執行 compass 編譯的專案，資料夾名稱為「demo」，其完整資料夾路徑就是 <em>D:/demo</em>。開啟終端機或命令提示字元，輸入下方指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">d:</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>將命令提示字元執行命令目標磁碟切換至 D 槽，然後使用 <em>cd</em> 指令進入 <em>demo</em> 資料夾內：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">cd demo</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果你覺得你的專案資料夾的路徑太長，也可以使用滑鼠拖曳的方式，直接用滑鼠壓住資料夾不放，將其拉進命令提示字元內，然後按下 <em>Enter&crarr;</em> 鍵，一樣可以令命令提示字元順利移動至該專案資料夾內。</p>
+<p><br></p>
+
+<h5 class="text-step">compass create 建立 Compass 專案</h5>
+<p>此刻 <em>demo</em> 資料夾裡頭仍空空如也，鍵入以下指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">compass create</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這個指令的目的是讓 <em>demo</em> 產生編譯 Compass 所需的相關設定檔及初始配置，待 <em>compass create</em> 執行完成，可以看到 <em>demo</em> 多了幾個資料夾以及重要的設定檔 <em>config.rb</em>。</p>
+<figure>
+    <img src="../images/css/compass-2.jpg">
+</figure>
+<p>當然我們在下達 <em>compass create </em> 的同時也可以在後方添加一個名稱，例如：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">compass create project</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>那麼 Compass 就會在 <em>demo</em> 資料夾底下新增一個 <em>project</em> 資料夾，將編譯相關檔案生成在其內部。</p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="http://compass-style.org/" target="_blank">Compass</a></li>
+        <li><a href="http://blog.shihshih.com/installing-the-sass-and-compass/" target="_blank">CSS開發工具(Sass + Compass)的環境安裝教學及基本操作</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10128634" target="_blank">30天掌握Sass語法 - (8)Sass、Compass環境安裝流程教學</a></li>
+        <li><a href="https://frankknow.com/sass-tutorial/" target="_blank">SASS教學 ＋SCSS：CSS 再進化，掌握語法攻略！</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../css.html'"></button>
+                    
+                    
+                    
+                    
+                    <button id="sideTop"></button>
+                </aside>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
