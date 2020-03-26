@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getCssIndex({ c_list, index: 1 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getCssIndex({ c_list, index: 1 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">簡介</a></li>
+        <li><a href="#act2">使用流程</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">簡介</h2>
+<p><a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a> 是一款處理 CSS 跨瀏覽器支援語法的編譯工具，透過該工具，我們只需要編寫 CSS（主要是 CSS3）的標準屬性，Autoprefixer 編譯時就會自動為需要支援不同瀏覽器的屬性添加相應的前綴。例如 <em>transform</em> 屬性經由 Autoprefixer 協助，輸出的 CSS 樣式表會同時包含 <em>transform</em> 與 <em>-webkit-transform</em> 的語法結果。</p>
+<p><br></p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">前綴</div>
+        <div class="t-f1">瀏覽器</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-ms-</em></div>
+        <div class="t-f1">IE</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-moz-</em></div>
+        <div class="t-f1">FireFox</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-webkit-</em></div>
+        <div class="t-f1">Chrome、Safari</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-o-</em></div>
+        <div class="t-f1">Opera</div>
+    </div>
+</div>
+<p><br></p>
+<p>坊間流行的前端自動化工具都可以安裝 Autoprefixer，本篇要安裝的對象是 Compass。可能部份人員會疑惑，為什麼是 Compass？Compass 自己不就有提供 CSS3 的 <em>@import</em> 方法？Compass 確實可以使用 <em>@import "compass/css3";</em> 直接將 CSS3 前綴支援導入到專案內。然而 Compass 已經停止更新多年，隨著瀏覽器版本更新，許多前綴已經不需要添加，抑或是無法支援新的 CSS3 屬性，反過來 Autoprefixer 則是依據 <a href="https://caniuse.com/" target="_blank">Can I use</a> 的標準，持續穩定地更新前綴新知。假設現在仍透過 Compass 開發專案的使用者，會傾向建議拋棄 Compass 內建的 <em>import</em>，額外使用 Autoprefixer 工具處理 CSS 屬性前綴的問題。</p>
+
+
+<h2 id="act2">使用流程</h2>
+<p>Compass 要使用 Autoprefixer 並不困難，首先，我們要確認以下幾個前置作業重點：</p>
+<div class="text-ol">
+    <ol>
+        <li>Ruby 版本不宜過舊也不宜過新<br>經測試，2.5 與 2.6 左右的版本是較為穩定的，其他版本都有可能令 Compass 監控 Autoprefixer 時發生錯誤。</li>
+        <li>需安裝 <a href="https://nodejs.org/en/" target="_blank">Node.js</a>。</li>
+    </ol>
+</div>
+<p><br></p>
+
+<h5 class="text-step">於命令提示字元輸入安裝指令</h5>
+<p>開啟工作電腦內的終端機或命令提示字元，輸入以下安裝指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">gem install autoprefixer-rails</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h5 class="text-step">於 <em>config.rb</em> 設定文件加入參數。</h5>
+<p><em>config.rb</em> 文件是 Compass 執行編譯作業時最重要的依賴，故我們需要將 Autoprefixer 的相關函式加入到文件裡，Compass 才能正確執行它。</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">require 'autoprefixer-rails'
+on_stylesheet_saved do |file|
+    css = File.read(file)
+    map = file + '.map'
+    if File.exists? map
+        result = AutoprefixerRails.process(css,
+        from: file,
+        to:   file,
+        map:  { prev: File.read(map), inline: false })
+    File.open(file, 'w') { |io| io << result.css }
+    File.open(map,  'w') { |io| io << result.map }
+    else
+        File.open(file, 'w') { |io| io << AutoprefixerRails.process(css) }
+    end
+end</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h5 class="text-step">開始或重新執行 <em>compass watch</em>。</h5>
+<p>如果編輯 <em>config.rb</em> 文件的同時忘記先把 <em>compass watch</em> 終止，記得要重新執行，修改的參數才能成功啟用。</p>
+<p>接著來輸入點什麼來測試看看...</p>
+<figure>
+    <img src="@@webRoot/images/css/autoprefixer-1.gif">
+</figure>
+<p>大功告成，是不是很簡單呢。</p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://github.com/ai/autoprefixer-rails" target="_blank">Autoprefixer Github</a></li>
+        <li><a href="https://blog.gtwang.org/web-development/autoprefixer-css-vender-prefixes/" target="_blank">Autoprefixer：最佳的 CSS 供應商前綴（Vender Prefixes）後處理器</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

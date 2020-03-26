@@ -37,13 +37,13 @@
                         <a  href="./javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
-                        <a  href="./app.html"><b>Applications</b></a>
+                        <a  class="active"  href="./app.html"><b>Applications</b></a>
                     </li>
                     <li>
                         <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
                     </li>
                     <li>
-                        <a  class="active"  href="./resource.html"><b>Resources</b></a>
+                        <a  href="./resource.html"><b>Resources</b></a>
                     </li>
                 </ul>
                 <div class="nav-bottom">
@@ -70,38 +70,31 @@
         </header>
         <main>
             <section class="container-wrap">
-                <h1>RESOURCES</h1>
+                <h1>Applicaptions</h1>
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="網頁前端"></option>
-                        <option value="CSS"></option>
-                        <option value="Javascript"></option>
-                        <option value="素材"></option>
-                        <option value="影音"></option>
-                        <option value="教學"></option>
-                        <option value="優化"></option>
-                        <option value="開發工具"></option>
+                        <option value="UI/UX"></option>
+                        <option value="資安"></option>
+                        <option value="影像"></option>
                     </datalist>
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
-                <div class="res-wrap">
-                    <div class="res-switch">
-                        <button class="is-grid" :class="isActive==1 ? 'is-active' : ''" @click="isActive=1"></button>
-                        <button class="is-row" :class="isActive==2 ? 'is-active' : ''" @click="isActive=2"></button>
-                    </div>
-                    <ul class="res-list" :class="isActive==2 ? 'is-row' : ''">
-                        <li class="res-item" v-for="item in filterRes" :key="item.id">
-                            <a :href="item.href" target="_blank">
-                                <figure>
-                                    <img :src="'images/resources/' + item.img_name + '.jpg'" v-if="item.img">
-                                    <img :src="'images/resources/default.png'" v-else>
-                                </figure>
+                <div class="notes-wrap">
+                    <ul class="notes-list">
+                        <li class="notes-item" v-for="item in filterApp" :key="item.id">
+                            <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
+                                    <h6 class="notes-tags">
+                                        <span v-if="item.tag1">{{ item.tag1_name }}</span>
+                                        <span v-if="item.tag2">{{ item.tag2_name }}</span>
+                                    </h6>
                                     <h2>{{ item.title }}</h2>
-                                    <h3>{{ item.desc }}</h3>
-                                    <span>{{ item.tag }}</span>
+                                    <time class="notes-time">{{ item.time }}</time>
                                 </hgroup>
+                                <figure v-if="item.img">
+                                    <img :src="'images/app/' + item.img_name + '.jpg'">
+                                </figure>
                             </a>
                         </li>
                     </ul>

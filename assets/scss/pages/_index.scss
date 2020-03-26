@@ -4,13 +4,13 @@
     padding-top: 3rem;
     > h1 {
         display: block;
-        text-align: center;
+        font-weight: bold;
         font-size: 3rem;
         color: $first;
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
     }
     section {
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
         > h2 {
             display: block;
             line-height: 2rem;
@@ -32,5 +32,9 @@
                 }
             }
         }
+    }
+    @include MQ(max-1024) {
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }

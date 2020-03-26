@@ -19,7 +19,9 @@
     <ul>
         <li><a href="#act1">Compass 簡介</a></li>
         <li><a href="#act2">環境安裝</a></li>
-        <li><a href="#act3">建立 Compass 專案</a></li>
+        <li><a href="#act3">執行專案</a></li>
+        <li><a href="#act4">config.rb 配置</a></li>
+        <li><a href="#act5">快速懶人包</a></li>
     </ul>
 </div>
 
@@ -45,7 +47,7 @@
     <img src="@@webRoot/images/css/compass-1.jpg">
 </figure>
 <p>由於 Sass 是用 Ruby 語言開發的，因此工作電腦必須先安裝 Ruby，據說 Mac 電腦內建 Ruby，所以可以跳過這個步驟，但微軟 Windows 使用者可就不能省略此一步驟了。</p>
-<p>置於下載版本部分，雖說理論上是越新越好，但倘若你有需要另外安裝其他輔助擴充套件（例如之後會撰文介紹的 Autoprefixer 自動前綴工具），則必須考量擴充套件相對 Ruby 版本的相容程度，版本太舊或太新都有可能會導致擴充套件無法順利執行編譯。在這裡筆者選擇的是 2.5.7-1 的版本，此為確保 Autoprefixer 可以正確執行的版本（2.6.5 或許也可以，但 2.7.0 開始就不相容，該套件則不支援 2.4.9 以下的版本）。</p>
+<p>至於下載版本部分，雖說理論上是越新越好，但倘若你有需要另外安裝其他輔助擴充套件（例如之後會撰文介紹的 Autoprefixer 自動前綴工具），則必須考量擴充套件相對 Ruby 版本的相容程度，版本太舊或太新都有可能會導致擴充套件無法順利執行編譯。在這裡筆者選擇的是 2.5.7-1 的版本，此為確保 Autoprefixer 可以正確執行的版本（2.6.5 或許也可以，但 2.7.0 開始就不相容，該套件則不支援 2.4.9 以下的版本）。</p>
 <p><br></p>
 
 <h5 class="text-step">安裝 Sass。</h5>
@@ -82,7 +84,7 @@
 <p>Ruby、Sass、Compass 皆分別安裝完畢後，我們就可以開始在自己的工作電腦用 Compass 編譯 Sass 了。</p>
 <p><br></p>
 
-<h2 id="act3">建立 Compass 專案</h2>
+<h2 id="act3">執行專案</h2>
 <h5 class="text-step">建立空白資料夾並移動至資料夾內。</h5>
 <p>假設我們在 D 槽建立要執行 compass 編譯的專案，資料夾名稱為「demo」，其完整資料夾路徑就是 <em>D:/demo</em>。開啟終端機或命令提示字元，輸入下方指令：</p>
 <div class="text-code is-bash">
@@ -109,11 +111,7 @@
     <span>COPY</span>
 </button>
 </div>
-<p>這個指令的目的是讓 <em>demo</em> 產生編譯 Compass 所需的相關設定檔及初始配置，待 <em>compass create</em> 執行完成，可以看到 <em>demo</em> 多了幾個資料夾以及重要的設定檔 <em>config.rb</em>。</p>
-<figure>
-    <img src="@@webRoot/images/css/compass-2.jpg">
-</figure>
-<p>當然我們在下達 <em>compass create </em> 的同時也可以在後方添加一個名稱，例如：</p>
+<p>這個指令的目的是讓 <em>demo</em> 產生編譯 Compass 所需的相關設定檔及初始配置，當然我們在下達 <em>compass create </em> 的同時也可以在後方添加一個名稱，例如：</p>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">compass create project</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -121,6 +119,287 @@
 </button>
 </div>
 <p>那麼 Compass 就會在 <em>demo</em> 資料夾底下新增一個 <em>project</em> 資料夾，將編譯相關檔案生成在其內部。</p>
+<p><br></p>
+<p><em>compass create</em> 執行完之後，會看見資料夾內產生以下這些內容物：</p>
+<figure>
+    <img src="@@webRoot/images/css/compass-2.jpg">
+</figure>
+<div class="text-ul">
+    <ul>
+        <li>.sass-cache：<br>存放 Sass 編譯時產生的暫存檔案，可以刪除，但每一次編譯會再次出現（後面會介紹取消暫存的方法）。</li>
+        <li>sass：<br>放置 Sass 檔案，Compass 會從這裡執行編譯。</li>
+        <li>stylesheets：<br>放置 Compass 編譯輸出後的 CSS 樣式表。</li>
+        <li>config.rb：<br>Compass 的設定檔，不可刪除。</li>
+    </ul>
+</div>
+<p>我們可以透過添加或修改 <em>config.rb</em> 設定檔裡面的參數，變更 <em>sass</em> 與 <em>stylesheets</em> 的相關配置，又或是取消 <em>.sass-cache</em> 暫存機制，詳細說明將留到之後 <em>config.rb</em> 介紹再行敘述。</p>
+<p><br></p>
+
+<h5 class="text-step">compass watch 監控 Compass 專案</h5>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">compass watch</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>輸入 <em>compass watch</em>，專案即開始執行監控，只要 <em>sass</em> 資料夾內的 sass 檔一經儲存，Compass 便會將 sass 編譯輸出成 css 格式。舉例來說，我們在 <em>print.scss</em> 這支檔案新增 CSS 樣式，接著儲存 <em>print.scss</em>，Compass 就會立即監控檔案，將其編譯為 CSS 格式，並輸出至 <em>stylesheets</em> 資料夾裡生成 <em>print.css</em> 樣式表。</p>
+<figure>
+    <img src="@@webRoot/images/css/compass-3.jpg">
+    <figcaption><em>compass watch</em> 監控中。</figcaption>
+</figure>
+<p><br></p>
+<h5 class="text-step">結束監控</h5>
+<p>若專案已經完成或暫時告一段落，可以同時按下 <em>ctrl</em> 與 <em>C</em> 鍵結束 <em>compass watch</em>。</p>
+<figure>
+    <img src="@@webRoot/images/css/compass-4.jpg">
+    <figcaption>Ctrl + C 後詢問是否終止工作？輸入 y 確認即可。</figcaption>
+</figure>
+<p><br></p>
+
+<h2 id="act4">config.rb 配置</h2>
+<p><em>config.rb</em> 是 Compass 專案不可缺少的設定文件，它記載著 Compass 執行編譯時所需的相關參數。儘管我們不能隨意刪除它，但有些參數細節可以視個人或團隊的需要去作變更，本節將介紹其設定文件的幾個重要參數，以及可以額外新增哪些參數進去。</p>
+<p>我們先來看看透過 <em>compass create</em> 所產生預設 <em>config.rb</em> 文件裡的配置內容：</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">require 'compass/import-once/activate'
+# Require any additional compass plugins here.
+
+# Set this to the root of your project when deployed:
+http_path = "/"
+css_dir = "stylesheets"
+sass_dir = "sass"
+images_dir = "images"
+javascripts_dir = "javascripts"
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+
+# To enable relative paths to assets via compass helper functions. Uncomment:
+# relative_assets = true
+
+# To disable debugging comments that display the original location of your selectors. Uncomment:
+# line_comments = false
+
+
+# If you prefer the indented syntax, you might want to regenerate this
+# project again passing --syntax sass, or you can uncomment this:
+# preferred_syntax = :sass
+# and then run:
+# sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>#</em> 代表註解的意思，只要在起始處加上 <em>#</em> 符號，該行內容都會成為註解，因此可以看到文件預設狀態下，有很多功能參數尚未被啟用（因為被註解化）。</p>
+<p><br></p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">require 'compass/import-once/activate'</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這行的意思是當重複引用某 Sass 檔案時，最終也只會輸出一次編譯效果。</p>
+<p><br></p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">http_path = "/"
+css_dir = "stylesheets"
+sass_dir = "sass"
+images_dir = "images"
+javascripts_dir = "javascripts"</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這幾行用來決定資料夾根目錄的路徑，以及執行編譯時對應的資料夾名稱。<em>http_path</em> 指的是根目錄路徑，它主要用來幫助 Compass 提供的一些便利功能，例如 <em>image-url</em> 語法，只要預先設置好 <em>http_path</em> 的路徑，我們在 Sass 插入影像時只需要填入 <em>images</em> 之後的影像路徑就好。</p>
+<p>至於 <em>css_dir</em>、<em>sass_dir</em>、<em>images_dir</em>、<em>javascripts_dir</em> 則分別代表 CSS、Sass、Images、Javascript 的資料夾名稱，通常筆者會將 <em>css_dir</em> 預設值 <em>stylesheets</em> 修改成較直覺的 <em>css</em>（重新執行編譯後別忘記把舊的 <em>stylesheets</em> 資料夾移除）。其他像是將 <em>javascripts</em> 改成 <em>js</em>、<em>sass</em> 則變更為 <em>scss</em>（此乃因為筆者使用的格式是 Scss）。</p>
+<p><br></p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby"># output_style = :expanded or :nested or :compact or :compressed</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>output_style</em> 指的是輸出 CSS 的格式，它有以下四種選擇：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">參數</div>
+        <div class="t-f1">說明</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>:expanded</em></div>
+        <div class="t-f1">預設值，保持原格式，每行 CSS 皆會斷行。</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>:nested</em></div>
+        <div class="t-f1">保留 Sass 的巢狀結構，父選擇器內的子選擇器會保留槽狀縮排。</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>:compact</em></div>
+        <div class="t-f1">簡潔格式，每一個 CSS 選擇器只有一行，其包含屬性都會擠在同一行內，因為少了許多縮進排版，故檔案大小會比前兩者輕量。</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>:compressed</em></div>
+        <div class="t-f1">極致壓縮，所有選擇器及其包含屬性通通會壓縮為一行表示。比 <em>:compact</em> 更加輕量，卻也最不易閱讀。</div>
+    </div>
+</div>
+<p>每一個參數都有其優劣，筆者較偏好維持預設的 <em>:expanded</em> 參數，或將選擇器僅佔單行表示的 <em>:compact</em> 格式。</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">output_style = :compact</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果要使用其他格式，記得要將註解符號（<em>#</em>）刪除，由於 <em>:expanded</em> 是內建預設值所以有沒有取消註解的影響較不大。</p>
+<p><br></p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby"># line_comments = false</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>line_comments</em> 用來決定輸出的 CSS 樣式表是否加上 Sass 的逐行註解，它的預設值是 <em>true</em>，編譯出來的結果可參考下方此圖：</p>
+<figure>
+    <img src="@@webRoot/images/css/compass-5.jpg">
+</figure>
+<p>筆者認為逐行註解沒有什麼必要，建議可以將參數註解取消，使其定義為 <em>false</em>。</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">line_comments = false</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>再來是額外添加的部分，筆者習慣令自己的專案 <em>config.rb</em> 文件另外添加一些配置，取消不必要的暫存生成，以及相關識別輔助...等，額外增添的參數不侷限於寫在文件的何處，個人則習慣加在文件的末端。</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">cache = false</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>此參數可以使 <em>.sass-cache</em> 的生成失效。</p>
+<p><br></p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">sourcemap = true</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>令 Compass 產出 CSS 樣式表的同時也生成 <em>.map</em> 格式的文件，它可以幫助我們直接在瀏覽器開發者模式裡閱讀到 CSS 屬性對應的 Sass 內容。</p>
+<p><br></p>
+
+<p>假如你有使用到 <em>image-url</em> 這個功能，像是給選擇器插入 <em>background-image</em> 屬性：</p>
+<div class="text-code is-scss">
+<pre class="text-pre"><code class="scss">body {
+    background-image: image-url('img.jpg');
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯成 CSS 的結果為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">body {
+    background-image: url('../images/img.jpg?1584062772');
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>會發現 CSS 的影像後方多了一串代碼，其實這是 <em>image-url</em> 公式裡的第三個參數 <em>$cache-buster</em> 生成的，其完整公式為：</p>
+<div class="text-code is-scss">
+<pre class="text-pre"><code class="scss">image-url($path, $only-path, $cache-buster)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這裡筆者姑且不贅述它們的用途，只是要告訴大家如果使用這個函數，卻又不希望 CSS 生成那一串代碼，我們可以在使用 <em>image-url</em> 同時，給 <em>$cache-buster</em> 賦予 <em>false</em> 值即可，例如：</p>
+<div class="text-code is-scss">
+<pre class="text-pre"><code class="scss">body {
+    background-image: image-url('img.jpg', false, false);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>然而，每一個影像都需要這樣寫又稍嫌麻煩了些，因此，我們就可以在 <em>config.rb</em> 文件配置這個參數：</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">asset_cache_buster {|*args| nil }</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如此一來編譯時系統就不會產出那串代碼了。</p>
+<p><br></p>
+
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">Encoding.default_external = 'utf-8'</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>部分 Ruby 版本（通常是比較早期的版本）在執行編譯時，會噴出「Error: Invalid CP950 character "\xxx"」這樣的訊息，大意是在說你的檔案內有存在 Ruby 無法識別的字元，遇到這種情況，我們可以在 <em>config.rb</em> 添加上方參數代碼，應該就能解決問題。</p>
+<p><br></p>
+<p>以下附上筆者個人的 <em>config.rb</em> 完整配置，提供給有需要的人員參考：</p>
+<div class="text-code is-ruby">
+<pre class="text-pre"><code class="ruby">require 'compass/import-once/activate'
+# Require any additional compass plugins here.
+
+# Set this to the root of your project when deployed:
+http_path = "../"
+css_dir = "css"
+sass_dir = "scss"
+images_dir = "images"
+javascripts_dir = "js"
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+output_style = :compact
+
+# To enable relative paths to assets via compass helper functions. Uncomment:
+# relative_assets = true
+
+# To disable debugging comments that display the original location of your selectors. Uncomment:
+line_comments = false
+
+
+# If you prefer the indented syntax, you might want to regenerate this
+# project again passing --syntax sass, or you can uncomment this:
+# preferred_syntax = :sass
+# and then run:
+# sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+Encoding.default_external = 'utf-8'
+cache = false
+sourcemap = true
+asset_cache_buster {|*args| nil }</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>最後補充一點，假如你在變更 <em>config.rb</em> 參數時手邊已經正在執行 <em>compass watch</em>，則必須終止並重新進行監控，<em>config.rb</em> 新變更的參數才會生效。</p>
+<p><br></p>
+
+<h2 id="act5">快速懶人包</h2>
+<p>以下筆記從初始安裝到編譯專案的完整指令流程：</p>
+<p>下載、安裝 <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a>。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">// 安裝 sass、compass
+gem install sass
+gem install compass
+
+// cd 至專案資料夾底下，也可用滑鼠拖曳的方式
+cd 專案資料夾
+
+// 建立 compass 初始環境
+compass create
+
+// 執行監控
+compass watch</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 
 <!-- 參考資料 -->
 <div class="text-refer">

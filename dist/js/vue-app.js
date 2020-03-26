@@ -74,6 +74,18 @@ const cssData = [
         img: true,
         img_name: 'thumb_compass'
     },
+    {
+        id: 1,
+        href: 'css_autoprefixer',
+        title: 'Autoprefixer──在 Compass 使用 CSS 自動前綴工具',
+        time: '2020.01.13',
+        tag1: true,
+        tag1_name: 'Compass',
+        tag2: false,
+        tag2_name: '',
+        img: true,
+        img_name: 'thumb_autoprefixer'
+    },
 ]
 
 const miscData = [
@@ -172,6 +184,21 @@ const miscData = [
         tag2_name: '教學',
         img: false,
         img_name: ''
+    },
+]
+
+const appData = [
+    {
+        id: 0,
+        href: 'app_git_intro',
+        title: 'Git──分散式的版本控制系統',
+        time: '2017.04.05',
+        tag1: true,
+        tag1_name: 'git',
+        tag2: false,
+        tag2_name: '',
+        img: true,
+        img_name: 'thumb_git'
     },
 ]
 
@@ -986,6 +1013,7 @@ var wrap = new Vue({
         h_list: htmlData,
         c_list: cssData,
         m_list: miscData,
+        a_list: appData,
         r_list: resData,
         query: "",
         isActive: 1,
@@ -1007,6 +1035,10 @@ var wrap = new Vue({
             return m_list[index] || {}
         },
 
+        getAppIndex({ a_list = [], index = 0 }) {
+            return a_list[index] || {}
+        },
+
         // 重置搜尋框的值
         resetSearchInput: function(e) {
             e.preventDefault()
@@ -1019,21 +1051,28 @@ var wrap = new Vue({
     computed: {
         filterHtml: function() {
             var search = this;
-            return this.h_list.filter(function(item) {
+            return this.h_list.reverse().filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterCss: function() {
             var search = this;
-            return this.c_list.filter(function(item) {
+            return this.c_list.reverse().filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterMisc: function() {
             var search = this;
-            return this.m_list.filter(function(item) {
+            return this.m_list.reverse().filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterApp: function() {
+            var search = this;
+            return this.a_list.reverse().filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },

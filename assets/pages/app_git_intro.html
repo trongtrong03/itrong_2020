@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "app": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1>{{ getAppIndex({ a_list, index: 0 }).title }}</h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time">{{ getAppIndex({ a_list, index: 0 }).time }}</time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">版本控制簡介</a></li>
+        <li><a href="#act2">學習 Git 的原因</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">版本控制簡介</h2>
+<p>無論是個人獨立作業或是團隊協作，在專案開發、修改乃至於維護上，皆需要進行版本控管，以防專案損壞時，苦無可以回溯的版本去進行修復。對任何專案而言，保存檔案是很重要的工作，善用版本控制系統，可以有效記錄檔案之間的演進過程與歷史變更訊息，方便管理者取回特定版本的資料。</p>
+<p><br></p>
+
+<p>版本控制的類型大抵可分為三類：</p>
+<h3>一、本機端版本控制系統</h3>
+<figure>
+    <img src="@@webRoot/images/app/git-intro-1.jpg">
+</figure>
+<p>他有以下這些特色：</p>
+<div class="text-ol">
+    <ol>
+        <li>將檔案複製在本機端其他目錄下。</li>
+        <li>方便獨立作業操作使用。</li>
+        <li>缺點是無法共同協作。</li>
+    </ol>
+</div>
+<p><br></p>
+
+<h3>二、集中化版本控制系統</h3>
+<figure>
+    <img src="@@webRoot/images/app/git-intro-2.jpg">
+</figure>
+<p>他的特色是：</p>
+<div class="text-ol">
+    <ol>
+        <li>具有遠端伺服器，記錄檔案變動過程。</li>
+        <li>其他人員可透過伺服器取得檔案。</li>
+        <li>缺點是若無法連接伺服器，就無法將開發或更新的檔案執行上傳。</li>
+        <li>若伺服器毀損，也有資料付諸東流的可能。</li>
+    </ol>
+</div>
+<p><br></p>
+
+<h3>三、分散式版本控制系統</h3>
+<figure>
+    <img src="@@webRoot/images/app/git-intro-3.jpg">
+</figure>
+<p>Distributed Version Control Systems，簡稱 DVCSs，此版控方式是目前比較主流的版本控制系統，它兼具前兩者的優勢，針對他們弱勢的部份也有妥善的因應之策，以下整理出分散式版本控制系統的特色：</p>
+<div class="text-ol">
+    <ol>
+        <li>擁有本機端與集中化兩者版本控制系統的優勢。</li>
+        <li>每次更動都必須擁有最新完整的版本，故不單是伺服器端，每個開發人員本機也擁有最新版本的資料。</li>
+        <li>承上，即使單一開發人員或伺服器損壞，仍然可以從其他人員取得最新檔案。</li>
+    </ol>
+</div>
+<p><br></p>
+
+<h2 id="act2">學習 Git 的原因</h2>
+<p>在數款分散式版本控制系統當中，Git 是最為倍受推崇的佼佼者，幾乎是所有電腦程式語言相關工作者的必學技能，比起其他同類型的版控工具，Git 在以下這些方面顯得更加突出：</p>
+<div class="text-ol">
+    <ol>
+        <li>快速</li>
+        <li>簡潔</li>
+        <li>完整</li>
+        <li>方便</li>
+    </ol>
+</div>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+        <li><a href="https://gitbook.tw/chapters/introduction/what-is-git.html" target="_blank">什麼是 Git？為什麼要學習它？</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "app": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

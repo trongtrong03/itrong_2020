@@ -3,10 +3,10 @@
 @@include("_head.html")
 <body>
     <article id="wrap">
-        @@include("_header.html", { "misc": "active" })
+        @@include("_header.html", { "app": "active" })
         <main>
             <section class="container-wrap">
-                <h1>Miscellaneous Notes</h1>
+                <h1>Applicaptions</h1>
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="notes-wrap">
                     <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterMisc" :key="item.id">
+                        <li class="notes-item" v-for="item in filterApp" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
                                     <h6 class="notes-tags">
@@ -29,7 +29,7 @@
                                     <time class="notes-time">{{ item.time }}</time>
                                 </hgroup>
                                 <figure v-if="item.img">
-                                    <img :src="'images/misc/' + item.img_name + '.jpg'">
+                                    <img :src="'images/app/' + item.img_name + '.jpg'">
                                 </figure>
                             </a>
                         </li>

@@ -175,6 +175,62 @@
                         </ul>
                     </div>
                 </section>
+                <!-- APP -->
+                <section>
+                    <h2>
+                        <span>Applicaptions</span>
+                        <a href="app.html">MORE</a>
+                    </h2>
+                    <div class="notes-wrap">
+                        <ul class="notes-list">
+                            <li class="notes-item">
+                                <a :href="'pages/' + getAppIndex({ a_list, index: a_list.length - 1 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 1 }).tag1">{{ getAppIndex({ a_list, index: a_list.length - 1 }).tag1_name }}</span>
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 1 }).tag2">{{ getAppIndex({ a_list, index: a_list.length - 1 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getAppIndex({ a_list, index: a_list.length - 1 }).title }}</h2>
+                                        <time class="notes-time">{{ getAppIndex({ a_list, index: a_list.length - 1 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getAppIndex({ a_list, index: a_list.length - 1 }).img">
+                                        <img :src="'images/app/' + getAppIndex({ a_list, index: a_list.length - 1 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="notes-item">
+                                <a :href="'pages/' + getAppIndex({ a_list, index: a_list.length - 2 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 2 }).tag1">{{ getAppIndex({ a_list, index: a_list.length - 2 }).tag1_name }}</span>
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 2 }).tag2">{{ getAppIndex({ a_list, index: a_list.length - 2 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getAppIndex({ a_list, index: a_list.length - 2 }).title }}</h2>
+                                        <time class="notes-time">{{ getAppIndex({ a_list, index: a_list.length - 2 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getAppIndex({ a_list, index: a_list.length - 2 }).img">
+                                        <img :src="'images/app/' + getAppIndex({ a_list, index: a_list.length - 2 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="notes-item">
+                                <a :href="'pages/' + getAppIndex({ a_list, index: a_list.length - 3 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 3 }).tag1">{{ getAppIndex({ a_list, index: a_list.length - 3 }).tag1_name }}</span>
+                                            <span v-if="getAppIndex({ a_list, index: a_list.length - 3 }).tag2">{{ getAppIndex({ a_list, index: a_list.length - 3 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getAppIndex({ a_list, index: a_list.length - 3 }).title }}</h2>
+                                        <time class="notes-time">{{ getAppIndex({ a_list, index: a_list.length - 3 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getAppIndex({ a_list, index: a_list.length - 3 }).img">
+                                        <img :src="'images/app/' + getAppIndex({ a_list, index: a_list.length - 3 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </main>
         @@include("_footer.html")

@@ -9593,7 +9593,7 @@ nav > ul a:hover b, nav > ul a.active b {
   position: absolute;
   top: 0;
   right: 0;
-  display: block;
+  display: none;
   width: 4rem;
   height: 4rem;
   text-align: center;
@@ -9605,6 +9605,12 @@ nav > ul a:hover b, nav > ul a.active b {
   content: '\f057';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-close {
+    display: block;
+  }
 }
 
 footer {
@@ -9630,14 +9636,14 @@ footer {
 
 .index-wrap > h1 {
   display: block;
-  text-align: center;
+  font-weight: bold;
   font-size: 3rem;
   color: #81D8D0;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 }
 
 .index-wrap section {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .index-wrap section > h2 {
@@ -9672,6 +9678,13 @@ footer {
 
 .index-wrap section > h2 a:hover {
   color: #444;
+}
+
+@media only screen and (max-width: 1024px) {
+  .index-wrap {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }
 
 .notes-list {
@@ -9864,9 +9877,12 @@ footer {
 }
 
 .text-content h3 {
-  font-size: 1.25rem;
-  color: #81D8D0;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #FFF;
+  background-color: #444;
   margin-bottom: .5rem;
+  padding: .5rem 1rem;
 }
 
 .text-content p {
@@ -10121,6 +10137,10 @@ footer {
 
 .text-code.is-ex::before {
   content: 'EX:';
+}
+
+.text-code.is-ruby::before {
+  content: 'RUBY:';
 }
 
 .text-pre {

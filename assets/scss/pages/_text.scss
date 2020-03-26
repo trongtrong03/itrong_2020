@@ -81,9 +81,12 @@
     }
 
     h3 {
-        font-size: 1.25rem;
-        color: $first;
+        line-height: 1.5;
+        font-size: 1rem;
+        color: #FFF;
+        background-color: $second;
         margin-bottom: .5rem;
+        padding: .5rem 1rem;
     }
 
     p {
@@ -287,6 +290,11 @@
     &.is-ex {
         &::before {
             content: 'EX:';
+        }
+    }
+    &.is-ruby {
+        &::before {
+            content: 'RUBY:';
         }
     }
 }

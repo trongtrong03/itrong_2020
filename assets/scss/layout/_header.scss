@@ -148,7 +148,7 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
-    display: block;
+    display: none;
     width: 4rem;
     height: 4rem;
     text-align: center;
@@ -158,5 +158,8 @@ nav {
         content: '\f057';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
+    }
+    @include MQ(max-1024) {
+        display: block;
     }
 }

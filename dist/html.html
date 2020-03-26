@@ -37,7 +37,7 @@
                         <a  href="./javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
-                        <a  href="./app.html"><b>Application</b></a>
+                        <a  href="./app.html"><b>Applications</b></a>
                     </li>
                     <li>
                         <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="notes-wrap">
                     <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterHtml.reverse()" :key="item.id">
+                        <li class="notes-item" v-for="item in filterHtml" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
                                     <h6 class="notes-tags">
