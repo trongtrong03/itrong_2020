@@ -183,56 +183,56 @@
                         </ul>
                     </div>
                 </section>
-                <!-- MISC -->
+                <!-- JavaScript -->
                 <section>
                     <h2>
-                        <span>Miscellaneous Notes</span>
-                        <a href="misc.html">MORE</a>
+                        <span>JavaScript</span>
+                        <a href="javascript.html">MORE</a>
                     </h2>
                     <div class="notes-wrap">
                         <ul class="notes-list">
                             <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 1 }).href + '.html'">
+                                <a :href="'pages/' + getJsIndex({ j_list, index: j_list.length - 1 }).href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).tag1_name }}</span>
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).tag2_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 1 }).tag1">{{ getJsIndex({ j_list, index: j_list.length - 1 }).tag1_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 1 }).tag2">{{ getJsIndex({ j_list, index: j_list.length - 1 }).tag2_name }}</span>
                                         </h6>
-                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 1 }).title }}</h2>
-                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).time }}</time>
+                                        <h2>{{ getJsIndex({ j_list, index: j_list.length - 1 }).title }}</h2>
+                                        <time class="notes-time">{{ getJsIndex({ j_list, index: j_list.length - 1 }).time }}</time>
                                     </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 1 }).img_name + '.jpg'">
+                                    <figure v-if="getJsIndex({ j_list, index: j_list.length - 1 }).img">
+                                        <img :src="'images/js/' + getJsIndex({ j_list, index: j_list.length - 1 }).img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
                             <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 2 }).href + '.html'">
+                                <a :href="'pages/' + getJsIndex({ j_list, index: j_list.length - 2 }).href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).tag1_name }}</span>
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).tag2_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 2 }).tag1">{{ getJsIndex({ j_list, index: j_list.length - 2 }).tag1_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 2 }).tag2">{{ getJsIndex({ j_list, index: j_list.length - 2 }).tag2_name }}</span>
                                         </h6>
-                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 2 }).title }}</h2>
-                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).time }}</time>
+                                        <h2>{{ getJsIndex({ j_list, index: j_list.length - 2 }).title }}</h2>
+                                        <time class="notes-time">{{ getJsIndex({ j_list, index: j_list.length - 2 }).time }}</time>
                                     </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 2 }).img_name + '.jpg'">
+                                    <figure v-if="getJsIndex({ j_list, index: j_list.length - 2 }).img">
+                                        <img :src="'images/js/' + getJsIndex({ j_list, index: j_list.length - 2 }).img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
                             <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 3 }).href + '.html'">
+                                <a :href="'pages/' + getJsIndex({ j_list, index: j_list.length - 3 }).href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).tag1_name }}</span>
-                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).tag2_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 3 }).tag1">{{ getJsIndex({ j_list, index: j_list.length - 3 }).tag1_name }}</span>
+                                            <span v-if="getJsIndex({ j_list, index: j_list.length - 3 }).tag2">{{ getJsIndex({ j_list, index: j_list.length - 3 }).tag2_name }}</span>
                                         </h6>
-                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 3 }).title }}</h2>
-                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).time }}</time>
+                                        <h2>{{ getJsIndex({ j_list, index: j_list.length - 3 }).title }}</h2>
+                                        <time class="notes-time">{{ getJsIndex({ j_list, index: j_list.length - 3 }).time }}</time>
                                     </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 3 }).img_name + '.jpg'">
+                                    <figure v-if="getJsIndex({ j_list, index: j_list.length - 3 }).img">
+                                        <img :src="'images/js/' + getJsIndex({ j_list, index: j_list.length - 3 }).img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
@@ -289,6 +289,62 @@
                                     </hgroup>
                                     <figure v-if="getAppIndex({ a_list, index: a_list.length - 3 }).img">
                                         <img :src="'images/app/' + getAppIndex({ a_list, index: a_list.length - 3 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- MISC -->
+                <section>
+                    <h2>
+                        <span>Miscellaneous Notes</span>
+                        <a href="misc.html">MORE</a>
+                    </h2>
+                    <div class="notes-wrap">
+                        <ul class="notes-list">
+                            <li class="notes-item">
+                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 1 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).tag1_name }}</span>
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 1 }).title }}</h2>
+                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 1 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 1 }).img">
+                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 1 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="notes-item">
+                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 2 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).tag1_name }}</span>
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 2 }).title }}</h2>
+                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 2 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 2 }).img">
+                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 2 }).img_name + '.jpg'">
+                                    </figure>
+                                </a>
+                            </li>
+                            <li class="notes-item">
+                                <a :href="'pages/' + getMiscIndex({ m_list, index: m_list.length - 3 }).href + '.html'">
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).tag1">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).tag1_name }}</span>
+                                            <span v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).tag2">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).tag2_name }}</span>
+                                        </h6>
+                                        <h2>{{ getMiscIndex({ m_list, index: m_list.length - 3 }).title }}</h2>
+                                        <time class="notes-time">{{ getMiscIndex({ m_list, index: m_list.length - 3 }).time }}</time>
+                                    </hgroup>
+                                    <figure v-if="getMiscIndex({ m_list, index: m_list.length - 3 }).img">
+                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: m_list.length - 3 }).img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>

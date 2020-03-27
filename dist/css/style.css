@@ -10131,8 +10131,12 @@ footer {
   content: 'VUE:';
 }
 
+.text-code.is-git::before {
+  content: 'GIT:';
+}
+
 .text-code.is-bash::before {
-  content: 'BASH:';
+  content: 'SHELL:';
 }
 
 .text-code.is-ex::before {

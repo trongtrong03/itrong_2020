@@ -282,9 +282,14 @@
             content: 'VUE:';
         }
     }
+    &.is-git {
+        &::before {
+            content: 'GIT:';
+        }
+    }
     &.is-bash {
         &::before {
-            content: 'BASH:';
+            content: 'SHELL:';
         }
     }
     &.is-ex {

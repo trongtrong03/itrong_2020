@@ -88,6 +88,21 @@ const cssData = [
     },
 ]
 
+const jsData = [
+    {
+        id: 0,
+        href: 'js_vue_intro',
+        title: 'sssssssss',
+        time: '2017.04.18',
+        tag1: true,
+        tag1_name: 'vue',
+        tag2: false,
+        tag2_name: 'false',
+        img: true,
+        img_name: 'thumb_vue_intro'
+    },
+]
+
 const miscData = [
     {
         id: 0,
@@ -191,8 +206,8 @@ const appData = [
     {
         id: 0,
         href: 'app_git_intro',
-        title: 'Git──分散式的版本控制系統',
-        time: '2017.04.05',
+        title: '分散式的版本控制系統──Git 介紹與安裝教學',
+        time: '2018.04.05',
         tag1: true,
         tag1_name: 'git',
         tag2: false,
@@ -1012,6 +1027,7 @@ var wrap = new Vue({
     data: {
         h_list: htmlData,
         c_list: cssData,
+        j_list: jsData,
         m_list: miscData,
         a_list: appData,
         r_list: resData,
@@ -1029,6 +1045,10 @@ var wrap = new Vue({
 
         getCssIndex({ c_list = [], index = 0 }) {
             return c_list[index] || {}
+        },
+
+        getJsIndex({ j_list = [], index = 0 }) {
+            return j_list[index] || {}
         },
 
         getMiscIndex({ m_list = [], index = 0 }) {
@@ -1059,6 +1079,13 @@ var wrap = new Vue({
         filterCss: function() {
             var search = this;
             return this.c_list.reverse().filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterJs: function() {
+            var search = this;
+            return this.j_list.reverse().filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
