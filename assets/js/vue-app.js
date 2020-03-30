@@ -64,6 +64,18 @@ const htmlData = [
 const cssData = [
     {
         id: 0,
+        href: 'css_mq',
+        title: 'CSS 的 Media Queries',
+        time: '2019.08.09',
+        tag1: true,
+        tag1_name: 'CSS3',
+        tag2: true,
+        tag2_name: 'RWD',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 1,
         href: 'css_compass_install',
         title: '用 Compass 寫 Sass：簡單介紹與環境安裝',
         time: '2020.01.12',
@@ -75,7 +87,7 @@ const cssData = [
         img_name: 'thumb_compass'
     },
     {
-        id: 1,
+        id: 2,
         href: 'css_autoprefixer',
         title: 'Autoprefixer──在 Compass 使用 CSS 自動前綴工具',
         time: '2020.01.13',
@@ -92,8 +104,8 @@ const jsData = [
     {
         id: 0,
         href: 'js_vue_intro',
-        title: 'sssssssss',
-        time: '2017.04.18',
+        title: '認識 Vue.js',
+        time: '2019.01.18',
         tag1: true,
         tag1_name: 'vue',
         tag2: false,
@@ -203,6 +215,18 @@ const miscData = [
 ]
 
 const appData = [
+    // {
+    //     id: 0,
+    //     href: 'app_sublime_install',
+    //     title: 'Sublime Text 安裝與初始設定',
+    //     time: '2016.11.22',
+    //     tag1: true,
+    //     tag1_name: '編輯器',
+    //     tag2: true,
+    //     tag2_name: 'Sublime',
+    //     img: true,
+    //     img_name: 'thumb_sublime'
+    // },
     {
         id: 0,
         href: 'app_git_intro',
@@ -214,6 +238,18 @@ const appData = [
         tag2_name: '',
         img: true,
         img_name: 'thumb_git'
+    },
+    {
+        id: 1,
+        href: 'app_vscode_install',
+        title: '‍Visual Studio Code 介紹與安裝教學',
+        time: '2020.02.15',
+        tag1: true,
+        tag1_name: '編輯器',
+        tag2: true,
+        tag2_name: 'VSCode',
+        img: true,
+        img_name: 'thumb_vscode'
     },
 ]
 

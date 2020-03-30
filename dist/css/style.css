@@ -10167,6 +10167,22 @@ footer {
   padding: 0 .5rem;
 }
 
+.text-codepen {
+  position: relative;
+  background-color: #EEE;
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+
+.text-codepen::before {
+  content: 'Codepen';
+  display: block;
+  line-height: 1.5rem;
+  font-size: .875rem;
+  color: #999;
+  padding-left: .5rem;
+}
+
 .res-switch {
   display: flex;
   justify-content: flex-end;

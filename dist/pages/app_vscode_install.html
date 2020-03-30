@@ -28,7 +28,7 @@
                         <a  href="index.html"><b>HOME</b></a>
                     </li>
                     <li>
-                        <a  class="active"  href="../html.html"><b>HTML</b></a>
+                        <a  href="../html.html"><b>HTML</b></a>
                     </li>
                     <li>
                         <a  href="../css.html"><b>CSS</b></a>
@@ -37,7 +37,7 @@
                         <a  href="../javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
-                        <a  href="../app.html"><b>Applications</b></a>
+                        <a  class="active"  href="../app.html"><b>Applications</b></a>
                     </li>
                     <li>
                         <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
@@ -71,9 +71,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+                    <h1>{{ getAppIndex({ a_list, index: 1 }).title }}</h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time">{{ getHtmlIndex({ h_list, index: 0 }).time }}</time>
+                        <time class="notes-time">{{ getAppIndex({ a_list, index: 1 }).time }}</time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -81,135 +81,47 @@
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">title1</a></li>
-        <li><a href="#act2">title2</a></li>
+        <li><a href="#act1">基本介紹</a></li>
+        <li><a href="#act2">安裝流程</a></li>
+        <li><a href="#act3">介面介紹</a></li>
+        <li><a href="#act4">初始設定</a></li>
     </ul>
 </div>
 
-<!-- 標題 -->
-<h2 id="act1">主標題</h2>
-<h3>副標題</h3>
-<p><em>程式碼片段</em> <strong>強調</strong> <a href="#0" target="_blank">連結</a></p>
-
-<!-- 圖片 -->
+<h2 id="act1">基本介紹</h2>
 <figure>
-    <img src="https://via.placeholder.com/640x300.png">
-    <img src="../images/剩餘路徑" alt="">
-    <figcaption>description</figcaption>
+    <img src="../images/app/vscode-install-1.jpg">
 </figure>
+<p>VS Code，全名 Visual Studio Code，是一套由微軟公司開發的跨平台編輯器，與 Atom（由 GitHub 開發）相同，使用 Electron 開源框架（也是由 GitHub 開發），目前已是公布於 GitHub 開源社群裡成長迅速的開源專案之一，相較 Sublime、Atom ...等編輯器軟體，VS Code 還有內嵌 Git 版本控管的優勢，且亦能與 Gulp、Webpack 整合，相當地方便。</p>
+<p><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>──全世界最知名的程式設計問答之一的討論區，於 2018 的各項使用者調查裡首次加入「<a href="https://insights.stackoverflow.com/survey/2018/?fbclid=IwAR2HxWsKlUzfU-MnJj9jwBcCQh4LqFPJm4Sq6hykbleystW5DvnOVTLeE-U#development-environments-and-tools" target="_blank">開發者使用環境與工具</a>」統計項目，身為後起之秀的 VSCode 竟以 34.9% 的得票率斬獲榜首。翌年（<a href="https://insights.stackoverflow.com/survey/2019#technology-_-most-popular-development-environments" target="_blank">2019</a>）得票率更是高達 50.7%，狠狠甩開與其他開發工具之間的差距，成為當前最熱門的程式語言開發編輯器。</p>
+<figure>
+    <img src="../images/app/vscode-install-2.jpg">
+    <figcaption>2018 年的統計數據。</figcaption>
+</figure>
+<figure>
+    <img src="../images/app/vscode-install-3.jpg">
+    <figcaption>2019 年的統計數據。</figcaption>
+</figure>
+<p><br></p>
 
-<!-- 表格 -->
-<div class="text-flex">
-    <div class="f-title">
-        <div class="t-f0"></div>
-        <div class="t-f1">欄位一</div>
-        <div class="t-f1">欄位二</div>
-    </div>
-    <div>
-        <div class="t-f0">title</div>
-        <div class="t-f1">欄位一</div>
-        <div class="t-f1">欄位一</div>
-    </div>
-</div>
+<h2 id="act2">安裝流程</h2>
+<p>VSCode 的安裝步驟並不複雜，只需要點擊<a href="https://code.visualstudio.com/" target="_blank">首頁</a>的下載按鈕，或在 <a href="https://code.visualstudio.com/Download" target="_blank">Download</a> 頁中選擇符合自己工作電腦的作業系統類型與版本，下載安裝應用程式執行安裝即可。</p>
+<figure>
+    <img src="../images/app/vscode-install-4.jpg">
+</figure>
+<p>安裝過程中建議勾選上圖用紅筆框起的兩個核選項目，它們可以幫助你迅速地透過 VSCode 開啟欲編輯的檔案。</p>
+<p><br></p>
 
-<!-- 步驟 -->
-<h5 class="text-step">xxxxx</h5>
-<p>xxxxxxxxxxxxxxx</p>
-
-<!-- 列表 -->
-<div class="text-ul">
-    <ul>
-        <li>item01</li>
-        <li>item02</li>
-        <li>item03</li>
-    </ul>
-</div>
-<div class="text-ol">
-    <ol>
-        <li>item01</li>
-        <li>item02</li>
-        <li>item03</li>
-    </ol>
-</div>
-
-<!-- 重點引用 -->
-<div class="text-quote">
-    quote
-</div>
-
-<!-- 程式碼 -->
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;script&gt;
-&lt;/script&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">
-    /* CSS */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-scss">
-<pre class="text-pre"><code class="scss">
-    /* SCSS */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">
-    /* js */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-jq">
-<pre class="text-pre"><code class="javascript">
-    /* jq */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-vue">
-<pre class="text-pre"><code class="javascript">
-    /* vue */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">
-    $git commit -m
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-codepen">
-    <code></code>
-</div>
-
+<h2 id="act3">介面介紹</h2>
+<figure>
+    <img src="../images/app/vscode-install-5.jpg">
+</figure>
+https://tw.alphacamp.co/blog/visual-studio-code-editor-tutorial-and-extensions
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="HREF" target="_blank">link</a></li>
-        <li><a href="HREF" target="_blank">link</a></li>
-        <li><a href="HREF" target="_blank">link</a></li>
+        <li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+        <li><a href="https://gitbook.tw/chapters/introduction/what-is-git.html" target="_blank">什麼是 Git？為什麼要學習它？</a></li>
     </ul>
 </div>
 <!-- Content end -->
@@ -219,6 +131,8 @@
                     
                     
                     
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../app.html'"></button>
                     
                     
                     <button id="sideTop"></button>

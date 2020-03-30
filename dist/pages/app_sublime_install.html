@@ -28,7 +28,7 @@
                         <a  href="index.html"><b>HOME</b></a>
                     </li>
                     <li>
-                        <a  class="active"  href="../html.html"><b>HTML</b></a>
+                        <a  href="../html.html"><b>HTML</b></a>
                     </li>
                     <li>
                         <a  href="../css.html"><b>CSS</b></a>
@@ -37,7 +37,7 @@
                         <a  href="../javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
-                        <a  href="../app.html"><b>Applications</b></a>
+                        <a  class="active"  href="../app.html"><b>Applications</b></a>
                     </li>
                     <li>
                         <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
@@ -71,9 +71,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1>{{ getHtmlIndex({ h_list, index: 0 }).title }}</h1>
+                    <h1>{{ getAppIndex({ a_list, index: 0 }).title }}</h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time">{{ getHtmlIndex({ h_list, index: 0 }).time }}</time>
+                        <time class="notes-time">{{ getAppIndex({ a_list, index: 0 }).time }}</time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -81,135 +81,20 @@
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">title1</a></li>
-        <li><a href="#act2">title2</a></li>
+        <li><a href="#act1">版本控制簡介</a></li>
+        <li><a href="#act2">學習 Git 的原因</a></li>
+        <li><a href="#act3">安裝 Git 與初始設定</a></li>
     </ul>
 </div>
 
-<!-- 標題 -->
-<h2 id="act1">主標題</h2>
-<h3>副標題</h3>
-<p><em>程式碼片段</em> <strong>強調</strong> <a href="#0" target="_blank">連結</a></p>
+<h2 id="act1">版本控制簡介</h2>
 
-<!-- 圖片 -->
-<figure>
-    <img src="https://via.placeholder.com/640x300.png">
-    <img src="../images/剩餘路徑" alt="">
-    <figcaption>description</figcaption>
-</figure>
-
-<!-- 表格 -->
-<div class="text-flex">
-    <div class="f-title">
-        <div class="t-f0"></div>
-        <div class="t-f1">欄位一</div>
-        <div class="t-f1">欄位二</div>
-    </div>
-    <div>
-        <div class="t-f0">title</div>
-        <div class="t-f1">欄位一</div>
-        <div class="t-f1">欄位一</div>
-    </div>
-</div>
-
-<!-- 步驟 -->
-<h5 class="text-step">xxxxx</h5>
-<p>xxxxxxxxxxxxxxx</p>
-
-<!-- 列表 -->
-<div class="text-ul">
-    <ul>
-        <li>item01</li>
-        <li>item02</li>
-        <li>item03</li>
-    </ul>
-</div>
-<div class="text-ol">
-    <ol>
-        <li>item01</li>
-        <li>item02</li>
-        <li>item03</li>
-    </ol>
-</div>
-
-<!-- 重點引用 -->
-<div class="text-quote">
-    quote
-</div>
-
-<!-- 程式碼 -->
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;script&gt;
-&lt;/script&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">
-    /* CSS */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-scss">
-<pre class="text-pre"><code class="scss">
-    /* SCSS */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">
-    /* js */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-jq">
-<pre class="text-pre"><code class="javascript">
-    /* jq */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-vue">
-<pre class="text-pre"><code class="javascript">
-    /* vue */
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">
-    $git commit -m
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-
-<div class="text-codepen">
-    <code></code>
-</div>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="HREF" target="_blank">link</a></li>
-        <li><a href="HREF" target="_blank">link</a></li>
-        <li><a href="HREF" target="_blank">link</a></li>
+        <li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+        <li><a href="https://gitbook.tw/chapters/introduction/what-is-git.html" target="_blank">什麼是 Git？為什麼要學習它？</a></li>
     </ul>
 </div>
 <!-- Content end -->
@@ -219,6 +104,8 @@
                     
                     
                     
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../app.html'"></button>
                     
                     
                     <button id="sideTop"></button>
