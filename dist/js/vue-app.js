@@ -111,7 +111,19 @@ const jsData = [
         tag2: false,
         tag2_name: 'false',
         img: true,
-        img_name: 'thumb_vue_intro'
+        img_name: 'thumb_vue'
+    },
+    {
+        id: 1,
+        href: 'js_vue_data',
+        title: 'Vue 筆記（一）：資料（Data）與樣板（Template）',
+        time: '2019.01.23',
+        tag1: true,
+        tag1_name: 'vue',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
     },
 ]
 
@@ -1061,11 +1073,11 @@ const resData = [
 var wrap = new Vue({
     el: '#wrap',
     data: {
-        h_list: htmlData,
-        c_list: cssData,
-        j_list: jsData,
-        m_list: miscData,
-        a_list: appData,
+        h_list: htmlData.reverse(),
+        c_list: cssData.reverse(),
+        j_list: jsData.reverse(),
+        m_list: miscData.reverse(),
+        a_list: appData.reverse(),
         r_list: resData,
         query: "",
         isActive: 1,
@@ -1107,35 +1119,35 @@ var wrap = new Vue({
     computed: {
         filterHtml: function() {
             var search = this;
-            return this.h_list.reverse().filter(function(item) {
+            return this.h_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterCss: function() {
             var search = this;
-            return this.c_list.reverse().filter(function(item) {
+            return this.c_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterJs: function() {
             var search = this;
-            return this.j_list.reverse().filter(function(item) {
+            return this.j_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterMisc: function() {
             var search = this;
-            return this.m_list.reverse().filter(function(item) {
+            return this.m_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterApp: function() {
             var search = this;
-            return this.a_list.reverse().filter(function(item) {
+            return this.a_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
