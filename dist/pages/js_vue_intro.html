@@ -71,9 +71,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1>{{ getJsIndex({ j_list, index: 0 }).title }}</h1>
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-1 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time">{{ getJsIndex({ j_list, index: 0 }).time }}</time>
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-1 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -218,7 +218,7 @@
                     
                     
                     
-                        <button id="sideBack" onclick="javascript:location.href='../js.html'"></button>
+                        <button id="sideBack" onclick="javascript:location.href='../javascript.html'"></button>
                     
                     
                     

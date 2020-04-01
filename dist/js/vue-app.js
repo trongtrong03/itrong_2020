@@ -125,6 +125,18 @@ const jsData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 2,
+        href: 'js_vue_text',
+        title: 'Vue 筆記（二）：v-text 與 v-html',
+        time: '2019.01.29',
+        tag1: true,
+        tag1_name: 'vue',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const miscData = [

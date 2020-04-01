@@ -71,9 +71,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-2 }).title"></h1>
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-3 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-2 }).time"></time>
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-3 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -82,98 +82,91 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">前言</a></li>
-        <li><a href="#act2">Data</a></li>
-        <li><a href="#act3">Template</a></li>
+        <li><a href="#act2">v-text</a></li>
+        <li><a href="#act3">v-html</a></li>
     </ul>
 </div>
 
 <h2 id="act1">前言</h2>
-<p>在解析之前先回頭看看上一篇創建的 Vue 實體結構：</p>
+<p>透過 Vue 給 HTML 插入純文本字串最簡單方式，乃是使用兩對花括號（<em>{{</em> <em>}}</em>）包住 Vue <em>data</em> 的數據，使其得以綁定到 DOM 裡。然而當網頁發生問題──例如網頁載入過慢，或是 Javascript 出錯時，<em v-pre>{{ data }}</em> 的原始程式碼就會直接暴露在頁面上，因此用這種在 HTML 載入時才顯示文本內容的渲染方式並非恰當的。假如要實現純文本綁定至網頁，Vue 有提供更好的指令：<em>v-text</em>。</p>
+<p>此外還有一個與 <em>v-text</em> 看起來用法相似的指令 <em>v-html</em>，本篇學習將一併作記用法，並比較它們的不同之處。</p>
+<p><br></p>
+
+<h2 id="act2">v-text</h2>
+<p>基本上渲染的結果和 <em v-pre>{{ data }}</em> 是一樣的，假如有一個 Vue 的實體結構為下：</p>
 <div class="text-code is-vue">
 <pre class="text-pre"><code class="javascript">var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        message: 'hello!'
     }
 });</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>儘管關於 Vue 資料的部分上篇已略述過，不過這裡仍重新筆記一次：</p>
-<p>通常我們需要先宣告一個名稱（例如 <em>app</em>、<em>vm</em>（viewmodel））建立 Vue 的實體。</p>
-<p>實體需要指定一個 HTML 對象，才可以將資料綁定過去。對象可以是純元素標籤或是 CSS 選擇器（<em>#ID</em> 或 <em>.class</em>），如果不在指定對象內的元素，則無法與 Vue 實體產生互動。</p>
-<p><br></p>
-<h2 id="act2">Data</h2>
-<p><em>data</em> 是一個物件屬性，代表「資料」，資料的屬性值可以是數字、字串、布林值，也可以是陣列或別的物件。除了 <em>data</em> 之外，Vue 實體還可以使用 <em>methods</em>（方法）、<em>computed</em>（運算）等屬性，這些屬性保留日後再行筆記。</p>
-<p>建立基本的 Vue 實體後，我們需要在 HTML 結構作點文章去綁定資料，好讓 DOM 可以順利將 Vue 實體裡的資料渲染出來。</p>
+<p>當我們要把 <em>data</em> 裡面的 <em>message</em> 資料渲染到網頁上時，可以這樣寫：</p>
 <div class="text-code is-html">
 <pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
-    {{ message }}
+    &lt;div&gt;{{ message }}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這種寫法的弊端在前言已經提過，當網頁載入過慢或 Javascript 出錯時，<em v-pre>{{ message }}</em> 會直接顯示在網頁上直到資料順利被綁定進來，但如果使用 <em>v-text</em> 指令就可以迴避這樣的情況：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
+    &lt;div v-text="message"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
 <p><br></p>
-<h2 id="act3">Template</h2>
-<p>寫在 HTML 的東西我們稱之為「樣板」（Template）或「模板」，注意喔，模板必須和要綁定 Vue 實體的 <em>el</em> 相對應才有作用。關於樣板的使用方式基本上有以下三種：</p>
-<h3>文本綁定：</h3>
-<p>上面範例中由兩對花括號（大括號）<em>{{</em> <em>}}</em> 組成的內容就是 Vue 將資料數值以文本方式插入樣板的基本寫法，而插入內容的名稱須與 <em>data</em> 的屬性值名稱互相對應，才能將實體的值綁定到樣板上，當 <em>data</em> 綁定數據發生改變，則樣板插入的內容也會一併更新。</p>
+<p>只是要注意的是，若 <em>v-text</em> 綁定的 HTML 元素的 content 存在其他內容，則會一併取代掉，相反地 <em v-pre>{{ data }}</em> 則不會，我們可以從下方的實例中得證：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="GvBzNW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-text">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/GvBzNW">
+          Vue-learn: v-text</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
 <p><br></p>
-<h3>指令綁定：</h3>
-<p>另一種資料綁定的方式是透過屬性（Attribute）雙向綁定，此時它的寫法規則就不是透過雙大括號，而是利用以 <em>v-</em> 開頭的特殊屬性來實現效果，這些 <em>v-</em> 前綴開頭的特殊詞彙在 Vue 稱之為「指令」。舉例來說：</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;img id="app" src="image.jpg" v-bind:title="message"&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
+
+<h2 id="act3">v-html</h2>
+<p>與 <em>v-text</em> 最大的不同在於 <em>data</em> 資料如果是 HTML 元素，<em>v-text</em> 渲染時會將其解析為字符實體，例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="poJYZXx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-text2">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/poJYZXx">
+          Vue-learn: v-text2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
 </div>
-<p><em>v-bind</em> 即為指令，將原本 HTML 元素標籤裡的 <em>title</em> 屬性值與資料數據的 <em>message</em> 屬性值綁定在一起，當滑鼠懸停圖片上方時就會出現「Hello Vue!」的字串。</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;input id="app" type="text" v-model="message"&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>又或者是 <em>v-model</em> 指令，令 <em>&lt;input&gt;</em> 的 value 值與 <em>data</em> 中 <em>message</em> 屬性值綁定，當 <em>message</em> 值發生改變，<em>&lt;input&gt;</em> 的值也會跟著改變。</p>
 <p><br></p>
-<h3>組件：</h3>
-<p>組件（Component）是 Vue 相當重要的功能，我們可以將樣板內容寫在 Vue 實體之前或裡面（又稱全域或局部註冊）使其組件化，於 HTML 裡直接調用該組件即可，例如：</p>
-<div class="text-code is-vue">
-<pre class="text-pre"><code class="javascript" v-pre>Vue.component("component-layout", {
-    template: `&lt;p&gt;{{ text }}&lt;/p&gt;`,
-    data(){
-        return{
-            text:'我是全域註冊'
-        }
-    }
-});
-let app = new Vue({
-    el: "#app"
-});</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
+<p>倘若改用 <em>v-html</em> 表示，則 HTML 元素就會被當作元素輸出：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="QWboVLB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-html">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/QWboVLB">
+          Vue-learn: v-html</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
 </div>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
-    &lt;component-layout&gt;&lt;/component-layout&gt;
-&lt;/div&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>關於組件的林林總總一時半刻也記錄不完，此刻僅需先瞭解個大概即可，日後會有更詳細的學習筆記作記錄。</p>
+<p>然而，普遍資深工程師會告訴你盡量不要使用 <em>v-html</em>，因為它的特性很有可能遭人惡意輸入有危害的程式碼。</p>
 <p><br></p>
-<p>以上就是 Vue 關於樣板語法與實體資料的簡單記錄，理解 Vue 基本的綁定運作方式後，就可以慢慢由簡入深，利用更多樣的屬性和指令建構各種前端需要的使用者介面。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="https://cn.vuejs.org/v2/guide/syntax.html" target="_blank">模板语法 — Vue.js</a></li>
-        <li><a href="https://ithelp.ithome.com.tw/articles/10215066" target="_blank">Vue 的聲明式渲染、樣板與資料</a></li>
-        <li><a href="https://medium.com/pierceshih/vue-js-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-day15-vue-component-%E5%85%83%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-a414e2333e2b" target="_blank">「Vue.js 學習筆記 Day15」- Vue component 元件基本用法</a></li>
+        <li><a href="https://www.kancloud.cn/bizzbee/vue/466892" target="_blank">v-text、v-html指令</a></li>
+        <li><a href="https://www.cnblogs.com/jinbang/p/6790592.html" target="_blank">vuejs {{}}，v-text 和 v-html的区别</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10202232" target="_blank">04 Vue的模板語法 - v-text, v-html</a></li>
     </ul>
 </div>
 <!-- Content end -->

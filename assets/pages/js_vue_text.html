@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-3 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-3 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">前言</a></li>
+        <li><a href="#act2">v-text</a></li>
+        <li><a href="#act3">v-html</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">前言</h2>
+<p>透過 Vue 給 HTML 插入純文本字串最簡單方式，乃是使用兩對花括號（<em>{{</em> <em>}}</em>）包住 Vue <em>data</em> 的數據，使其得以綁定到 DOM 裡。然而當網頁發生問題──例如網頁載入過慢，或是 Javascript 出錯時，<em v-pre>{{ data }}</em> 的原始程式碼就會直接暴露在頁面上，因此用這種在 HTML 載入時才顯示文本內容的渲染方式並非恰當的。假如要實現純文本綁定至網頁，Vue 有提供更好的指令：<em>v-text</em>。</p>
+<p>此外還有一個與 <em>v-text</em> 看起來用法相似的指令 <em>v-html</em>，本篇學習將一併作記用法，並比較它們的不同之處。</p>
+<p><br></p>
+
+<h2 id="act2">v-text</h2>
+<p>基本上渲染的結果和 <em v-pre>{{ data }}</em> 是一樣的，假如有一個 Vue 的實體結構為下：</p>
+<div class="text-code is-vue">
+<pre class="text-pre"><code class="javascript">var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'hello!'
+    }
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當我們要把 <em>data</em> 裡面的 <em>message</em> 資料渲染到網頁上時，可以這樣寫：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
+    &lt;div&gt;{{ message }}&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這種寫法的弊端在前言已經提過，當網頁載入過慢或 Javascript 出錯時，<em v-pre>{{ message }}</em> 會直接顯示在網頁上直到資料順利被綁定進來，但如果使用 <em>v-text</em> 指令就可以迴避這樣的情況：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
+    &lt;div v-text="message"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>只是要注意的是，若 <em>v-text</em> 綁定的 HTML 元素的 content 存在其他內容，則會一併取代掉，相反地 <em v-pre>{{ data }}</em> 則不會，我們可以從下方的實例中得證：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="GvBzNW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-text">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/GvBzNW">
+          Vue-learn: v-text</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act3">v-html</h2>
+<p>與 <em>v-text</em> 最大的不同在於 <em>data</em> 資料如果是 HTML 元素，<em>v-text</em> 渲染時會將其解析為字符實體，例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="poJYZXx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-text2">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/poJYZXx">
+          Vue-learn: v-text2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>倘若改用 <em>v-html</em> 表示，則 HTML 元素就會被當作元素輸出：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="QWboVLB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue-learn: v-html">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/QWboVLB">
+          Vue-learn: v-html</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>然而，普遍資深工程師會告訴你盡量不要使用 <em>v-html</em>，因為它的特性很有可能遭人惡意輸入有危害的程式碼。</p>
+<p><br></p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.kancloud.cn/bizzbee/vue/466892" target="_blank">v-text、v-html指令</a></li>
+        <li><a href="https://www.cnblogs.com/jinbang/p/6790592.html" target="_blank">vuejs {{}}，v-text 和 v-html的区别</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10202232" target="_blank">04 Vue的模板語法 - v-text, v-html</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

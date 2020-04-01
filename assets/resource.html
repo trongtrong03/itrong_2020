@@ -34,9 +34,9 @@
                                     <img :src="'images/resources/default.png'" v-else>
                                 </figure>
                                 <hgroup>
-                                    <h2>{{ item.title }}</h2>
-                                    <h3>{{ item.desc }}</h3>
-                                    <span>{{ item.tag }}</span>
+                                    <h2 v-text="item.title"></h2>
+                                    <h3 v-text="item.desc"></h3>
+                                    <span v-text="item.tag"></span>
                                 </hgroup>
                             </a>
                         </li>

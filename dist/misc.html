@@ -86,11 +86,11 @@
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
                                     <h6 class="notes-tags">
-                                        <span v-if="item.tag1">{{ item.tag1_name }}</span>
-                                        <span v-if="item.tag2">{{ item.tag2_name }}</span>
+                                        <span v-if="item.tag1" v-text="item.tag1_name"></span>
+                                        <span v-if="item.tag2" v-text="item.tag2_name"></span>
                                     </h6>
-                                    <h2>{{ item.title }}</h2>
-                                    <time class="notes-time">{{ item.time }}</time>
+                                    <h2 v-text="item.title"></h2>
+                                    <time class="notes-time" v-text="item.time"></time>
                                 </hgroup>
                                 <figure v-if="item.img">
                                     <img :src="'images/misc/' + item.img_name + '.jpg'">

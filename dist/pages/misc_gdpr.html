@@ -71,9 +71,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1>{{ getMiscIndex({ m_list, index: 4 }).title }}</h1>
+                    <h1 v-text="getMiscIndex({ m_list, index: m_list.length-5 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time">{{ getMiscIndex({ m_list, index: 4 }).time }}</time>
+                        <time class="notes-time" v-text="getMiscIndex({ m_list, index: m_list.length-5 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
