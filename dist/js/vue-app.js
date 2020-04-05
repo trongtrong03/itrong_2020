@@ -265,6 +265,30 @@ const appData = [
     },
     {
         id: 1,
+        href: 'app_git_process',
+        title: 'Git 筆記（一）：版本控制流程簡述',
+        time: '2018.04.06',
+        tag1: true,
+        tag1_name: 'git',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 2,
+        href: 'app_git_init',
+        title: 'Git 筆記（二）：版本庫建立與提交流程',
+        time: '2018.04.09',
+        tag1: true,
+        tag1_name: 'git',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 3,
         href: 'app_vscode_install',
         title: '‍Visual Studio Code 介紹與安裝教學',
         time: '2020.02.15',

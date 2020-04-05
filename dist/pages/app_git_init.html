@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-3 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-3 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">前言</a></li>
+        <li><a href="#act2">建立版本庫</a></li>
+        <li><a href="#act3">提交流程-Bash</a></li>
+        <li><a href="#act4">提交流程-Tortoisegit</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">前言</h2>
+<p>上一篇我們已經掌握 Git 是如何進行版本控制的了，從這篇開始學習如何在本地端的專案裡使用 Git 進行版本控制。筆者使用的作業系統為 Windows，儘管對 Git 操作而言影響不大，但如果是非 Git 的系統操作就會以 Windows 作記（若你是 Mac 或 Linux 系統的使用者只能說聲抱歉了）。為了方便操作，首先我們創建一個內容包含三個記事本檔案的資料夾「demo」，當作實務練習的對象。當然要用已經存在的專案也可以，版控流程都是一樣的，與資料夾內容無關。</p>
+<figure>
+    <img src="../images/app/git-init-1.jpg">
+    <figcaption>demo 資料夾裡包含 1.txt、2.txt、3.txt 三個檔案。</figcaption>
+</figure>
+<p>在 demo 資料夾內點擊右鍵，選擇「Git Bash Here」叫出 Git 內建的命令提示字元視窗。</p>
+<figure>
+    <img src="../images/app/git-init-2.jpg">
+</figure>
+<figure>
+    <img src="../images/app/git-init-3.jpg">
+</figure>
+<p><br></p>
+
+<h2 id="act2">建立版本庫</h2>
+<p>在專案還沒建立版本庫之前，任何有關 Git 的指令皆無效，因此我們必須先在專案資料夾裡建立版本庫，其指令語法為：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git init</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>$</em> 是 Bash 的執行緒代號，如果是用 Windows 命令提示字元下指令的話不用加這個字符。版本庫建立完成後，demo 資料夾會生成一個「.git」的隱藏資料夾。「.git」資料夾將用來存取每一次版本提交的內容。</p>
+<p>另外要注意的是，Git 指令有大小寫之分。</p>
+<figure>
+    <img src="../images/app/git-init-4.jpg">
+</figure>
+<p>隱藏資料夾在作業系統預設狀態下為不可見，Windows 使用者可以在工具列中「檢視」頁籤找到「隱藏的項目」的項目，將其核選方塊勾選即可。</p>
+<figure>
+    <img src="../images/app/git-init-5.jpg">
+</figure>
+<p><br></p>
+<p>若要用 Tortoisegit 操作，則在右鍵快速選單中選擇「Git Create repository here...」功能即可。</p>
+<figure>
+    <img src="../images/app/git-init-6.jpg">
+</figure>
+<p><br></p>
+
+<h2 id="act3">提交流程-Bash</h2>
+<figure>
+    <img src="../images/app/git-process-1.jpg">
+</figure>
+<p>還記得這張流程圖嗎？建立版本庫後，該專案就可以開始執行 Git 版控的步驟，目前 demo 專案資料夾裡的檔案所在位置為「Working directory」（工作區域）。從流程圖中我們可以看到檔案從工作區域要進入到最後階段（Repository）分別要經過添加（add） 和提交（commit）的動作，而這同時也是我們提交至版本庫分別要下的指令。</p>
+<p><br></p>
+<h5 class="text-step">將工作區域檔案添加至暫存區域（Ataging area）</h5>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git add .</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>add</em> 是 Git 將工作區域的檔案「添加」到暫存區域的動作，其指令參數有很多種，詳細留到以後再獨立成篇介紹。這裡先使用最簡單灑脫的參數 <em>.</em>，意即將所有檔案通通添加到暫存區域。</p>
+<p><br></p>
+
+<h5 class="text-step">將暫存區域檔案提交至版本庫（Repository）</h5>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git commit -m "c1"</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>commit</em> 則是將暫存區域內的檔案「提交」到版本庫的命令，<em>-m</em> 中的 m 是 message 的意思，我們需要在其後方用雙引號撰寫此次提交版本的訊息，例如範例中「c1」。Git 的 Commit Message 最好以清楚易讀為原則，以方便未來檢視提交日誌時，能更一目了然各個提交版本的目的是什麼。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-7.jpg">
+</figure>
+<p><em>add</em> 和 <em>commit</em> 依序執行完就算是完成本地端版本庫的一次版控流程了，假如想確認檔案是否有紮紮實實地進入版控，我們可以用兩種方式確認。</p>
+<p><br></p>
+<p>第一個方法是 <em>git status</em> 指令，它可以查看目前檔案的狀態，如果你的檔案已是最新版本，它會返回「nothing to commit, working tree clean」的訊息。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git status</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<figure>
+    <img src="../images/app/git-init-8.jpg">
+</figure>
+<p><br></p>
+<p>第二種方法則是 <em>git log</em>，這個指令可以列出版本庫的所有 Commit 記錄，是 Git 裡非常重要且也是相當好用的功能。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git log</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<figure>
+    <img src="../images/app/git-init-9.jpg">
+</figure>
+<p><br></p>
+
+<h2 id="act4">提交流程-Tortoisegit</h2>
+<p>看完了 Bash 本地端版控流程，我們接著看看 Tortoisegit 要如何操作。</p>
+<figure>
+    <img src="../images/app/git-init-10.jpg">
+</figure>
+<p>在功能選單中點擊「Add」。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-11.jpg">
+</figure>
+<p>Tortoisegit 會列出目前工作區域內的檔案，我們將要加入追蹤的檔案勾選起來（預設是全選）。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-12.jpg">
+</figure>
+<p>成功將檔案添加到暫存區域！接下來可以點擊「Commit」按鈕，執行暫存區域檔案提交的動作。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-13.jpg">
+</figure>
+<p>輸入 Message 訊息，以「c1」作為範例。輸入完成後按下「Commit」。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-14.jpg">
+</figure>
+<p>完成版控。</p>
+<p>Tortoisegit 的好處是每一次執行面板都會貼心地引導使用者下一步可以執行的動作，例如 Commit 完成後，它接著繼續提示使用者可以將本地端版本庫「Push」（推送）到遠端儲存庫上。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-15.jpg">
+</figure>
+<p>如果要確認 Commit 記錄，可以從 Tortoisegit 右側選單裡找到「Show log」（顯示歷史記錄）的功能。</p>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-init-16.jpg">
+</figure>
+<p>歷史記錄面板裡不僅列出 Commit 的圖形鏈，下方也有詳細列出每一次提交記錄的檔案狀態變更的資訊。</p>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../app.html'"></button>
+                    
+                    
+                    <button id="sideTop"></button>
+                </aside>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

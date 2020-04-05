@@ -77,9 +77,9 @@ body {
 main {
     position: relative;
     min-height: calc(100vh - 3rem);
-    padding: 2rem;
+    padding: 2rem 2rem 6rem;
     @include MQ(max-1024) {
-        padding: 5rem 1rem 2rem;
+        padding: 5rem 1rem 4rem;
     }
 }
 
