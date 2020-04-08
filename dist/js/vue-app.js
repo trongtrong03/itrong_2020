@@ -8,7 +8,7 @@ const htmlData = [
         tag1_name: 'HTML',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_symbol'
     },
     {
@@ -44,7 +44,7 @@ const htmlData = [
         tag1_name: 'SEO',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_schema'
     },
     {
@@ -56,7 +56,7 @@ const htmlData = [
         tag1_name: 'SEO',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_breadcrumbs'
     },
 ]
@@ -83,7 +83,7 @@ const cssData = [
         tag1_name: 'Compass',
         tag2: true,
         tag2_name: '安裝',
-        img: true,
+        img: false,
         img_name: 'thumb_compass'
     },
     {
@@ -95,7 +95,7 @@ const cssData = [
         tag1_name: 'Compass',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_autoprefixer'
     },
 ]
@@ -110,7 +110,7 @@ const jsData = [
         tag1_name: 'vue',
         tag2: false,
         tag2_name: 'false',
-        img: true,
+        img: false,
         img_name: 'thumb_vue'
     },
     {
@@ -149,7 +149,7 @@ const miscData = [
         tag1_name: '影像',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_apng'
     },
     {
@@ -161,7 +161,7 @@ const miscData = [
         tag1_name: 'UI/UX',
         tag2: true,
         tag2_name: '設計',
-        img: true,
+        img: false,
         img_name: 'thumb_uiux'
     },
     {
@@ -173,7 +173,7 @@ const miscData = [
         tag1_name: 'UI/UX',
         tag2: true,
         tag2_name: '設計',
-        img: true,
+        img: false,
         img_name: 'thumb_gestalt'
     },
     {
@@ -197,7 +197,7 @@ const miscData = [
         tag1_name: '資安',
         tag2: true,
         tag2_name: '網際網路',
-        img: true,
+        img: false,
         img_name: 'thumb_gdpr'
     },
     {
@@ -221,7 +221,7 @@ const miscData = [
         tag1_name: 'Windows',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_msdos'
     },
     {
@@ -248,7 +248,7 @@ const appData = [
     //     tag1_name: '編輯器',
     //     tag2: true,
     //     tag2_name: 'Sublime',
-    //     img: true,
+    //     img: false,
     //     img_name: 'thumb_sublime'
     // },
     {
@@ -260,7 +260,7 @@ const appData = [
         tag1_name: 'git',
         tag2: false,
         tag2_name: '',
-        img: true,
+        img: false,
         img_name: 'thumb_git'
     },
     {
@@ -296,7 +296,7 @@ const appData = [
         tag1_name: '編輯器',
         tag2: true,
         tag2_name: 'VSCode',
-        img: true,
+        img: false,
         img_name: 'thumb_vscode'
     },
 ]
