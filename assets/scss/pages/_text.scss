@@ -139,8 +139,8 @@
     margin-bottom: 1rem;
     > div {
         display: flex;
+        line-height: 2;
         > div {
-            line-height: 2;
             padding: .5rem 1rem;
             &:nth-child(odd) {
                 background-color: #F7F7F7;
@@ -149,6 +149,13 @@
                 background-color: #FFF !important;
                 border-right: 1px solid #F7F7F7;
             }
+        }
+        &.f-head {
+            position: relative;
+            color: $second;
+            border-left: .25rem solid $second;
+            margin-top: 1rem;
+            padding: 0 1rem;
         }
         &.f-title {
             > div {

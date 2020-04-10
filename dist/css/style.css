@@ -9939,10 +9939,10 @@ footer {
 
 .text-flex > div {
   display: flex;
+  line-height: 2;
 }
 
 .text-flex > div > div {
-  line-height: 2;
   padding: .5rem 1rem;
 }
 
@@ -9953,6 +9953,14 @@ footer {
 .text-flex > div > div:first-child {
   background-color: #FFF !important;
   border-right: 1px solid #F7F7F7;
+}
+
+.text-flex > div.f-head {
+  position: relative;
+  color: #444;
+  border-left: 0.25rem solid #444;
+  margin-top: 1rem;
+  padding: 0 1rem;
 }
 
 .text-flex > div.f-title > div {
