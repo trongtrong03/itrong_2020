@@ -9885,6 +9885,13 @@ footer {
   padding: .5rem 1rem;
 }
 
+.text-content h4 {
+  line-height: 1.5;
+  font-weight: 900;
+  font-size: 1.125rem;
+  color: #000;
+}
+
 .text-content p {
   line-height: 2;
   font-size: 1rem;

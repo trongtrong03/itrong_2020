@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-5 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-5 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">前言</a></li>
+        <li><a href="#act2">初始狀態</a></li>
+        <li><a href="#act3">等待期</a></li>
+        <li><a href="#act4">執行期</a></li>
+        <li><a href="#act5">完成期</a></li>
+        <li><a href="#act6">單行縮寫＆結語</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">前言</h2>
+<p>CSS3 的問世令網頁設計出現巨大變革，它大幅減少了網頁對 Javascript 的依賴，過往許多需要依賴 Javascript 實現之效果，如今都可以單純透過 CSS3 去實現，而本篇要介紹的動畫（Animation）便是其中之一。以往我們要實現元素動畫不外乎是透過動態媒介（例如 GIF、Flash）或 Javascript、jQuery，但在 CSS3 新增的屬性 <em>animation</em> 中，已經可以針對指定元素作逐格的屬性參數變化效果，同時還有一些控制屬性，像是執行時間、延遲執行、循環次數等，以下內容筆者將以動畫「初始狀態」、「等待期」、「執行期」、「完成期」四個階段一一撰文作說明。</p>
+<p><br></p>
+
+<h2 id="act2">初始狀態</h2>
+<p>動畫的初始狀態意指元素尚未觸發動畫的情境下，其樣式是由原本設置的屬性所控制。</p>
+<p>開始設置動畫相關控制參數之前，我們通常需要先寫好指定元素要執行的動畫內容，定義動畫規則的屬性為 <em>@keyframes</em>，於自定義的關鍵影格（幀）中設置其他屬性樣式。其語法規則為下：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">@keyframes animationName {
+    keyframes-selector {
+        css-styles;
+    }
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>舉例來說，若要設定一個透明度（<em>opacity</em>）由 <em>0</em> 變為 <em>1</em> 的淡入出現動畫效果，則 <em>@keyframes</em> 動畫規則可以這樣寫：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">@keyframes animationName {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacitY: 1;
+    }
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>@keyframes</em> 中的 <em>from</em> 其實就是動畫四個階段中的「初始狀態」，一般而言，若指定元素內 <em>opacity</em> 為 <em>0</em>，那麼要指定給它的動畫規則裡的初始值應該也會是 <em>0</em>。<em>to</em> 則是動畫結束處的關鍵影格，假如一個動畫規則沒有設定起始或結束影格，瀏覽器就會以元素自身設置的屬性作為起始或結束狀態。此外，<em>from</em> 與 <em>to</em> 也可以分別用百分比 <em>0%</em> 及 <em>100%</em> 表示，兩者可以混用。</p>
+<p><br></p>
+<p>在透過 <em>@keyframes</em> 寫動畫規則的過程中，有些情境對應方法或基本規範是需要知道的，以下列舉出來一塊兒瞧瞧。</p>
+<h4>多個關鍵影格</h4>
+<p>倘若動畫規則裡需要多個關鍵影格，我們可以在理想變化的關鍵點以百分比的方式加入屬性變值，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">@keyframes animationName {
+    0% {
+        top: 0px;
+    }
+    20% {
+        top: -20px;
+    }
+    100% {
+        top: 80px;
+    }
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<h4>關鍵影格重複</h4>
+<p>假設同個動畫規則裡設定了兩個以上相同百分比的關鍵影格，則會以最後一個百分比關鍵影格裡的屬性為主。</p>
+<p><br></p>
+
+<h4>關鍵影格屬性數量不固定</h4>
+<p>不同個關鍵影格裡，屬性數量並不一定要都一樣，比如說中途插值，又或者在之前的某一格開始之後到結束都是相同的值，這些都會令整體動畫規則的各關鍵格裡屬性數量產生變動</p>
+
+
+
+
+
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes
+https://segmentfault.com/q/1010000003867335
+https://www.webhek.com/post/css-animation-keyframes.html
+<p><br></p>
+<h2 id="act6">單行縮寫＆結語</h2>
+<p>儘管不能說 CSS3 <em>animation</em> 可以完全取代 Javascript，畢竟若要更有效地操控動畫，Javascript 仍然比 CSS3 好用許多，但如果只是要實現一些簡單的元素動畫，並設置它的執行時間、循環次數...等，那麼不妨大膽地使用 <em>animation</em> 去實現吧。</p>
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://github.com/ai/autoprefixer-rails" target="_blank">Autoprefixer Github</a></li>
+        <li><a href="https://blog.gtwang.org/web-development/autoprefixer-css-vender-prefixes/" target="_blank">Autoprefixer：最佳的 CSS 供應商前綴（Vender Prefixes）後處理器</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

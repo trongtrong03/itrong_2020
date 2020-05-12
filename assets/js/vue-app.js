@@ -110,6 +110,18 @@ const cssData = [
         img: false,
         img_name: 'thumb_autoprefixer'
     },
+    {
+        id: 4,
+        href: 'css_animation',
+        title: '使用 CSS3 寫動畫──Animation＆Keyframes',
+        time: '2020.03.01',
+        tag1: true,
+        tag1_name: 'CSS3',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [
