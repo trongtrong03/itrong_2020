@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-6 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-6 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>CSS3 中的 <em>transform</em> 屬性是一種使元素形貌產生變化的屬性，它就像 Photoshop 的「變形」功能，可以讓元素旋轉、縮放、傾斜，且變形範圍不僅侷限於二維空間，三維方向同樣可以做變化。<em>transform</em> 令元素運用更加靈活，也降低對外部媒介的依賴，是 CSS3 相當具代表性的屬性之一。</p>
+<p>本篇從善如流，承襲前人的智慧，將 <em>transform</em> 的參數依二維（2D）與三維（3D）分別進行介紹，此為上篇。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">屬性介紹</a></li>
+        <li><a href="#act2">transform-origin</a></li>
+        <li><a href="#act3">Matrix</a></li>
+        <li><a href="#act4">結語</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">屬性介紹</h2>
+<p>在二維空間變化中，<em>transform</em> 可以定義這些參數：<em>translate</em>、<em>scale</em>、<em>rotate</em>、<em>skew</em>，以及 <em>matrix</em>。許多專業文章內容裡，都會把 <em>matrix</em>（矩陣）放在前面介紹，這是因為 <em>transform</em> 前面四種變化方式嚴格來講都是可以用 Matrix 計算出來的用法，假如能熟悉矩陣的概念，基本就能從 <em>transform</em> 的課程中完滿畢業。但畢竟矩陣與數學相關，想馬上學會並非談何容易之事，因此筆者決定將矩陣留到後面，專門花一個章節的篇幅單獨敘述它，此節先介紹其他四種參數的功用。</p>
+<p><br></p>
+<h4>Translate（位移）</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: translate(x, y);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>位移的概念與偏移屬性（<em>top</em>、<em>left</em>...）相似，但它不需要設定 <em>position</em> 屬性。語法內的 <em>x</em>、<em>y</em> 值分別從元素參考點中心往水平（x 軸）與垂直（y 軸）移動。假設 <em>translate()</em> 裡面只有設定一個值，則視為 <em>x</em> 軸位移，<em>y</em> 軸位移為 <em>0</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="GRpXKWe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-1">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/GRpXKWe">
+          css3: transform-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>在範例中 <em>x</em> 值以百分比表示，百分比的位移程度是以元素寬度去計算，例如 <em>50%</em> 即位移該元素一半的寬度。</p>
+<p>另外也可以針對 X、Y 軸單獨定義，其語法為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: translateX(length);
+    transform: translateY(length);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>Scale（縮放）</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: scale(x, y);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>以元素參考點為中心做 X、Y 軸的倍率縮放，它填入的值只能是純數字（因為是倍數的意思），不接受其他單位，例如像素（<em>px</em>）或百分比（<em>%</em>）等。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="MWaqWar" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-2">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/MWaqWar">
+          css3: transform-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>假如只填入一個數字，代表 X 與 Y 軸縮放的倍率相同。此外，如同位移效果，縮放亦可分別定義 X 與 Y 軸的縮放程度：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: scaleX(number);
+    transform: scaleY(number);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>Rotate（旋轉）</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: rotate(θ);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>以元素的參考點為中心進行旋轉，單位為 <em>deg</em>，代表角度，若填入的數字為正值，代表元素以順時針旋轉，負值則為逆時針。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="WNQgNzX" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-3">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/WNQgNzX">
+          css3: transform-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>Skew（傾斜）</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: skew(θx, θy);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>以元素參考點為中心，使其分別向 X、Y 軸傾斜填入的角度。倘若只填入一個值，代表只有 X 軸傾斜，Y 軸傾斜。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="KKdxKxR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-4">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/KKdxKxR">
+          css3: transform-4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>看過前面 <em>translate()</em> 與 <em>scale()</em>，應該多少心裡有底只要能分別填入 X、Y 軸，就能更針對性的只單獨定義其中一個方向的變形屬性，因此傾斜也不例外：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: skewX(θ);
+    transform: skewY(θ);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p><br></p>
+
+<p>有些時候我們需要同時定義多個變形效果，這時只需要將各個變形參數間以「空白格」區隔開來即可。例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: translateX(-50%) rotate(45deg) skew(5deg, 15deg);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h2 id="act2">transform-origin</h2>
+<p>或許你心中會存在以下疑問──在上一章節介紹每個參數用途時，反反覆覆提到「以參考點為中心」，究竟什麼是參考點？要如何知道它中心點的位置？又是否能修改它？</p>
+<p>首先我們要知道，元素進行任何變化時，都必須要以其內部的某一個點為中心，這個點就是參考點，以下拿 Photohop 當作範例：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-1.jpg">
+</figure>
+<p>當編輯綠色圖形變形效果時，其中央有一個圓形的小圓圈，它便是該圖形的參考點。一般而言，HTML 元素的參考點中心為正中央。假如要更改它的參考點，我們可以使用 <em>transform-origin</em> 屬性。</p>
+<pre class="text-pre"><code class="css">div {
+    transform-origin: x y z;
+}</code></pre>
+<p>計算起點是以元素的左上角為基準點，參數預設值為 <em>50% 50% 0%</em>，剛好就是元素的正中心。單位除了百分比外，也可以使用固定單位、角度（deg）或是偏移名稱（<em>top</em>、<em>right</em>、<em>bottom</em>、<em>left</em>）。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="rNOZaYa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-origin">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/rNOZaYa">
+        css3: transform-origin</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如果 <em>transform-origin</em> 僅填入一個數值，則代表其三軸參考點位置皆相同；若只填入兩個值，則 Z 軸會被忽略。</p>
+<p><br></p>
+
+<h2 id="act3">Matrix</h2>
+<p>Matrix 中文名為「矩陣」，我們普遍看到較淺顯易懂的方法是，將矩陣理解為古代軍隊作戰的「方陣」陣型，只是在數學運算的世界裡，矩陣裡面的單位是數值，例如下圖：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-2.jpg">
+    <figcaption>矩陣內的數字只是舉例，並非公式數值。</figcaption>
+</figure>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform-function" target="_blank">MDN web docs --transform-function</a></li>
+        <li><a href="https://juejin.im/post/5ab8b5ed51882548fe4a2069#heading-10" target="_blank">CSS3 transform 属性详解</a></li>
+        <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
+        <li><a href="https://juejin.im/post/5d0ba96df265da1ba252659b" target="_blank">【css基础】如何理解transform的matrix()用法</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

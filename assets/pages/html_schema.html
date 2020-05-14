@@ -14,22 +14,21 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">前言</a></li>
-        <li><a href="#act2">什麼是結構化標記</a></li>
-        <li><a href="#act3">屬性說明</a></li>
-        <li><a href="#act4">Google 結構化資料標記協助工具</a></li>
-    </ul>
-</div>
-
-<h2 id="act1">前言</h2>
+<h2>前言</h2>
 <p>長期接觸網頁相關工作的人員都一定聽過一個詞：「SEO」，究竟什麼是「SEO」？其完整全名為 Search Engine Optimization，意為「搜尋引擎優化」（或說搜尋引擎最佳化）。如果要簡單描述它的用途，即專業人員在網站導入一些技術或為網頁進行優化作業，以提升網站的關鍵字排名，幫助使用者在瀏覽器輸入關鍵字時，能更優先看到該網站出現在搜尋結果的前面位置。</p>
 <p>隨著 SEO 日益獲得重視，HTML 對於元素標籤的用法規範也越趨兼顧 SEO，例如 <em>&lt;h1&gt;</em> 代表網頁最主要的大標，單一網頁應當只存在一個 <em>&lt;h1&gt;</em>；又或者是在 HTML <em>&lt;head&gt;</em> 處添加大量的 <em>&lt;meta&gt;</em> 標籤定義網站的各項資訊，提供自身關鍵字的可見度。SEO 的諸多云云就留待未來有更多涉略時再來筆記，現階段我們只要知道 SEO 在網頁世界裡扮演舉足輕重的角色即可。</p>
 <p><br></p>
 
-<h2 id="act2">什麼是結構化標記</h2>
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">什麼是結構化標記</a></li>
+        <li><a href="#act2">屬性說明</a></li>
+        <li><a href="#act3">Google 結構化資料標記協助工具</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">什麼是結構化標記</h2>
 <p>儘管正確地使用 HTML 元素編寫網頁對搜尋優化已有幫助，但如果面對使用者想搜尋更精確的關鍵字，例如某某顏色（紅色、綠色...）、某某價格範圍（0 ~ 5000）等，單純的 HTML 標籤就顯得較為不足，於是後來 Google、Bing、Yandex 和 Yahoo! 等企業合作推出「資料結構化」的概念，透過為 HTML 標籤添加特定標記屬性，進一步提升關鍵字搜尋的最佳結果。</p>
 <p><a href="https://schema.org/" target="_blank">Schema.org</a> 就是集上述四家企業大成，共同訂定結構化標記的網站資源，網路上也可以搜尋到<a href="https://schema.org.cn/docs/index.html" target="_blank">中文化</a>的版本，然而距離前次更新已經要追溯至 2012 年，所以如果要獲取最新資訊，最好還是透過原文官方文件來取得。</p>
 <div class="text-code is-html">
@@ -58,7 +57,7 @@
 <p>雖然程式碼看起來變多了，但也相對更明瞭元素裡面的內容存放著什麼樣的資料。有關 Schema 的語法放在下一個章節進行介紹。</p>
 <p><br></p>
 
-<h2 id="act3">屬性說明</h2>
+<h2 id="act2">屬性說明</h2>
 <p>常見的 Schema 屬性可見下表：</p>
 <div class="text-flex">
     <div class="f-title">
@@ -80,7 +79,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act4">Google 結構化資料標記協助工具</h2>
+<h2 id="act3">Google 結構化資料標記協助工具</h2>
 <p>我們可以不用自己動手去設定每一個標籤的結構化標記，身為推廣結構化標記開發商之一，Google 已有提供線上工具「<a href="https://www.google.com/webmasters/markup-helper/u/0/" target="_blank">結構化資料標記協助工具</a>」，幫助開發者快速產生標記化後的程式碼。以下介紹 Google 結構化資料標記協助工具的操作流程：</p>
 <h5 class="text-step">選擇標記類型並輸入網頁內容</h5>
 <figure>

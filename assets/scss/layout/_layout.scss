@@ -66,6 +66,7 @@ body {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     @include scrollbar($first);
+    scroll-behavior: smooth;
     padding-left: 15rem;
     animation-name: fadeIn;
     animation-duration: .5s;

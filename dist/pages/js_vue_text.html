@@ -78,21 +78,20 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">前言</a></li>
-        <li><a href="#act2">v-text</a></li>
-        <li><a href="#act3">v-html</a></li>
-    </ul>
-</div>
-
-<h2 id="act1">前言</h2>
+<h2>前言</h2>
 <p>透過 Vue 給 HTML 插入純文本字串最簡單方式，乃是使用兩對花括號（<em>{{</em> <em>}}</em>）包住 Vue <em>data</em> 的數據，使其得以綁定到 DOM 裡。然而當網頁發生問題──例如網頁載入過慢，或是 Javascript 出錯時，<em v-pre>{{ data }}</em> 的原始程式碼就會直接暴露在頁面上，因此用這種在 HTML 載入時才顯示文本內容的渲染方式並非恰當的。假如要實現純文本綁定至網頁，Vue 有提供更好的指令：<em>v-text</em>。</p>
 <p>此外還有一個與 <em>v-text</em> 看起來用法相似的指令 <em>v-html</em>，本篇學習將一併作記用法，並比較它們的不同之處。</p>
 <p><br></p>
 
-<h2 id="act2">v-text</h2>
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">v-text</a></li>
+        <li><a href="#act2">v-html</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">v-text</h2>
 <p>基本上渲染的結果和 <em v-pre>{{ data }}</em> 是一樣的，假如有一個 Vue 的實體結構為下：</p>
 <div class="text-code is-vue">
 <pre class="text-pre"><code class="javascript">var app = new Vue({
@@ -136,7 +135,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act3">v-html</h2>
+<h2 id="act2">v-html</h2>
 <p>與 <em>v-text</em> 最大的不同在於 <em>data</em> 資料如果是 HTML 元素，<em>v-text</em> 渲染時會將其解析為字符實體，例如：</p>
 <div class="text-codepen">
     <code>

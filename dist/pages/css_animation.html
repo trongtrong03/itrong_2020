@@ -78,24 +78,23 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">前言</a></li>
-        <li><a href="#act2">初始狀態</a></li>
-        <li><a href="#act3">等待期</a></li>
-        <li><a href="#act4">執行期</a></li>
-        <li><a href="#act5">完成期</a></li>
-        <li><a href="#act6">單行縮寫＆補充</a></li>
-        <li><a href="#act7">結語</a></li>
-    </ul>
-</div>
-
-<h2 id="act1">前言</h2>
+<h2>前言</h2>
 <p>CSS3 的問世令網頁設計出現巨大變革，它大幅減少了網頁對 Javascript 的依賴，過往許多需要依賴 Javascript 實現之效果，如今都可以單純透過 CSS3 去實現，而本篇要介紹的動畫（Animation）便是其中之一。以往我們要實現元素動畫不外乎是透過動態媒介（例如 GIF、Flash）或 Javascript、jQuery，但在 CSS3 新增的屬性 <em>animation</em> 中，已經可以針對指定元素作逐格的屬性參數變化效果，同時還有一些控制屬性，像是執行時間、延遲執行、循環次數等，以下內容筆者將以動畫「初始狀態」、「等待期」、「執行期」、「完成期」四個階段一一撰文作說明。</p>
 <p><br></p>
 
-<h2 id="act2">初始狀態</h2>
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">初始狀態</a></li>
+        <li><a href="#act2">等待期</a></li>
+        <li><a href="#act3">執行期</a></li>
+        <li><a href="#act4">完成期</a></li>
+        <li><a href="#act5">單行縮寫＆補充</a></li>
+        <li><a href="#act6">結語</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">初始狀態</h2>
 <p>動畫的初始狀態意指元素尚未觸發動畫的情境下，其樣式是由原本設置的屬性所控制。</p>
 <p>開始設置動畫相關控制參數之前，我們可以先寫好指定元素要執行的動畫內容（注意喔，這裡用的詞彙是「可以」，意思是說你也可以先設定好動畫相關參數，再來寫動畫內容），定義動畫規則的屬性為 <em>@keyframes</em>，於自定義的關鍵影格（幀）中設置其他屬性樣式。其語法規則為下：</p>
 <div class="text-code is-css">
@@ -226,7 +225,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act3">等待期</h2>
+<h2 id="act2">等待期</h2>
 <p>有時我們不想要讓網頁一載入馬上執行動畫，而等待期指的是動畫開始觸發前的這段過渡時間，暫且不說可以用 Javascript 去控制的方法（但如果是要畫面滾到元素位置處才觸發的話仍需要借助 Javascript 的力量），這裡單純就只以純 CSS 實現而言，使動畫延遲執行的屬性叫做 <em>animation-delay</em>。</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
@@ -238,7 +237,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act4">執行期</h2>
+<h2 id="act3">執行期</h2>
 <p>指的是等待期（或說是 <em>animation-delay</em> 到點後的開始）之後的動畫過程，元素將會完整將 <em>@keyframes</em> 設定的關鍵影格從開始到結束逐格完整執行過一遍，接著視其他控制需求，令動畫要停留在起始影格或結束影格，又或者無限循環執行...等等。</p>
 <p>決定動畫執行時長的屬性為 <em>animation-duration</em>，參數值與 <em>animation-delay</em> 一樣，填入 <em>s</em>（秒） 或 <em>ms</em>（毫秒）。基本上只要有了 <em>animation-name</em> 和 <em>animation-duration</em> 就能執行一次完整的動畫了。</p>
 <div class="text-codepen">
@@ -330,7 +329,7 @@
 <p>屬性預設值是 <em>ease</em>，代表動畫到 <em>50%</em> 前會逐漸加速，之後則慢慢減速到結束。貝茲曲線（cubic-bezier）的用法大有學問，很難用簡單三言兩語就能概括，故本篇暫時不多作記錄。</p>
 <p><br></p>
 
-<h2 id="act5">完成期</h2>
+<h2 id="act4">完成期</h2>
 <p>完成期與初始狀態是相對的存在，指的是動畫跑完之後的狀態，有些人會以為關鍵一格的最後一格就是完成狀態，但這其實並不是完全正確的說法，如同我們在執行期中會給動畫加上部分控制屬性，它們都會影響該元素在最後動畫完成時的樣式狀態，甚至當 <em>animation-iteration-count</em> 為 <em>infinite</em>（無限循環）的時候，該元素便沒有完成期可言。</p>
 <p><em>animation-fill-mode</em> 屬性可以決定動畫「等待期」與「完成期」的狀態（對...之所以沒有在等待期提到這個屬性就是為了留到完成期一起說明），我們先來看看它有哪些參數值：</p>
 <div class="text-flex">
@@ -429,7 +428,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act6">單行縮寫＆補充</h2>
+<h2 id="act5">單行縮寫＆補充</h2>
 <p>除了前面林林總總介紹到的 <em>animation</em> 屬性外，還有一種可以控制動畫運行狀態的屬性，名叫 <em>animation-play-state</em>，它有兩個參數值：</p>
 <div class="text-flex">
     <div class="f-title">
@@ -489,7 +488,7 @@
 
 
 <p><br></p>
-<h2 id="act7">結語</h2>
+<h2 id="act6">結語</h2>
 <p>儘管不能說 CSS3 <em>animation</em> 可以完全取代 Javascript，畢竟若要更有效地操控動畫，Javascript 仍然比 CSS3 好用許多，但如果只是要實現一些簡單的元素動畫，並設置它的執行時間、循環次數...等，那麼不妨大膽地使用 <em>animation</em> 去實現吧。倘若看完 <em>animation</em> 所有屬性的說明仍然摸不著頭緒要如何下手寫動畫，別擔心，網路上已有許多現成的工具可以輔助開發者達到理想效果，以下列舉幾項實用的工具網站或套件：</p>
 <p>
     <a href="https://animate.style/" target="_blank">Animate.css</a>：提供許多現成的 CSS 動畫並提供下載到自己的專案裡使用。<br>

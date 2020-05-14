@@ -78,21 +78,20 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">前言</a></li>
-        <li><a href="#act2">操作流程</a></li>
-        <li><a href="#act3">補充</a></li>
-    </ul>
-</div>
-
-<h2 id="act1">前言</h2>
+<h2>前言</h2>
 <p>如果你和筆者一樣是個不熟悉資料庫、不會寫表單程式，卻又希望給自己網站添加聯絡表單系統的網頁工作者，後來筆者在 Github 上找到一篇利用 Google Apps Mail 實現不透過 Server 端，直接將表單內容郵寄到指定信箱的分享文章，儘管操作步驟有一些些繁瑣，但比起自己摸索資料庫與後端相關程式語言寫法而言肯定已是相對容易許多......除非你打算直接付費請專業的人代勞。</p>
 <p>Github 專案的連結在<a href="https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server" target="_blank">這裡</a>，有興趣可自行參閱原文，以下則記錄筆者自己實際參照文章進行功能實裝的步驟流程。</p>
 <p><br></p>
 
-<h2 id="act2">操作流程</h2>
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">操作流程</a></li>
+        <li><a href="#act2">補充</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">操作流程</h2>
 <h5 class="text-step">複製 Google Sheets 文件以建立副本。</h5>
 <p>登入或註冊自己的 Google 帳戶，點擊此<a href="https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/copy" target="_blank">試算表連結</a>並建立副本，複製一份 HTML Form Reponses 文件。</p>
 <figure>
@@ -213,7 +212,7 @@
 <p>答案是有的，手腳俐落的話，前前後後時間花費不到十分鐘就能搞定在自己網站加入簡易的聯絡表單了。</p>
 <p><br></p>
 
-<h2 id="act3">補充</h2>
+<h2 id="act2">補充</h2>
 <p>可能會有人和筆者一樣，不希望表單送出後離開自己的網頁，導向至純 JSON 數據的結果，其實可以透過結合 AJAX 方式改善它，以下來看看如何設定：</p>
 <h5 class="text-step">複製 AJAX 語法文件。</h5>
 <p>複製以下程式碼並命名為「form-submission-handler.js」，要改成別的也不反對，自己看得順眼即可。</p>

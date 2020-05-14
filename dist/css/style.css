@@ -9176,6 +9176,7 @@ body {
   overflow-y: auto;
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   padding-left: 15rem;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -9815,9 +9816,11 @@ footer {
 }
 
 .text-catalog::before {
-  content: 'Article Catalog：';
+  content: 'Chapter Catalog：';
   line-height: 2;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #CF5341;
 }
 
 .text-catalog > ul {

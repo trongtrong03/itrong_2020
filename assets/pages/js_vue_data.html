@@ -17,13 +17,13 @@
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">前言</a></li>
+        <li><a href="#act1">複習</a></li>
         <li><a href="#act2">Data</a></li>
         <li><a href="#act3">Template</a></li>
     </ul>
 </div>
 
-<h2 id="act1">前言</h2>
+<h2 id="act1">複習</h2>
 <p>在解析之前先回頭看看上一篇創建的 Vue 實體結構：</p>
 <div class="text-code is-vue">
 <pre class="text-pre"><code class="javascript">var app = new Vue({
@@ -40,6 +40,7 @@
 <p>通常我們需要先宣告一個名稱（例如 <em>app</em>、<em>vm</em>（viewmodel））建立 Vue 的實體。</p>
 <p>實體需要指定一個 HTML 對象，才可以將資料綁定過去。對象可以是純元素標籤或是 CSS 選擇器（<em>#ID</em> 或 <em>.class</em>），如果不在指定對象內的元素，則無法與 Vue 實體產生互動。</p>
 <p><br></p>
+
 <h2 id="act2">Data</h2>
 <p><em>data</em> 是一個物件屬性，代表「資料」，資料的屬性值可以是數字、字串、布林值，也可以是陣列或別的物件。除了 <em>data</em> 之外，Vue 實體還可以使用 <em>methods</em>（方法）、<em>computed</em>（運算）等屬性，這些屬性保留日後再行筆記。</p>
 <p>建立基本的 Vue 實體後，我們需要在 HTML 結構作點文章去綁定資料，好讓 DOM 可以順利將 Vue 實體裡的資料渲染出來。</p>
@@ -52,6 +53,7 @@
 </button>
 </div>
 <p><br></p>
+
 <h2 id="act3">Template</h2>
 <p>寫在 HTML 的東西我們稱之為「樣板」（Template）或「模板」，注意喔，模板必須和要綁定 Vue 實體的 <em>el</em> 相對應才有作用。關於樣板的使用方式基本上有以下三種：</p>
 <h3>文本綁定：</h3>

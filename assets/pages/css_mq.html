@@ -14,22 +14,21 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">簡介</a></li>
-        <li><a href="#act2">語法</a></li>
-        <li><a href="#act3">Media Types</a></li>
-        <li><a href="#act4">Media Features</a></li>
-        <li><a href="#act5">邏輯應用</a></li>
-    </ul>
-</div>
-
-<h2 id="act1">簡介</h2>
+<h2>前言</h2>
 <p>Media Queries 敘述的語意是先「詢問」（query）「媒體」（media）的屬性，然後再針對其定義樣式，不僅可以根據指定的裝置型態（例如螢幕或列印）或特定特徵（例如螢幕解析度或瀏覽器可視範圍寬度）套用指定的樣式屬性，更是實現響應式網頁（RWD）不可或缺的重要方法。</p>
 <p><br></p>
 
-<h2 id="act2">語法</h2>
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">語法</a></li>
+        <li><a href="#act2">Media Types</a></li>
+        <li><a href="#act3">Media Features</a></li>
+        <li><a href="#act4">邏輯應用</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">語法</h2>
 <p>一個 media query 是由一個可選的 media types 及不定數量的 media features 運算式構成。media query 本身具有邏輯的概念，若指定的 media types 與正在顯示的裝置內容相符，且 media features 運算式結果也為 <em>true</em> 時，回傳為 <em>true</em>（套用屬性樣式），否則為 <em>false</em>（不套用屬性樣式）。<br>假如設定的 media types 是未知的類型，則該 media query 將會永遠是 <em>false</em>。</p>
 <p><br></p>
 <div class="text-code is-css">
@@ -44,7 +43,7 @@
 <p>除了 <em>and</em> 之外，還有 <em>or</em>、<em>not</em>、<em>only</em>一共四種應用方法，這部份將保留至後面再提。</p>
 <p><br></p>
 
-<h2 id="act3">Media Types</h2>
+<h2 id="act2">Media Types</h2>
 <p>Media Types 描述裝置類型，有以下四種參數：</p>
 <div class="text-flex">
     <div class="f-title">
@@ -92,7 +91,7 @@
 <p>逗號是邏輯 <em>and</em> 的意思。</p>
 <p><br></p>
 
-<h2 id="act4">Media Features</h2>
+<h2 id="act3">Media Features</h2>
 <p>Media features 也可以稱為特徵，用來給 Media Types 更加詳細的設定，要注意的是，每一個特徵都需要用括號包覆起來，並與邏輯關鍵字（<em>and</em>、<em>or</em>、<em>not</em>、<em>only</em>）結合，以下將特徵分門別類為視窗或頁面尺寸、顯示品質、顏色、互動這四大項來一一介紹。</p>
 <h3>視窗或頁面尺寸（Viewport/Page Dimensions）：</h3>
 <div class="text-flex">
@@ -239,7 +238,7 @@
 </div>
 <p><br></p>
 
-<h2 id="act5">邏輯應用</h2>
+<h2 id="act4">邏輯應用</h2>
 <p>前面曾提過 Media Queries 的邏輯使用除了 <em>and</em> 外，還有另外三種方式，分別是：</p>
 <div class="text-flex">
     <div class="f-title">
