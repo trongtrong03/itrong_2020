@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-7 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-7 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>本篇為 <em>transform</em> 屬性學習筆記的下篇，將介紹元素在三維空間（3D）內可以使用哪些有趣用法。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基本概念</a></li>
+        <li><a href="#act2">perspective</a></li>
+        <li><a href="#act3">Scale（縮放）</a></li>
+        <li><a href="#act4">Rotate（旋轉）</a></li>
+        <li><a href="#act5">Skew（傾斜）</a></li>
+        <li><a href="#act6">transform-origin</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基本概念</h2>
+<p>二維與三維最大的不同，在於方向除了 X 軸與 Y 軸外，還多了 Z 軸，示意圖如下：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-3d-1.jpg">
+</figure>
+<p>如果說 X、Y 軸共同交織出平面，那麼 Z 軸則是將平面物件變成立體，當然，瀏覽器不可能真的創造出立體物件，假設我們將 X 軸視為螢幕的水平方向，Y 軸為垂直方向，那麼 Z 軸就是一條自螢幕往使用者身上射出的虛擬座標軸。CSS3 中的 3D 效果利用了 Z 軸「透視」遠近深度的原理，使物件看起來像是立體化了一樣。而用來設定 3D 深度遠近的屬性名稱，叫做 <em>perspective</em>。</p>
+<p><br></p>
+
+<h2 id="act2">perspective</h2>
+<p>單純只給元素賦予 <em>transform</em> 3D 參數，是無法對元素產生 3D 效果的，必須搭配 <em>perspective</em> 這個屬性才可以。<em>perspective</em> 用途在於定義元素透視點與 XY 軸所形成平面之間的距離，概念如下圖：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-3d-3.jpg">
+</figure>
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform-function" target="_blank">MDN web docs --transform-function</a></li>
+        <li><a href="https://juejin.im/post/5ab8b5ed51882548fe4a2069#heading-10" target="_blank">CSS3 transform 属性详解</a></li>
+        <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
+        <li><a href="https://juejin.im/post/5d0ba96df265da1ba252659b" target="_blank">【css基础】如何理解transform的matrix()用法</a></li>
+    </ul>
+</div>
+
+
+https://www.oxxostudio.tw/articles/201506/css-3d.html
+https://www.itread01.com/content/1544474722.html
+https://eyesofkids.gitbooks.io/css3/content/contents/transform3d.html
+https://juejin.im/entry/5c98b24af265da60f2070009
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
