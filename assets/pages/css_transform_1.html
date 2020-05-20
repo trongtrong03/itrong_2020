@@ -128,7 +128,7 @@
     <span>COPY</span>
 </button>
 </div>
-<p>以元素參考點為中心，使其分別向 X、Y 軸傾斜填入的角度。倘若只填入一個值，代表只有 X 軸傾斜，Y 軸傾斜。</p>
+<p>以元素參考點為中心，使其分別向 X、Y 軸傾斜填入的角度。倘若只填入一個值，代表只有 X 軸傾斜，Y 軸不傾斜。</p>
 <div class="text-codepen">
     <code>
         <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="KKdxKxR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-4">
@@ -169,10 +169,15 @@
     <img src="@@webRoot/images/css/transform-1.jpg">
 </figure>
 <p>當編輯綠色圖形變形效果時，其中央有一個圓形的小圓圈，它便是該圖形的參考點。一般而言，HTML 元素的參考點中心為正中央。假如要更改它的參考點，我們可以使用 <em>transform-origin</em> 屬性。</p>
+<div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
     transform-origin: x y z;
 }</code></pre>
-<p>計算起點是以元素的左上角為基準點，參數預設值為 <em>50% 50% 0%</em>，剛好就是元素的正中心。單位除了百分比外，也可以使用固定單位、角度（deg）或是偏移名稱（<em>top</em>、<em>right</em>、<em>bottom</em>、<em>left</em>）。</p>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>計算起點是以元素的左上角為基準點，參數預設值為 <em>50% 50% 0%</em>，剛好就是元素的正中心。單位除了百分比外，也可以使用固定單位、角度（deg）或是偏移方向的名稱（<em>top</em>、<em>right</em>、<em>bottom</em>、<em>left</em>）。</p>
 <div class="text-codepen">
     <code>
         <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="rNOZaYa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-origin">

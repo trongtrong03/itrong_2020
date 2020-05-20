@@ -99,14 +99,47 @@
 <figure>
     <img src="../images/css/transform-3d-1.jpg">
 </figure>
-<p>如果說 X、Y 軸共同交織出平面，那麼 Z 軸則是將平面物件變成立體，當然，瀏覽器不可能真的創造出立體物件，假設我們將 X 軸視為螢幕的水平方向，Y 軸為垂直方向，那麼 Z 軸就是一條自螢幕往使用者身上射出的虛擬座標軸。CSS3 中的 3D 效果利用了 Z 軸「透視」遠近深度的原理，使物件看起來像是立體化了一樣。而用來設定 3D 深度遠近的屬性名稱，叫做 <em>perspective</em>。</p>
+<p>如果說 X、Y 軸共同交織出平面，那麼 Z 軸則是將平面物件變成立體，假設我們將 X 軸視為螢幕的水平方向，Y 軸為垂直方向，那麼 Z 軸就是一條自螢幕往使用者身上射出的虛擬座標軸。當然，瀏覽器不可能真的創造出立體物件，CSS3 中的 3D 效果利用了 Z 軸「透視」遠近深度的原理，使物件看起來像是立體化了一樣。</p>
 <p><br></p>
 
 <h2 id="act2">perspective</h2>
-<p>單純只給元素賦予 <em>transform</em> 3D 參數，是無法對元素產生 3D 效果的，必須搭配 <em>perspective</em> 這個屬性才可以。<em>perspective</em> 用途在於定義元素透視點與 XY 軸所形成平面之間的距離，概念如下圖：</p>
+<p>單純只給元素賦予 <em>transform</em> 3D 參數，是無法對元素產生 3D 效果的，用來設定 3D 深度遠近的屬性名稱，叫做 <em>perspective</em>。<em>perspective</em> 用途在於定義元素透視點與 XY 軸所形成平面之間的距離，概念如下圖：</p>
 <figure>
     <img src="../images/css/transform-3d-3.jpg">
 </figure>
+<p>示意圖中的「d」指的是物件（元素）到使用者（或稱攝影機）間的距離，而「z」則是物件的 Z 軸（translateZ），當 z 的數值越小，代表物件離我們越近，3D 的變化也越明顯；反之越遠，立體感也越不明顯。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.parent {
+    perspective: 100px;
+}
+
+.child {
+    transform: ...  /* 屬性 */
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>還有另一種定義 <em>perspective</em> 的方法是透過 <em>transform</em>，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: perspective(100px) rotateX(45deg);;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>兩種方法一樣有效。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWjzQMJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: perspective-1">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/QWjzQMJ">
+          CSS3: perspective-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+
 
 
 <!-- 參考資料 -->
