@@ -87,10 +87,9 @@
     <ul>
         <li><a href="#act1">基本概念</a></li>
         <li><a href="#act2">perspective</a></li>
-        <li><a href="#act3">Scale（縮放）</a></li>
-        <li><a href="#act4">Rotate（旋轉）</a></li>
-        <li><a href="#act5">Skew（傾斜）</a></li>
-        <li><a href="#act6">transform-origin</a></li>
+        <li><a href="#act3">translate3d()</a></li>
+        <li><a href="#act4">rotate3d()</a></li>
+        <li><a href="#act5">scale3d()</a></li>
     </ul>
 </div>
 
@@ -123,7 +122,7 @@
 <p>還有另一種定義 <em>perspective</em> 的方法是透過 <em>transform</em>，例如：</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
-    transform: perspective(100px) rotateX(45deg);;
+    transform: perspective(100px) rotateX(45deg);
 }</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
@@ -139,25 +138,49 @@
         </p>
     </code>
 </div>
+<p><br></p>
+<p>如果 <em>transform</em> 可以透過 <em>transform-origin</em> 屬性設置參考點，<em>perspective</em> 同樣也可以利用 <em>perspective-origin</em> 定義使用者（攝影機）的視線中心點，例如以下示意圖：</p>
+<figure>
+    <img src="../images/css/transform-3d-4.jpg">
+</figure>
+<p>藍色區域就是依據 <em>perspective-origin</em> 調整中心點後投現的可視範圍。</p>
+<p>語法：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    perspective-origin: center center;    /* 預設值 */
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="bGVOmgM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: perspective-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/bGVOmgM">
+        CSS3: perspective-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>（建議與前一個範例 <em>perspective</em> 比較會更容易感受到 <em>perspective-origin</em> 的作用。）</p>
+<p>以上就是 3D 的透視基本概念，以及要如何在 CSS3 去運用它，那麼接下來將談談 <em>transform</em> 屬性裡，<em>translate</em>、<em>rotate</em> 與 <em>scale</em> 在 3D 空間的使用方法。</p>
+<p><br></p>
+
+
+<h2 id="act3">translate3d()</h2>
 
 
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform-function" target="_blank">MDN web docs --transform-function</a></li>
-        <li><a href="https://juejin.im/post/5ab8b5ed51882548fe4a2069#heading-10" target="_blank">CSS3 transform 属性详解</a></li>
-        <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
-        <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
-        <li><a href="https://juejin.im/post/5d0ba96df265da1ba252659b" target="_blank">【css基础】如何理解transform的matrix()用法</a></li>
+        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform-function#Coordinates_for_3D_graphics" target="_blank">MDN web docs --Coordinates for 3D graphics</a></li>
+        <li><a href="https://www.oxxostudio.tw/articles/201506/css-3d.html" target="_blank">玩轉 CSS 3D - 原理篇</a></li>
+        <li><a href="https://www.itread01.com/content/1544474722.html" target="_blank">前端-CSS（x、y、z）座標的含義，以及變換的使用</a></li>
+        <li><a href="https://eyesofkids.gitbooks.io/css3/content/contents/transform3d.html" target="_blank">變形(transform) 3D基本使用</a></li>
+        <li><a href="https://juejin.im/entry/5c98b24af265da60f2070009" target="_blank">看图理解 perspective 和 preserve-3d</a></li>
     </ul>
 </div>
-
-
-https://www.oxxostudio.tw/articles/201506/css-3d.html
-https://www.itread01.com/content/1544474722.html
-https://eyesofkids.gitbooks.io/css3/content/contents/transform3d.html
-https://juejin.im/entry/5c98b24af265da60f2070009
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
