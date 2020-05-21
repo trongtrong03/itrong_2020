@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-8 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-8 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>前面兩篇 <em>transform</em> 的文章分別介紹了元素在 2D 與 3D 空間可以有哪些變化──位移（Translate）、旋轉（Rotate）、縮放（Scale）以及傾斜（Skew），還有一種屬性參數叫做 <em>matrix</em>，也就是矩陣。起初看了許多 CSS 教程對於矩陣的闡述，筆者和多數讀者一樣，抱持「只要知道有這玩意就好」的想法，選擇不去正眼探究。只是現下既然已著手整理有關 <em>transform</em> 的學習筆記，倘若又刻意迴避矩陣的面對契機，恐怕自己未來也不會再去接觸了。加上矩陣在網頁設計裡似乎也不單單僅止於 <em>transform</em>，假如要更上一層樓，學習矩陣的概念無非是必要踏上的階梯。</p>
+<p>廢話不多說，以下開始吧。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基本概念</a></li>
+        <li><a href="#act2">perspective</a></li>
+        <li><a href="#act3">translate3d()</a></li>
+        <li><a href="#act4">rotate3d()</a></li>
+        <li><a href="#act5">scale3d()</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基本概念</h2>
+<p>首先，我們需要理解矩陣的基礎概念及運算方法，然後再帶入到 CSS 世界裡，看看 CSS 如何運用矩陣實現樣式。</p>
+<p><br></p>
+<h4>什麼是矩陣</h4>
+<p>矩陣是一個由列（row）與行（column）多個元素排成的方陣，例如下圖：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-1.jpg">
+</figure>
+<p>這是一個 3 x 3──三列三行的矩陣。</p>
+<p>作為解決線性方程式的工具，矩陣的發展歷史相當悠遠，最早的文獻記載可追溯至...嗯，以下省略，本篇不是歷史課，沒有打算對矩陣的前世今生贅述太多，此刻我們只要大概知道數學裡的矩陣大概長什麼模樣，已及在生活中，其實處處都可以看到矩陣的運用。例如：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-2.jpg">
+    <figcaption>秀泰影城的票價表。</figcaption>
+</figure>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-3.jpg">
+    <figcaption>台灣高鐵的票價表。</figcaption>
+</figure>
+<p><br></p>
+
+<h4>矩陣的名詞解釋</h4>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-4.jpg">
+</figure>
+<p>一個 m 列 n 行的矩陣稱作 m x n 階矩陣，圖中的矩陣即為 2 x 3 階矩陣。要注意喔，台灣與中國對於行列的定義是相反的，台灣習慣稱橫向的為列，縱向的為行，中國則反之，因此如果閱讀到中國的文獻時，要記得自行轉換一下觀念。</p>
+<p>而矩陣中的每一個單位稱為「元」（或元素），假設有人提問「第一列第二行」的元是什麼？答案為「2」。</p>
+<p><br></p>
+
+<h4>不同矩陣的運算</h4>
+<p>不同矩陣間的運算方式包含加法、減法與乘法，其中加法與減法必須要複數矩陣彼此間的行列相等，才可以進行元之間的對應。</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-5.jpg">
+    <figcaption>兩矩陣間的第一列第一行互相相加（5 + 0），得出答案為 5，其他依此類推。</figcaption>
+</figure>
+<p>至於矩陣相乘的規則就相對複雜多了，其核心規則為：「前行與後列必須相等，則前列與後行相乘後加總」。</p>
+<p>如果要白話一點解釋，那就是「前面矩陣的行」，必須與「後面矩陣的列」數量相等，矩陣相乘才可以成立，而他們的結果則會是「前面矩陣的列」與「後面矩陣的行」相乘後的結果。</p>
+<p>...看上去依然很拗口，沒關係，我們直接看實例。</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-6.jpg">
+    <figcaption>A、B、C 分別是一個矩陣。</figcaption>
+</figure>
+<p>同為 2 x 3 矩陣，A 矩陣 與 B 矩陣因不符合「前行後列相等」的規則，故無法進行相乘運算；而 A 矩陣與 C 矩陣則符合原則，相乘運算後將會是一個 2 x 2 的矩陣結果。</p>
+<p>接著我們來瞧瞧所謂「相乘後加總」究竟是怎樣一回事：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-7.jpg">
+</figure>
+<p>上圖分別是 2 x 2 與 2 x 1 的矩陣，套用前行與後列必須相等的條件，確定此矩陣相乘合法（皆為 2），且相乘後的矩陣將會是 2 x 1 矩陣。而新矩陣第一列第一行的元計算則是前列（a、b）與後行（s、t）兩兩對應後互相相加的結果，第二列第一行的元也是相同的推算方式。</p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=VGSfnZQQf5w" target="_blank">矩陣的乘法</a></li>
+        <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
+        <li><a href="https://juejin.im/post/5d0ba96df265da1ba252659b" target="_blank">【css基础】如何理解transform的matrix()用法</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

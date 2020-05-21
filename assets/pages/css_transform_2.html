@@ -104,8 +104,110 @@
 
 
 <h2 id="act3">translate3d()</h2>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: translate3d(x, y, z);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>x</em>、<em>y</em> 值與 2D 相同，分別是指往水平及垂直方向位移，而 <em>z</em> 值自然指的就是 Z 軸，預設值從 <em>0</em> 開始，數字越大，代表物件越往攝影機的方向靠近；反之數字越小則距離越遠。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="zYveOqV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: transform3D-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/zYveOqV">
+        CSS3: transform3D-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>也可以只使用 <em>transform: translateZ(n)</em> 來單獨設定 Z 軸的偏移值。</p>
+<p><br></p>
 
+<h2 id="act4">rotate3d()</h2>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: rotate3d(x, y, z, a);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>x</em>、<em>y</em>、<em>z</em> 分別對應旋轉軸三個方向的座標（通常會定義在 0 ~ 1 之間），<em>a</em> 代表旋轉角度（angle），單位可以是 <em>deg</em>（Degress，度）、<em>grad</em>（Gradians，梯度）、<em>turn</em>（Turns，圈數）、<em>rad</em>（Radians，弧度）等。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="oNjmvPB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: transform3D-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/oNjmvPB">
+        CSS3: transform3D-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>三個方向的旋轉亦能單獨定義：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: rotateX(a);
+    transform: rotateY(a);
+    transform: rotateZ(a);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>※ 圖方便所以將三個 <em>transform</em> 寫在同一元素裡，若要複數使用參數務必記得正確的書寫方式是由空白格隔開不同的參數。</p>
+<p><br></p>
+<p>另外補充各個角度單位的標準，請見下表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">單位</div>
+        <div class="t-f1">名稱</div>
+        <div class="t-f6">說明</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>deg</em></div>
+        <div class="t-f1">度</div>
+        <div class="t-f6">一個圓等於 360 度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>grad</em></div>
+        <div class="t-f1">梯度</div>
+        <div class="t-f6">一個圓等於 400 梯度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>turn</em></div>
+        <div class="t-f1">圈數</div>
+        <div class="t-f6">一個圓等於 1 圈</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>rad</em></div>
+        <div class="t-f1">弧度</div>
+        <div class="t-f6">一個圓等於 2π 弧度</div>
+    </div>
+</div>
+<p>（90deg = 100grad = 0.25turn ≈ 1.570796326794897rad）</p>
+<p><br></p>
 
+<h2 id="act5">scale3d()</h2>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: scale3d(x, y, z);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>物件 3D 的縮放其實看不太出效果，但 <em>z</em> 的參數和另外兩個方向一樣皆是指該軸的縮放倍率。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="rNOPaxp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: transform3D-3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/rNOPaxp">
+        CSS3: transform3D-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>也可以只使用 <em>transform: scaleZ(n)</em> 來單獨設定 Z 軸的縮放倍率值。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
@@ -115,6 +217,7 @@
         <li><a href="https://www.itread01.com/content/1544474722.html" target="_blank">前端-CSS（x、y、z）座標的含義，以及變換的使用</a></li>
         <li><a href="https://eyesofkids.gitbooks.io/css3/content/contents/transform3d.html" target="_blank">變形(transform) 3D基本使用</a></li>
         <li><a href="https://juejin.im/entry/5c98b24af265da60f2070009" target="_blank">看图理解 perspective 和 preserve-3d</a></li>
+        <li><a href="https://blog.hinablue.me/css3-matrix3d-yu-rotate3d-zhi-dao-di-zai-zhuan-shi-mo-gui/" target="_blank">[CSS3] matrix3d 與 rotate3d 之到底在轉什麼鬼</a></li>
     </ul>
 </div>
 <!-- Content end -->
