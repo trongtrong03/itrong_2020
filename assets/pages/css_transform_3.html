@@ -23,10 +23,8 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">基本概念</a></li>
-        <li><a href="#act2">perspective</a></li>
-        <li><a href="#act3">translate3d()</a></li>
-        <li><a href="#act4">rotate3d()</a></li>
-        <li><a href="#act5">scale3d()</a></li>
+        <li><a href="#act2">matrix()</a></li>
+        <li><a href="#act3">matrix3d()</a></li>
     </ul>
 </div>
 
@@ -39,7 +37,7 @@
     <img src="@@webRoot/images/css/transform-matrix-1.jpg">
 </figure>
 <p>這是一個 3 x 3──三列三行的矩陣。</p>
-<p>作為解決線性方程式的工具，矩陣的發展歷史相當悠遠，最早的文獻記載可追溯至...嗯，以下省略，本篇不是歷史課，沒有打算對矩陣的前世今生贅述太多，此刻我們只要大概知道數學裡的矩陣大概長什麼模樣，已及在生活中，其實處處都可以看到矩陣的運用。例如：</p>
+<p>作為解決線性方程式的工具，矩陣的發展歷史相當悠遠，最早的文獻記載可追溯至...嗯，以下省略，本篇不是歷史課，沒有打算對矩陣的前世今生贅述太多，此刻我們只要大概知道數學裡的矩陣大概長什麼模樣，以及在生活中，其實處處都可以看到矩陣的運用。例如：</p>
 <figure>
     <img src="@@webRoot/images/css/transform-matrix-2.jpg">
     <figcaption>秀泰影城的票價表。</figcaption>
@@ -76,7 +74,34 @@
 <figure>
     <img src="@@webRoot/images/css/transform-matrix-7.jpg">
 </figure>
-<p>上圖分別是 2 x 2 與 2 x 1 的矩陣，套用前行與後列必須相等的條件，確定此矩陣相乘合法（皆為 2），且相乘後的矩陣將會是 2 x 1 矩陣。而新矩陣第一列第一行的元計算則是前列（a、b）與後行（s、t）兩兩對應後互相相加的結果，第二列第一行的元也是相同的推算方式。</p>
+<p>上圖分別是 2 x 2 與 2 x 1 的矩陣，套用前行與後列必須相等的條件，確定此矩陣相乘合法（皆為 2），且相乘後的矩陣將會是 2 x 1 矩陣。而新矩陣第一列第一行的元計算則是前列（a、b）與後行（s、t）兩兩對應相乘後再互相加總的結果，第二列第一行的元也是相同的推算方式。</p>
+<p>大概知道運算規則之後，實際練習是最快驗收是否有吸收理解的方法：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-8.jpg">
+    <figcaption>請試著計算此矩陣相乘的結果。</figcaption>
+</figure>
+<p>如果你算完了就可以往下滑查看正確答案。</p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-9.jpg">
+</figure>
+<p>如果答對了，恭喜，你應該已經搞懂矩陣相乘的計算方式；答錯也不打緊，以下我們拿相乘結果之第一列第三行的答案「5」來作演算歷程：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-10.jpg">
+</figure>
+<p>謹記一個原則：兩矩陣相乘，前者以橫列去與後者的直行相乘，最後相加便得新矩陣的結果。</p>
+<p>學到這裡，差不多已經可以嘗試去理解 CSS3 <em>transform</em> 屬性中的 <em>matrix</em> 矩陣要如何下定義了，當然矩陣的運算及特殊規則絕對不僅於此，但這裡終究不是數學課，避免混淆，我們對數學矩陣的認識就先到這裡打住，將戰場轉移到 CSS 世界去。</p>
+<p><br></p>
+
+<h2 id="act2">matrix()</h2>
+
+
+
+
 
 <!-- 參考資料 -->
 <div class="text-refer">
