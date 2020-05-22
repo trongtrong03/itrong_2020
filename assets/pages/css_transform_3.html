@@ -75,7 +75,7 @@
     <img src="@@webRoot/images/css/transform-matrix-7.jpg">
 </figure>
 <p>上圖分別是 2 x 2 與 2 x 1 的矩陣，套用前行與後列必須相等的條件，確定此矩陣相乘合法（皆為 2），且相乘後的矩陣將會是 2 x 1 矩陣。而新矩陣第一列第一行的元計算則是前列（a、b）與後行（s、t）兩兩對應相乘後再互相加總的結果，第二列第一行的元也是相同的推算方式。</p>
-<p>大概知道運算規則之後，實際練習是最快驗收是否有吸收理解的方法：</p>
+<p>大概知道運算規則之後，實際練習是最快驗收是否有成功吸收的方式：</p>
 <figure>
     <img src="@@webRoot/images/css/transform-matrix-8.jpg">
     <figcaption>請試著計算此矩陣相乘的結果。</figcaption>
@@ -98,14 +98,138 @@
 <p><br></p>
 
 <h2 id="act2">matrix()</h2>
+<p>在 CSS3 <em>transform</em> 屬性中，<em>matrix</em> 的公式語法是長這個樣子的：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix(a, b, c, d, tx, ty);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果要用矩陣來表示，則會是這副模樣：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-11.jpg">
+</figure>
+<p>有些網路文章會將 <em>tx</em> 與 <em>ty</em> 值分別用 <em>e</em>、<em>f</em> 取代，其實概念是一樣的，並無傷大雅。至於第三列為什麼會多補 <em>0 0 1</em>，目前還沒有看到比較詳細明瞭的解釋（也許是與 Z 軸有關？），現階段只好先強硬接受它。</p>
+<p>一個巴掌拍不響，當我們填入 <em>matrix()</em> 裡的六個數值，它們會和元素參考點相乘，計算出最後變化的結果。</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-12.jpg">
+</figure>
+<p>x、y 分別指的是元素的參考點座標，根據兩矩陣相乘的結果，最後會得出新的 xy 座標值。以下實際練習一個例子：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix(1, 0, 0, 1, 20, 20);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>另外假設元素參考點的 (x, y) 座標值為 (0, 0)，那麼實際代入到公式時會變成這樣：</p>
+<figure>
+    <img src="@@webRoot/images/css/transform-matrix-13.jpg">
+</figure>
+<p>由此可知新的參考點座標是 (20, 20)，換言之，該元素的參考點從原先的 (0, 0) 位移到 (20, 20)，相當於元素向水平及垂直方向各偏移了 <em>20px</em> 的位移量...看到這裡，是不是覺得跟 <em>translate</em> 的用法很類似呢？不信的話我們可以看看實例便知：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="XWmOBrb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/XWmOBrb">
+        css3: transform-matrix-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>是的，不管是 <em>translate</em>、<em>scale</em>、<em>rotate</em>、<em>skew</em>，其實都是從 <em>matrix</em> 衍生出來的快速給值方法。所以 <em>matrix()</em> 裡提供的六個值，各自代表的是：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY() );
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
 
+<h4>位移</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix(1, 0, 0, 1, tx, ty);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>筆者在上面的介紹中已經提過位移的矩陣表示方法，這裡就不再重複說明。</p>
+<p><br></p>
 
+<h4>縮放</h4>
+<p>根據定義，影響矩陣縮放的參數是 <em>matrix()</em> 第一及第四位的數字。</p> 
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>第一個數字改變的是 X 軸方向的縮放倍率，第四個數字則是 Y 軸方向的縮放倍率。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="RwWveeg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/RwWveeg">
+        css3: transform-matrix-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
 
+<h4>旋轉＆傾斜</h4>
+<p>這兩個的參數計算方式比起位移和縮放複雜許多，因為它們必須動用到三角函數的概念（什麼賽、摳賽的...），這些東西早就已經通通還給了高中數學老師。再者，用 <em>matrix()</em> 寫旋轉或傾斜實在很沒效率，舉例來說，如果我們要令元素旋轉 <em>30deg</em>，我們可以直接用 <em>rotate()</em> 這樣寫：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: rotate(30deg);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但如果要用矩陣去表示，則會變成一串相當複雜之數字：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="eYpxQBp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix-3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/eYpxQBp">
+        css3: transform-matrix-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
 
+<h2 id="act3">matrix3d()</h2>
+<p>3D 的矩陣變化又比 2D 矩陣複雜更多，其矩陣語法是：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>從 9 個數字一口氣暴增到了 16 個。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix" target="_blank">MDN web docs</a></li>
         <li><a href="https://www.youtube.com/watch?v=VGSfnZQQf5w" target="_blank">矩陣的乘法</a></li>
         <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
