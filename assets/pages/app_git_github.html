@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "app": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-4 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-4 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<p>在上一章我們已經順利學會 Git 在本機端進行版本控制的方法，儘管已經可以對專案建立一套備份機制，但這也僅止於個人工作電腦內，一旦工作電腦損壞，所有版控都會連同專案檔案一同付諸東流。因此，除了將變更、維護後的專案定期提交到版本庫儲存之外，同時將檔案一併推送到遠端的儲存庫亦是分散式管理系統很重要的一環。有關本機端檔案推送（Push）的方式筆者將發表於下一篇學習筆記，為了讓之後遠端相關操作的練習得以更快速進行，遂決定先講講建立遠端儲存庫的方法。</p>
+<p>建立遠端儲存庫的平台或方法不少，本篇採用的是 <a href="https://github.com/" target="_blank">GitHub</a>，不單單只是一個透過 Git 進行版本控制的軟體原始碼代管服務，它同時也是一個被稱為開發者作品集的開源社群平台。如果你還沒有 GitHub 帳號，趕緊去辦理帳戶吧！註冊用戶之後，便可以開始進行遠端版本儲存庫的建置了。</p>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "app": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

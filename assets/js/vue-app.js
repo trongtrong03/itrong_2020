@@ -349,6 +349,18 @@ const appData = [
     },
     {
         id: 3,
+        href: 'app_git_github',
+        title: 'Git 筆記（三）：使用 GitHub 建立遠端儲存庫（repository）',
+        time: '2018.04.11',
+        tag1: true,
+        tag1_name: 'git',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 4,
         href: 'app_vscode_install',
         title: '‍Visual Studio Code 介紹與安裝教學',
         time: '2020.02.15',
@@ -359,6 +371,7 @@ const appData = [
         img: false,
         img_name: 'thumb_vscode'
     },
+    
 ]
 
 const resData = [

@@ -71,67 +71,15 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-5 }).title"></h1>
+                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-4 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-5 }).time"></time>
+                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-4 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<h2>前言</h2>
-<figure>
-    <img src="../images/app/vscode-install-1.jpg">
-</figure>
-<p>VS Code，全名 Visual Studio Code，是一套由微軟公司開發的跨平台編輯器，與 Atom（由 GitHub 開發）相同，使用 Electron 開源框架（也是由 GitHub 開發），目前已是公布於 GitHub 開源社群裡成長迅速的開源專案之一，相較 Sublime、Atom ...等編輯器軟體，VS Code 還有內嵌 Git 版本控管的優勢，且亦能與 Gulp、Webpack 整合，相當地方便。</p>
-<p><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>──全世界最知名的程式設計問答之一的討論區，於 2018 的各項使用者調查裡首次加入「<a href="https://insights.stackoverflow.com/survey/2018/?fbclid=IwAR2HxWsKlUzfU-MnJj9jwBcCQh4LqFPJm4Sq6hykbleystW5DvnOVTLeE-U#development-environments-and-tools" target="_blank">開發者使用環境與工具</a>」統計項目，身為後起之秀的 VSCode 竟以 34.9% 的得票率斬獲榜首。翌年（<a href="https://insights.stackoverflow.com/survey/2019#technology-_-most-popular-development-environments" target="_blank">2019</a>）得票率更是高達 50.7%，狠狠甩開與其他開發工具之間的差距，成為當前最熱門的程式語言開發編輯器。</p>
-<figure>
-    <img src="../images/app/vscode-install-2.jpg">
-    <figcaption>2018 年的統計數據。</figcaption>
-</figure>
-<figure>
-    <img src="../images/app/vscode-install-3.jpg">
-    <figcaption>2019 年的統計數據。</figcaption>
-</figure>
-<p><br></p>
-
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">安裝流程</a></li>
-        <li><a href="#act2">介面介紹</a></li>
-    </ul>
-</div>
-
-
-<h2 id="act1">安裝流程</h2>
-<p>VSCode 的安裝步驟並不複雜，只需要點擊<a href="https://code.visualstudio.com/" target="_blank">首頁</a>的下載按鈕，或在 <a href="https://code.visualstudio.com/Download" target="_blank">Download</a> 頁中選擇符合自己工作電腦的作業系統類型與版本，下載安裝應用程式執行安裝即可。</p>
-<figure>
-    <img src="../images/app/vscode-install-4.jpg">
-</figure>
-<p>安裝過程中建議勾選上圖用紅筆框起的兩個核選項目，它們可以幫助你迅速地透過 VSCode 開啟欲編輯的檔案。</p>
-<p><br></p>
-
-<h2 id="act2">介面介紹</h2>
-<figure>
-    <img src="../images/app/vscode-install-5.jpg">
-</figure>
-<p>左邊列表的五項功能分別是：</p>
-<h3>1. Explorer：</h3>
-<p>即檔案總管，可直接開啟本機專案，也可以輸入遠端儲存庫的 URL（例如 GitHub 上的專案），VSCode 會自動協助將遠端儲存庫的專案 clone 到指定路徑內。</p>
-<p><br></p>
-<h3>2. Search：</h3>
-<p>即搜尋功能，當輸入關鍵字後，VSCode 會協助找出專案資料夾內包含其關鍵字內容的所有檔案。另外也可以利用「取代」功能，將指定文字快速取代搜尋之關鍵字。</p>
-<p><br></p>
-<h3>3. Source Control：</h3>
-<p>為原始檔控制，如果你開啟之專案已有使用版本控制（例如 Git），那麼 VSCode 已經提供 Git 相關服務，不需要額外呼叫 Bash 或 GUI 執行版控。</p>
-<p><br></p>
-<h3>4. Run：</h3>
-<p>這個功能可以測試開發者寫的程式腳本是否有錯誤，並提供相關 Debug 建議或方案。</p>
-<p><br></p>
-<h3>5. Extensions：</h3>
-<p>即延伸模組，這個功能可說是 VSCode 的精華，所有支援 VSCode 的擴充功能或套件都可以在這個功能裡找到，幫助開發者更方便地使用 VSCode 寫程式。</p>
-<p><br></p>
-<p>以上就是 VSCode 的基本介紹，之後會再陸陸續續筆記分享一些實用的延伸模組文章，讓 VSCode 更加便利完善。最後補充一個小技巧，安裝好 VSCode 之後，你可以在命令提示字元中輸入 <em>code</em> 指令，就可以快速呼叫出 VSCode，若一時半刻找不到 VSCode 的捷徑，不妨可以試試看。</p>
+<p>在上一章我們已經順利學會 Git 在本機端進行版本控制的方法，儘管已經可以對專案建立一套備份機制，但這也僅止於個人工作電腦內，一旦工作電腦損壞，所有版控都會連同專案檔案一同付諸東流。因此，除了將變更、維護後的專案定期提交到版本庫儲存之外，同時將檔案一併推送到遠端的儲存庫亦是分散式管理系統很重要的一環。有關本機端檔案推送（Push）的方式筆者將發表於下一篇學習筆記，為了讓之後遠端相關操作的練習得以更快速進行，遂決定先講講建立遠端儲存庫的方法。</p>
+<p>建立遠端儲存庫的平台或方法不少，本篇採用的是 <a href="https://github.com/" target="_blank">GitHub</a>，不單單只是一個透過 Git 進行版本控制的軟體原始碼代管服務，它同時也是一個被稱為開發者作品集的開源社群平台。如果你還沒有 GitHub 帳號，趕緊去辦理帳戶吧！註冊用戶之後，便可以開始進行遠端版本儲存庫的建置了。</p>
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
