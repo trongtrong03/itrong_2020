@@ -267,6 +267,8 @@
     <span>COPY</span>
 </button>
 </div>
+<p><br></p>
+<p>以下提供一個簡易矩陣傾斜變化工具，有興趣的看倌可以玩玩看傾斜角度的變化與矩陣的運算方式，感受矩陣的計算有多複雜。</p>
 <div class="text-codepen">
     <code>
         <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="eYpxQBp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix-3">
@@ -288,7 +290,56 @@
     <span>COPY</span>
 </button>
 </div>
-<p>從 9 個數字一口氣暴增到了 16 個。</p>
+<p>從 9 個數字一口氣暴增到了 16 個。其基本數值為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix3d(
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        0, 0, 0, 1
+    );
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>和 2D 矩陣有點類似，基本數值中的 <em>1</em>（撇除最後一列不算），掌控的就是三軸方向的縮放倍率。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="LYpozxX" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix3d-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/LYpozxX">
+        css3: transform-matrix3d-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p><em>translate3d()</em> 的矩陣對應位置則是：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    transform: matrix3d(
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        tx, ty, tz, 1
+    );
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="JjYqrye" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css3: transform-matrix3d-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JjYqrye">
+        css3: transform-matrix3d-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>目前還不太清楚範例中 <em>matrix3d</em> 的 3D 位移效果為何沒有作用，等日後蒐羅到更多更詳盡的資料時再回頭檢視。</p>
+<p>至於傾斜與旋轉的部分...姑且先以一句「未完待續」作結吧。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
@@ -298,6 +349,7 @@
         <li><a href="https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank">理解CSS3 transform中的Matrix(矩阵)</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10197360" target="_blank">transform的matrix屬性</a></li>
         <li><a href="https://juejin.im/post/5d0ba96df265da1ba252659b" target="_blank">【css基础】如何理解transform的matrix()用法</a></li>
+        <li><a href="https://www.jianshu.com/p/52e0018e6ce2" target="_blank">CSS3 matrix - matrix3d介绍</a></li>
     </ul>
 </div>
 <!-- Content end -->
