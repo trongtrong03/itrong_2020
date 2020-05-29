@@ -158,6 +158,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 8,
+        href: 'css_flexbox',
+        title: 'CSS3 嶄新的佈局模型──Flexible Box（彈性容器）',
+        time: '2020.03.11',
+        tag1: true,
+        tag1_name: 'CSS3',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [

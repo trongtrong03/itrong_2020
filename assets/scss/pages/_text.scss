@@ -96,6 +96,7 @@
         font-weight: 900;
         font-size: 1.125rem;
         color: #000;
+        padding: .5rem 0;
     }
 
     p {
@@ -172,6 +173,7 @@
                 background-color: $first;
                 &:first-child {
                     color: $second;
+                    background-color: #F7F7F7 !important;
                 }
             }
         }

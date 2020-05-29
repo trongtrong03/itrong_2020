@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-9 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-9 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>在 <em>&lt;div&gt;</em> 佈局概念還未普及之前，開發者們習慣用 <em>&lt;table&gt;</em> 進行網頁排版，但受限表格欄列式並排的排版結構，很難實現或必須用更多的表格嵌套實現較繁瑣的版型設計，遂後來 <em>&lt;div&gt;</em> 逐漸取代 <em>&lt;table&gt;</em>，成為迄今依舊蔚為主流的排版佈局。儘管 <em>&lt;div&gt;</em> 大大提升網頁排版的靈活度，但是在部分需求上仍顯得支絀──例如令元素垂直居中對齊且等高，排版必須使用不下於 <em>&lt;table&gt;</em> 階層數量的 <em>&lt;div&gt;</em> 才能達到需求。例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="oNjrmjq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: table-cell">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/oNjrmjq">
+        CSS: table-cell</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>到了令網頁排版有大幅度變革的 CSS3 時代，排版佈局的方法也有顯著的提升，「CSS Flexible Box Layout」便是其中之一。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基本概念</a></li>
+        <li><a href="#act2">父容器</a></li>
+        <li><a href="#act3">子元件</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基本概念</h2>
+<p>CSS Flexible Box Layout，一般以 Flexbox 稱之，它是一種彈性容器（盒子），可以更簡單有效解決複雜的網頁佈局，誠如前言描述的垂直居中效果，如果使用 Flexbox 便可以大大減少 <em>&lt;div&gt;</em> 的使用。Flexbox 的基本結構是這樣子的：</p>
+<figure>
+    <img src="../images/css/flexbox-1.jpg">
+</figure>
+<p>結構很簡單，就是用一個父容器去囊括所有子元件爾爾，也有一說是外容器與內元件的關係，無妨，傳達的概念都是一樣的。以下先列出它們各自可設定的屬性名單，接著再一一進行介紹：</p>
+<p><br></p>
+<h4>父容器：</h4>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f5">編碼</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>display</em></div>
+        <div class="t-f5">定義父容器的模型類別</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-flow</em></div>
+        <div class="t-f5">定義子元件們的排序方向及是否換行</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>justify-content</em></div>
+        <div class="t-f5">定義子元件們在主軸的對齊位置（與 <em>align-items</em> 相反方向）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>align-items</em></div>
+        <div class="t-f5">定義子元件們在交錯軸的對齊位置（與 <em>justify-content</em> 相反方向）</div>
+    </div>
+</div>
+<p><br></p>
+<h4>子元件：</h4>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex</em></div>
+        <div class="t-f5">定義該子元件的寬度彈性</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>order</em></div>
+        <div class="t-f5">定義該子元件的順序</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>align-self</em></div>
+        <div class="t-f5">定義該子元件於主軸的對齊位置</div>
+    </div>
+</div> 
+<p><br></p>
+
+<h2 id="act2">父容器</h2>
+<h4>display：</h4>
+<p>父容器的 <em>display</em> 參數必須設置為 <em>flex</em> 或 <em>inline-flex</em>，Flexbox 才有作用。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.flexbox {
+    display: flex;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>flex</em> 與 <em>inline-flex</em> 在於前者排列模式等同 <em>block</em>，會獨自佔據一整列，後續元素將會排在其下方；而 <em>inline-flex</em> 則近似 <em>inline-block</em>，後續的元素會與之並排。且看範例演示：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="mdeZoVJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/mdeZoVJ">
+        CSS3: flexbox-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>flex-flow：</h4>
+<p>此屬性是 <em>flex-direction</em> 與 <em>flex-wrap</em> 的合體簡寫屬性，前者用來控制子元件排列的主軸方向，後者則是設定當子元件溢出父容器寬度範圍時是否要換行。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.flexbox {
+    flex-flow: flex-direction flex-wrap;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<p><em>flex-direction</em>：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數值</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>row</em></div>
+        <div class="t-f5">【預設值】由左至右，從上到下</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>row-reverse</em></div>
+        <div class="t-f5">由右至左，從下到上</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>column</em></div>
+        <div class="t-f5">從上到下，再由左至右</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>column-reverse</em></div>
+        <div class="t-f5">從下到上，再由右至左</div>
+    </div>
+</div> 
+<p>此屬性設定的排列方向為「主軸」，而與之垂直的另一軸則稱為「交錯軸」，它將會直接影響 <em>justify-content</em> 與 <em>align-items</em> 對齊依據，一般而言，若 <em>flex-direction</em> 設定是水平排列，則 <em>justify-content</em> 將會是水平方向對齊方式（主軸為水平），<em>align-items</em> 則設定垂直方向的對齊（交錯軸為垂直）。</p>
+<figure>
+    <img src="../images/css/flexbox-2.jpg">
+    <figcaption>Flexbox 主軸與交錯軸示意圖。</figcaption>
+</figure>
+
+<p><br></p>
+<h2 id="act3">子元件</h2>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox" target="_blank">MDN web docs</a></li>
+        <li><a href="https://www.oxxostudio.tw/articles/201501/css-flexbox.html" target="_blank">深入解析 CSS Flexbox</a></li>
+        <li><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank">圖解：CSS Flex 屬性一點也不難</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                        <button id="sideBack" onclick="javascript:location.href='../css.html'"></button>
+                    
+                    
+                    
+                    
+                    <button id="sideTop"></button>
+                </aside>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
