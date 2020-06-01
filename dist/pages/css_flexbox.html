@@ -82,7 +82,7 @@
 <p>在 <em>&lt;div&gt;</em> 佈局概念還未普及之前，開發者們習慣用 <em>&lt;table&gt;</em> 進行網頁排版，但受限表格欄列式並排的排版結構，很難實現或必須用更多的表格嵌套實現較繁瑣的版型設計，遂後來 <em>&lt;div&gt;</em> 逐漸取代 <em>&lt;table&gt;</em>，成為迄今依舊蔚為主流的排版佈局。儘管 <em>&lt;div&gt;</em> 大大提升網頁排版的靈活度，但是在部分需求上仍顯得支絀──例如令元素垂直居中對齊且等高，排版必須使用不下於 <em>&lt;table&gt;</em> 階層數量的 <em>&lt;div&gt;</em> 才能達到需求。例如：</p>
 <div class="text-codepen">
     <code>
-        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="oNjrmjq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: table-cell">
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="oNjrmjq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: table-cell">
         <span>See the Pen <a href="https://codepen.io/itrong/pen/oNjrmjq">
         CSS: table-cell</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
@@ -130,6 +130,10 @@
         <div class="t-f1"><em>align-items</em></div>
         <div class="t-f5">定義子元件們在交錯軸的對齊位置（與 <em>justify-content</em> 相反方向）</div>
     </div>
+     <div>
+        <div class="t-f1"><em>align-content</em></div>
+        <div class="t-f5">與 <em>align-items</em> 性質相同，但本屬性適用多行情況下</div>
+    </div>
 </div>
 <p><br></p>
 <h4>子元件：</h4>
@@ -167,7 +171,7 @@
 <p><em>flex</em> 與 <em>inline-flex</em> 在於前者排列模式等同 <em>block</em>，會獨自佔據一整列，後續元素將會排在其下方；而 <em>inline-flex</em> 則近似 <em>inline-block</em>，後續的元素會與之並排。且看範例演示：</p>
 <div class="text-codepen">
     <code>
-        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="mdeZoVJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-1">
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="mdeZoVJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-1">
         <span>See the Pen <a href="https://codepen.io/itrong/pen/mdeZoVJ">
         CSS3: flexbox-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
@@ -186,8 +190,17 @@
     <span>COPY</span>
 </button>
 </div>
+<p>例：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.flexbox {
+    flex-flow: row wrap;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 
-<p><em>flex-direction</em>：</p>
+<p>■ flex-direction：</p>
 <div class="text-flex">
     <div class="f-title">
         <div class="t-f1">參數值</div>
@@ -210,14 +223,280 @@
         <div class="t-f5">從下到上，再由右至左</div>
     </div>
 </div> 
-<p>此屬性設定的排列方向為「主軸」，而與之垂直的另一軸則稱為「交錯軸」，它將會直接影響 <em>justify-content</em> 與 <em>align-items</em> 對齊依據，一般而言，若 <em>flex-direction</em> 設定是水平排列，則 <em>justify-content</em> 將會是水平方向對齊方式（主軸為水平），<em>align-items</em> 則設定垂直方向的對齊（交錯軸為垂直）。</p>
+<p>此屬性設定的排列方向為「主軸」，而與之垂直的另一軸則稱為「交錯軸」，它將會直接影響 <em>justify-content</em> 與 <em>align-items</em> 對齊依據。一般而言，若 <em>flex-direction</em> 設定是水平排列，則 <em>justify-content</em> 將會是水平方向對齊方式（主軸為水平），<em>align-items</em> 則是對齊垂直方向（交錯軸為垂直）。</p>
 <figure>
     <img src="../images/css/flexbox-2.jpg">
     <figcaption>Flexbox 主軸與交錯軸示意圖。</figcaption>
 </figure>
-
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="BaoGbZB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-3">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/BaoGbZB">
+    CSS3: flexbox-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
 <p><br></p>
+
+<p>■ flex-wrap：</p>
+<p>決定子元件若超出父容器的寬度範圍時，是否要換行。</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數值</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>wrap</em></div>
+        <div class="t-f5">換行</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>nowrap</em></div>
+        <div class="t-f5">【預設值】，不換行</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>wrap-reverse</em></div>
+        <div class="t-f5">換行且反轉</div>
+    </div>
+</div>
+<p>不換行的意思是當子元件寬度溢出父容器時，所有子元件的寬度將會平均縮減，以確保所有子元件都能並排在同一列裡。</p>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="KKdrEXM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-4">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/KKdrEXM">
+    CSS3: flexbox-4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p><br></p>
+
+<h4>justify-content：</h4>
+<p>此屬性用來定義子元件要如何對齊父容器的主軸。有關主軸的觀念在上一屬性 <em>flex-direction</em> 介紹中已有提過，此處就不再贅述。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.flexbox {
+    justify-content: center;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>參數表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數值</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-start</em></div>
+        <div class="t-f5">【預設值】向主軸的頭（左或上）對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-end</em></div>
+        <div class="t-f5">向主軸的尾（右或下）對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>center</em></div>
+        <div class="t-f5">向主軸的中間對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>space-between</em></div>
+        <div class="t-f5">頭尾分散對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>space-around</em></div>
+        <div class="t-f5">頭尾分散對齊，但頭尾兩端留有間距（間距平均分配）</div>
+    </div>
+</div>
+<p>假如覺得文字不是那麼容易理解，沒關係，透過下方這張示意圖應該會好懂許多：</p>
+<figure>
+    <img src="../images/css/flexbox-3.jpg">
+    <figcaption>justify-content 參數示意圖。</figcaption>
+</figure>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="LYpXavM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-5">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/LYpXavM">
+    CSS3: flexbox-5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p><br></p>
+
+<h4>align-items：</h4>
+<p>此屬性用來定義子元件要如何對齊父容器的交錯軸，與 <em>justify-content</em> 是相對的存在。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.flexbox {
+    align-items: stretch;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>參數表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數值</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-start</em></div>
+        <div class="t-f5">靠頭對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-end</em></div>
+        <div class="t-f5">靠尾對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>center</em></div>
+        <div class="t-f5">向交錯軸的中間對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>baseline</em></div>
+        <div class="t-f5">對齊內元件內容的基線</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>stretch</em></div>
+        <div class="t-f5">【預設值】內元件拉伸至容器範圍</div>
+    </div>
+</div>
+<figure>
+    <img src="../images/css/flexbox-4.jpg">
+    <figcaption>align-items 參數示意圖。</figcaption>
+</figure>
+<p>預設值 <em>stretch</em> 是很有意思的屬性值，它會將所有子元件的高度自動撐滿至與父容器同高，這在部分排版布局上（例如兩欄式排版左右要等高）非常實用。然而，需要注意的是若子元件一旦設定高度，則此參數便無效。</p>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="MWazRpG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-6">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/MWazRpG">
+    CSS3: flexbox-6</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p><br></p>
+
+<h4>align-content：</h4>
+<p>此屬性堪稱 <em>align-items</em> 的多行版本。</p>
+<p>參數表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數值</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-start</em></div>
+        <div class="t-f5">靠頭對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>flex-end</em></div>
+        <div class="t-f5">靠尾對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>center</em></div>
+        <div class="t-f5">向交錯軸的中間對齊</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>space-between</em></div>
+        <div class="t-f5">分散對齊容器交錯軸兩端</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>space-around</em></div>
+        <div class="t-f5">散對齊容器交錯軸兩端，但頭尾兩端留有間距（間距平均分配）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>stretch</em></div>
+        <div class="t-f5">【預設值】內元件拉伸至容器範圍</div>
+    </div>
+</div>
+<figure>
+    <img src="../images/css/flexbox-5.jpg">
+    <figcaption>align-content 參數示意圖。</figcaption>
+</figure>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyYQLwG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-7">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/dyYQLwG">
+    CSS3: flexbox-7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p><br></p>
+
+
 <h2 id="act3">子元件</h2>
+<h4>flex</h4>
+<p>相較父容器，子元件需要設定的屬性比較少，其中最重要的莫過於 <em>flex</em> 這個屬性了，它用來定義子元件的寬度彈性，是由 <em>flex-grow</em>、<em>flex-shrink</em>、<em>flex-basis</em> 三個屬性組合起來的寫法。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.item {
+    flex: flex-grow flex-shrink flex-basis;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.item {
+    flex: 1 1 150px;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>■ flex-grow：</p>
+<p>它的值是一個沒有單位的純數字，其預設值是 <em>0</em>，不允許負值或小數。在 <em>flex-basis</em> 沒有設定或它的值「小」於它在父容器分配到的寬度時，其佔寬會以設定之數值去做比例分配並作伸展。舉例來說，假設現在有三個子元件，其單位分別是：A = 1、B = 2、C = 1，則 A 在父容器裡延展的寬度將會是 1/4，B 則是 2/4，C 則與 A 相同都是 1/4。</p>
+<figure>
+    <img src="../images/css/flexbox-6.jpg">
+</figure>
+<p><br></p>
+<p>■ flex-shrink：</p>
+<p>與 <em>flex-grow</em> 相反，這個屬性代表的是「收縮」，在 <em>flex-basis</em> 沒有設定或它的值「大」於它在父容器分配到的寬度時，其佔寬會以設定之數值去做比例分配並作收縮，同樣地它的屬性值只會是數字，預設值為 <em>1</em>，<em>0</em> 代表不進行彈性變化。</p>
+<p><br></p>
+<p>■ flex-basis：</p>
+<p>它用來定義子元件的基本寬度，是個有單位的數值，例如 <em>100px</em>、<em>20em</em>...等等，預設值為 <em>0</em>。當此屬性沒有設定數值的時候，子元素將會以 <em>flex-grow</em> 的值去作彈性伸縮。</p>
+<p>我們可透過以下實例更了解它們的伸縮方式：</p>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="VwvqYBv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-8">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/VwvqYBv">
+    CSS3: flexbox-8</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p>範例中你會看到筆者賦予第一個子元件的 <em>flex-basis</em> 屬性為 <em>200px</em>，但 <em>flex-grow</em> 與 <em>flex-shrink</em> 皆設為 <em>0</em>，這意味著此子元件不作任何伸展收縮，不會隨著父容器寬度變化而跟著伸縮，而是固定會佔據 <em>200px</em> 的寬。而另外兩個子元件則分別填入 <em>flex</em> 值 <em>1</em> 以及 <em>2</em>，當 <em>flex</em> 只有一個值的時候，瀏覽器會默認其為 <em>flex-grow</em> 的值，它們倆將會自己分配剩餘空間中的 1/3 與 2/3。</p>
+<p><br></p>
+<h4>order</h4>
+<p><em>order</em> 可以定義子元件的排列順序，它將使子元件無視其在 HTML 書寫的先後順序，是個非常方便好用的屬性。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.item {
+    order: 1;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>它的預設值是 <em>0</em>，允許使用負數。它會和其他子元件的 <em>order</em> 數值比較，數字越小則排在越前面。</p>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyYwoZW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-9">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/dyYwoZW">
+    CSS3: flexbox-9</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p><br></p>
+
+<h4>align-self</h4>
+<p>這個屬性和 <em>align-item</em> 一樣，都是針對交錯軸進行對齊，只是 <em>align-self</em> 是單指該子元件本身，不像 <em>align-item</em> 是涵蓋父容器底下所有的子元件。</p>
+<p><em>order</em> 可以定義子元件的排列順序，它將使子元件無視其在 HTML 書寫的先後順序，是個非常方便好用的屬性。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.item {
+    align-self: center;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="abvPOYZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: flexbox-10">
+    <span>See the Pen <a href="https://codepen.io/itrong/pen/abvPOYZ">
+    CSS3: flexbox-10</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+    on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</div>
+<p>假設父容器已設定 <em>align-item</em>，而某個子元件也有設定 <em>align-self</em> 情況下，則該子元件在交錯軸對齊的位置將會以自身的 <em>align-self</em> 屬性值為主。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">

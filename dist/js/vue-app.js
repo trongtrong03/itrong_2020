@@ -161,7 +161,7 @@ const cssData = [
     {
         id: 8,
         href: 'css_flexbox',
-        title: 'CSS3 嶄新的佈局模型──Flexible Box（彈性容器）',
+        title: 'CSS3 彈性佈局模型──Flexible Box',
         time: '2020.03.11',
         tag1: true,
         tag1_name: 'CSS3',
