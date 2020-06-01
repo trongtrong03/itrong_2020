@@ -9573,21 +9573,26 @@ nav > ul a:hover b, nav > ul a.active b {
 }
 
 .nav-btn {
-  position: absolute;
-  top: calc(50% - 2rem);
-  right: 0;
-  display: block;
-  width: 4rem;
-  height: 4rem;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #81D8D0;
+  display: none;
 }
 
-.nav-btn::before {
-  content: '\f0c9';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+@media only screen and (max-width: 1024px) {
+  .nav-btn {
+    position: absolute;
+    top: calc(50% - 2rem);
+    right: 0;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #81D8D0;
+  }
+  .nav-btn::before {
+    content: '\f0c9';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
 }
 
 .nav-close {

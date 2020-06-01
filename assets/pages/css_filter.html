@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-10 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-10 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>「我的圖片要在滑鼠移到上方的時候從灰階轉變成原色」──相信很多網頁前端開發者都有承接過類似的需求。早期較直覺的處理方式，不外乎是透過繪圖軟體將原圖另外儲存灰階的圖片，利用 CSS <em>hover</em> 或 HTML <em>onmouseover</em>、<em>onmouseout</em> 觸發，又或者是使用 jQuery <em>hover</em> 事件達到圖片置換的效果。這些方法當然不會說它們不好，只不過在 CSS3 蓬勃發展的現在，網頁對影像處理上也有顯著提升，其中，<em>filter</em> 便是用來為圖片添加濾鏡的屬性，讓我們得以不需要再透過額外出圖的方式，就能實現圖片濾鏡變換的效果。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">參數一覽</a></li>
+        <li><a href="#act2">濾鏡介紹</a></li>
+        <li><a href="#act3">相容性支援</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">參數一覽</h2>
+<p>首先，介紹一下 <em>filter</em> 在 CSS3 正式定義的語法規則為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    filter: 濾鏡名稱(參數值);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>儘管標題和前言都在強調這個屬性可以為圖片帶來濾鏡變化的效果，但實際上它影響範圍涵蓋指定元素本身及其內部所有子元素內容，絕不單單侷限於 <em>img</em> 而已。此外，嚴格說起來，瀏覽器渲染 <em>filter</em> 的方式其實也是透過矩陣運算，如果你有看過或學過 <em>transform</em> 的 <em>matrix</em> 的矩陣運算方法，就知道要用矩陣去定義想要的效果可以到非常非常非常麻煩的程度，筆者堅信，大多數人也包含自己在內，應該都沒那個心思想去深入理解瀏覽器如何將矩陣參數轉換給圖片的過程，所以以下就直接列出 <em>filter</em> 已經定義好的十種特效：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f1">效果</div>
+        <div class="t-f3">參數範圍</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>grayscale</em></div>
+        <div class="t-f1">灰階</div>
+        <div class="t-f3">0 ~ 1（或 0% ~ 100%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>sepia</em></div>
+        <div class="t-f1">褐色</div>
+        <div class="t-f3">0 ~ 1（或 0% ~ 100%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>saturate</em></div>
+        <div class="t-f1">飽和度</div>
+        <div class="t-f3">0 ~ N（或 0% ~ N%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>hue-rotate</em></div>
+        <div class="t-f1">色相旋轉</div>
+        <div class="t-f3">0deg ~ 360deg</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>invert</em></div>
+        <div class="t-f1">負片</div>
+        <div class="t-f3">0 ~ 1（或 0% ~ 100%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>opacity</em></div>
+        <div class="t-f1">透明度</div>
+        <div class="t-f3">0 ~ 1（或 0% ~ 100%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>brightness</em></div>
+        <div class="t-f1">亮度</div>
+        <div class="t-f3">0 ~ N（或 0% ~ N%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>contrast</em></div>
+        <div class="t-f1">對比度</div>
+        <div class="t-f3">0 ~ N（或 0% ~ N%）</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>blur</em></div>
+        <div class="t-f1">高斯模糊</div>
+        <div class="t-f3">用單位表示，如 <em>px</em>、<em>em</em>...</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>drop-shadow</em></div>
+        <div class="t-f1">下拉陰影</div>
+        <div class="t-f3">(x y blur color)</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act2">濾鏡介紹</h2>
+<p>為了避免誤導，本章節開始不再稱圖片套用濾鏡，而以元素取代之。</p>
+
+<h4>grayscale：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: grayscale(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>grayscale</em> 可使元素變成灰階，它的範圍從 <em>0</em> 到 <em>1</em>（也可以用百分比表示），數值越小代表越接近原色，反之則越灰階化。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWjJEvE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---grayscale">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/QWjJEvE">
+          CSS3: filter---grayscale</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>sepia：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: sepia(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>sepia</em> 可使元素變成褐色（復古風），它的範圍從 <em>0</em> 到 <em>1</em>（也可以用百分比表示），數值越小代表越接近原色，反之則越褐色化。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="rNOQLYY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---sepia">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/rNOQLYY">
+        CSS3: filter---sepia</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>saturate：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: saturate(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>saturate</em> 可調整元素的飽和度，其參數值以 <em>1</em>（或 <em>100%</em>）作為分野，<em>1</em> 代表維持原狀，越靠近 <em>0</em> 則飽和度越低，數字越大則色彩越飽滿。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="mdeQEjb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---saturate">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/mdeQEjb">
+        CSS3: filter---saturate</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>hue-rotate：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: hue-rotate(0deg);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>hue-rotate</em> 可令元素進行色相旋轉，使元素產生異色的變化。它的參數值是 <em>0</em> 到 <em>360</em> ，單位為 <em>deg</em> 的旋轉角度，<em>0</em> 與 <em>360</em> 皆為原狀。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWjJEzp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---hue-rotate">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/QWjJEzp">
+        CSS3: filter---hue-rotate</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>invert：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: invert(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>invert</em> 可讓元素產生負片效果，它的範圍從 <em>0</em> 到 <em>1</em>（也可以用百分比表示），數值越小代表越接近原色，反之則越負片化。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="BaoGzeL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---invert">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/BaoGzeL">
+        CSS3: filter---invert</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>opacity：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: opacity(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>opacity</em> 這個參數和 CSS3 獨立屬性 <em>opacity</em> 產生的效果是一樣的，皆是用來設定元素的不透明度，範圍從 <em>0</em> 到 <em>1</em>（也可以用百分比表示），數值越接近 <em>0</em> 代表越透明，<em>1</em> 則是完全不透明。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="qBOQaBw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---opacity">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBOQaBw">
+        CSS3: filter---opacity</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>brightness：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: brightness(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>brightness</em> 可為元素調整亮度，以 <em>1</em> 為界（即 <em>100%</em>），代表保持原本亮度，數值越靠近 <em>0</em> 越暗，數值越大則越亮。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="yLYQaOj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---brightness">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/yLYQaOj">
+        CSS3: filter---brightness</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>contrast：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: contrast(1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>contrast</em> 用來調整元素的對比度，<em>1</em>（<em>100%</em>）是為原狀，數字越大對比度越高。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="MWazjvq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---contrast">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/MWazjvq">
+        CSS3: filter---contrast</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>blur：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: blur(5px);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>blur</em> 可設定元素的高斯模糊程度，<em>0</em> 代表不進行任何模糊。和其他多數濾鏡效果不同，它需要指定明確的數值單位，數值越大則模糊強度越高。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyYQpJY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---blur">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/dyYQpJY">
+        CSS3: filter---blur</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>drop-shadow：</h4>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: drop-shadow(x y blur color);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: drop-shadow(4px 4px 8px #000);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>drop-shadow</em> 可以為元素添加「真實描邊」的陰影，何謂真實描邊？假如影像是透明背景格式（如 PNG）的圖片，則 <em>drop-shadow</em> 會沿著有色彩的像素格邊緣添加陰影。它常常會拿來與 <em>box-shadow</em> 做比較，只不過後者是針對元素的輪廓給予陰影，無法像 <em>drop-shadow</em> 可以賦予形狀多變的透明背景影像貼合的陰影。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="LYpXRXG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: filter---drop-shadow">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/LYpXRXG">
+        CSS3: filter---drop-shadow</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>以上就是 <em>filter</em> 十大濾鏡效果的介紹，在這裡多作一個補充，同一個元素可以設定不止一個濾鏡效果，只需要各濾鏡參數之間用「空格」間隔開來即可。例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: saturate(120%) brightness(150%) blur(10px);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h2 id="act3">相容性支援</h2>
+<p>截至 2020 年，幾乎各大主流瀏覽器都已經能省略各自的兼容前綴，成功判讀 CSS3 的屬性標準定義。唯獨 IE──是的，令諸多開發者頭疼的萬惡 IE 瀏覽器，儘管隨 Windows 10 OS 推出的 IE Edge 已經改善不少，但包含末代版本 11 在內的 舊 IE，一律不支援標準的 <em>filter</em> 語法格式，從 <a href="https://caniuse.com/#feat=css-filters" target="_blank">Can I use</a> 網站中就能清楚看出：</p>
+<figure>
+    <img src="@@webRoot/images/css/filter-1.jpg">
+    <figcaption>主流瀏覽器的 filter 兼容一覽表</figcaption>
+</figure>
+<p>假如想使用 <em>filter</em> 屬性卻又必須顧及 IE11 以下版本兼容性問題的話，則可以試著在 <em>filter</em> 後方添加支援方案：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">img {
+    filter: grayscale(1);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>然而，也有一派專家認為這條 IE 替代語法可能沒有效果，並提出透過 SVG 或 Canvas 圖形繪製的方式才是最佳的兼容方案。至於如何利用 SVG、Canvas 實現濾鏡的效果，由於這已經超過 CSS3 的範疇，因此就先不在這篇文章進行記述，待日後有開這兩者的學習筆記再行補述。</p>
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="http://blog.shihshih.com/css-filter/" target="_blank">簡單究好--CSS濾鏡效果</a></li>
+        <li><a href="https://zhuanlan.zhihu.com/p/125137964" target="_blank">知乎--CSS filter与前端滤镜</a></li>
+        <li><a href="https://www.cnblogs.com/fsjohnhuang/p/4127888.html" target="_blank">CSS3魔法堂：CSS3滤镜及Canvas、SVG和IE滤镜替代方案详解</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

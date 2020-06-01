@@ -128,19 +128,22 @@ nav {
 }
 
 .nav-btn {
-    position: absolute;
-    top: calc(50% - 2rem);
-    right: 0;
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    text-align: center;
-    font-size: 1.5rem;
-    color: $first;
-    &::before {
-        content: '\f0c9';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
+    display: none;
+    @include MQ(max-1024) {
+        position: absolute;
+        top: calc(50% - 2rem);
+        right: 0;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        text-align: center;
+        font-size: 1.5rem;
+        color: $first;
+        &::before {
+            content: '\f0c9';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
     }
 }
 
