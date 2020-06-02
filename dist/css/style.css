@@ -9949,7 +9949,7 @@ footer {
 }
 
 .text-flex {
-  border-bottom: 1px solid #F7F7F7;
+  border-bottom: 1px solid #F6F6F6;
   margin-bottom: 1rem;
 }
 
@@ -9963,12 +9963,11 @@ footer {
 }
 
 .text-flex > div > div:nth-child(odd) {
-  background-color: #F7F7F7;
+  background-color: #F6F6F6;
 }
 
 .text-flex > div > div:first-child {
-  background-color: #FFF !important;
-  border-right: 1px solid #F7F7F7;
+  border-right: 1px solid #F6F6F6;
 }
 
 .text-flex > div.f-head {
@@ -9986,7 +9985,7 @@ footer {
 
 .text-flex > div.f-title > div:first-child {
   color: #444;
-  background-color: #F7F7F7 !important;
+  background-color: #FCFCFC !important;
 }
 
 .t-f0 {
@@ -10172,6 +10171,10 @@ footer {
   content: 'RUBY:';
 }
 
+.text-code.is-php::before {
+  content: 'PHP:';
+}
+
 .text-pre {
   line-height: 1.75;
   font-size: .875rem;
@@ -10195,7 +10198,6 @@ footer {
 .text-codepen {
   position: relative;
   background-color: #EEE;
-  margin-top: 1rem;
   margin-bottom: .25rem;
 }
 

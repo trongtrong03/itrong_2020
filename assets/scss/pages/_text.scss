@@ -145,7 +145,7 @@
 
 // 表格
 .text-flex {
-    border-bottom: 1px solid #F7F7F7;
+    border-bottom: 1px solid #F6F6F6;
     margin-bottom: 1rem;
     > div {
         display: flex;
@@ -153,11 +153,11 @@
         > div {
             padding: .5rem 1rem;
             &:nth-child(odd) {
-                background-color: #F7F7F7;
+                background-color: #F6F6F6;
             }
             &:first-child {
-                background-color: #FFF !important;
-                border-right: 1px solid #F7F7F7;
+                // background-color: #FFF !important;
+                border-right: 1px solid #F6F6F6;
             }
         }
         &.f-head {
@@ -173,7 +173,7 @@
                 background-color: $first;
                 &:first-child {
                     color: $second;
-                    background-color: #F7F7F7 !important;
+                    background-color: #FCFCFC !important;
                 }
             }
         }
@@ -320,6 +320,11 @@
             content: 'RUBY:';
         }
     }
+    &.is-php {
+        &::before {
+            content: 'PHP:';
+        }
+    }
 }
 
 .text-pre {
@@ -345,7 +350,7 @@
 .text-codepen {
     position: relative;
     background-color: #EEE;
-    margin-top: 1rem;
+    // margin-top: 1rem;
     margin-bottom: .25rem;
     &::before {
         content: 'Codepen';
