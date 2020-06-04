@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-2 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-2 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<figure>
+    <img src="@@webRoot/images/js/learn-var-1.jpg">
+    <figcaption>JavaScript 的思維流程。</figcaption>
+</figure>
+<p>回顧這張流程圖，前一篇我們已經對變數宣告方式及其型別種類有了初步認識，本篇則聚焦「計算與處理」階段，淺談 JavaScript 基本的程式結構要如何看、怎麼寫，然後接著說說很常使用到的條件判斷邏輯。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基本介紹</a></li>
+        <li><a href="#act2">條件敘述句</a></li>
+        <li><a href="#act3">迴圈敘述句</a></li>
+        <li><a href="#act4">跳躍敘述句</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基本介紹</h2>
+<p>程式腳本的每一句指令都可以稱為敘述句（Statement），用來驅使電腦執行我們寫下的規則。一句完整的敘述句會以分號 <em>;</em> 作為結尾，向 JavaScript 表示一段可執行運算的程式。根據這個定義，我們回首看看上一篇是如何宣告變數的：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var price = 20;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>變數宣告後以 <em>;</em> 分號結尾，沒錯，宣告變數的行為就是一句敘述句。當然啦，不是所有敘述句都這麼單純，不同的需求、不同的邏輯，敘述句的複雜程度也不一樣，有時甚至會結合多個敘述句使其成為一段複合敘述句，而通常這些敘述句逐句讀下來可以發現彼此互有關連，那麼我們就需要將它們群組起來以便識別，這個群組稱為「程式區塊」（Code Block）。</p>
+<p>範例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo() {
+    var name = 'iTrong';
+    console.log(name);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>由一對大括號（或稱花括號）<em>{ }</em> 標示的區塊即為程式區塊，一個程式區塊內可包含一或多個敘述句。此外，程式區塊結尾不需要加上分號。</p>
+<p>認知 <em>;</em> 與 <em>{ }</em> 在程式碼代表的意義後，接下來學習各種類型的敘述句表現手法，應該會相對容易閱讀許多。大體而言，敘述句的種類可區分為三種：條件敘述句、迴圈敘述句與跳躍敘述句。</p>
+<p><br></p>
+
+<h2 id="act2">條件敘述句</h2>
+<p>條件敘述句的語法有兩種：<em>if</em> 與 <em>switch</em>。</p>
+<h4>if：</h4>
+<p><em>if</em> 是很常見的條件判斷式敘述句，基本上會搭配 <em>else</em>，表示「如果符合 if 的條件則執行其指令，若不是則執行 else 裡的指令」的概念。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var a = 5;
+var b = 3;
+
+if (a > b) {
+    document.write("a 比 b 大");
+}
+else {
+    document.write("a 比 b 小");
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在上例中我們宣告了變數 <em>a</em> 與 <em>b</em>，並分別指定它們的值為 <em>5</em> 與 <em>3</em>。條件式的程式區塊判斷規則為：如果 <em>a</em> 大於 <em>b</em>，則文件寫下「a 比 b 大」的結果，否則輸出「a 比 b 小」。程式執行判斷時，會判讀小括號 <em>( )</em> 裡的條件是否與變數吻合，若相同則執行寫在它程式區塊裡的敘述句，若不相同則不執行。實際判斷結果 <em>a</em> 數值大於 <em>b</em>，所以程式執行 <em>if</em> 裡的指令。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="wvMBwjQ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: if...else...">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/wvMBwjQ">
+        JS-learn: if...else...</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>儘管這個範例的判斷式乍看之下沒有問題，但其實存在很大的瑕疵──沒有考慮到兩者數值相等的可能性，假設今天我們把 <em>a</em> 的數值改成 <em>3</em>，試問會發生什麼情況？</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var a = 5;
+var b = 3;
+
+a = 3;
+
+if (a > b) {
+    document.write("a 比 b 大");
+}
+else {
+    document.write("a 比 b 小");
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="JjGojrL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: if...else..._2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JjGojrL">
+        JS-learn: if...else..._2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>答對了嗎？畫面最後顯示的結果是「a 比 b 小」。其實程式判定並沒有錯，因為條件式的規則只有定義兩種結果，要嘛 <em>a</em> 大於 <em>b</em>，要嘛「其他」，這個其他同時包含了「a 小於 b」以及「a 等於 b」兩種可能，如果我們要使條件式符合邏輯，最簡單的方法就是將 <em>else</em> 的敘述句結果修改為「a 不比 b 小」，或是「a 小於等於 b」，但這些都是治標不治本的處理方式（除非，你希望等於與小於的條件式是相同的），比較好的方式仍是將兩者數字相等的判斷邏輯自成一格。有些剛開始學程式的人會以為 <em>if else</em> 只能設定兩種條件，實則不然，<em>if</em> 條件式可同時設定多筆條件，初始條件使用 <em>if</em>，其他條件使用 <em>else if</em>，最終條件（或稱非以上條件的結果）使用 <em>else</em>。</p>
+<p>我們可以將剛才的範例條件式改寫成如下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">if (a > b) {
+    document.write("a 比 b 大");
+}
+else if (a = b) {
+    document.write("a 等於 b");
+}
+else {
+    document.write("a 比 b 小");
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如此一來，當 <em>a</em> 與 <em>b</em> 數值相等的情況下進入條件式判斷，就能正確輸出「a 等於 b」的結果了。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="qBbEBzL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: if...else..._3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBbEBzL">
+        JS-learn: if...else..._3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>switch：</h4>
+<p>當我們使用 <em>if</em> 處理超過一個以上的判斷條件式，可以使用 <em>else if</em>，除此之外還有另一種語法，那就是 <em>switch</em>。<em>switch</em> 適用場合多在進行多項條件且規則類似的條件判斷。其語法結構為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">switch(參數){
+    case '條件1':
+        ...
+        break;
+    
+    case '條件2':
+        ...
+        break;
+    
+    default:
+        ...
+        break;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>每一句 <em>case</em> 都代表一個條件，<em>default</em> 則表示預設（或不符合以上條件）的條件。至於 <em>break</em>，它代表的是一種跳出的概念，如果程式讀取到相符的條件，就會停止讀取後方的程式碼。</p>
+<p>假設現在要寫一個判斷三原色的條件式，我們可以這樣寫：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var color = "blue";
+switch(color){
+    case 'red':
+        document.write("紅色");
+        break;
+    
+    case 'green':
+        document.write("綠色");
+        break;
+
+    case 'blue':
+        document.write("藍色");
+        break;
+    
+    default:
+        document.write("不是三原色");
+        break;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="RwrNNZr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: switch">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/RwrNNZr">
+        JS-learn: switch</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>switch</em> 與 <em>if</em> 條件的差別在於前者會只讀取跟參數相符條件式裡的敘述句；而後者則讀取所有條件與其敘述句，效能消耗較 <em>switch</em> 來得多，渲染就會比較慢。</p>
+<p><br></p>
+
+<h2 id="act3">迴圈敘述句</h2>
+<p>當我們想重複執行某件事情（敘述句）十遍，我們可能會在程式碼裡面輸入十次內容，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+console.log(5);
+console.log(6);
+console.log(7);
+console.log(8);
+console.log(9);
+console.log(10);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>雖然程式依然能跑出我們要的結果，但這種作法既浪費效能，看起來也很不專業，是那種明眼的工程師一看就會噴笑的程度。但如果使用迴圈那就不一樣了，不僅將要重複執行多次的敘述句大幅輕量化，整體程式碼也變得簡潔乾淨，雖然迴圈在資深工程師的眼裡依然是很基本的概念，但起碼菜味已經沒有那麼濃郁。JavaScript 的迴圈語法有兩種：<em>for</em> 與 <em>while</em>。</p>
+
+
+
+
+
+<p><br></p>
+<h2 id="act4">跳躍敘述句</h2>
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
+        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">MDN web docs</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-5-if.html" target="_blank">康廷數位 JavaScript 快速入門（5/10）－ 敘述句 if / switch</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10211560" target="_blank">JavaScript 基礎知識-switch 判斷式</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10229223" target="_blank">從 0 學習 JavaScript 筆記－控制判斷(if、else if、switch)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10218218" target="_blank">Day 5: 述句(Statements)</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
