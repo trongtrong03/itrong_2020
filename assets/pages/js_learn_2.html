@@ -19,7 +19,7 @@
     <img src="@@webRoot/images/js/learn-var-1.jpg">
     <figcaption>JavaScript 的思維流程。</figcaption>
 </figure>
-<p>回顧這張流程圖，前一篇我們已經對變數宣告方式及其型別種類有了初步認識，本篇則聚焦「計算與處理」階段，淺談 JavaScript 基本的程式結構要如何看、怎麼寫，然後接著說說很常使用到的條件判斷邏輯。</p>
+<p>回顧這張流程圖，前一篇我們已經對變數宣告方式及其型別種類有了初步認識，本篇則聚焦「計算與處理」階段，淺談 JavaScript 基本的程式結構要如何看、怎麼寫，然後接著介紹敘述句的幾種分類。</p>
 <p><br></p>
 
 <!-- 大綱 -->
@@ -111,7 +111,7 @@ else {
         </p>
     </code>
 </div>
-<p>答對了嗎？畫面最後顯示的結果是「a 比 b 小」。其實程式判定並沒有錯，因為條件式的規則只有定義兩種結果，要嘛 <em>a</em> 大於 <em>b</em>，要嘛「其他」，這個其他同時包含了「a 小於 b」以及「a 等於 b」兩種可能，如果我們要使條件式符合邏輯，最簡單的方法就是將 <em>else</em> 的敘述句結果修改為「a 不比 b 小」，或是「a 小於等於 b」，但這些都是治標不治本的處理方式（除非，你希望等於與小於的條件式是相同的），比較好的方式仍是將兩者數字相等的判斷邏輯自成一格。有些剛開始學程式的人會以為 <em>if else</em> 只能設定兩種條件，實則不然，<em>if</em> 條件式可同時設定多筆條件，初始條件使用 <em>if</em>，其他條件使用 <em>else if</em>，最終條件（或稱非以上條件的結果）使用 <em>else</em>。</p>
+<p>答對了嗎？畫面最後顯示的結果是「a 比 b 小」。其實程式判定並沒有錯，因為條件式的規則只有定義兩種結果，要嘛 <em>a</em> 大於 <em>b</em>，要嘛「其他」，這個其他同時包含了「a 小於 b」以及「a 等於 b」兩種可能，如果我們要使條件式符合邏輯，最簡單的方法就是將 <em>else</em> 的敘述句結果修改為「a 不比 b 小」，或是「a 小於等於 b」，但這些都是治標不治本的處理方式（除非，你希望等於與小於的條件式是相同的），比較好的方式仍是將兩者數字相等的判斷邏輯自成一格。有些剛開始學程式的人會以為 <em>if</em>、<em>else</em> 只能設定兩種條件，實則不然，<em>if</em> 條件式可同時設定多筆條件，初始條件使用 <em>if</em>，其他條件使用 <em>else if</em>，最終條件（或稱非以上條件的結果）使用 <em>else</em>。</p>
 <p>我們可以將剛才的範例條件式改寫成如下：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">if (a > b) {
@@ -200,24 +200,107 @@ switch(color){
 <h2 id="act3">迴圈敘述句</h2>
 <p>當我們想重複執行某件事情（敘述句）十遍，我們可能會在程式碼裡面輸入十次內容，例如：</p>
 <div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">console.log(1);
-console.log(2);
-console.log(3);
-console.log(4);
-console.log(5);
-console.log(6);
-console.log(7);
-console.log(8);
-console.log(9);
-console.log(10);</code></pre>
+<pre class="text-pre"><code class="javascript">document.write("1");
+document.write("2");
+document.write("3");
+document.write("4");
+document.write("5");
+document.write("6");
+document.write("7");
+document.write("8");
+document.write("9");
+document.write("10");</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>雖然程式依然能跑出我們要的結果，但這種作法既浪費效能，看起來也很不專業，是那種明眼的工程師一看就會噴笑的程度。但如果使用迴圈那就不一樣了，不僅將要重複執行多次的敘述句大幅輕量化，整體程式碼也變得簡潔乾淨，雖然迴圈在資深工程師的眼裡依然是很基本的概念，但起碼菜味已經沒有那麼濃郁。JavaScript 的迴圈語法有兩種：<em>for</em> 與 <em>while</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="VweYmzb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="VweYmzb">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/VweYmzb">
+        VweYmzb</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>雖然程式依然能跑出我們要的結果，但這種作法既浪費效能，看起來也很不專業，是那種明眼的工程師一看就會噴笑的程度。但如果使用迴圈那就不一樣了，不僅將要重複執行多次的敘述句大幅輕量化，整體程式碼也變得簡潔乾淨，雖然迴圈在資深工程師的眼裡依然是很基本的概念，但起碼菜味已經沒有那麼濃郁。在 JavaScript 世界裡，有關迴圈敘述句的語法有兩種：<em>for</em> 與 <em>while</em>。</p>
+<p><br></p>
 
+<h4>for：</h4>
+<p>在 <em>for</em> 迴圈裡，通常以計數器作為條件，以決定迴圈要運行的次數。我們直接沿用前面的例子，如果要用 <em>for</em> 迴圈表示的話，程式碼為下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">for(var i = 1; i <= 10; i++){
+    document.write(i);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 
+<p>由小括號 <em>( )</em> 囊括起來的程式碼我們稱之為條件，通常以使用計數器為多，而此條件裡又包含了三個敘述句，分別是：初始化（<em>var i = 0</em>）、條件（<em>i <= 10</em>）以及結束時的更新（<em>i++</em>）。</p>
+<p>初始化：建立（宣告）一個變數，通常只有在第一次迴圈運行時才會被建立。有些人習慣將宣告寫在迴圈外部，初始化部分則只有單純指定數值。</p>
+<p>條件：迴圈會重複執行，直到次數滿足設定的條件（例如十次）。需要注意的是，條件除了常見的計數之外，也可以使用變數，那麼迴圈運行的條件次數將會是變數指定的值。</p>
+<p>結束時的更新：每次迴圈執行完大括號 <em>{ }</em> 裡的敘述句，迴圈就會累計一次計數，至於是遞增還是遞減，則要看此處使用的運算子，例如 <em>++</em> 就是遞增，<em>--</em> 則是遞減。</p>
+<p>了解迴圈條件裡各個敘述句的用途後，再來看看範例裡迴圈程式運作的邏輯──我們宣告了一個變數 <em>i</em>，並且指定數值 <em>1</em> 作為它的初始值，每次執行迴圈時，均會檢測 <em>i</em> 的數值是否「小於等於 10」？若是（true），則執行迴圈程式區塊裡的敘述句，當敘述句執行完畢後，<em>i</em> 的數值會遞增 <em>1</em>，然後再次進行 <em>i</em> 是否小於等於 <em>10</em> 的檢測，如果符合，則再次執行迴圈 <em>{ }</em>裡的敘述句，直到條件不符合（當 <em>i</em> > <em>10</em>）時終止迴圈。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="rNxaWyB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: for">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/rNxaWyB">
+        JS-learn: for</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
 
+<h4>while：</h4>
+<p>同樣的範例，來瞧瞧如果是用 <em>while</em> 迴圈會怎麼寫：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var i = 1;
+while (i <= 10) {
+    document.write(i);
+    i++;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>寫法其實與 <em>for</em> 大同小異（廢話），主要是 <em>while</em> 在小括弧 <em>( )</em> 內僅需定義「執行迴圈的條件」，變數則在外部進行宣告，當變數滿足條件（結果為 <em>true</em>）時，程式會執行程式區塊大括號 <em>{ }</em> 裡頭的敘述句。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="vYLEWab" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: while">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/vYLEWab">
+        JS-learn: while</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>for</em> 與 <em>while</em> 的差別在於是否確定迴圈執行的次數。倘若不甚了解這句話的意思，那麼以下將兩者的迴圈條件裡的成份單獨拆出來看：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">// for
+for(var i = 0; i < n; i++){ ... }
+
+// while
+while (i < n) { ... }
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>n</em> 是已知數，那麼 <em>for</em> 迴圈執行的次數便一目了然，但 <em>while</em> 卻不一定，只知道當 <em>i</em> 大於或等於 <em>n</em> 的時候，迴圈才會停止。所以簡單來講，當我們明確知道迴圈執行次數時，用 <em>for</em>，反之則使用 <em>while</em>。所有的 <em>for</em> 迴圈皆可以改寫成 <em>while</em>，但並非所有的 <em>while</em> 都能用 <em>for</em> 取代。</p>
+<p>但無論如何，不管是 <em>for</em> 還是 <em>while</em>，都務必要定義好結束的條件，否則迴圈可能發生無限執行的情況，我們稱之為無窮迴圈。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">// for
+for(var i = 0; i >= 0; i++){ ... }
+
+// while
+var i = 0;
+while (i < 10) { ... }</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這兩個迴圈因為條件會永遠成立，那麼迴圈將永遠不會結束。</p>
 
 
 <p><br></p>
@@ -231,6 +314,8 @@ console.log(10);</code></pre>
         <li><a href="https://ithelp.ithome.com.tw/articles/10211560" target="_blank">JavaScript 基礎知識-switch 判斷式</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10229223" target="_blank">從 0 學習 JavaScript 筆記－控制判斷(if、else if、switch)</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10218218" target="_blank">Day 5: 述句(Statements)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10191453" target="_blank">重新認識 JavaScript: Day 09 流程判斷與迴圈</a></li>
+        <li><a href="https://www.itread01.com/content/1548601025.html" target="_blank">for迴圈和while迴圈的區別</a></li>
     </ul>
 </div>
 <!-- Content end -->
