@@ -198,7 +198,7 @@ switch(color){
 <p><br></p>
 
 <h2 id="act3">迴圈敘述句</h2>
-<p>當我們想重複執行某件事情（敘述句）十遍，我們可能會在程式碼裡面輸入十次內容，例如：</p>
+<p>當我們想重複執行某件事情（敘述句）十遍，直覺想到的可能是直接在編輯器裡面輸入十次內容，例如：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">document.write("1");
 document.write("2");
@@ -287,8 +287,8 @@ while (i < n) { ... }
     <span>COPY</span>
 </button>
 </div>
-<p><em>n</em> 是已知數，那麼 <em>for</em> 迴圈執行的次數便一目了然，但 <em>while</em> 卻不一定，只知道當 <em>i</em> 大於或等於 <em>n</em> 的時候，迴圈才會停止。所以簡單來講，當我們明確知道迴圈執行次數時，用 <em>for</em>，反之則使用 <em>while</em>。所有的 <em>for</em> 迴圈皆可以改寫成 <em>while</em>，但並非所有的 <em>while</em> 都能用 <em>for</em> 取代。</p>
-<p>但無論如何，不管是 <em>for</em> 還是 <em>while</em>，都務必要定義好結束的條件，否則迴圈可能發生無限執行的情況，我們稱之為無窮迴圈。</p>
+<p><em>n</em> 是已知數，那麼 <em>for</em> 迴圈執行的次數便一目了然，但 <em>while</em> 卻不一定，只知道當 <em>i</em> 大於或等於 <em>n</em> 的時候，迴圈才會停止。簡單來說，當我們明確知道迴圈執行次數時，用 <em>for</em>，反之則使用 <em>while</em>。所有的 <em>for</em> 迴圈皆可以改寫成 <em>while</em>，但並非所有的 <em>while</em> 都能用 <em>for</em> 取代。</p>
+<p>無論如何，不管是 <em>for</em> 還是 <em>while</em>，都務必要定義好結束的條件，否則迴圈可能發生無限執行的情況，這種情況通常被稱為無窮迴圈。</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">// for
 for(var i = 0; i >= 0; i++){ ... }
@@ -300,7 +300,7 @@ while (i < 10) { ... }</code></pre>
     <span>COPY</span>
 </button>
 </div>
-<p>這兩個迴圈因為條件會永遠成立，那麼迴圈將永遠不會結束。</p>
+<p>這兩個迴圈因為條件會永遠成立，迴圈將永遠不會結束。</p>
 
 
 <p><br></p>
