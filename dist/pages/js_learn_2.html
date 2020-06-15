@@ -61,7 +61,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
-                    <a class="msg" href="contact.html" title="Contact me">
+                    <a class="msg" href="../contact.html" title="Contact me">
                         <i class="far fa-envelope"></i>
                     </a>
                 </div>
@@ -365,10 +365,78 @@ while (i < 10) { ... }</code></pre>
 </button>
 </div>
 <p>這兩個迴圈因為條件會永遠成立，迴圈將永遠不會結束。</p>
-
-
 <p><br></p>
+
 <h2 id="act4">跳躍敘述句</h2>
+<p>跳躍敘述句也有人稱跳出敘述句，用途如其名，指在程式執行到某種情況時，利用跳躍句迫使程式退出。看到這裡，腦海是否馬上浮現出了什麼？是的，<em>switch</em> 條件式裡使用到的 <em>break</em> 即是跳躍敘述句的一員。<em>break</em> 不僅可以使用在 <em>switch</em>，也可以用於迴圈。除了 <em>break</em> 之外，常見的跳躍句尚有：<em>continue</em>、<em>return</em>。</p>
+<h4>break：</h4>
+<p>條件式 <em>switch</em> 的 <em>break</em> 用法就不再重述，這裡只談它如何運用於迴圈。在預設情況，迴圈只有條件以滿足時才會結束執行，而透過加入 <em>break</em>，就可以在迴圈抵達指定條件下就強制結束，譬如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var i = 1;
+while (i <= 10) {
+    document.write(i);
+    i++;
+    if (i > 5) {
+        break;
+    }
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>原本還沒加入 <em>break</em> 時，<em>while</em> 迴圈條件表示當 <em>i</em> 小於等於 <em>10</em> 之前，都會反覆執行條件裡的程式。但在範例中我們加入了一條判斷規則：「當 <em>i</em> 大於 <em>5</em> 的時候，<em>break</em> 將直接跳離迴圈」。所以你將會看到最後迴圈只讓文件輸出到 <em>5</em> 變強制結束了。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="BajNNLm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: while &amp;amp; break">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/BajNNLm">
+        JS-learn: while &amp; break</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>continue：</h4>
+<p><em>continue</em> 只能使用在迴圈裡，它與 <em>break</em> 的差別在於 <em>break</em> 強制從迴圈跳出之後就不會再繼續執行迴圈了，但 <em>continue</em> 只是滿足條件後跳出，略過之後要執行的程式，但仍會繼續執行下一次的迴圈內容。什麼意思？我們直接上實例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">for (var i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    document.write(i);
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<p><em>continue</em> 跳出的條件為：當 <em>i</em> 除於 <em>2</em> 的餘數等於 <em>0</em> 的時候，迴圈將跳出，不執行後續的程式敘述。假如我們使用 <em>break</em>，當 <em>i</em> 數值是 <em>2</em> 時，就會因為滿足跳出條件而強行直接結束迴圈，後續的迴圈將不會再執行：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="wvMaMva" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: for &amp;amp; break">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/wvMaMva">
+        JS-learn: for &amp; break</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>但通常我們會希望迴圈能執行到 <em>i</em> 大於 <em>10</em> 為止才結束，這時我們應該使用 <em>continue</em>：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="XWXbmep" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: for &amp;amp; continue">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/XWXbmep">
+        JS-learn: for &amp; continue</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如此一來，<em>i</em> 後續到 <em>10</em> 為止前不能被 <em>2</em> 除盡的奇數才能透過後續的敘述句顯示在文件上。</p>
+<p><br></p>
+
+<h4>return：</h4>
+<p><em>return</em> 用來回覆函式（function）呼叫的變數，它只能出現在函式裡，若用在迴圈將會造成程式錯誤。由於本篇對函式尚未有太多著墨，因此有關 <em>return</em> 的用法就留到函式篇一起做筆記。</p>
+
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
