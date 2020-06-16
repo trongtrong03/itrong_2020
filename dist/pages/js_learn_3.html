@@ -144,13 +144,183 @@
         <li>邏輯運算子（Logical operators）</li>
     </ol>
 </div>
+<p><br></p>
 
+<h2 id="act3">指定運算子</h2>
+<p>最常見的指定運算子就是 <em>=</em> 符號，用來表示將某個值指定給變數。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var name = 'itrong';</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>除此之外，只要有掛上 <em>=</em> 的都可以算是指定運算子的成員之一，詳見如下表：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">運算子</div>
+        <div class="t-f1">範例</div>
+        <div class="t-f6">說明</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>=</em></div>
+        <div class="t-f1">x = y</div>
+        <div class="t-f6">將 y 值指定給變數 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>+=</em></div>
+        <div class="t-f1">x += y</div>
+        <div class="t-f6">相當於 x = x + y</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-=</em></div>
+        <div class="t-f1">x -= y</div>
+        <div class="t-f6">相當於 x = x - y</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>*=</em></div>
+        <div class="t-f1">x *= y</div>
+        <div class="t-f6">相當於 x = x * y</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>/=</em></div>
+        <div class="t-f1">x /= y</div>
+        <div class="t-f6">相當於 x = x / y，<em>/</em> 是相除的意思</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>%=</em></div>
+        <div class="t-f1">x %= y</div>
+        <div class="t-f6">相當於 x = x % y，意即將 x 除以 y 後的餘數指定給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>**=</em></div>
+        <div class="t-f1">x **= y</div>
+        <div class="t-f6">相當於 x = x ** y，意即將 x 的 y 次方值指定給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em><<=</em></div>
+        <div class="t-f1">x <<= y</div>
+        <div class="t-f6">相當於 x = x <<= y，意即將 x 所有位元左移 y 位，右邊的位元補入 0 後的值指定回給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>>>=</em></div>
+        <div class="t-f1">x >>= y</div>
+        <div class="t-f6">相當於 x = x >>= y，意即將 x 所有位元右移 y 位，最左邊的位元 (sign bit) 補入跟原本最左位元一樣值後指定回給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>>>>=</em></div>
+        <div class="t-f1">x >>>= y</div>
+        <div class="t-f6">相當於 x = x >>>= y，和 <em>>>=</em> 一樣，但最左邊的位元補 0</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>&=</em></div>
+        <div class="t-f1">x &= y</div>
+        <div class="t-f6">相當於 x = x & y，意即將 x y 做位元 AND 運算後的值指定回給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>^=</em></div>
+        <div class="t-f1">x ^= y</div>
+        <div class="t-f6">相當於 x = x ^ y，意即將 x y 做位元 XOR 運算後的值指定回給 x</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>|=</em></div>
+        <div class="t-f1">x |= y</div>
+        <div class="t-f6">相當於 x = x | y，意即將 x y 做位元 OR 運算後的值指定回給 x</div>
+    </div>
+</div>
+<p>透過表格可以看出指定運算子常與其他類型的運算子搭配使用，以達到產生指定結果值予變數之目的。</p>
+<p><br></p>
+
+<h2 id="act4">算術運算子</h2>
+<p>算術運算子（Arithmetic operators）包含基本的加減乘除，以及遞增、遞減等運算方式。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var total = 10 * 3;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>以下為算術運算子清單：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">運算子</div>
+        <div class="t-f6">說明</div>
+        <div class="t-f1">範例</div>
+        <div class="t-f1">結果</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>+</em></div>
+        <div class="t-f6">加法，即兩個數值相加</div>
+        <div class="t-f1">10 + 5</div>
+        <div class="t-f1">15</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>-</em></div>
+        <div class="t-f6">減法，即兩個數值相減</div>
+        <div class="t-f1">10 - 5</div>
+        <div class="t-f1">5</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>*</em></div>
+        <div class="t-f6">乘法，即兩個數值相乘</div>
+        <div class="t-f1">10 * 5</div>
+        <div class="t-f1">50</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>/</em></div>
+        <div class="t-f6">除法，即兩個數值相除</div>
+        <div class="t-f1">10 / 5</div>
+        <div class="t-f1">2</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>++</em></div>
+        <div class="t-f6">將目前的值加 1</div>
+        <div class="t-f1">i = 10; i++;</div>
+        <div class="t-f1">11</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>--</em></div>
+        <div class="t-f6">將目前的值減 1</div>
+        <div class="t-f1">i = 10; i--;</div>
+        <div class="t-f1">9</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>%</em></div>
+        <div class="t-f6">模數，即將兩個數值相除後的餘數。</div>
+        <div class="t-f1">10 % 3</div>
+        <div class="t-f1">1</div>
+    </div>
+</div>
+<p>我們都知道數學運算有著「先乘除後加減」的鐵律，若要先加減後乘除，則必須用括號將優先計算加減的值包含起來，這一點在程式運算亦同。舉例來說：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var total = 6 + 10 * 3;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>得到的結果會是 <em>36</em>，而不是 <em>48</em>。若要先加後乘的話，則必須這樣定義：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var total = (6 + 10) * 3;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如此一來，回傳的結果就會是 <em>48</em>。</p>
+<p><br></p>
+
+<h2 id="act5">字串運算子</h2>
+<p><br></p>
+
+<h2 id="act6">比較運算子</h2>
+<p><br></p>
+
+<h2 id="act7">邏輯運算子</h2>
+<p><br></p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
         <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
         <li><a href="http://www.kangting.tw/2013/11/javascript-4.html" target="_blank">JavaScript 快速入門（4/10）－ 運算子</a></li>
+        <li><a href="https://www.fooish.com/javascript/operator.html" target="_blank">JavaScript 運算子 (Operators)</a></li>
     </ul>
 </div>
 <!-- Content end -->
