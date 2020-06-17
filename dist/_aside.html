@@ -1,9 +1,25 @@
 <aside class="side-bar">
-    <button id="sideHome" onclick="javascript:location.href='./index.html'"></button>
+    <button id="sideHome" title="Home" onclick="javascript:location.href='./index.html'"></button>
     
     
     
     
     
-    <button id="sideTop"></button>
+    <a href="#wrap" id="sideTop" title="Top"></a>
+    <button id="sideList" title="List"></button>
+    <button id="sideCatalog" title="Catalog"></button>
 </aside>
+
+<div class="text-list">
+    <ul>
+        
+        
+        
+        
+        
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
+    </ul>
+    <button class="text-close"></button>
+</div>
+<div class="overlay" :class="{ 'is-active' : listActive}"></div>

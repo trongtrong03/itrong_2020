@@ -7,9 +7,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-5 }).title"></h1>
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-6 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-5 }).time"></time>
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-6 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -116,7 +116,7 @@ let app = new Vue({
 </div>
 <!-- Content end -->
                 </div>
-                @@include("../_aside.html", { "js": true })
+                @@include("../_aside.html", { "js": true, "pages": true })
             </section>
         </main>
         @@include("../_footer.html")

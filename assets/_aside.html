@@ -1,19 +1,45 @@
 <aside class="side-bar">
-    <button id="sideHome" onclick="javascript:location.href='@@webRoot/index.html'"></button>
+    <button id="sideHome" title="Home" onclick="javascript:location.href='@@webRoot/index.html'"></button>
     @@if (context.html===true ) {
-        <button id="sideBack" onclick="javascript:location.href='@@webRoot/html.html'"></button>
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/html.html'"></button>
     }
     @@if (context.css===true ) {
-        <button id="sideBack" onclick="javascript:location.href='@@webRoot/css.html'"></button>
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/css.html'"></button>
     }
     @@if (context.js===true ) {
-        <button id="sideBack" onclick="javascript:location.href='@@webRoot/javascript.html'"></button>
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/javascript.html'"></button>
     }
     @@if (context.app===true ) {
-        <button id="sideBack" onclick="javascript:location.href='@@webRoot/app.html'"></button>
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/app.html'"></button>
     }
     @@if (context.misc===true ) {
-        <button id="sideBack" onclick="javascript:location.href='@@webRoot/misc.html'"></button>
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/misc.html'"></button>
     }
-    <button id="sideTop"></button>
+    <a href="#wrap" id="sideTop" title="Top"></a>
+    <button id="sideList" title="List"></button>
+    <button id="sideCatalog" title="Catalog"></button>
 </aside>
+
+<div class="text-list">
+    <ul>
+        @@if (context.html===true ) {
+        <li v-for="item in filterHtml" :key="item.id">
+        }
+        @@if (context.css===true ) {
+        <li v-for="item in filterCss" :key="item.id">
+        }
+        @@if (context.js===true ) {
+        <li v-for="item in filterJs" :key="item.id">
+        }
+        @@if (context.app===true ) {
+        <li v-for="item in filterApp" :key="item.id">
+        }
+        @@if (context.misc===true ) {
+        <li v-for="item in filterMisc" :key="item.id">
+        }
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
+    </ul>
+    <button class="text-close"></button>
+</div>
+<div class="overlay" :class="{ 'is-active' : listActive}"></div>

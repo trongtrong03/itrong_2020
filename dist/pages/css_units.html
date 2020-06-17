@@ -512,16 +512,34 @@
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
-                    <button id="sideHome" onclick="javascript:location.href='../index.html'"></button>
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
                     
                     
-                        <button id="sideBack" onclick="javascript:location.href='../css.html'"></button>
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../css.html'"></button>
                     
                     
                     
                     
-                    <button id="sideTop"></button>
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                    <button id="sideCatalog" title="Catalog"></button>
                 </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        <li v-for="item in filterCss" :key="item.id">
+                        
+                        
+                        
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+                <div class="overlay" :class="{ 'is-active' : listActive}"></div>
             </section>
         </main>
         <div class="particles-bg"></div>

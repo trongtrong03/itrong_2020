@@ -7,9 +7,9 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-2 }).title"></h1>
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-3 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-2 }).time"></time>
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-3 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
@@ -39,7 +39,12 @@
     <span>COPY</span>
 </button>
 </div>
-<p>這是一句常見的運算式（expressions），其基本由至少兩個的「運算元」（<em>a</em>、<em>20</em>）與「運算子」（<em>=</em>）構成。運算式可以產生一個單一值，大致可分為兩種類型：</p>
+<p>這是一句常見的運算式（expressions），其基本由至少兩個的「運算元」（<em>a</em>、<em>20</em>）與「運算子」（<em>=</em>）構成。</p>
+<figure>
+    <img src="@@webRoot/images/js/learn-expressions-1.jpg">
+    <figcaption>運算式組成結構示意。</figcaption>
+</figure>
+<p>運算式可以產生一個單一值，大致可分為兩種類型：</p>
 <div class="text-ol">
     <ol>
         <li>運算式僅為變數指定一個內容值。</li>
@@ -90,7 +95,7 @@
     <span>COPY</span>
 </button>
 </div>
-<p>除此之外，只要有掛上 <em>=</em> 的都可以算是指定運算子的成員之一，詳見如下表：</p>
+<p>除此之外，只要有掛上一個 <em>=</em> 的都可以算是指定運算子的成員之一，詳見如下表：</p>
 <div class="text-flex">
     <div class="f-title">
         <div class="t-f0">運算子</div>
@@ -296,10 +301,144 @@ var final = number * name;</code></pre>
 <p><br></p>
 
 <h2 id="act6">比較運算子</h2>
+<p>如同它字面意義所述，我們可以將程式碼中的值與預期值進行比較，評估後的結果將會以「布林值」表示，也就是 <em>true</em> 或 <em>false</em>。運算元可以是數值、字串、表達式 (expression) 或物件等。假如比較的運算元型別不同，JavaScript 會嘗試將之轉型成相同型別後再行比較，通常情況下，會先轉成數字資料型別（Number）。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var pass = 60;
+var score = 87;
+var hasPassed = score >= pass;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="jYebKO" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example17" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/jYebKO/">JS-learn: example17</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
+<p><em>score</em> 值（<em>87</em>）大於 <em>pass</em> 值（<em>60</em>），故回傳的結果為 <em>true</em>。</p>
+<p>前面有提到，運算元不一定要是單一值或是變數名稱，它也可以是一個運算式，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">((num1 + num2) > (num3 + num4));</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="EodPRe" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example18" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/EodPRe/">JS-learn: example18</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
+<p><br></p>
+<p>接著來看看比較運算子的字符有哪些：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">運算子</div>
+        <div class="t-f6">說明</div>
+        <div class="t-f2">範例</div>
+        <div class="t-f1">結果</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>==</em></div>
+        <div class="t-f6">等於，比較兩個值（數字、字串、布林值）並確認是否相同</div>
+        <div class="t-f2">'123' == '123'<br>'123' == '1234'<br>'123' == 123</div>
+        <div class="t-f1">true<br>false<br>true</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>===</em></div>
+        <div class="t-f6">嚴格等於，比較兩個值（數字、字串、布林值）並確認資料型別與值皆相同</div>
+        <div class="t-f2">'123' === 123<br>'123' === '123'</div>
+        <div class="t-f1">false<br>true</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>!=</em></div>
+        <div class="t-f6">不等於，比較兩個值（數字、字串、布林值）並確認是否不相同</div>
+        <div class="t-f2">'123' != '123'<br>123 != '123'<br>'123' != '1234'<br></div>
+        <div class="t-f1">false<br>false<br>true</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>!==</em></div>
+        <div class="t-f6">嚴格不等於，比較兩個值（數字、字串、布林值）並確認資料型別與值皆不相同</div>
+        <div class="t-f2">'123' !== 123<br>'123' !== '123'</div>
+        <div class="t-f1">true<br>false</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>></em></div>
+        <div class="t-f6">大於，檢視左邊的數字是否大於右邊的數字</div>
+        <div class="t-f2">5 > 3<br>'5' > 3<br>3 > 5</div>
+        <div class="t-f1">true<br>true<br>false</div>
+    </div>
+    <div>
+        <div class="t-f0"><em><</em></div>
+        <div class="t-f6">小於，檢視左邊的數字是否小於右邊的數字</div>
+        <div class="t-f2">5 < 3<br>'5' < 3<br>3 < 5</div>
+        <div class="t-f1">false<br>false<br>true</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>>=</em></div>
+        <div class="t-f6">大於等於，檢視左邊的數字是否大於「或」等於右邊的數字</div>
+        <div class="t-f2">5 >= 3<br>3 >= 5<br>3 >= 3</div>
+        <div class="t-f1">true<br>false<br>true</div>
+    </div>
+    <div>
+        <div class="t-f0"><em><=</em></div>
+        <div class="t-f6">小於等於，檢視左邊的數字是否小於「或」等於右邊的數字</div>
+        <div class="t-f2">5 <= 3<br>3 <= 5<br>3 <= 3</div>
+        <div class="t-f1">false<br>true<br>true</div>
+    </div>
+</div>
 <p><br></p>
 
 <h2 id="act7">邏輯運算子</h2>
+<p>比較運算子通常回傳 <em>true</em> 或 <em>false</em> 的單一結果值，邏輯運算子則可以針對多個比較運算子產生的結果值，再進行邏輯判斷。以下是邏輯運算子的常見運用方法之一的範例：</p>
+<figure>
+    <img src="@@webRoot/images/js/learn-expressions-2.jpg">
+    <figcaption>邏輯運算子運算式組成結構範例。</figcaption>
+</figure>
+<p>這個結構包含三個運算式，每一個均會產生 <em>true</em> 或 <em>false</em> 的結果值，「運算式1」的結果為 <em>false</em>，而「運算式2」的結果為 <em>true</em>，「運算式3」則使用了一個邏輯運算子「<em>&&</em>」，指的是「AND」邏輯運算子，用來檢查運算式1和運算式2的結果是否均為 <em>true</em> 值，但因為運算式1的結果為 <em>false</em>，故最後運算式3輸出的結果為 <em>false</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="ZvqpdR" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example19" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/ZvqpdR/">JS-learn: example19</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
 <p><br></p>
+<p>除了 <em>&&</em> 之外，邏輯運算子尚有 <em>||</em>、<em>!</em> 這兩個字符，以下透過表格來介紹之：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0">運算子</div>
+        <div class="t-f6">說明</div>
+        <div class="t-f2">範例</div>
+        <div class="t-f1">結果</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>&&</em></div>
+        <div class="t-f6">表示 AND，兩邊運算式評估必須均為 true，輸出結果才會為 true，其餘皆 false。<br>true && true => true<br>true && false => false<br>false && true => false<br>false && false => false</div>
+        <div class="t-f2">((6 > 5) && (3 >= 3))<br>((5 < 2) && (3 >= 2))</div>
+        <div class="t-f1">true<br>false</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>||</em></div>
+        <div class="t-f6">表示 OR，只要任一運算式評估為 true，輸出結果就是 true，只有兩邊運算式都是 false 的情況，輸出結果才會是 false。<br>true && true => true<br>true && false => true<br>false && true => true<br>false && false => false</div>
+        <div class="t-f2">((6 > 5) && (3 >= 3))<br>((5 < 2) && (3 >= 2))<br>((5 < 2) && (3 < 2))</div>
+        <div class="t-f1">true<br>true<br>false</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>!</em></div>
+        <div class="t-f6">表示 NOT，將運算式的布林值轉換為相反值<br>!true => false<br>!false => true</div>
+        <div class="t-f2">!(2 < 1)</div>
+        <div class="t-f1">true</div>
+    </div>
+</div>
+<p>此外值得一提的是，邏輯運算子是由左至右執行評估，如果第一個運算式條件已可提供足夠資訊取得整體運算式的答案，那麼 JavaScript 就不會繼續評估第二個條件。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">(5 < 2) && (3 >= 2);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>第一個條件 <em>(5 < 2)</em> 經評估結果為 <em>false</em>，已可確定 AND 邏輯運算子的結果為 <em>false</em>，那麼就不會再去評估第二個條件了。</p>
+<p><br></p>
+<p>以上就是有關運算式和運算子的基本介紹了，其實除了上列運算子的分類外，運算子亦可以以一元（unary）、二元（binary）、三元（ternary）運算子區分，這部分留待日後再另行撰文介紹。</p>
+
 
 <!-- 參考資料 -->
 <div class="text-refer">
@@ -311,7 +450,7 @@ var final = number * name;</code></pre>
 </div>
 <!-- Content end -->
                 </div>
-                @@include("../_aside.html", { "js": true })
+                @@include("../_aside.html", { "js": true, "pages": true })
             </section>
         </main>
         @@include("../_footer.html")
