@@ -243,6 +243,56 @@
 <p><br></p>
 
 <h2 id="act5">字串運算子</h2>
+<p>字串運算子（String operators）只有一種──「加號（<em>+</em>）」，可用於連接運算子兩端的字串資料值。寫程式的我們經常需要連接兩個以上的字串，以建立一個新的字串，這個連接的程序稱為「字串連結（concatenation）」。譬如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var firstName = 'Trong ';
+var lastName = 'Chen';
+var fullName = firstName + lastName;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們把人的姓氏跟名字分開儲存於變數使用，但可能有時候會需要將它們結合，以顯示完整的姓名，透過字串運算子便可以實現我們的需要，像上面這個範例，最後 <em>fullName</em> 得出的結果為 <em>Trong Chen</em>。</p>
+<p>數值資料型別與字串資料型別是可以混合使用的，但是不同的表示方法會有不同的結果。</p>
+<h4>1. 數值加上引號：</h4>
+<p>若在數值兩邊加上引號，它將成為字串資料型別，而不再是數值資料型別。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var number1 = '10';
+var number2 = '99';
+var final = number1 + number2;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>最後 <em>final</em> 輸出的結果會是 <em>1099</em>，而不是兩數值相加後的 <em>109</em>。</p>
+<p><br></p>
+<h4>2. 數值與字串相加：</h4>
+<p>若將純數字的變數與字串變數相加，數值則會變成字串的一部分。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var number = 10;
+var name = 'itrong';
+var final = number + name;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>final</em> 輸出的值為 <em>10itrong</em>。</p>
+<p><br></p>
+<h4>3. 對字串資料作數學運算：</h4>
+<p>因為字串不是數字，若給它們執行算術運算，只會得到 <em>NaN</em>的結果。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var number = '3';
+var name = 'itrong';
+var final = number * name;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="OzoQNj" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example16" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/OzoQNj/">JS-learn: example16</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
 <p><br></p>
 
 <h2 id="act6">比較運算子</h2>
