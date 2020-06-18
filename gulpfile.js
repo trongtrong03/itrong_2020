@@ -75,11 +75,12 @@ function watch()  {
     gulp.watch('assets/**/*.html', gulp.series('compileHtml'))
     gulp.watch('assets/scss/**/*.scss', gulp.series('compileCss'))
     gulp.watch('assets/js/**/*.js', gulp.series('compileJs'))
-    gulp.watch('assets/images/**/*', gulp.series('cleanAll','compileImg'))
+    // gulp.watch('assets/images/**/*', gulp.series('cleanAll','compileImg'))
 }
 
 // 建構任務流程
-const bulid = gulp.series(compileImg, compileHtml, compileCss, compileJs, watch);
+// const bulid = gulp.series(compileImg, compileHtml, compileCss, compileJs, watch);
+const bulid = gulp.series(compileHtml, compileCss, compileJs, watch);
 
 // 執行預設任務
 gulp.task('default', bulid);
