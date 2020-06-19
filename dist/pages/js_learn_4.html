@@ -86,7 +86,7 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">函數是什麼</a></li>
-        <li><a href="#act2">函數結構</a></li>
+        <li><a href="#act2">函數結構與呼叫</a></li>
     </ul>
 </div>
 
@@ -100,6 +100,105 @@
     <img src="../images/js/learn-function-2.jpg">
     <figcaption>利用函數來處理重複使用的程式碼。</figcaption>
 </figure>
+<p><br></p>
+
+<h2 id="act2">函數結構與呼叫</h2>
+<p>函數的關鍵字為 <em>function</em>，以下是宣告一個函數的基本架構圖：</p>
+<figure>
+    <img src="../images/js/learn-function-3.jpg">
+</figure>
+<p>透過函數關鍵字 <em>function</em> 告知解譯器我們要宣告一個函數，接著給予函數名稱，名稱後方須加上小括號 <em>( )</em>。負責執行工作的敘述句則放置於程式區段內，也就是由大括號 <em>{ }</em> 包含的範圍。如此一來，一個可以被重複使用的函數便誕生了。宣告完函數後，我們只要直接調用函數名稱就能執行函數大括號內的所有敘述句。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">// 宣告函數
+function fName() {
+    document.write('Hello world!');
+}
+
+// 呼叫函數
+fName();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="mpzmMO" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example21" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/mpzmMO/">JS-learn: example21</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
+<p>實作上面的練習範例，會發現函數尚未被宣告之前，就已經先被呼叫，但最後依然可以正常執行其敘述句...此乃因為解譯器會先讀取完整份 JavaScript 腳本，再依序執行每一行描述，故呼叫函數的程式碼寫於宣告之前「乍看」【註】是可行的。只是一般來說，「先宣告後呼叫」仍是比較正常且良好的習慣。<br>【註】：函數宣告有幾種方式，其中有一種寫法，若函數呼叫搶在宣告之前，將會被告知未定義（<em>undefined</em>）致使呼叫出錯。</p>
+<p><br></p>
+
+<h4>宣告一個「需要資訊的函數」</h4>
+<p>以下先列舉一則模擬情境──有間主打彩繪手機殼的商店，提供顧客客製化彩繪的服務，依據上門顧客提供的樣本，來產出符合顧客需求的彩繪手機殼，此乃店家接單製作的標準作業流程。假如今天要用 JavaScript 表示，我們可以將「從接收訂單到將成品提交給顧客」這一連串的過程寫成函數，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function 訂單() {
+    接收顧客需求;
+    進行手機殼彩繪作業;
+    將手機殼交給顧客;
+}
+
+訂單();
+訂單();
+...
+訂單();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>聰明如你想必已經察覺到不對勁──是的，儘管函數可以允許我們在不同的程式碼區域重複呼叫並執行其內部的程式碼，但並非所有顧客的需求都一樣，也許有的顧客主題是花卉、寵物、動漫...等，這種情況下，我們需要為函數代入一個參數，此參數用來傳遞顧客客製化訂單的需求。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function 訂單(參數) {
+    接收顧客 參數 需求;
+    進行手機殼彩繪作業;
+    將手機殼交給顧客;
+}
+
+訂單(羽蝶蘭);
+訂單(我愛一條柴);
+...
+訂單(初音未來);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如此一來，就能在不同區域呼叫函數時，傳入各別的參數值給函數執行程式了。</p>
+<p>看完文字舉例，接著來看一個實際演練的案例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function getArea(width, height) {
+    return width * height;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>此函數範例要展示的重點有二，一是要表達 <em>width</em>、<em>height</em> 為參數，其在函數中使用方式視同變數的概念。二則是函數設定的傳遞參數可不止一個。當我們要呼叫這個函數時，會在呼叫它的小括號內傳入要使用的值，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">getArea(30, 60);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>於函數呼叫的小括弧內傳入的值，我們稱之為「引數」，它們可以用「數值」或「變數」的方式進行傳遞。數值的部分如同上方的範例，而變數傳遞的方式如下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">itemW = 30;
+itemH = 60;
+getArea(itemW, itemH);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>由此可見，函數呼叫裡的值不一定要是確定的數值，透過變數傳遞至對應的參數也能完成相同的工作。</p>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="PEyJbW" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example22" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/PEyJbW/">JS-learn: example22</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>參數與引數的不同</h4>
+<p>參數是指函數在宣告時所使用的字彙（例如：<em>width</em>、<em>height</em>）；引數則是指傳遞給函數進行運算的數值。</p>
+
+
 
 
 
@@ -107,8 +206,8 @@
 <div class="text-refer">
     <ul>
         <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
-        <li><a href="http://www.kangting.tw/2013/11/javascript-4.html" target="_blank">JavaScript 快速入門（4/10）－ 運算子</a></li>
-        <li><a href="https://www.fooish.com/javascript/operator.html" target="_blank">JavaScript 運算子 (Operators)</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-7.html" target="_blank">JavaScript 快速入門（7/10）－ 函式</a></li>
+        <li><a href="https://www.fooish.com/javascript/function.html" target="_blank">JavaScript Function (函數)</a></li>
     </ul>
 </div>
 <!-- Content end -->
