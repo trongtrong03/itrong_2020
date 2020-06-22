@@ -87,6 +87,8 @@
     <ul>
         <li><a href="#act1">函數是什麼</a></li>
         <li><a href="#act2">函數結構與呼叫</a></li>
+        <li><a href="#act3">函數的回傳值──return</a></li>
+        <li><a href="#act4">匿名函數</a></li>
     </ul>
 </div>
 
@@ -162,7 +164,7 @@ fName();</code></pre>
 </button>
 </div>
 <p>如此一來，就能在不同區域呼叫函數時，傳入各別的參數值給函數執行程式了。</p>
-<p>看完文字舉例，接著來看一個實際演練的案例：</p>
+<p>看完文字舉例，我們將中文敘述轉換成程式碼，看看函數是如何表示的：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">function getArea(width, height) {
     return width * height;
@@ -197,6 +199,48 @@ getArea(itemW, itemH);</code></pre>
 
 <h4>參數與引數的不同</h4>
 <p>參數是指函數在宣告時所使用的字彙（例如：<em>width</em>、<em>height</em>）；引數則是指傳遞給函數進行運算的數值。</p>
+<p><br></p>
+
+<h2 id="act3">函數的回傳值──return</h2>
+<p>在大多數的函數中，我們可以看到其最末行使用 <em>return</em> 敘述句，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function calculateArea(width, height) {
+    var area = width * height;
+    return area;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在 <em>calculateArea</em> 此函數中，宣告了一個名為 <em>area</em> 的變數，以儲存運算（<em>width * height</em>）的結果。<em>return</em> 是用來回傳一個值給最初呼叫此函式的程式碼，一旦 <em>return</em> 被執行，解譯器便會跳出函數，回到當初呼叫此函數的敘述句位置。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="ZEQeXQZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: function 1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ZEQeXQZ">
+        JS-learn: function 1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>上面實例練習中我們分別呼叫了 <em>calculateArea</em> 函數兩次，並傳遞不同的引數給函數執行運算，接著透過 <em>return</em> 將運算結果的值回傳給我們另外宣告的變數（<em>item1</em>、<em>item2</em>）。</p>
+<p>稍早有提過，若函數一旦讀到 <em>return</em> 並會立刻跳出，假如其後續還有其他敘述句都將不會被執行。請見下例：</p>
+<div class="text-codepen">
+    <code>
+        <p data-height="360" data-theme-id="0" data-slug-hash="QaZOQX" data-default-tab="js,result" data-user="itrong" data-embed-version="2" data-pen-title="JS-learn: example23" class="codepen">See the Pen <a href="https://codepen.io/itrong/pen/QaZOQX/">JS-learn: example23</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </code>
+</div>
+<p>由於函數內的 <em>document.write(t);</em> 被寫在 <em>return</em> 之後，所以不會被執行。</p>
+
+
+
+
+<p><br></p>
+
+
+
+
+
+
 
 
 
