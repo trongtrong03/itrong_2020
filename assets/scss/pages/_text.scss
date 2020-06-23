@@ -276,14 +276,18 @@
     > div {
         display: flex;
         line-height: 2;
+        background-color: #FFF;
+        &:nth-child(odd) {
+            background-color: #FAFAFA;
+        }
         > div {
             padding: .5rem 1rem;
-            &:nth-child(odd) {
-                background-color: #F6F6F6;
-            }
+            // &:nth-child(odd) {
+            //     background-color: #F6F6F6;
+            // }
             &:first-child {
                 // background-color: #FFF !important;
-                border-right: 1px solid #F6F6F6;
+                // border-right: 1px solid #F6F6F6;
             }
         }
         &.f-head {
@@ -297,10 +301,10 @@
             > div {
                 color: #FFF;
                 background-color: $first;
-                &:first-child {
-                    color: $second;
-                    background-color: #FCFCFC !important;
-                }
+                // &:first-child {
+                //     color: $second;
+                //     background-color: #FCFCFC !important;
+                // }
             }
         }
     }

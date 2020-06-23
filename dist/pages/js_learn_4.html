@@ -88,9 +88,9 @@
         <li><a href="#act1">函式是什麼</a></li>
         <li><a href="#act2">函式結構與呼叫</a></li>
         <li><a href="#act3">函式的回傳值──return</a></li>
-        <li><a href="#act4">函式宣告的方式與匿名函式</a></li>
-        <li><a href="#act5">變數的存在範圍</a></li>
-        
+        <li><a href="#act4">變數的存在範圍</a></li>
+        <li><a href="#act5">函式宣告方式與匿名函式</a></li>
+        <li><a href="#act6">立即函式</a></li>
     </ul>
 </div>
 
@@ -166,7 +166,7 @@ fName();</code></pre>
 </button>
 </div>
 <p>如此一來，就能在不同區域呼叫函式時，傳入各別的參數值給函式執行程式了。</p>
-<p>看完文字舉例，我們將中文敘述轉換成程式碼，看看函式是如何表示的：</p>
+<p>看完文字舉例，我們將中文敘述轉換成程式碼，看看函式是如何表示的，此處我們以計算區域平面面積的公式為例：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">function getArea(width, height) {
     return width * height;
@@ -233,68 +233,7 @@ getArea(itemW, itemH);</code></pre>
 <p>參數是指函式在宣告時所使用的字彙（例如：<em>width</em>、<em>height</em>）；引數則是指傳遞給函式進行運算的數值。</p>
 <p><br></p>
 
-<h2 id="act4">函式宣告的方式與匿名函式</h2>
-<p>JavaScript 一共提供三種函式宣告的方式：</p>
-<div class="text-ol">
-    <ol>
-        <li>Function declaration</li>
-        <li>Function constructor</li>
-        <li>Function expression</li>
-    </ol>
-</div>
-<h4>Function declaration：</h4>
-<p>本篇前大半篇幅介紹的函式內容範例皆採用此種寫法。例如：</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">function demo(text) {
-    document.write(text);
-}</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>這種宣告方式很常見，我們也可以叫它「具名函式」（Named Function），<em>demo</em> 便是此函式的名稱。</p>
-<p><br></p>
-<h4>Function constructor：</h4>
-<p>此種方式用中文稱為「函式建構式」，這裡就直接先說結論：在多數情況中，建構式的寫法並不常被使用到。</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">var demo = new Function("num1", "num2", "return num1 * num2");
-var result = demo(10, 20);</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>本篇文章先跳過不提。</p>
-<p><br></p>
-<h4>Function expression：</h4>
-<p>中文名稱叫做「函式陳述式」，主要是透過變數宣告的方式來定義函式，舉例來說：</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">var a = function demo(text) {
-    document.write(text);
-}</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>範例中的 <em>function</em> 同樣有命名，所以同樣地也可稱作具名函式。然而當我們利用變數來定義函式時，就必須藉由變數（<em>a()</em>）去呼叫函式，而並非直接呼叫函式名稱（<em>demo()</em>），此時腦海裡不禁浮現幾個問題：</p>
-<div class="text-ol">
-    <ol>
-        <li>這個函式要叫做 <em>a</em> 還是 <em>demo</em>？</li>
-        <li>如果要透過變數名稱呼叫函式，為什麼還要為函式命名？</li>
-    </ol>
-</div>
-<p>第一題的答案──此函式的名稱依然叫做 <em>demo</em>，只是在函式之外我們必須通過 <em>a</em> 才能呼叫 / 存取到它。至於第二題的答案...變數宣告函式寫法裡同時為函式命名，自然有其適用時機，然而本篇文章不打算深入探討太多，現階段要說明的是，假設我們不給函式命名，單純這樣宣告的話：</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">var a = function(text) {
-    document.write(text);
-}</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>它看上去就像一個沒有命名的函式，在程式語言裡這種寫法被稱為「匿名函式」（Anonymous Function）。</p>
-<p><br></p>
-
-<h2 id="act5">變數的存在範圍</h2>
+<h2 id="act4">變數的存在範圍</h2>
 <p>JavaScript 的變數有其存在範圍，在存在範圍以外的程式碼便無法存取到該變數。存在範圍在 JavaScript 裡稱為「作用域」（Scope），只要建立一個函式，同時也是建立了一個新的作用域。當 JavaScript 查找變數時，會循著其所在作用域鏈（scope chain）一層一層向外尋找，直到找到宣告的變數或找不到變數為止。也因為如此，不同函式無法找到其他外部函式作用鏈裡的變數，且我們也無法從函式外部使用函式內的變數，例如：</p>
 <div class="text-codepen">
     <code>
@@ -321,18 +260,144 @@ var result = demo(10, 20);</code></pre>
 <p>以上關於變數作用域的說明主要針對 JavaScript ES5 以前的版本，該版本之前變數存在範圍是以函式（Function）作為作用域，而從 ES6 開始，變數宣告方式多了 <em>let</em> 與 <em>const</em> 兩種，作用域將不再單純只是看 <em>function</em> 了，但本篇暫時不對 ES6 進行太多著墨，留待日後再行專文補充，現階段只需有個大概印象即可。</p>
 <p><br></p>
 
+<h2 id="act5">函式宣告方式與匿名函式</h2>
+<p>JavaScript 一共提供三種函式宣告的方式：</p>
+<div class="text-ol">
+    <ol>
+        <li>Function declaration</li>
+        <li>Function constructor</li>
+        <li>Function expression</li>
+    </ol>
+</div>
+<h4>Function declaration：</h4>
+<p>本篇前大半篇幅介紹的函式內容範例皆採用此種寫法。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo(text) {
+    document.write(text);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>翻成中文叫做「函式宣告式」，這種宣告方式很常見，我們也可以叫它「具名函式」（Named Function），<em>demo</em> 便是此函式的名稱。</p>
+<p><br></p>
+<h4>Function constructor：</h4>
+<p>翻成中文叫做「函式建構式」，這裡就直接先說結論：在多數情況中，建構式的寫法並不常被使用到。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var demo = new Function("num1", "num2", "return num1 * num2");
+var result = demo(10, 20);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>本篇文章先跳過不提。</p>
+<p><br></p>
+<h4>Function expression：</h4>
+<p>翻成中文叫做「函式陳述式」或函式表達式，主要是透過變數來定義函式，舉例來說：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var a = function demo(text) {
+    document.write(text);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>範例中的 <em>function</em> 同樣有命名，所以同樣地也可稱作具名函式。然而當我們利用變數來定義函式時，就必須藉由變數（<em>a()</em>）去呼叫函式，而並非直接呼叫函式名稱（<em>demo()</em>），此時腦海裡不禁浮現幾個問題：</p>
+<div class="text-ol">
+    <ol>
+        <li>這個函式要叫做 <em>a</em> 還是 <em>demo</em>？</li>
+        <li>如果要透過變數名稱呼叫函式，為什麼還要為函式命名？</li>
+    </ol>
+</div>
+<p>第一題的答案──此函式的名稱依然叫做 <em>demo</em>，只是在函式之外我們必須通過 <em>a</em> 才能呼叫 / 存取到它。至於第二題的答案...變數宣告函式寫法裡同時為函式命名，自然有其適用時機，然而本篇文章不打算深入探討太多，現階段要說明的是，假設我們不給函式命名，單純這樣宣告的話：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var a = function() {
+    document.write("Hello! world");
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>它看上去就像一個沒有命名的函式，在程式語言裡這種寫法被稱為「匿名函式」（Anonymous Function）。匿名函式的用途廣泛，其中最主要的莫過於創建閉包（Closure）了。另外匿名函式作用域類似區域變數的作用域範圍，匿名函式一旦執行完畢，儲存在記憶體裡的變數就會立即被釋放（銷毀），而不會像全域變數那樣繼續佔據記憶體空間，匿名函式一方面可節省記憶體空間的同時，又可避免函式全域命名衝突的問題。</p>
+<p>另外補充一點，匿名函式不能單獨執行，譬如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function() {
+    document.write("Hello! world");
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當你透過線上編輯器或直接用瀏覽器開發者環境去看程式碼，會發現函式不但沒有執行，甚至還出現了錯誤：</p>
+<figure>
+    <img src="../images/js/learn-function-4.jpg">
+    <figcaption>函式需要名稱。</figcaption>
+</figure>
+<p><br></p>
 
+<h2 id="act6">立即函式</h2>
+<p>一般而言，函式未經呼叫的情況下不會被執行，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo() {
+    document.write("Hello! world");
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這僅僅是定義一個名為 <em>demo</em> 的函式而已，如果要執行它，就得在程式其他地方去呼叫：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo() {
+    document.write("Hello! world");
+}
 
-
-
-
-
-
-
-
-
-
-
+demo();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但其實，JavaScript 允許函式不經呼叫的動作就能立即被執行，這種用法在中文通稱為「立即函式」，英文術語叫做「Immediately Invoked Functions Expressions」，簡稱「IIFE」。立即函式的寫法有兩種，分別為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">(function(){
+}());</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>以及</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">(function(){
+})();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>第一種寫法是較被推薦的寫法，後續也將以這種格式為主。以下圖解它的結構：</p>
+<figure>
+    <img src="../images/js/learn-function-5.jpg">
+</figure>
+<p>從英文原名 Immediately Invoked Functions Expressions 中不難看出，立即函式引援自函式陳述式（Function expression），也就是說只有陳述式才能立即被執行。而真正使函式可以被立即執行的符號，則是函式程式碼區段（花括號 <em>{ }</em>）後方的成對小括弧 <em>( )</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="qBbmadM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: function 5">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBbmadM">
+        JS-learn: function 5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如果要將參數傳遞進去，則從立即執行符裡傳入：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="wvMdoBr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: function 6">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/wvMdoBr">
+        JS-learn: function 6</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>匿名函式與立即函式在函式運用中都是比較常見的概念和用法，然而初學階段下並不容易理解，因此現階段主要先了解 JavaScript 的函式結構及基本概念，隨著學習越發深入，相信對於函式也會有更深度的認識。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">

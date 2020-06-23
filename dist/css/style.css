@@ -10201,18 +10201,15 @@ footer {
 .text-flex > div {
   display: flex;
   line-height: 2;
+  background-color: #FFF;
+}
+
+.text-flex > div:nth-child(odd) {
+  background-color: #FAFAFA;
 }
 
 .text-flex > div > div {
   padding: .5rem 1rem;
-}
-
-.text-flex > div > div:nth-child(odd) {
-  background-color: #F6F6F6;
-}
-
-.text-flex > div > div:first-child {
-  border-right: 1px solid #F6F6F6;
 }
 
 .text-flex > div.f-head {
@@ -10226,11 +10223,6 @@ footer {
 .text-flex > div.f-title > div {
   color: #FFF;
   background-color: #81D8D0;
-}
-
-.text-flex > div.f-title > div:first-child {
-  color: #444;
-  background-color: #FCFCFC !important;
 }
 
 .t-f0 {

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-5 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-5 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>還記得變數的七種資料型別嗎？其中一種型別叫做 Object，也就是物件型別：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">型別</div>
+        <div class="t-f1">說明</div>
+        <div class="t-f3">範例</div>
+    </div>
+    <div>
+        <div class="t-f1">Object</div>
+        <div class="t-f1">物件</div>
+        <div class="t-f3"><em>[1, 2, 3]</em>、<em>{ name: 'iTrong' }</em>、<em>function foo(){}</em> ...</div>
+    </div>
+</div>
+<p>我們可以看物件型別範例裡除了上一篇學到的函式（<em>function</em>）之外，尚有一項用中括號（或稱方括號 <em>[ ]</em>）表示的物件，它的真實身分是「陣列」（Array），不僅是 JavaScript 的內建物件，也是 JavaScript 很重要且常常需要使用到的技巧，本篇學習筆記將專注於陣列的介紹與相關操作方法。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">什麼是陣列</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">什麼是陣列</h2>
+<p>假設今天我們要建立一本班級名冊，用 JavaScript 的話大概會是這個模樣：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var number1 = "王小明";
+var number2 = "李大華";
+var number3 = "張小芬";
+...</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在上面程式碼片段裡我們用座號當作變數名稱，依次宣告同學的順序。如果人數少可能還不覺得有什麼問題，但萬一人數很多呢？又或者未來某天來了名轉學生，勢必得需要額外宣告新的變數名稱（numberN），以在名冊裡加入新同學的資料。可是當每一筆資料都單獨通過變數命名存取，在程式操作上會相當不方便（例如變數只宣告到 <em>number50</em>，我就只能存取到 <em>number50</em> 以內的變數）。且不確定資料數量情況下，這種所有資料都以變數命名各自管理的模式也顯得不具彈性。</p>
+<h4>同一個變數，用位置分割不同資料</h4>
+<p>陣列可以讓我們統一用一個變數，以位置分割的方式，去記錄每一筆資料。拿班級名冊的例子來說，陣列的表示方法如下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = [];
+nameList[0] = "王小明";
+nameList[1] = "李大華";
+nameList[2] = "張小芬";</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>方括號 <em>[ ]</em> 是陣列的表示方式，資料位置的起始數字從 <em>0</em> 開始計算，因此你才會看到第一筆資料在陣列中的位置為 <em>0</em>。陣列的資料內容是可以動態新增的，假設現有名單 50 員情境下要新增第 51 人，只需要在程式碼裡新增 <em>nameList[50]</em> 即可（位置從 <em>0</em> 開始，所以第 51 人的在陣列中的第 <em>50</em> 個位置）。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">nameList[50] = "林阿玉";</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>額外補充一點，<em>[]</em> 也可以用 <em>new Array()</em> 表示，兩者是一樣的：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var a = [];
+var a = new Array();
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>除了上面的表示方式外，陣列還有更簡潔的宣告方式，即在宣告陣列變數名稱的同時，將已知的資料預先寫入陣列裡，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬", ...];</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>陣列裡的資料以逗號 <em>,</em> 區隔。</p>
+
+<!-- <div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="abdWWJo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/abdWWJo">
+        JS-learn: array 1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div> -->
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-7.html" target="_blank">JavaScript 快速入門（7/10）－ 函式</a></li>
+        <li><a href="https://www.fooish.com/javascript/function.html" target="_blank">JavaScript Function (函式)</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
