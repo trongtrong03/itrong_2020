@@ -35,6 +35,12 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">什麼是陣列</a></li>
+        <li><a href="#act2">陣列的長度</a></li>
+        <li><a href="#act3">新增陣列資料</a></li>
+        <li><a href="#act4">刪除陣列資料</a></li>
+        <li><a href="#act5">splice──增刪改陣列資料</a></li>
+        <li><a href="#act6">反轉陣列資料</a></li>
+        <li><a href="#act7">排序陣列資料</a></li>
     </ul>
 </div>
 
@@ -61,7 +67,7 @@ nameList[2] = "張小芬";</code></pre>
     <span>COPY</span>
 </button>
 </div>
-<p>方括號 <em>[ ]</em> 是陣列的表示方式，資料位置的起始數字從 <em>0</em> 開始計算，因此你才會看到第一筆資料在陣列中的位置為 <em>0</em>。陣列的資料內容是可以動態新增的，假設現有名單 50 員情境下要新增第 51 人，只需要在程式碼裡新增 <em>nameList[50]</em> 即可（位置從 <em>0</em> 開始，所以第 51 人的在陣列中的第 <em>50</em> 個位置）。</p>
+<p>方括號 <em>[ ]</em> 是陣列的表示方式，資料位置的起始數字一般稱為「索引值」（index）。索引值從 <em>0</em> 開始計算，因此你才會看到第一筆資料在陣列中的索引值為 <em>0</em>。陣列的資料內容是可以動態新增的，假設現有名單 50 員情境下要新增第 51 人，只需要在程式碼裡新增 <em>nameList[50]</em> 即可（索引值從 <em>0</em> 開始算起，所以第 51 人的在陣列中的索引值為 <em>50</em>）。</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">nameList[50] = "林阿玉";</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -84,9 +90,32 @@ var a = new Array();
     <span>COPY</span>
 </button>
 </div>
-<p>陣列裡的資料以逗號 <em>,</em> 區隔。</p>
-
-<!-- <div class="text-codepen">
+<p>陣列裡的資料以逗號 <em>,</em> 區隔。此外，前面陣列裡的數字（例如 <em>nameList[1]</em>）指的是陣列裡的索引值，並非數值型別，陣列同樣可以存取純數字資料，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var numbers = [1, 2, 3, 4, 5];</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>總的來說，JavaScript 的陣列可以視為裝載任何資料型別的容器，不光是字串、數字或物件，甚至還可以再放入另一個陣列，也就是「多維陣列」。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = [1, "2", [3]];</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<h4>更改陣列中某個資料的值</h4>
+<p>已經宣告的陣列裡的資料是可以被更改的，只要指定新的值給陣列索引值就可以。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬", ...];
+nameList[0] = '盧小小';
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
     <code>
         <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="abdWWJo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 1">
         <span>See the Pen <a href="https://codepen.io/itrong/pen/abdWWJo">
@@ -94,7 +123,239 @@ var a = new Array();
         on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
     </code>
-</div> -->
+</div>
+<p>以上就是陣列的基礎介紹了，接下來的章節將介紹陣列常用的幾種屬性用法。</p>
+
+<p><br></p>
+<h2 id="act2">陣列的長度</h2>
+<p>藉由陣列的 <em>length</em> 屬性，可以取得該陣列目前儲存的資料數量。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.length;
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>回傳的結果為 <em>3</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="JjGNVdv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JjGNVdv">
+        JS-learn: array 2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act3">新增陣列資料</h2>
+<p>陣列新增資料有以下這幾種方法：</p>
+<h4>新增資料在陣列的首位：</h4>
+<p>使用的方法為 <em>unshift()</em>，見下例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.unshift("盧小小");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="YzwVbWw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/YzwVbWw">
+        JS-learn: array 3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<h4>新增資料在陣列的末位：</h4>
+<p>有兩種方法，第一種是使用最常見的 <em>push()</em> 方法：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.push("盧小小");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="qBbmGXE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 4">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBbmGXE">
+        JS-learn: array 4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>第二種則是透過 <em>ary[aryLength]</em> 的方式，讓目前陣列的索引值再加一個：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList[nameList.length] = "盧小小";
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="JjGNqpd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 5">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/JjGNqpd">
+          JS-learn: array 5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>新增資料在陣列的某位：</h4>
+<p>可透過 <em>splice()</em> 方法進行，詳見 <a href="#act5">splice──增刪改陣列資料</a> 一節。</p>
+<p><br></p>
+
+<h2 id="act4">刪除陣列資料</h2>
+<h4>刪除陣列首位的資料：</h4>
+<p>可使用 <em>shift()</em> 方法。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.shift();
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="vYLmqJR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 6">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/vYLmqJR">
+        JS-learn: array 6</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>刪除陣列末位的資料：</h4>
+<p>可使用 <em>pop()</em> 方法。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.pop();
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="zYrwVWN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 7">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/zYrwVWN">
+        JS-learn: array 7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>刪除陣列某位的資料：</h4>
+<p>可透過 <em>splice()</em> 方法進行，詳見 <a href="#act5">splice──增刪改陣列資料</a> 一節。</p>
+<p><br></p>
+
+<h2 id="act5">splice──增刪改陣列資料</h2>
+<p><em>splice()</em> 方法可針對陣列資料進行新增、刪除、修改的動作，是陣列操作裡很強大的功能之一。它的結構一共包含了三個參數：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">arrayObject.splice(index, howmany, item1,.....,itemN)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">參數</div>
+        <div class="t-f1">必要性</div>
+        <div class="t-f5">說明</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>index</em></div>
+        <div class="t-f1">必要</div>
+        <div class="t-f5">指定要新增或刪除的索引值</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>howmany</em></div>
+        <div class="t-f1">必要</div>
+        <div class="t-f5">要移除的資料長度，從哪裡開始即依據第一個值所指定的索引值繼續</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>item1,.....,itemN</em></div>
+        <div class="t-f1">非必要</div>
+        <div class="t-f5">要添加的資料內容</div>
+    </div>
+</div>
+<p>以下列舉幾種操作方式給大家看看──</p>
+<h4>1. 新增資料：</h4>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.splice(2, 0, "甲生", "乙生");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>索引值（<em>index</em>）為 <em>2</em>，也就是將新的資料從陣列中的第三個位置，原先第三位的「張小芬」由於 <em>howmany</em> 值為 <em>0</em>，代表不會被刪除，所以只會被往後推。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="ExPmBqw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 8">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ExPmBqw">
+        JS-learn: array 7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>2. 刪除資料：</h4>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.splice(1, 2);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>從陣列索引值 <em>1</em> 的資料開始算，刪除包含它在內的兩筆資料，因此「李大華」和「張小芬」都被刪除了。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="JjGNgoL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 9">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JjGNgoL">
+        JS-learn: array 9</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>3. 修改資料：</h4>
+<p>這裡用「修改」一詞其實是不精確的說法，在解釋之前，不妨直接閱讀範例──</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬"];
+nameList.splice(1, 1, "甲員");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="XWXRvXe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 10">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/XWXRvXe">
+        JS-learn: array 10</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>以結果論來看，感覺確實就像是我們把陣列裡索引值 <em>1</em> 的「李大華」，改成了「甲員」沒錯。然而稍加觀察程式碼就會發現，<em>splice()</em> 所做並不是修改，而是先將「李大華」刪除（因為 <em>howmany</em> 為 <em>1</em>，代表刪除一個資料），再將新的資料「甲員」添加到索引值 <em>1</em> 的位置。</p>
+
+
+
+
+
 
 
 <!-- 參考資料 -->
@@ -103,6 +364,9 @@ var a = new Array();
         <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
         <li><a href="http://www.kangting.tw/2013/12/javascript-7.html" target="_blank">JavaScript 快速入門（7/10）－ 函式</a></li>
         <li><a href="https://www.fooish.com/javascript/function.html" target="_blank">JavaScript Function (函式)</a></li>
+        <li><a href="https://www.oxxostudio.tw/articles/201908/js-array.html" target="_blank">JavaScript Array 陣列操作方法大全 ( 含 ES6 )</a></li>
+        <li><a href="https://blog.kdchang.cc/2016/06/23/javascript-data-structure-algorithm-array/" target="_blank">用 JavaScript 學習資料結構和演算法：陣列（Array）篇</a></li>
+        <li><a href="https://codertw.com/ios/28518/" target="_blank">javascript 陣列的常用方法</a></li>
     </ul>
 </div>
 <!-- Content end -->
