@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-6 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-6 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>本篇是陣列學習筆記的下篇，將繼續聚焦於陣列操作方法的介紹。廢話不多說，馬上進入正題。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">複製陣列資料（copyWithin）</a></li>
+        <li><a href="#act2">填充陣列資料（fill）</a></li>
+        <li><a href="#act3">篩選陣列資料（filter）</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">複製陣列資料（copyWithin）</h2>
+<p><em>copyWithin()</em> 方法可以複製陣列的資料，並從指定索引值的位置開始將複製的資料覆蓋原本位置的資料。它一共可填入三個參數值，分別表示：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">ary.copyWithin(target, start, end);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>第一個值 <em>target</em> 指的是要置換位置的目標索引值（必填），<em>start</em> 表示要從什麼位置開始複製（預設值為 <em>0</em>），<em>end</em> 則表示要在哪一個位置結束，但不包含該數值索引值本身的位置（預設為陣列長度）。剛說明定義可能仍有些懵懂，以下我們就直接來看程式碼範例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬", "盧小小", "黃阿亮"];</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>只填入目標索引值：</h4>
+<p>操作陣列的資料如上，假設此時我們僅先給予 <em>copyWithin()</em> 一個參數值，其數值為 <em>2</em>：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">nameList.copyWithin(2);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當 <em>copyWithin()</em> 內參數值只有一個數值的時候，代表陣列將從該數字對應位置的資料開始把複製的陣列資料依序取代原本的內容，由於起始值與結束值都沒有指定，因此複製的範圍涵蓋整個陣列。得到結果為下：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="gOPxvLP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 25">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/gOPxvLP">
+        JS-learn: array 25</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>2</em> 指向的索引值為第三個位置的 <em>張小芬</em>，並從第一個位置的 <em>王小明</em> 開始複製資料，取代原本陣列第三個位置的內容，並逐格複製直到陣列結束。原本陣列的長度不會隨著複製操作而有所改變，若複製資料超過原陣列長度，溢出部份將會直接被忽略。</p>
+<p><br></p>
+
+<h4>填入起始值：</h4>
+<p><em>copyWithin()</em> 第二個參數值代表資料要從哪一個位置開始複製，假如我們填入的參數值為 <em>copyWithin(2, 1)</em>，表示陣列從第三個位置開始覆蓋資料，而複製的資料從第二個位置的資料起計。例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="zYrdLpG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 26">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/zYrdLpG">
+        JS-learn: array 26</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>填入結束值：</h4>
+<p><em>copyWithin()</em> 的第三個參數表示停止複製的資料位置，也就是說，資料複製只會到結束索引值的錢一個位置，不包含結束索引值本身。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="NWxvBME" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 27">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/NWxvBME">
+        JS-learn: array 27</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act2">填充陣列資料（fill）</h2>
+<p><em>fill()</em> 方法可用來將陣列中的資料填充為指定的值，其語法規則為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">ary.fill(value, start, end);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>value</em> 值是要填充的內容，<em>start</em>、<em>end</em> 和其他方法的用法相同，分別表示要從哪一個索引值位置開始執行，然後到結束值的前一個位置停止填充。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬", "盧小小", "黃阿亮"];
+nameList.fill("林小玉");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>像上方程式碼片段只填入 <em>value</em> 的話，即表示陣列所有資料通通都會被 <em>林小玉</em> 給填充。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="BajdMpz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 28">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/BajdMpz">
+        JS-learn: array 28</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act3">篩選陣列資料（filter）</h2>
+<p><em>filter()</em> 方法用來使陣列依據指定的判斷函式，依序對陣列裡每一筆資料進行判斷，並篩選出符合條件的資料。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function aryFilter(n) {
+    return n >= 10;
+}
+
+var nameList = [5, 1, 13, 4, 8, 55, 9, 2, 10, 24];
+nameList.filter(aryFilter);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>首先，我們定義了一個判斷函式 <em>aryFilter</em>，其內容是回傳（<em>return</em>）大於等於 <em>10</em> 的數值。接著透過 <em>filter()</em> 方法呼叫函式，函式便會對指定陣列裡的每一個資料執行判斷，凡是數值大於等於 <em>10</em> 符合條件的資料，就會被篩選出來成為新的陣列。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="WNrEPYX" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 29">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/WNrEPYX">
+        JS-learn: array 29</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>當然，可篩選的目標不單侷限於數字而已，字串同樣可以通過條件判斷進行處理，例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="abdyXgg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: array 30">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/abdyXgg">
+        JS-learn: array 30</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>篩選出字串長度大於等於 <em>5</em> 的陣列資料。</p>
+
+
+
+
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-7.html" target="_blank">JavaScript 快速入門（7/10）－ 函式</a></li>
+        <li><a href="https://www.fooish.com/javascript/function.html" target="_blank">JavaScript Function (函式)</a></li>
+        <li><a href="https://www.oxxostudio.tw/articles/201908/js-array.html" target="_blank">JavaScript Array 陣列操作方法大全 ( 含 ES6 )</a></li>
+        <li><a href="https://blog.kdchang.cc/2016/06/23/javascript-data-structure-algorithm-array/" target="_blank">用 JavaScript 學習資料結構和演算法：陣列（Array）篇</a></li>
+        <li><a href="https://codertw.com/ios/28518/" target="_blank">javascript 陣列的常用方法</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../javascript.html'"></button>
+                    
+                    
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                    <button id="sideCatalog" title="Catalog"></button>
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        <li v-for="item in filterJs" :key="item.id">
+                        
+                        
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+                <div class="overlay" :class="{ 'is-active' : listActive}"></div>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

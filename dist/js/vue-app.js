@@ -236,7 +236,7 @@ const jsData = [
     {
         id: 4,
         href: 'js_learn_5',
-        title: 'Javascript 學習筆記（五）：陣列',
+        title: 'Javascript 學習筆記（五）：陣列---上',
         time: '2019.07.18',
         tag1: false,
         tag1_name: 'false',
@@ -247,6 +247,18 @@ const jsData = [
     },
     {
         id: 5,
+        href: 'js_learn_6',
+        title: 'Javascript 學習筆記（六）：陣列---下',
+        time: '2019.07.20',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 6,
         href: 'js_vue_intro',
         title: '認識 Vue.js',
         time: '2019.11.21',
@@ -258,7 +270,7 @@ const jsData = [
         img_name: 'thumb_vue'
     },
     {
-        id: 6,
+        id: 7,
         href: 'js_vue_data',
         title: 'Vue 學習筆記（一）：資料（Data）與樣板（Template）',
         time: '2019.11.23',
@@ -270,7 +282,7 @@ const jsData = [
         img_name: ''
     },
     {
-        id: 7,
+        id: 8,
         href: 'js_vue_text',
         title: 'Vue 學習筆記（二）：v-text 與 v-html',
         time: '2019.11.29',
