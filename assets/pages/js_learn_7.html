@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-7 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-7 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>本篇是陣列學習筆記的下篇，將繼續聚焦於陣列操作方法的介紹。廢話不多說，馬上進入正題。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">複製陣列資料（copyWithin）</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">複製陣列資料（copyWithin）</h2>
+<p><em>copyWithin()</em> 方法可以複製陣列的資料，並從指定索引值的位置開始將複製的資料覆蓋原本位置的資料。它一共可填入三個參數值，分別表示：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">ary.copyWithin(target, start, end);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>第一個值 <em>target</em> 指的是要置換位置的目標索引值（必填），<em>start</em> 表示要從什麼位置開始複製（預設值為 <em>0</em>），<em>end</em> 則表示要在哪一個位置結束，但不包含該數值索引值本身的位置（預設為陣列長度）。剛說明定義可能仍有些懵懂，以下我們就直接來看程式碼範例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var nameList = ["王小明", "李大華", "張小芬", "盧小小", "黃阿亮"];</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+
+
+
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-9.html" target="_blank">JavaScript 快速入門（9/10）－ 陣列</a></li>
+        <li><a href="https://www.fooish.com/javascript/array/" target="_blank">JavaScript Array (陣列)</a></li>
+        <li><a href="https://www.oxxostudio.tw/articles/201908/js-array.html" target="_blank">JavaScript Array 陣列操作方法大全 ( 含 ES6 )</a></li>
+        <li><a href="https://blog.kdchang.cc/2016/06/23/javascript-data-structure-algorithm-array/" target="_blank">用 JavaScript 學習資料結構和演算法：陣列（Array）篇</a></li>
+        <li><a href="https://codertw.com/ios/28518/" target="_blank">javascript 陣列的常用方法</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
