@@ -79,24 +79,49 @@
                 <div class="text-content">
 <!-- Content start -->
 <h2>前言</h2>
-<p></p>
+<p>在 JavaScript 世界裡，除了原始型別（數字、布林值、字串），其餘東西都是物件（Object），我們可以再度請出資料型別表一看：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">型別</div>
+        <div class="t-f1">說明</div>
+        <div class="t-f3">範例</div>
+    </div>
+    <div>
+        <div class="t-f1">Object</div>
+        <div class="t-f1">物件</div>
+        <div class="t-f3"><em>[1, 2, 3]</em>、<em>{ name: 'iTrong' }</em>、<em>function foo(){}</em> ...</div>
+    </div>
+</div>
+<p>包含上一篇學習筆記主題的陣列（Array）在內，函式（Function）甚至是未列於表中的根（roots）本身也都是物件。根物件又名全局物件，在瀏覽器裡的根物件指的是 <em>window</em>。此時此刻就先不針對 <em>window</em> 進行過多的解釋，我們只要知道，物件是 JavaScript 很重要的基礎，每一位工程師都必須要瞭解它的概念與相關應用。</p>
 <p><br></p>
+
 
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">複製陣列資料（copyWithin）</a></li>
+        <li><a href="#act1">物件宣告與結構</a></li>
     </ul>
 </div>
 
-<h2 id="act1">複製陣列資料（copyWithin）</h2>
-<p><em>copyWithin()</em> 方法可以複製陣列的資料，並從指定索引值的位置開始將複製的資料覆蓋原本位置的資料。它一共可填入三個參數值，分別表示：</p>
+<h2 id="act1">物件宣告與結構</h2>
+<p>在 JavaScript 裡，一個基礎型別可以是一個數字、布林值或字串，但物件可能是由一個空值或一群屬性（property）組合而成的複雜型態資料。宣告物件的方式有兩種：</p>
+<h4>物件建構式（Object Constructor）：</h4>
 <div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">ary.copyWithin(target, start, end);</code></pre>
+<pre class="text-pre"><code class="javascript">var obj = new Object(); </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
+<p>用 <em>new</em> 關鍵字加上 <em>Object()</em> 就能建立一個型別為物件的變數。</p>
+<p><br></p>
+<h4>物件實字（Object Literal）：</h4>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var obj = {}; </code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>另一種方式則是直接使用一對大括號（花括號）來表示物件，此種建立方式較物件建構式來得常見。本篇學習筆記的範例練習主要也會以此方式來進行。</p>
 <p><br></p>
 
 
@@ -108,8 +133,10 @@
 <div class="text-refer">
     <ul>
         <li><a href="https://www.books.com.tw/products/0010744702" target="_blank">《JavaScript & JQuery：網站互動設計程式進化之道》</a></li>
-        <li><a href="http://www.kangting.tw/2013/12/javascript-9.html" target="_blank">JavaScript 快速入門（9/10）－ 陣列</a></li>
-        <li><a href="https://www.fooish.com/javascript/array/" target="_blank">JavaScript Array (陣列)</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-8.html" target="_blank">JavaScript 快速入門（8/10）－ 物件</a></li>
+        <li><a href="https://www.fooish.com/javascript/object.html" target="_blank">JavaScript Object (物件)</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10193605" target="_blank">JavaScript - 物件 與 屬性</a></li>
+        <li><a href="https://wcc723.github.io/javascript/2017/12/09/javascript-object/" target="_blank">JavaScript 就是一堆物件的概念</a></li>
     </ul>
 </div>
 <!-- Content end -->
