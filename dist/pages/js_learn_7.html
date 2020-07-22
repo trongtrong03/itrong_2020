@@ -123,10 +123,35 @@
 </div>
 <p>另一種方式則是直接使用一對大括號（花括號）來表示物件，此種建立方式較物件建構式來得常見。本篇學習筆記的範例練習主要也會以此方式來進行。</p>
 <p><br></p>
-
-
-
-
+<p>通常物件裡會存放一些該物件的屬性，就像一輛車子會存在許多資料，例如廠牌、型號、顏色...等，這些資料即為該車輛（物件）的屬性，倘若要透過 JavaScript 來表示，其物件結構會是這個樣子的：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var car = {
+    brand: "TOYOTA",
+    name: "C-HR",
+    color: "red",
+    year: 2016
+}; </code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>應該不難理解，每一條屬性皆是由名稱（Key）及值（Value）的組成。其中，值（Value）可以放入任何型別的資料，當然也包含物件，這時整體看起來宛如 Sass 的巢狀結構：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var car = {
+    brand: "TOYOTA",
+    name: "C-HR",
+    color: "red",
+    year: 2016,
+    price: {
+        LE: 895000,
+        XLE: 959000,
+        Limited: 1069000
+    }
+}; </code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 
 
 <!-- 參考資料 -->
