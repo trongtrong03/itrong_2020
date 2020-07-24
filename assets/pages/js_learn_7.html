@@ -36,6 +36,7 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">物件宣告與結構</a></li>
+        <li><a href="#act2">存取屬性</a></li>
     </ul>
 </div>
 
@@ -71,7 +72,7 @@
     <span>COPY</span>
 </button>
 </div>
-<p>應該不難理解，每一條屬性皆是由名稱（Key）及值（Value）的組成。其中，值（Value）可以放入任何型別的資料，當然也包含物件，這時整體看起來宛如 Sass 的巢狀結構：</p>
+<p>應該不難理解，每一條屬性皆是由名稱（Key）及值（Value）的組成，如果物件裡存在多條屬性，則每條屬性之間以逗號區隔。值（Value）可以放入任何型別的資料，當然也包含物件，這時整體看起來宛如 Sass 的巢狀結構：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">var car = {
     brand: "TOYOTA",
@@ -88,6 +89,74 @@
     <span>COPY</span>
 </button>
 </div>
+<p><br></p>
+
+<h2 id="act2">存取屬性</h2>
+<p>如果要存取物件裡的屬性，主要有兩種方法：</p>
+<h4>1. 使用 <em>.</em> 運算子：</h4>
+<p>以上個章節的範例為例，如果我們要存取該車輛物件 <em>car</em> 的「品牌」屬性（<em>brand</em>），那麼我們只需 <em>car.brand</em> 這樣寫即可。且看下方實作：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="gOPdjdz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/gOPdjdz">
+        JS-learn: object 1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如果要用 <em>.</em> 存取屬性，必須注意屬性名稱（也就是 Key 值）不能含「符號」，因為此種方式無法判別屬性名稱裡的符號是否為其一部分。</p>
+<p><br></p>
+
+<h4>2. 使用 <em>[]</em>：</h4>
+<p>另一種方式則是使用中括號，注意中括號裡的屬性名稱需要用單或雙引號囊括起來，例如 <em>car["brand"]</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="vYLPWNv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/vYLPWNv">
+        JS-learn: object 2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>和 <em>.</em> 運算子不同，<em>[]</em> 可以接受屬性名稱含有符號，儘管如此，變數命名規仍應當避免使用特殊符號。除此之外，<em>[]</em> 裡的內容也可以是變數，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var car = {};
+var carBrand = "brand";
+
+car[carBrand] = "TOYOTA";   // 物件 car 建立名為 brand 的屬性，其值為 TOYOTA
+
+console.log(car[carBrand]);    // 這裡中括號裡引入的內容是變數，所以不需要雙引號</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="ExPMQeW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ExPMQeW">
+        JS-learn: object 3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>假如我們使用 <em>.</em> 運算子來給變數指定值，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">car.carBrand = "TOYOTA";</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這樣反而變成物件 <em>car</em> 新增一個名為 <em>carBrand</em> 屬性，而並非是變數了。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="eYJXVxd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 4">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/eYJXVxd">
+        JS-learn: object 4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>透過實際操作展示可以發現輸出的結果是 <em>undefined</em>。</p>
 
 
 <!-- 參考資料 -->
