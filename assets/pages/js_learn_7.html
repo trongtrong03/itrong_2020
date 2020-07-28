@@ -37,6 +37,8 @@
     <ul>
         <li><a href="#act1">物件宣告與結構</a></li>
         <li><a href="#act2">存取屬性</a></li>
+        <li><a href="#act3">刪除屬性</a></li>
+        <li><a href="#act4">物件的方法</a></li>
     </ul>
 </div>
 
@@ -157,6 +159,58 @@ console.log(car[carBrand]);    // 這裡中括號裡引入的內容是變數，�
     </code>
 </div>
 <p>透過實際操作展示可以發現輸出的結果是 <em>undefined</em>。</p>
+<p><br></p>
+
+<h2 id="act3">刪除屬性</h2>
+<p>倘如要刪除物件裡的屬性，我們可以使用 <em>delete</em> 關鍵字，具體操作方式為下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">delete object.property;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var car = {
+    brand: "TOYOTA",
+    name: "C-HR",
+    color: "red",
+    year: 2016,
+};
+
+delete car.name;
+delete car.color;
+delete car.year;
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>最後 <em>car</em> 物件裡的屬性便只剩下 <em>brand</em> 一條而已，我們可以通過下方範例實作的 Console 功能獲得證實：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="QWyRKVq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 5">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/QWyRKVq">
+        JS-learn: object 5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act4">物件的方法</h2>
+<p>在前言曾提到，JavaScript 除了原始型別之外的所有東西都是物件，自然也包含「函式」（function）。而當我們將函式主體直接定義給某物件裡的屬性時，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var obj = {
+    something: function(){ ... },
+};
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>像這樣，如果物件的屬性值是一個函式，則稱其為該物件的「方法」（method）。物件的方法將用來定義一個物件可以做的動作。</p>
+
 
 
 <!-- 參考資料 -->
