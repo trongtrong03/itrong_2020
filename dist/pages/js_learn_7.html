@@ -263,17 +263,58 @@ delete car.year;
 <p><br></p>
 
 <h2 id="act4">物件的方法</h2>
-<p>在前言曾提到，JavaScript 除了原始型別之外的所有東西都是物件，自然也包含「函式」（function）。而當我們將函式主體直接定義給某物件裡的屬性時，例如：</p>
+<p>在前言曾提到，JavaScript 除了原始型別之外的所有東西都是物件，自然也包含「函式」（function）。我們除了可以將函式主體指定給某物件的某屬性外，也可以直接在物件屬性裡定義函式，例如：</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">var obj = {
-    something: function(){ ... },
+    f: function(){ ... },
 };
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>像這樣，如果物件的屬性值是一個函式，則稱其為該物件的「方法」（method）。物件的方法將用來定義一個物件可以做的動作。</p>
+<p>像這樣，如果物件的屬性值是一個函式，一般大眾稱其為該物件的「方法」（method）──物件的方法將用來定義一個物件可以做的動作。假如要調用物件方法時可以這麼寫：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">obj.f();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="abdebbO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 6">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/abdebbO">
+        JS-learn: object 6</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>當然，我們也可以先定義好函式，再將其指定給物件裡的某屬性。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo(e) {
+    document.write(e);
+}
+
+var obj = {
+    f: demo
+};
+
+obj.f("Hello world!");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="mdVNyea" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: object 7">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/mdVNyea">
+        JS-learn: object 7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+
 
 
 
