@@ -1286,6 +1286,20 @@ const resData = [
     },
 ]
 
+const hikData = [
+    {
+        id: 0,
+        href: 'xxx',
+        time: '2222.11.11',
+        title: 'xxxxxx',
+        tag1: true,
+        tag1_name: 'XX',
+        tag2: true,
+        tag2_name: 'XXXXX',
+        img_name: '001'
+    },
+]
+
 
 var wrap = new Vue({
     el: '#wrap',
@@ -1296,6 +1310,7 @@ var wrap = new Vue({
         m_list: miscData.reverse(),
         a_list: appData.reverse(),
         r_list: resData,
+        hk_list: hikData.reverse(),
         query: "",
         isActive: 1,
         navActive: false,
@@ -1323,6 +1338,10 @@ var wrap = new Vue({
 
         getAppIndex({ a_list = [], index = 0 }) {
             return a_list[index] || {}
+        },
+
+        getHikIndex({ hk_list = [], index = 0 }) {
+            return hk_list[index] || {}
         },
 
         // 重置搜尋框的值
@@ -1374,6 +1393,13 @@ var wrap = new Vue({
             var search = this;
             return this.r_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterHik: function() {
+            var search = this;
+            return this.hk_list.filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
         

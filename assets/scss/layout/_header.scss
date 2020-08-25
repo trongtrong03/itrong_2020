@@ -66,23 +66,26 @@ nav {
         display: block;
         li {
             display: block;
-        }
-        a {
-            display: block;
-            font-size: 1rem;
-            color: $second;
-            @include text-overflow;
-            padding: 1rem;
-            b {
-                font-weight: normal;
-                padding: .25rem;
-            }
-            &:hover,
-            &.active {
-                color: #FFF;
+            a {
+                display: block;
+                font-size: 1rem;
+                color: $second;
+                @include text-overflow;
+                padding: 1rem;
                 b {
-                    background-color: $red;
+                    font-weight: normal;
+                    padding: .25rem;
                 }
+                &:hover,
+                &.active {
+                    color: #FFF;
+                    b {
+                        background-color: $red;
+                    }
+                }
+            }
+            &:last-child {
+                border-top: 1px solid rgba(0, 0, 0, .3);
             }
         }
     }

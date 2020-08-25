@@ -8,7 +8,7 @@
     <nav :class="{ 'is-active' : navActive}">
         <ul>
             <li>
-                <a @@if (context.index==="active" ) { class="active" } href="index.html"><b>HOME</b></a>
+                <a @@if (context.index==="active" ) { class="active" } href="@@webRoot/index.html"><b>HOME</b></a>
             </li>
             <li>
                 <a @@if (context.html==="active" ) { class="active" } href="@@webRoot/html.html"><b>HTML</b></a>
@@ -27,6 +27,9 @@
             </li>
             <li>
                 <a @@if (context.res==="active" ) { class="active" } href="@@webRoot/resource.html"><b>Resources</b></a>
+            </li>
+            <li>
+                <a @@if (context.hike==="active" ) { class="active" } href="@@webRoot/hiking.html"><b>Hiking</b></a>
             </li>
         </ul>
         <div class="nav-bottom">

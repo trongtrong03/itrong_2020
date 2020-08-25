@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="index">
 <head>
     <title>iTrong work studio</title>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
             <nav :class="{ 'is-active' : navActive}">
                 <ul>
                     <li>
-                        <a  class="active"  href="index.html"><b>HOME</b></a>
+                        <a  class="active"  href="./index.html"><b>HOME</b></a>
                     </li>
                     <li>
                         <a  href="./html.html"><b>HTML</b></a>
@@ -44,6 +44,9 @@
                     </li>
                     <li>
                         <a  href="./resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  href="./hiking.html"><b>Hiking</b></a>
                     </li>
                 </ul>
                 <div class="nav-bottom">
@@ -70,13 +73,13 @@
         </header>
         <main>
             <div class="index-wrap">
-                <h1>LASTEST</h2>
+                <h2>LASTEST</h2>
                 <!-- HTML -->
                 <section>
-                    <h2>
+                    <h3>
                         <span>HTML</span>
                         <a href="html.html">MORE</a>
-                    </h2>
+                    </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
                             <li class="notes-item">
@@ -129,10 +132,10 @@
                 </section>
                 <!-- CSS -->
                 <section>
-                    <h2>
+                    <h3>
                         <span>CSS</span>
                         <a href="css.html">MORE</a>
-                    </h2>
+                    </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
                             <li class="notes-item">
@@ -185,10 +188,10 @@
                 </section>
                 <!-- JavaScript -->
                 <section>
-                    <h2>
+                    <h3>
                         <span>JavaScript</span>
                         <a href="javascript.html">MORE</a>
-                    </h2>
+                    </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
                             <li class="notes-item">
@@ -239,118 +242,28 @@
                         </ul>
                     </div>
                 </section>
-                <!-- APP -->
+                <!-- Hiking -->
+                <h2>Hiking</h2>
                 <section>
-                    <h2>
-                        <span>Applicaptions</span>
-                        <a href="app.html">MORE</a>
-                    </h2>
-                    <div class="notes-wrap">
-                        <ul class="notes-list">
-                            <li class="notes-item">
-                                <a :href="'pages/' + getAppIndex({ a_list, index: 0 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getAppIndex({ a_list, index: 0 }).tag1" v-text="getAppIndex({ a_list, index: 0 }).tag1_name"></span>
-                                            <span v-if="getAppIndex({ a_list, index: 0 }).tag2" v-text="getAppIndex({ a_list, index: 0 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getAppIndex({ a_list, index: 0 }).title"></h2>
-                                        <time class="notes-time" v-text="getAppIndex({ a_list, index: 0 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getAppIndex({ a_list, index: 0 }).img">
-                                        <img :src="'images/app/' + getAppIndex({ a_list, index: 0 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getAppIndex({ a_list, index: 1 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getAppIndex({ a_list, index: 1 }).tag1" v-text="getAppIndex({ a_list, index: 1 }).tag1_name"></span>
-                                            <span v-if="getAppIndex({ a_list, index: 1 }).tag2" v-text="getAppIndex({ a_list, index: 1 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getAppIndex({ a_list, index: 1 }).title"></h2>
-                                        <time class="notes-time" v-text="getAppIndex({ a_list, index: 1 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getAppIndex({ a_list, index: 1 }).img">
-                                        <img :src="'images/app/' + getAppIndex({ a_list, index: 1 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getAppIndex({ a_list, index: 2 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getAppIndex({ a_list, index: 2 }).tag1" v-text="getAppIndex({ a_list, index: 2 }).tag1_name"></span>
-                                            <span v-if="getAppIndex({ a_list, index: 2 }).tag2" v-text="getAppIndex({ a_list, index: 2 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getAppIndex({ a_list, index: 2 }).title"></h2>
-                                        <time class="notes-time" v-text="getAppIndex({ a_list, index: 2 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getAppIndex({ a_list, index: 2 }).img">
-                                        <img :src="'images/app/' + getAppIndex({ a_list, index: 2 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="photo-list">
+                        <li class="photo-item" v-for="item in filterHik" :key="item.id">
+                            <a :href="'pages/' + item.href + '.html'">
+                                <figure>
+                                    <img :src="'images/hiking/' + item.img_name + '.jpg'">
+                                    <figcaption class="notes-tags">
+                                        <span v-if="item.tag1" v-text="item.tag1_name"></span>
+                                        <span v-if="item.tag2" v-text="item.tag2_name"></span>
+                                    </figcaption>
+                                </figure>
+                                <hgroup>
+                                    <time v-text="item.time"></time>
+                                    <h2 v-text="item.title"></h2>
+                                </hgroup>
+                            </a>
+                        </li>
+                    </ul>
                 </section>
-                <!-- MISC -->
-                <section>
-                    <h2>
-                        <span>Miscellaneous Notes</span>
-                        <a href="misc.html">MORE</a>
-                    </h2>
-                    <div class="notes-wrap">
-                        <ul class="notes-list">
-                            <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: 0 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: 0 }).tag1" v-text="getMiscIndex({ m_list, index: 0 }).tag1_name"></span>
-                                            <span v-if="getMiscIndex({ m_list, index: 0 }).tag2" v-text="getMiscIndex({ m_list, index: 0 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getMiscIndex({ m_list, index: 0 }).title"></h2>
-                                        <time class="notes-time" v-text="getMiscIndex({ m_list, index: 0 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: 0 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: 0 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: 1 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: 1 }).tag1" v-text="getMiscIndex({ m_list, index: 1 }).tag1_name"></span>
-                                            <span v-if="getMiscIndex({ m_list, index: 1 }).tag2" v-text="getMiscIndex({ m_list, index: 1 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getMiscIndex({ m_list, index: 1 }).title"></h2>
-                                        <time class="notes-time" v-text="getMiscIndex({ m_list, index: 1 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: 1 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: 1 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getMiscIndex({ m_list, index: 2 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getMiscIndex({ m_list, index: 2 }).tag1" v-text="getMiscIndex({ m_list, index: 2 }).tag1_name"></span>
-                                            <span v-if="getMiscIndex({ m_list, index: 2 }).tag2" v-text="getMiscIndex({ m_list, index: 2 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getMiscIndex({ m_list, index: 2 }).title"></h2>
-                                        <time class="notes-time" v-text="getMiscIndex({ m_list, index: 2 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getMiscIndex({ m_list, index: 2 }).img">
-                                        <img :src="'images/misc/' + getMiscIndex({ m_list, index: 2 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                
             </div>
         </main>
         <div class="particles-bg"></div>
