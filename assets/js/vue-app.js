@@ -182,6 +182,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 10,
+        href: 'css_column',
+        title: '使用 column 實現文字多欄式排版',
+        time: '2020.08.14',
+        tag1: true,
+        tag1_name: 'CSS3',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [

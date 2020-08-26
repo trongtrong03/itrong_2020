@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-11 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-11 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>CSS3 中的 <em>column</em> 屬性可以用來設定文章的排版方式，使其具有多欄式陳列內容的風格，另外也有人用其實現「瀑布流」（Masonry）布局。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基本概念</a></li>
+        <li><a href="#act2">濾鏡介紹</a></li>
+        <li><a href="#act3">相容性支援</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基本概念</h2>
+
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="http://blog.shihshih.com/css-filter/" target="_blank">簡單究好--CSS濾鏡效果</a></li>
+        <li><a href="https://zhuanlan.zhihu.com/p/125137964" target="_blank">知乎--CSS filter与前端滤镜</a></li>
+        <li><a href="https://www.cnblogs.com/fsjohnhuang/p/4127888.html" target="_blank">CSS3魔法堂：CSS3滤镜及Canvas、SVG和IE滤镜替代方案详解</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
