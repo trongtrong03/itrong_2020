@@ -10459,48 +10459,6 @@ footer {
   padding-left: .5rem;
 }
 
-.res-switch {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.res-switch button {
-  display: block;
-  width: 3rem;
-  height: 3rem;
-  text-align: center;
-  font-size: 1rem;
-  color: #81D8D0;
-  background-color: transparent;
-  border: 1px solid #81D8D0;
-  transition: all .3s ease;
-}
-
-.res-switch button::before {
-  content: '';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-.res-switch button.is-active {
-  color: #FFF;
-  background-color: #81D8D0;
-}
-
-.res-switch button.is-grid::before {
-  content: '\f84c';
-}
-
-.res-switch button.is-row::before {
-  content: '\f03a';
-}
-
-@media only screen and (max-width: 480px) {
-  .res-switch {
-    display: none;
-  }
-}
-
 .res-list {
   list-style: none;
   margin: 0;
@@ -10518,10 +10476,20 @@ footer {
 }
 
 .res-item {
+  position: relative;
+  z-index: 1;
   width: calc(20% - (4rem / 5));
   margin-right: 1rem;
   margin-bottom: 1rem;
   float: left;
+  -webkit-animation-name: filterFadeIn;
+  animation-name: filterFadeIn;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
 }
 
 .res-item a {
@@ -10593,6 +10561,10 @@ footer {
   animation-name: resFadeIn;
   -webkit-animation-duration: .25s;
   animation-duration: .25s;
+}
+
+.res-item:hover {
+  z-index: 5;
 }
 
 .res-item:nth-child(5n) {
@@ -10686,6 +10658,28 @@ footer {
   }
 }
 
+@-webkit-keyframes filterFadeIn {
+  0% {
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes filterFadeIn {
+  0% {
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes resFadeIn {
   0% {
     top: 96%;
@@ -10708,7 +10702,88 @@ footer {
   }
 }
 
+.features-wrap {
+  *zoom: 1;
+}
+
+.features-wrap:before, .features-wrap:after {
+  content: "";
+  display: table;
+}
+
+.features-wrap:after {
+  clear: both;
+}
+
+.filter-list {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 6rem);
+  height: 3rem;
+  float: left;
+}
+
+.filter-list button {
+  flex: 0 1 auto;
+  line-height: 2rem;
+  font-size: .875rem;
+  color: #fff;
+  background-color: #444;
+  margin-right: 0.5rem;
+  padding: 0 .5rem;
+  transition: opacity .3s;
+  opacity: 0.4;
+}
+
+.filter-list button.is-active {
+  opacity: 1;
+}
+
+.switch-list {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+
+.switch-list button {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #81D8D0;
+  background-color: transparent;
+  border: 1px solid #81D8D0;
+  transition: all .3s ease;
+}
+
+.switch-list button::before {
+  content: '';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.switch-list button.is-active {
+  color: #FFF;
+  background-color: #81D8D0;
+}
+
+.switch-list button.is-grid::before {
+  content: '\f84c';
+}
+
+.switch-list button.is-row::before {
+  content: '\f03a';
+}
+
+@media only screen and (max-width: 480px) {
+  .switch-list {
+    display: none;
+  }
+}
+
 .photo-list {
+  padding-top: 1rem;
   *zoom: 1;
 }
 
@@ -10729,6 +10804,14 @@ footer {
   margin-right: 1rem;
   margin-bottom: 1rem;
   float: left;
+  -webkit-animation-name: filterFadeIn;
+  animation-name: filterFadeIn;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
   transition: transform .3s;
 }
 

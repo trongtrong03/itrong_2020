@@ -10,24 +10,27 @@
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="網頁前端"></option>
-                        <option value="CSS"></option>
-                        <option value="Javascript"></option>
-                        <option value="素材"></option>
-                        <option value="影音"></option>
-                        <option value="教學"></option>
-                        <option value="優化"></option>
-                        <option value="開發工具"></option>
+                        <!-- <option value="網頁前端"></option> -->
                     </datalist>
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
                 <div class="res-wrap">
-                    <div class="res-switch">
-                        <button class="is-grid" :class="isActive==1 ? 'is-active' : ''" @click="isActive=1"></button>
-                        <button class="is-row" :class="isActive==2 ? 'is-active' : ''" @click="isActive=2"></button>
+                    <div class="features-wrap">
+                        <div class="filter-list">
+                            <button :class="{ 'is-active': currentFilter === 'all' }" @click="setFilter('all')">全部</button>
+                            <button :class="{ 'is-active': currentFilter === 'webfront' }" @click="setFilter('webfront')">網頁前端</button>
+                            <button :class="{ 'is-active': currentFilter === 'material' }" @click="setFilter('material')">素材模板</button>
+                            <button :class="{ 'is-active': currentFilter === 'media' }" @click="setFilter('media')">影音剪輯</button>
+                            <button :class="{ 'is-active': currentFilter === 'teach' }" @click="setFilter('teach')">教學資源</button>
+                            <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">未分類</button>
+                        </div>
+                        <div class="switch-list">
+                            <button class="is-grid" :class="isActive==1 ? 'is-active' : ''" @click="isActive=1"></button>
+                            <button class="is-row" :class="isActive==2 ? 'is-active' : ''" @click="isActive=2"></button>
+                        </div>
                     </div>
                     <ul class="res-list" :class="isActive==2 ? 'is-row' : ''">
-                        <li class="res-item" v-for="item in filterRes" :key="item.id">
+                        <li class="res-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterRes" :key="item.id">
                             <a :href="item.href" target="_blank">
                                 <figure>
                                     <img :src="'images/resources/' + item.img_name + '.jpg'" v-if="item.img">

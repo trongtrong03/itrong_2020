@@ -500,7 +500,7 @@ const resData = [
         href: 'https://www.colorzilla.com/gradient-editor/',
         title: 'Ultimate CSS Gradient Generator',
         desc: '方便好用的線上漸層調製工具，可向下支援至 ie8。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'colorZilla'
     },
@@ -509,7 +509,7 @@ const resData = [
         href: 'http://apps.eky.hk/css-triangle-generator/zh-hant',
         title: 'CSS 三角形產生器',
         desc: '可即時設定任何三角形的 CSS 樣式，並輸出原始碼提供複製取用。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -518,7 +518,7 @@ const resData = [
         href: 'http://tw.faviconico.org/',
         title: 'Favicon 線上製作轉換工具',
         desc: 'favicon.ico 一般用於作為縮略的網站標誌，它顯示在流覽器的位址欄、流覽器標籤上或者在我的最愛上，是展示網站個性的縮略 logo 標誌。',
-        tag: '網頁前端 影音 ICON',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -527,7 +527,7 @@ const resData = [
         href: 'https://beautifier.io/',
         title: 'Online JavaScript Beautifier',
         desc: '提供線上美化 JavaScript 程式碼，使用者可透過相關參數設置輸出適合自己專案的美化格式。',
-        tag: '網頁前端 JS JavaScript',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -536,7 +536,7 @@ const resData = [
         href: 'https://www.aconvert.com/tw/image/webp-to-png/',
         title: 'ACONVERT',
         desc: '提供各種線上轉檔的服務，包含 .webp 影像格式的轉換，或是電子書文件的轉換等。',
-        tag: '影音 webp',
+        tag: 'media',
         img: true,
         img_name: 'aconvert'
     },
@@ -545,7 +545,7 @@ const resData = [
         href: 'https://placeholder.com/',
         title: 'Placehold.it',
         desc: '範例圖片產生器，同時可變更圖片顏色、尺寸，甚至加入文字。',
-        tag: '網頁前端 影音',
+        tag: 'webfront',
         img: true,
         img_name: 'placeholder'
     },
@@ -554,7 +554,7 @@ const resData = [
         href: 'http://www.colorfavs.com/',
         title: 'colorfavs',
         desc: '上傳你想要分析影像色彩的圖檔，它可自動幫你解析顏色代碼，也可以查看其他配色方案，收藏喜歡的配色。',
-        tag: '網頁前端 影音 Color',
+        tag: 'webfront',
         img: true,
         img_name: 'colorfavs'
     },
@@ -563,7 +563,7 @@ const resData = [
         href: 'https://stackedit.io/',
         title: 'StackEdit',
         desc: '一款可線上撰寫 Markdown 程式語言的線上工具，有提供輸出轉檔的功能。',
-        tag: '網頁前端 Markdown HAML',
+        tag: 'webfront',
         img: true,
         img_name: 'stackedit'
     },
@@ -572,7 +572,7 @@ const resData = [
         href: 'https://cacoo.com/home',
         title: 'Cacoo',
         desc: '提供圖表與 Flowchart 製作、圖表分享與張貼圖表的線上服務。',
-        tag: 'UI/UX',
+        tag: 'webfront',
         img: true,
         img_name: 'cacoo'
     },
@@ -581,7 +581,7 @@ const resData = [
         href: 'http://css2sass.herokuapp.com/',
         title: 'CSS 2 SASS/SCSS CONVERTER',
         desc: '快速轉換 CSS、SASS / SCSS 的線上工具。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -590,7 +590,7 @@ const resData = [
         href: 'https://cssgrid-generator.netlify.com/',
         title: 'CSS Grid Generator',
         desc: '透過 CSS 格線產生器，讓網頁排版更加整齊美觀。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'cssgrid'
     },
@@ -599,7 +599,7 @@ const resData = [
         href: 'https://cubic-bezier.com/#.17,.67,.83,.67',
         title: 'cubic-bezier',
         desc: 'CSS animation 的貝茲曲線線上編輯器，如果不喜歡原本屬性設置的 timing-function，可嘗試利用此工具網站來編輯想要呈現的曲線。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'cubic-bezier'
     },
@@ -608,7 +608,7 @@ const resData = [
         href: 'http://cssanimate.com/',
         title: 'CSS Animate',
         desc: '可在此網站直接製作動畫並觀看演示效果，可立即輸出原始碼，方便設計師直接複製使用。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'cssanimate'
     },
@@ -617,7 +617,7 @@ const resData = [
         href: 'https://jscompress.com/',
         title: 'JSCompress',
         desc: '將 Javascript 原始碼壓縮減少容量空間的線上工具。',
-        tag: '網頁前端 JS Javascript',
+        tag: 'webfront',
         img: true,
         img_name: 'jscompress'
     },
@@ -626,7 +626,7 @@ const resData = [
         href: 'https://squoosh.app/',
         title: 'Squoosh',
         desc: '由 Google 團隊發佈的線上圖片壓縮工具。',
-        tag: '影音 圖片 壓縮 Google',
+        tag: 'webfront',
         img: true,
         img_name: 'squoosh'
     },
@@ -635,7 +635,7 @@ const resData = [
         href: 'https://bennettfeely.com/clippy/',
         title: 'CSS clip-path maker',
         desc: '可線上繪製 clip-path 圖形，並即時產生 CSS 碼提供複製使用，此外也有預設幾種多邊型。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -644,7 +644,7 @@ const resData = [
         href: 'https://tinypng.com/',
         title: 'TinyPNG',
         desc: '提供圖片壓縮的線上服務，可顯著減少圖片的容量。',
-        tag: '影音 圖片 壓縮',
+        tag: 'webfront',
         img: true,
         img_name: 'tinypng'
     },
@@ -653,7 +653,7 @@ const resData = [
         href: 'http://placekitten.com/',
         title: 'placekitten',
         desc: '與 Placehold.it 雷同，藉由一串網址來產生圖片，比較特別的是，placekitten 產生的圖片是貓的影像，相較其他相同類型的圖片產生網站來說更加生動活潑。',
-        tag: '網頁前端 HTML 影音',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -662,7 +662,7 @@ const resData = [
         href: 'https://vectorpaint.yaks.co.nz/',
         title: 'SVG Editor',
         desc: '提供線上繪製 SVG 的服務。',
-        tag: '網頁前端 SVG',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -671,7 +671,7 @@ const resData = [
         href: 'https://mixpanel.com/',
         title: 'mixpanel',
         desc: '分析網站的操作模式。',
-        tag: '網頁前端 優化',
+        tag: 'webfront',
         img: true,
         img_name: 'mixpanel'
     },
@@ -680,7 +680,7 @@ const resData = [
         href: 'https://developers.google.com/speed/pagespeed/insights/',
         title: 'PageSpeed Insights',
         desc: '由 Google developers 推出的網頁載入速度評測工具，可分析網頁是否符合通用規範，總結效能分數並提供改善建議。',
-        tag: '網頁前端 優化 Google',
+        tag: 'webfront',
         img: true,
         img_name: 'pagespeed'
     },
@@ -689,7 +689,7 @@ const resData = [
         href: 'https://c.runoob.com/',
         title: '菜鸟工具',
         desc: '定義文件檔案類型。',
-        tag: '網頁前端',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -698,7 +698,7 @@ const resData = [
         href: 'http://tool.chinaz.com/tools/urlencode.aspx',
         title: 'Chinaz.com',
         desc: '您可以使用本工具對中文進行 UrlEncode 編碼。',
-        tag: '網頁前端',
+        tag: 'webfront',
         img: true,
         img_name: 'chinaz'
     },
@@ -707,7 +707,7 @@ const resData = [
         href: 'http://www.peise.net/tools/web/',
         title: 'Color Scheme Designer',
         desc: '線上配色工具，提供單或多種配色方案選擇，可即時預覽汲取色票之呈現畫面。',
-        tag: '網頁前端 Color',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -716,7 +716,7 @@ const resData = [
         href: 'https://www.apowersoft.tw/heic-to-jpg',
         title: '免費 HEIC 圖片轉換',
         desc: '免費 HEIC 圖片轉換',
-        tag: '影音 圖片 轉換 HEIC JPG',
+        tag: 'media',
         img: true,
         img_name: 'apowersoft'
     },
@@ -725,7 +725,7 @@ const resData = [
         href: 'https://www.apowersoft.tw/free-online-audio-editor',
         title: 'Apowersoft免費線上音訊編輯',
         desc: '線上免費剪輯音樂網站，讓音訊剪輯更輕鬆。',
-        tag: '影音 剪輯',
+        tag: 'media',
         img: true,
         img_name: 'apowersoft'
     },
@@ -734,7 +734,7 @@ const resData = [
         href: 'https://www.onlinevideoconverter.com/zh',
         title: 'OnlineVideoConverter',
         desc: 'YouTube 影片轉檔下載的工具，支援多種格式，諸如 .mp3、.ogg、.wma ...等。',
-        tag: '影音 剪輯 YouTube',
+        tag: 'media',
         img: true,
         img_name: 'onlinevideoconverter'
     },
@@ -743,7 +743,7 @@ const resData = [
         href: 'http://qr.calm9.com/tw/',
         title: 'QR Code 條碼產生器',
         desc: '快速生成 QR CODE 二維條碼的線上工具網站。',
-        tag: '網頁前端 二維條碼',
+        tag: 'others',
         img: false,
         img_name: ''
     },
@@ -752,7 +752,7 @@ const resData = [
         href: 'https://10minutemail.net/',
         title: '10 分鐘信箱',
         desc: '10 分鐘壽命的電子信箱，超時就失效，避免收到垃圾郵件最好的選擇。',
-        tag: '信箱 Email E-mail 郵件',
+        tag: 'others',
         img: false,
         img_name: ''
     },
@@ -761,7 +761,7 @@ const resData = [
         href: 'http://gs.statcounter.com/',
         title: 'StatCounter',
         desc: '可查詢目前使用者主流瀏覽器的種類、排名、比例。',
-        tag: '優化 瀏覽器',
+        tag: 'webfront',
         img: true,
         img_name: 'statcounter'
     },
@@ -770,7 +770,7 @@ const resData = [
         href: 'http://hao.shejidaren.com/',
         title: '設計導航',
         desc: '集結許多設計人常造訪或推薦的實用網站，有事沒事可以來造訪看看，或許會發現一些未知的寶典。',
-        tag: '網頁前端 設計 UI/UX 分享 素材',
+        tag: 'webfront',
         img: true,
         img_name: 'shejidaren'
     },
@@ -779,7 +779,7 @@ const resData = [
         href: 'https://fonts.adobe.com/',
         title: 'Adobe Fonts',
         desc: '由 Adobe 提供的文字庫，可以將其提供的字型用於網頁之中。',
-        tag: '網頁前端 文字 UI/UX',
+        tag: 'webfront',
         img: true,
         img_name: 'adobefonts'
     },
@@ -788,7 +788,7 @@ const resData = [
         href: 'http://freefrontend.com/',
         title: 'FREE FRONTEND',
         desc: '提供多種 CSS 的實用效果範例，可打包下載應用於自己的專案上。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'freefrontend'
     },
@@ -797,7 +797,7 @@ const resData = [
         href: 'https://www.toptal.com/designers/htmlarrows/',
         title: 'HTML Symbols',
         desc: '提供多種特殊符號的網頁編碼，是除了 Font icon 之外替代使用圖片的不錯方法。',
-        tag: '網頁前端 HTML 符號',
+        tag: 'webfront',
         img: true,
         img_name: 'htmlarrows'
     },
@@ -806,7 +806,7 @@ const resData = [
         href: 'http://necolas.github.io/normalize.css/',
         title: 'Normalize.css',
         desc: '目前最流行的 CSS 重製樣式表之一，較另一款「Reset」多些彈性，並保留有價值的屬性默認值。',
-        tag: '網頁前端 CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'normalize'
     },
@@ -815,7 +815,7 @@ const resData = [
         href: 'http://fontawesome.io/',
         title: 'Font Awesome',
         desc: '目前市面上最流行的文字 Icon 工具。',
-        tag: '網頁前端 文字 素材 UI/UX HTML',
+        tag: 'webfront',
         img: true,
         img_name: 'fontawesome'
     },
@@ -824,7 +824,7 @@ const resData = [
         href: 'https://daneden.github.io/animate.css/',
         title: 'Animate.css',
         desc: '頗為流行的現成 CSS 動畫效果套件，可直接下載 CSS 檔至自己網頁資料夾中使用、編輯。',
-        tag: '網頁前端 CSS 動畫',
+        tag: 'webfront',
         img: true,
         img_name: 'animate'
     },
@@ -833,7 +833,7 @@ const resData = [
         href: 'http://leaverou.github.io/prefixfree/',
         title: '-prefix-free',
         desc: '-prefix-free 是一套 JavaScript 工具，可以自動檢查網頁中的 CSS 程式碼，將必要的供應商前綴自動加上去。',
-        tag: '網頁前端 CSS JS Javascript',
+        tag: 'webfront',
         img: true,
         img_name: 'prefixfree'
     },
@@ -842,7 +842,7 @@ const resData = [
         href: 'https://www.iviewui.com/',
         title: 'iView',
         desc: '一套基於 Vue.js 的高質量 UI 组件庫。',
-        tag: '網頁前端 JS Javascript Vue',
+        tag: 'webfront',
         img: true,
         img_name: 'iviewui'
     },
@@ -851,7 +851,7 @@ const resData = [
         href: 'https://webgradients.com/',
         title: 'WebGradients',
         desc: '擁有 180 款利用 CSS3 background linear gradients 調配而成的漸層色彩庫。',
-        tag: '網頁前端 CSS 漸層 Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'webgradients'
     },
@@ -860,7 +860,7 @@ const resData = [
         href: 'https://colourco.de/',
         title: 'Colourco',
         desc: '移動滑鼠可即時取得所需之色彩代碼。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'colourco'
     },
@@ -869,7 +869,7 @@ const resData = [
         href: 'http://colormind.io/bootstrap/',
         title: 'Colormind',
         desc: '隨機產生配色的網站，此網站較重視略為中性的調和色，產生出來的色調搭配於視覺上較為柔和。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'colormind'
     },
@@ -878,7 +878,7 @@ const resData = [
         href: 'https://www.color-hex.com/color-palettes/',
         title: 'color-hex',
         desc: '一個數量高達四萬多款的色彩搭配網站。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'color-hex'
     },
@@ -887,7 +887,7 @@ const resData = [
         href: 'http://www.lolcolors.com/',
         title: 'LOLCOLORS',
         desc: '水滴型的顏色搭配，提供多樣的顏色組合，讓視覺設計更加流暢。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'lolcolors'
     },
@@ -896,7 +896,7 @@ const resData = [
         href: 'https://colorhunt.co/',
         title: 'Color Hunt',
         desc: '每天都會釋出一組新的顏色搭配，若在設計配色運用上滯礙難行可多加利用。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'colorhunt'
     },
@@ -905,7 +905,7 @@ const resData = [
         href: 'https://nipponcolors.com/',
         title: '日本傳統色系參考',
         desc: '展示日本傳統風格的各種色彩。',
-        tag: 'Color 色彩 配色',
+        tag: 'material',
         img: true,
         img_name: 'nipponcolors'
     },
@@ -914,7 +914,7 @@ const resData = [
         href: 'http://iosfonts.com/',
         title: 'iOS Fonts',
         desc: '可查詢目前 iOS 系統有支援哪些字型。',
-        tag: '字型 文字 IOS',
+        tag: 'webfront',
         img: false,
         img_name: ''
     },
@@ -923,7 +923,7 @@ const resData = [
         href: 'https://www.mobile-patterns.com/',
         title: 'MOBILE PATTERNS',
         desc: '一個致力於手機裝置介面設計的資源網站，分別提供 Android 及 iOS 的設計範例，同時也提供幾種常見功能的分類選項，得以迅速查閱想要參考的設計方式。',
-        tag: '設計 UI/UX 手機 mobile 模板',
+        tag: 'material',
         img: true,
         img_name: 'mobile-patterns'
     },
@@ -932,7 +932,7 @@ const resData = [
         href: 'https://www.csswinner.com/',
         title: 'CSSWINNER',
         desc: '顧名思義，CSSWINNER 是評分各式網頁作品的線上平台，可以看到諸多網站的各項評分，設計師可以此為借鏡，推敲現今受歡迎的網站設計風格。',
-        tag: '設計 素材 模板',
+        tag: 'material',
         img: true,
         img_name: 'csswinner'
     },
@@ -941,7 +941,7 @@ const resData = [
         href: 'https://material.io/resources/devices/',
         title: 'Device Metrics',
         desc: '從 Google 的 Material Design 網站提供的 Device Metrics 工具，收錄近年較知名、常見的行動裝置資訊，提供其畫面尺寸、長寬比、PPI、作業系統類型...等訊息。',
-        tag: 'Google 模板 素材 手機 行動裝置 設計 mobile',
+        tag: 'material',
         img: true,
         img_name: 'material'
     },
@@ -950,7 +950,7 @@ const resData = [
         href: 'http://screensiz.es/',
         title: 'SCREEN SIZ.ES',
         desc: '與 Device Metrics 工具相同，是查詢各種常見行動裝置各項軟硬體數據的方便網站。',
-        tag: '模板 素材 手機 行動裝置 設計 mobile',
+        tag: 'material',
         img: true,
         img_name: 'screensiz'
     },
@@ -959,7 +959,7 @@ const resData = [
         href: 'https://www.pexels.com/zh-tw/',
         title: 'Pexels',
         desc: '在 Pexels 圖庫裡收錄的相片素材皆採用 CC0（Creative Commons Zero）授權，可使用於個人或商業用途，亦可編輯、修改、複製，不用標註來源或鏈結。',
-        tag: '素材 圖庫 設計',
+        tag: 'material',
         img: true,
         img_name: 'pexels'
     },
@@ -968,7 +968,7 @@ const resData = [
         href: 'https://www.brandeps.com/',
         title: 'BrandEPS',
         desc: '擁有大量品牌 LOGO 或 icon 圖示矢量圖的素材網站。',
-        tag: '素材 圖庫 設計 LOGO ICON',
+        tag: 'material',
         img: true,
         img_name: 'brandeps'
     },
@@ -977,7 +977,7 @@ const resData = [
         href: 'http://huaban.com/',
         title: '花瓣网',
         desc: '提供很多類型的創作靈感。',
-        tag: '素材 圖庫 設計',
+        tag: 'material',
         img: true,
         img_name: 'huaban'
     },
@@ -986,7 +986,7 @@ const resData = [
         href: 'http://www.ene-design.com/?p_order=view',
         title: 'ホームページデザイン制作の参考に',
         desc: '一個蒐集很多網站設計的日本網站。',
-        tag: '設計 模板 素材 網頁 網站',
+        tag: 'material',
         img: true,
         img_name: 'ene-design'
     },
@@ -995,7 +995,7 @@ const resData = [
         href: 'https://www.freepik.com/',
         title: 'Freepik',
         desc: '免費向量、影像、PSD 檔案下載的素材網站。',
-        tag: '素材 圖庫 設計 LOGO ICON',
+        tag: 'material',
         img: true,
         img_name: 'freepik'
     },
@@ -1004,7 +1004,7 @@ const resData = [
         href: 'https://sketchsheets.com/',
         title: 'sketchsheets',
         desc: '可下載瀏覽器、常見行動裝置，甚至是 Apple Watch 的設備模板圖檔。',
-        tag: '模板 素材 手機 行動裝置 設計 mobile',
+        tag: 'material',
         img: true,
         img_name: 'sketchsheets'
     },
@@ -1013,7 +1013,7 @@ const resData = [
         href: 'https://www.materialpalette.com/light-blue/lime',
         title: 'material design palette',
         desc: '秉持「在大面積色塊使用大膽的配色，利用動畫讓介面更生動活潑」的特色，Google 提供了為網頁進行版型配色的線上工具網站，同時也釋出免費 icon 供設計師下載使用。',
-        tag: 'Google Color 色彩 配色 模板',
+        tag: 'material',
         img: true,
         img_name: 'materialpalette'
     },
@@ -1022,7 +1022,7 @@ const resData = [
         href: 'https://www.behance.net/',
         title: 'Behance',
         desc: 'Behance 比較像是設計師的部落格，同樣也是設計人必知的作品集網站，它背後有 Adobe 作支持，可與 Adobe 軟體相連結。',
-        tag: '素材 作品集 設計 Adobe',
+        tag: 'material',
         img: true,
         img_name: 'behance'
     },
@@ -1031,7 +1031,7 @@ const resData = [
         href: 'https://dribbble.com/',
         title: 'Dribbble',
         desc: '國外非常有名，同時也是偌大設計人必須認識的知名設計網站之一，dribble 一詞來自籃球裡「運球」之意，就連網站許多功能都和籃球術語有關。',
-        tag: '素材 作品集 設計 ',
+        tag: 'material ',
         img: true,
         img_name: 'dribbble'
     },
@@ -1040,7 +1040,7 @@ const resData = [
         href: 'https://responsive-jp.com/',
         title: 'Responsive Web Design JP',
         desc: '分享日本諸多 RWD 網頁的平台，可提供視覺設計靈感。',
-        tag: '模板 素材 設計 RWD',
+        tag: 'material',
         img: true,
         img_name: 'responsive-jp'
     },
@@ -1049,7 +1049,7 @@ const resData = [
         href: 'https://material.io/resources/icons/',
         title: 'Material icons',
         desc: '由 Google 提供的免費向量圖集，包含 SVG、PNGs、Icon Font 等檔案類型，可用於個人或企業專案。',
-        tag: 'Google 素材 ICON 向量',
+        tag: 'material',
         img: true,
         img_name: 'mobile-patterns'
     },
@@ -1058,7 +1058,7 @@ const resData = [
         href: 'https://www.flaticon.com/',
         title: 'FLATICON',
         desc: '提供免費的圖示搜尋下載服務。',
-        tag: '素材 圖庫 設計 LOGO ICON',
+        tag: 'material',
         img: true,
         img_name: 'flaticon'
     },
@@ -1067,7 +1067,7 @@ const resData = [
         href: 'https://juejin.im/',
         title: '掘金',
         desc: '掘金是一個來自中國的高質量社區，提供網頁工作者分享技術、汲取新知的管道。',
-        tag: '設計 教學',
+        tag: 'teach',
         img: true,
         img_name: 'juejin'
     },
@@ -1076,7 +1076,7 @@ const resData = [
         href: 'https://uiiiuiii.com/',
         title: 'UiiiUiii 优优教程网',
         desc: '適合所有設計師學習繪圖軟體或分享個人創意的設計平台。',
-        tag: '設計 教學',
+        tag: 'teach',
         img: true,
         img_name: 'uiiiuiii'
     },
@@ -1085,7 +1085,7 @@ const resData = [
         href: 'http://www.xueui.cn/',
         title: '学ui网—ui设计师学习教程平台',
         desc: '中國最大、最熱門的 UI 分享設計平台之一。',
-        tag: '設計 教學',
+        tag: 'teach',
         img: true,
         img_name: 'xueui'
     },
@@ -1094,7 +1094,7 @@ const resData = [
         href: 'https://cssreference.io/',
         title: 'cssreference.io',
         desc: '收錄所有 CSS 屬性的教學網站。',
-        tag: '網頁前端 CSS 教學',
+        tag: 'teach',
         img: true,
         img_name: 'cssreference'
     },
@@ -1103,7 +1103,7 @@ const resData = [
         href: 'https://htmlreference.io/',
         title: 'htmlreference.io',
         desc: '收錄所有 HTML 元素及屬性說明的教學網站。',
-        tag: '網頁前端 HTML 教學',
+        tag: 'teach',
         img: true,
         img_name: 'htmlreference'
     },
@@ -1112,7 +1112,7 @@ const resData = [
         href: 'https://www.codecademy.com/',
         title: 'codecademy',
         desc: '實用的網頁前端語言教學網站。',
-        tag: '設計 教學',
+        tag: 'teach',
         img: true,
         img_name: 'codecademy'
     },
@@ -1121,7 +1121,7 @@ const resData = [
         href: 'https://oscarotero.com/jquery/',
         title: 'jQuery Quick API Reference',
         desc: '學習 jQuery 的實用教學網站。',
-        tag: '網頁前端 教學 jQuery Javascript JS',
+        tag: 'teach',
         img: true,
         img_name: 'oscarotero'
     },
@@ -1130,7 +1130,7 @@ const resData = [
         href: 'https://codecombat.com/',
         title: 'CodeCombat',
         desc: '標榜一邊玩遊戲，一邊學程式語言的教學網站，有中文版版本。',
-        tag: '網頁前端 教學 Javascript JS 遊戲',
+        tag: 'teach',
         img: true,
         img_name: 'codecombat'
     },
@@ -1139,7 +1139,7 @@ const resData = [
         href: 'https://www.sublimetext.com/',
         title: 'Sublime Text',
         desc: '一套跨平台的程式編輯器，為時下熱門的程式開發軟體之一。',
-        tag: '開發工具',
+        tag: 'webfront',
         img: true,
         img_name: 'sublimetext'
     },
@@ -1148,7 +1148,7 @@ const resData = [
         href: 'https://prepros.io/',
         title: 'Prepros',
         desc: '支援多種前端程式語言（如：Less、Sass、SCSS、Jade ...等）的編譯工具，且享有永久試用的福利。',
-        tag: '開發工具',
+        tag: 'webfront',
         img: true,
         img_name: 'prepros'
     },
@@ -1157,7 +1157,7 @@ const resData = [
         href: 'https://code.visualstudio.com/',
         title: 'Visual Studio Code',
         desc: '一套由微軟公司開發的跨平台程式編輯器。',
-        tag: '開發工具',
+        tag: 'webfront',
         img: true,
         img_name: 'visualstudio'
     },
@@ -1166,7 +1166,7 @@ const resData = [
         href: 'https://nodejs.org/en/',
         title: 'Node.js',
         desc: 'NodeJS 是一套高效能、易擴充的網站應用程式開發框架（Web Application Framework）。',
-        tag: '開發工具',
+        tag: 'webfront',
         img: true,
         img_name: 'nodejs'
     },
@@ -1175,7 +1175,7 @@ const resData = [
         href: 'http://compass-style.org/',
         title: 'Compass',
         desc: 'Compass 是一個 sass 的 Framework，將原來在 sass 裡要寫很多次的樣式，Compass 已內建簡化的寫法。',
-        tag: '開發工具 SCSS SASS CSS',
+        tag: 'webfront',
         img: true,
         img_name: 'compass'
     },
@@ -1184,7 +1184,7 @@ const resData = [
         href: 'https://rubyinstaller.org/',
         title: 'RubyInstaller',
         desc: '用於安裝 Ruby 語言的開發工具與運行環境。',
-        tag: '開發工具',
+        tag: 'others',
         img: true,
         img_name: 'rubyinstaller'
     },
@@ -1193,7 +1193,7 @@ const resData = [
         href: 'https://gitforwindows.org/',
         title: 'git',
         desc: '分散式版本控制系統，是目前最受歡迎且必須要學會的版本控制軟體。',
-        tag: '開發工具',
+        tag: 'others',
         img: true,
         img_name: 'git'
     },
@@ -1202,7 +1202,7 @@ const resData = [
         href: 'http://www.fancynode.com.cn/pxcook',
         title: 'PxCook',
         desc: '高效的自動標註工具，同時支援 Adobe Photoshop 與 Sketch。',
-        tag: '開發工具 標註',
+        tag: 'others',
         img: true,
         img_name: 'pxcook'
     },
@@ -1211,7 +1211,7 @@ const resData = [
         href: 'http://www.getmarkman.com/',
         title: 'Markman',
         desc: '馬克鰻，設計稿標註測量工具。',
-        tag: '開發工具 標註',
+        tag: 'others',
         img: true,
         img_name: 'markman'
     },
@@ -1220,7 +1220,7 @@ const resData = [
         href: 'https://www.apachefriends.org/zh_tw/index.html',
         title: 'XAMPP',
         desc: 'XAMPP 是完全免費且易於安裝的 Apache 發行版本，號稱時下最流行的 PHP 開發環境。',
-        tag: '開發工具 虛擬 Apache PHP 資料庫 MYSQL',
+        tag: 'others',
         img: true,
         img_name: 'xampp'
     },
@@ -1229,7 +1229,7 @@ const resData = [
         href: 'https://picpick.app/zh-tw/',
         title: 'PicPick',
         desc: '一款全功能的螢幕擷取工具、直觀的圖片編輯器、色彩選擇器、調色盤、尺規、量角器、十字線和白板等等...',
-        tag: '設計 圖片 影像 截圖',
+        tag: 'media',
         img: true,
         img_name: 'picpick'
     },
@@ -1238,7 +1238,7 @@ const resData = [
         href: 'http://psydk.org/pngoptimizer',
         title: 'PSYDK.ORG',
         desc: 'PngOptimizer 是一款免費的圖片壓縮減肥軟體，支援 PNG、BMP、GIF、TGA、APNG 等圖檔格式，但不支援 JPEG。',
-        tag: '圖片 影像 壓縮',
+        tag: 'media',
         img: true,
         img_name: 'psydk'
     },
@@ -1247,7 +1247,7 @@ const resData = [
         href: 'https://www.copytrans.net/copytransheic/',
         title: 'CopyTrans HEIC for Windows',
         desc: '一款可以在 Windows 系統閱覽 iPhone 「HEIC」新影像儲存格式，並轉存為 jpeg 格式的解碼工具。',
-        tag: '圖片 轉檔 HEIC 解碼',
+        tag: 'media',
         img: true,
         img_name: 'copytransheic'
     },
@@ -1256,7 +1256,7 @@ const resData = [
         href: 'https://www.screentogif.com/',
         title: 'ScreenToGif',
         desc: 'ScreenToGif 可以將錄影畫面輸出成 Gif 或視頻動畫，錄影採用可移動式的方框，只要是在範圍內的畫面通通可以被錄製起來，後製階段還可以詳細察看每一幀，可以剔除不必要的部分。',
-        tag: '圖片 影像 錄影 截圖 GIF 剪輯',
+        tag: 'media',
         img: true,
         img_name: 'screentogif'
     },
@@ -1265,7 +1265,7 @@ const resData = [
         href: 'https://recordit.co/',
         title: 'Recordit Fast Screencasts',
         desc: '擷取螢幕畫面，使其錄製成 .gif 動態影像的應用程式工具。',
-        tag: '圖片 影像 錄影 截圖 GIF 剪輯',
+        tag: 'media',
         img: true,
         img_name: 'recordit'
     },
@@ -1274,7 +1274,7 @@ const resData = [
         href: 'http://apngdis.sourceforge.net/',
         title: 'APNG Disassembler',
         desc: '可以將 APNG （動態的 PNG）格式細部分解每一幀，輸出成檔的工具軟體，目前只有 Windows 系統有 GUI 介面，其他作業系統只能使用 CMD 指令來操作。',
-        tag: '轉檔 圖片 影像',
+        tag: 'media',
         img: true,
         img_name: 'apng'
     },
@@ -1283,7 +1283,7 @@ const resData = [
         href: 'http://www.azofreeware.com/2015/03/apng-anime-maker-portable.html',
         title: 'APNG Anime Maker',
         desc: '動態 PNG 製作工具，製作方式與 GIF 相同，將各幀 PNG 影像合成為一個檔案，也就是 APNG。',
-        tag: '轉檔 圖片 影像 合成',
+        tag: 'media',
         img: true,
         img_name: 'apng'
     },
@@ -1292,7 +1292,7 @@ const resData = [
         href: 'https://app.prntscr.com/zh-cn/index.html',
         title: 'LightShot',
         desc: '好用的螢幕截圖工具，也可以在 Chrome 或 Firefox 擴充元件進行安裝。',
-        tag: '螢幕 截圖 影像 圖片',
+        tag: 'media',
         img: true,
         img_name: 'lightshot'
     },
@@ -1304,6 +1304,7 @@ const hikData = [
         href: 'xxx',
         time: '2222.11.11',
         title: 'xxxxxx',
+        catalog: '百岳',
         tag1: true,
         tag1_name: 'XX',
         tag2: true,
@@ -1327,7 +1328,8 @@ var wrap = new Vue({
         isActive: 1,
         navActive: false,
         listActive: false,
-        cleanActive: false
+        cleanActive: false,
+        currentFilter: 'all',
     },
 
     methods: {
@@ -1363,6 +1365,11 @@ var wrap = new Vue({
             this.$data.query = "";
             // document.getElementById("cleanBtn").classList.remove("is-active");
         },
+
+        // 篩選
+        setFilter: function(filter) {
+            this.currentFilter = filter;
+        }
     },
 
     computed: {

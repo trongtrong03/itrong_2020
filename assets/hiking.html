@@ -15,8 +15,18 @@
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
                 <div class="photo-wrap">
+                    <div class="features-wrap">
+                        <div class="filter-list">
+                            <button :class="{ 'is-active': currentFilter === 'all' }" @click="setFilter('all')">全部</button>
+                            <button :class="{ 'is-active': currentFilter === 'webfront' }" @click="setFilter('webfront')">網頁前端</button>
+                            <button :class="{ 'is-active': currentFilter === 'material' }" @click="setFilter('material')">素材模板</button>
+                            <button :class="{ 'is-active': currentFilter === 'media' }" @click="setFilter('media')">影音剪輯</button>
+                            <button :class="{ 'is-active': currentFilter === 'teach' }" @click="setFilter('teach')">教學資源</button>
+                            <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">未分類</button>
+                        </div>
+                    </div>
                     <ul class="photo-list">
-                        <li class="photo-item" v-for="item in filterHik" :key="item.id">
+                        <li class="photo-item" v-if="currentFilter === item.tag || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
                                     <img :src="'images/hiking/' + item.img_name + '.jpg'">
