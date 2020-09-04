@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200807/p01.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>學田山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市烏日區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>136m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.08.07</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>全程約 2K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>善光寺</span><span>知高圳步道</span><span>好漢坡</span><span>學田山</span><span>原路折返</span><span>善光寺</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

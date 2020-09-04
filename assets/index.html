@@ -15,48 +15,18 @@
                     </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
-                            <li class="notes-item">
-                                <a :href="'pages/' + getHtmlIndex({ h_list, index: 0 }).href + '.html'">
+                            <li class="notes-item" v-for="item in h_list.slice(0, 3)">
+                                <a :href="'pages/' + item.href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getHtmlIndex({ h_list, index: 0 }).tag1" v-text="getHtmlIndex({ h_list, index: 0 }).tag1_name"></span>
-                                            <span v-if="getHtmlIndex({ h_list, index: 0 }).tag2" v-text="getHtmlIndex({ h_list, index: 0 }).tag2_name"></span>
+                                            <span v-if="item.tag1" v-text="item.tag1_name"></span>
+                                            <span v-if="item.tag2" v-text="item.tag2_name"></span>
                                         </h6>
-                                        <h2 v-text="getHtmlIndex({ h_list, index: 0 }).title"></h2>
-                                        <time class="notes-time" v-text="getHtmlIndex({ h_list, index: 0 }).time"></time>
+                                        <h2 v-text="item.title"></h2>
+                                        <time class="notes-time" v-text="item.time"></time>
                                     </hgroup>
-                                    <figure v-if="getHtmlIndex({ h_list, index: 0 }).img">
-                                        <img :src="'images/html/' + getHtmlIndex({ h_list, index: 0 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getHtmlIndex({ h_list, index: 1 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getHtmlIndex({ h_list, index: 1 }).tag1" v-text="getHtmlIndex({ h_list, index: 1 }).tag1_name"></span>
-                                            <span v-if="getHtmlIndex({ h_list, index: 1 }).tag2" v-text="getHtmlIndex({ h_list, index: 1 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getHtmlIndex({ h_list, index: 1 }).title"></h2>
-                                        <time class="notes-time" v-text="getHtmlIndex({ h_list, index: 1 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getHtmlIndex({ h_list, index: 1 }).img">
-                                        <img :src="'images/html/' + getHtmlIndex({ h_list, index: 1 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getHtmlIndex({ h_list, index: 2 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getHtmlIndex({ h_list, index: 2 }).tag1" v-text="getHtmlIndex({ h_list, index: 2 }).tag1_name"></span>
-                                            <span v-if="getHtmlIndex({ h_list, index: 2 }).tag2" v-text="getHtmlIndex({ h_list, index: 2 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getHtmlIndex({ h_list, index: 2 }).title"></h2>
-                                        <time class="notes-time" v-text="getHtmlIndex({ h_list, index: 2 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getHtmlIndex({ h_list, index: 2 }).img">
-                                        <img :src="'images/html/' + getHtmlIndex({ h_list, index: 2 }).img_name + '.jpg'">
+                                    <figure v-if="item.img">
+                                        <img :src="'images/html/' + item.img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
@@ -71,48 +41,18 @@
                     </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
-                            <li class="notes-item">
-                                <a :href="'pages/' + getCssIndex({ c_list, index: 0 }).href + '.html'">
+                            <li class="notes-item" v-for="item in c_list.slice(0, 3)">
+                                <a :href="'pages/' + item.href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getCssIndex({ c_list, index: 0 }).tag1" v-text="getCssIndex({ c_list, index: 0 }).tag1_name"></span>
-                                            <span v-if="getCssIndex({ c_list, index: 0 }).tag2" v-text="getCssIndex({ c_list, index: 0 }).tag2_name"></span>
+                                            <span v-if="item.tag1" v-text="item.tag1_name"></span>
+                                            <span v-if="item.tag2" v-text="item.tag2_name"></span>
                                         </h6>
-                                        <h2 v-text="getCssIndex({ c_list, index: 0 }).title"></h2>
-                                        <time class="notes-time" v-text="getCssIndex({ c_list, index: 0 }).time"></time>
+                                        <h2 v-text="item.title"></h2>
+                                        <time class="notes-time" v-text="item.time"></time>
                                     </hgroup>
-                                    <figure v-if="getCssIndex({ c_list, index: 0 }).img">
-                                        <img :src="'images/css/' + getCssIndex({ c_list, index: 0 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getCssIndex({ c_list, index: 1 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getCssIndex({ c_list, index: 1 }).tag1" v-text="getCssIndex({ c_list, index: 1 }).tag1_name"></span>
-                                            <span v-if="getCssIndex({ c_list, index: 1 }).tag2" v-text="getCssIndex({ c_list, index: 1 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getCssIndex({ c_list, index: 1 }).title"></h2>
-                                        <time class="notes-time" v-text="getCssIndex({ c_list, index: 1 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getCssIndex({ c_list, index: 1 }).img">
-                                        <img :src="'images/css/' + getCssIndex({ c_list, index: 1 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getCssIndex({ c_list, index: 2 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getCssIndex({ c_list, index: 2 }).tag1" v-text="getCssIndex({ c_list, index: 2 }).tag1_name"></span>
-                                            <span v-if="getCssIndex({ c_list, index: 2 }).tag2" v-text="getCssIndex({ c_list, index: 2 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getCssIndex({ c_list, index: 2 }).title"></h2>
-                                        <time class="notes-time" v-text="getCssIndex({ c_list, index: 2 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getCssIndex({ c_list, index: 2 }).img">
-                                        <img :src="'images/css/' + getCssIndex({ c_list, index: 2 }).img_name + '.jpg'">
+                                    <figure v-if="item.img">
+                                        <img :src="'images/css/' + item.img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
@@ -127,48 +67,18 @@
                     </h3>
                     <div class="notes-wrap">
                         <ul class="notes-list">
-                            <li class="notes-item">
-                                <a :href="'pages/' + getJsIndex({ j_list, index: 0 }).href + '.html'">
+                            <li class="notes-item" v-for="item in j_list.slice(0, 3)">
+                                <a :href="'pages/' + item.href + '.html'">
                                     <hgroup>
                                         <h6 class="notes-tags">
-                                            <span v-if="getJsIndex({ j_list, index: 0 }).tag1" v-text="getJsIndex({ j_list, index: 0 }).tag1_name"></span>
-                                            <span v-if="getJsIndex({ j_list, index: 0 }).tag2" v-text="getJsIndex({ j_list, index: 0 }).tag2_name"></span>
+                                            <span v-if="item.tag1" v-text="item.tag1_name"></span>
+                                            <span v-if="item.tag2" v-text="item.tag2_name"></span>
                                         </h6>
-                                        <h2 v-text="getJsIndex({ j_list, index: 0 }).title"></h2>
-                                        <time class="notes-time" v-text="getJsIndex({ j_list, index: 0 }).time"></time>
+                                        <h2 v-text="item.title"></h2>
+                                        <time class="notes-time" v-text="item.time"></time>
                                     </hgroup>
-                                    <figure v-if="getJsIndex({ j_list, index: 0 }).img">
-                                        <img :src="'images/js/' + getJsIndex({ j_list, index: 0 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getJsIndex({ j_list, index: 1 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getJsIndex({ j_list, index: 1 }).tag1" v-text="getJsIndex({ j_list, index: 1 }).tag1_name"></span>
-                                            <span v-if="getJsIndex({ j_list, index: 1 }).tag2" v-text="getJsIndex({ j_list, index: 1 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getJsIndex({ j_list, index: 1 }).title"></h2>
-                                        <time class="notes-time" v-text="getJsIndex({ j_list, index: 1 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getJsIndex({ j_list, index: 1 }).img">
-                                        <img :src="'images/js/' + getJsIndex({ j_list, index: 1 }).img_name + '.jpg'">
-                                    </figure>
-                                </a>
-                            </li>
-                            <li class="notes-item">
-                                <a :href="'pages/' + getJsIndex({ j_list, index: 2 }).href + '.html'">
-                                    <hgroup>
-                                        <h6 class="notes-tags">
-                                            <span v-if="getJsIndex({ j_list, index: 2 }).tag1" v-text="getJsIndex({ j_list, index: 2 }).tag1_name"></span>
-                                            <span v-if="getJsIndex({ j_list, index: 2 }).tag2" v-text="getJsIndex({ j_list, index: 2 }).tag2_name"></span>
-                                        </h6>
-                                        <h2 v-text="getJsIndex({ j_list, index: 2 }).title"></h2>
-                                        <time class="notes-time" v-text="getJsIndex({ j_list, index: 2 }).time"></time>
-                                    </hgroup>
-                                    <figure v-if="getJsIndex({ j_list, index: 2 }).img">
-                                        <img :src="'images/js/' + getJsIndex({ j_list, index: 2 }).img_name + '.jpg'">
+                                    <figure v-if="item.img">
+                                        <img :src="'images/js/' + item.img_name + '.jpg'">
                                     </figure>
                                 </a>
                             </li>
@@ -179,7 +89,7 @@
                 <h2>Hiking</h2>
                 <section>
                     <ul class="photo-list">
-                        <li class="photo-item" v-for="item in filterHik" :key="item.id">
+                        <li class="photo-item" v-for="item in hk_list.slice(0, 1)" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
                                     <img :src="'images/hiking/' + item.img_name + '.jpg'">

@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <ul class="res-list" :class="isActive==2 ? 'is-row' : ''">
-                        <li class="res-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterRes" :key="item.id">
+                        <li class="res-item" v-if="currentFilter === item.tag || currentFilter === 'all'" v-for="item in filterRes" :key="item.id">
                             <a :href="item.href" target="_blank">
                                 <figure>
                                     <img :src="'images/resources/' + item.img_name + '.jpg'" v-if="item.img">

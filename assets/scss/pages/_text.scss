@@ -89,7 +89,6 @@
     }
 }
 
-
 // 目錄
 .text-catalog {
     margin-bottom: 5rem;
@@ -184,6 +183,98 @@
     }
 }
 
+// 旅行資訊
+.hiking-box {
+    margin-bottom: 1rem;
+    figure {
+        img {
+            display: block;
+            width: 100%;
+        }
+        figcaption {
+            border-bottom: 1px dashed $first;
+            border-top: 0;
+            padding: 0.5rem 0;
+            div {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: .5rem;
+                margin-right: 1rem;
+                padding-left: 1.75rem;
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 1.5rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    color: $red;
+                }
+                p {
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 1.5rem;
+                    padding: 0;
+                    span {
+                        &::after {
+                            content: '\f141';
+                            display: inline-block;
+                            vertical-align: top;
+                            font-family: 'Font Awesome 5 Free';
+                            font-weight: 900;
+                            font-size: 0.75rem;
+                            color: $first;
+                            margin: 0 .25rem;
+                        }
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.is-name {
+                    &::before {
+                        content: "\f279";
+                    }
+                }
+                &.is-site {
+                    &::before {
+                        content: "\f3c5";
+                    }
+                }
+                &.is-date {
+                    &::before {
+                        content: "\f017";
+                    }
+                }
+                &.is-altitude {
+                    &::before {
+                        content: "\f6fc";
+                    }
+                }
+                &.is-mileage {
+                    &::before {
+                        content: "\f54b";
+                    }
+                }
+                &.is-path {
+                    display: block;
+                    margin-left: 0;
+                    &::before {
+                        content: "\f6ec";
+                    }
+                }
+            }
+        }
+    }   
+}
+
 // 格式
 .text-content {
     counter-reset: number;
@@ -244,29 +335,29 @@
         padding: 0 .25rem;
     }
 
-    figure {
+    > figure {
         margin-bottom: 1rem;
         img {
             display: block;
             max-width: 100%;
             border: 1px solid #DDD;
         }
-    }
-
-    figcaption {
-        line-height: 1.5;
-        font-size: .875rem;
-        padding: .25rem 0;
-        &::before {
-            content: '▲';
-            font-size: 80%;
-            margin-right: .25rem;
+        figcaption {
+            line-height: 1.5;
+            font-size: .875rem;
+            padding: .25rem 0;
+            &::before {
+                content: '▲';
+                font-size: 80%;
+                margin-right: .25rem;
+            }
+            a {
+                color: $href;
+                text-decoration: underline;
+            }
         }
-        a {
-            color: $href;
-            text-decoration: underline;
-        }
     }
+    
 }
 
 // 表格

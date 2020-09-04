@@ -1301,15 +1301,15 @@ const resData = [
 const hikData = [
     {
         id: 0,
-        href: 'xxx',
-        time: '2222.11.11',
-        title: 'xxxxxx',
-        catalog: '百岳',
+        href: 'hiking_001',
+        time: '2020.08.20',
+        title: '學田山',
+        catalog: 'trail',
         tag1: true,
         tag1_name: 'XX',
         tag2: true,
         tag2_name: 'XXXXX',
-        img_name: '001'
+        img_name: '20200807/p01'
     },
 ]
 

@@ -17,7 +17,9 @@
     }
     <a href="#wrap" id="sideTop" title="Top"></a>
     <button id="sideList" title="List"></button>
-    <button id="sideCatalog" title="Catalog"></button>
+    @@if (context.hike===false ) {
+        <button id="sideCatalog" title="Catalog"></button>
+    }
 </aside>
 
 <div class="text-list">
@@ -36,6 +38,9 @@
         }
         @@if (context.misc===true ) {
         <li v-for="item in filterMisc" :key="item.id">
+        }
+        @@if (context.hike===true ) {
+        <li v-for="item in filterHik" :key="item.id">
         }
             <a :href="item.href + '.html'" v-text="item.title"></a>
         </li>

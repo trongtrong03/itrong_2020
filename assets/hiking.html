@@ -10,7 +10,7 @@
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
-                        <option value="網頁前端"></option>
+                        <!-- <option value="網頁前端"></option> -->
                     </datalist>
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
@@ -18,15 +18,15 @@
                     <div class="features-wrap">
                         <div class="filter-list">
                             <button :class="{ 'is-active': currentFilter === 'all' }" @click="setFilter('all')">全部</button>
-                            <button :class="{ 'is-active': currentFilter === 'webfront' }" @click="setFilter('webfront')">網頁前端</button>
-                            <button :class="{ 'is-active': currentFilter === 'material' }" @click="setFilter('material')">素材模板</button>
-                            <button :class="{ 'is-active': currentFilter === 'media' }" @click="setFilter('media')">影音剪輯</button>
-                            <button :class="{ 'is-active': currentFilter === 'teach' }" @click="setFilter('teach')">教學資源</button>
-                            <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">未分類</button>
+                            <button :class="{ 'is-active': currentFilter === 'bm100' }" @click="setFilter('bm100')">百岳</button>
+                            <button :class="{ 'is-active': currentFilter === 'sm100' }" @click="setFilter('sm100')">小百岳</button>
+                            <button :class="{ 'is-active': currentFilter === 'trail' }" @click="setFilter('trail')">健行步道</button>
+                            <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">其他</button>
                         </div>
                     </div>
+                    <div v-if="currentFilter === 'trail'">xxxxxxx</div>
                     <ul class="photo-list">
-                        <li class="photo-item" v-if="currentFilter === item.tag || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
+                        <li class="photo-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
                                     <img :src="'images/hiking/' + item.img_name + '.jpg'">
