@@ -1296,6 +1296,15 @@ const resData = [
         img: true,
         img_name: 'lightshot'
     },
+    {
+        id: 89,
+        href: 'https://www.fotor.com/tw/',
+        title: 'Fotor',
+        desc: '創新性照片編輯器及平面設計工具。',
+        tag: 'media',
+        img: true,
+        img_name: 'fotor'
+    },
 ]
 
 const hikData = [
@@ -1303,12 +1312,11 @@ const hikData = [
         id: 0,
         href: 'hiking_001',
         time: '2020.08.20',
-        title: '學田山',
+        name: '學田山',
+        title: '漫步知高圳──綠草青青，學田山悠然賞夕',
         catalog: 'trail',
-        tag1: true,
-        tag1_name: 'XX',
-        tag2: true,
-        tag2_name: 'XXXXX',
+        tag: true,
+        tag_name: '台中市',
         img_name: '20200807/p01'
     },
 ]

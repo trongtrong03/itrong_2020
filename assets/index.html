@@ -89,17 +89,14 @@
                 <h2>Hiking</h2>
                 <section>
                     <ul class="photo-list">
-                        <li class="photo-item" v-for="item in hk_list.slice(0, 1)" :key="item.id">
+                        <li class="photo-item" v-for="item in hk_list.slice(0, 6)" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
                                     <img :src="'images/hiking/' + item.img_name + '.jpg'">
-                                    <figcaption class="notes-tags">
-                                        <span v-if="item.tag1" v-text="item.tag1_name"></span>
-                                        <span v-if="item.tag2" v-text="item.tag2_name"></span>
-                                    </figcaption>
+                                    <figcaption v-text="item.name"></figcaption>
                                 </figure>
                                 <hgroup>
-                                    <time v-text="item.time"></time>
+                                    <!-- <time v-text="item.time"></time> -->
                                     <h2 v-text="item.title"></h2>
                                 </hgroup>
                             </a>

@@ -10117,7 +10117,7 @@ footer {
 }
 
 .hiking-box {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .hiking-box figure img {
@@ -10548,6 +10548,10 @@ footer {
   padding-left: .5rem;
 }
 
+.res-wrap {
+  padding-bottom: 5rem;
+}
+
 .res-list {
   list-style: none;
   margin: 0;
@@ -10906,6 +10910,7 @@ footer {
 }
 
 .photo-item a {
+  position: relative;
   display: block;
   background-color: #FFF;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
@@ -10926,32 +10931,20 @@ footer {
 
 .photo-item figure figcaption {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
   display: block;
-  *zoom: 1;
-}
-
-.photo-item figure figcaption:before, .photo-item figure figcaption:after {
-  content: "";
-  display: table;
-}
-
-.photo-item figure figcaption:after {
-  clear: both;
-}
-
-.photo-item figure figcaption span {
-  display: block;
-  line-height: 1;
-  font-size: 0.875rem;
+  width: 75%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
   color: #fff;
-  background-color: #333;
-  margin-bottom: 0.25rem;
-  padding: .5rem;
-  float: left;
-  clear: both;
+  border: 1px solid #FFF;
+  padding: 1.5rem .5rem;
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+  transform: translate(-50%, -50%);
 }
 
 .photo-item hgroup {
@@ -10959,20 +10952,42 @@ footer {
   padding: 0.5rem 1rem;
 }
 
-.photo-item hgroup time {
-  font-size: 0.675rem;
-  color: #888;
-}
-
 .photo-item hgroup h2 {
+  height: 3rem;
   line-height: 1.5;
   font-size: 1rem;
   color: #444;
 }
 
+.photo-item div {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.photo-item div time {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.photo-item div time::before {
+  content: 'published @ ';
+}
+
+.photo-item div time::after {
+  content: ' / ';
+}
+
+.photo-item div span {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .photo-item:hover {
   z-index: 2;
-  transform: scale(1.05, 1.05);
 }
 
 .photo-item:hover figure img {
