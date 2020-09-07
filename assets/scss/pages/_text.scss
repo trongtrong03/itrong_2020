@@ -275,6 +275,18 @@
     }   
 }
 
+.hiking-text {
+    margin-bottom: 2rem;
+    figure {
+        margin-bottom: 0;
+        img {
+            display: block;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
 // 格式
 .text-content {
     counter-reset: number;

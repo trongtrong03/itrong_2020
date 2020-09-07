@@ -1311,13 +1311,24 @@ const hikData = [
     {
         id: 0,
         href: 'hiking_001',
-        time: '2020.08.20',
+        time: '2020.08.10',
         name: '學田山',
         title: '漫步知高圳──綠草青青，學田山悠然賞夕',
         catalog: 'trail',
         tag: true,
         tag_name: '台中市',
         img_name: '20200807/p01'
+    },
+    {
+        id: 1,
+        href: 'hiking_002',
+        time: '2020.08.15',
+        name: '鳶嘴山',
+        title: '「台中天然岩場」之體感零分的鳶嘴山紀實',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191005/p07'
     },
 ]
 

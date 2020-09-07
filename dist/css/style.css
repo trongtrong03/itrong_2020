@@ -10205,6 +10205,20 @@ footer {
   content: "\f6ec";
 }
 
+.hiking-text {
+  margin-bottom: 2rem;
+}
+
+.hiking-text figure {
+  margin-bottom: 0;
+}
+
+.hiking-text figure img {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 .text-content {
   counter-reset: number;
   padding-bottom: 6rem;
@@ -10873,6 +10887,21 @@ footer {
   .switch-list {
     display: none;
   }
+}
+
+.photo-tips p {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
 }
 
 .photo-list {

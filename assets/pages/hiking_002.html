@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-2 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-2 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191005/p07.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>鳶嘴山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>2,180m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.10.05</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>全程約 2K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>大雪山林道</span><span>鳶嘴山登山口</span><span>鳶嘴稍來山步道</span><span>鳶嘴山</span><span>鳶嘴稍來山步道支線</span><span>大雪山林道</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<p>當和攀岩愛好者討論台灣有哪些著名天然岩場的話題時，北部人可能會回答你皇帝殿、五寮尖、孝子山，或是近年很夯的劍龍稜；南部人則可能給出關子嶺岩場、壽山岩場的答案。那麼中部呢？十之八九直覺想到的當屬鳶嘴山。且不侷限於攀岩界，假如上登山社群發問中部中級山的推薦名單，鳶嘴山肯定也是榜上有名。不光是挑戰具有一定難度，其山頂上的景緻更是令人流連忘返，早在多年前，鳶嘴山已是許多喜愛冒險的登山人推崇的中級山，每逢例假日，前來攀爬鳶嘴山的遊客可說是絡繹不絕，常常將狹窄的石道擠得水洩不通。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191005/p01.jpg">
+    </figure>
+    <p>鳶嘴山登山入口位於大雪山林道２７Ｋ處，從導覽地圖中可以清楚得知，入口到山頂不過才一公里，看上去很簡單，但其實沿途一路陡上，後半段更是需要手腳並用，花費時間與里程數顯然不成正比。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191005/p02.jpg">
+    </figure>
+    <p>除部份路段鋪設階梯外，步道大多為原始山徑。攀爬鳶嘴山的這條步道全名為「鳶嘴稍來山步道」，意即這條步道不僅通往鳶嘴山，且延伸至另一座知名中級山，同時也是小百岳之一的「稍來山」。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191005/p03.jpg">
+    </figure>
+    <p>來到橫嶺山與鳶嘴山的岔口，橫嶺山我還沒有去過，先暫時列入待爬名單裡。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191005/p04.jpg">
+    </figure>
+    <p>０．５Ｋ的里程碑映入眼簾，表示鳶嘴山已經爬了一半，爾後架起拉繩的路段也逐漸增多。</p>
+</div>
+
+
+<p>我和友人刻意選了補班日的週六前來朝聖，沒想到即便是補班日，來爬鳶嘴山的登山客依然超乎我們想像，部份中高齡的登山前輩素質著實令人不敢恭維，再加上這天碰了個大白牆，無緣一見諸多網友美照中的實景，所以決定用「體感零分」作為此次鳶嘴山登山遊記的心得標題，告訴自己未來一定要再安排時間前往尋訪鳶嘴山。</p>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

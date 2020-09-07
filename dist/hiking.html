@@ -87,11 +87,17 @@
                             <button :class="{ 'is-active': currentFilter === 'all' }" @click="setFilter('all')">全部</button>
                             <button :class="{ 'is-active': currentFilter === 'bm100' }" @click="setFilter('bm100')">百岳</button>
                             <button :class="{ 'is-active': currentFilter === 'sm100' }" @click="setFilter('sm100')">小百岳</button>
+                            <button :class="{ 'is-active': currentFilter === 'mm' }" @click="setFilter('mm')">中級山</button>
                             <button :class="{ 'is-active': currentFilter === 'trail' }" @click="setFilter('trail')">郊山</button>
                             <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">其他</button>
                         </div>
                     </div>
-                    <div v-if="currentFilter === 'trail'">xxxxxxx</div>
+                    <div class="photo-tips">
+                        <p v-if="currentFilter === 'bm100'">百岳是指從台灣２５８座海拔超過３０００公尺的高山中，挑選出符合既定門檻的一百座高山。</p>
+                        <p v-if="currentFilter === 'sm100'">小百岳是行政院體育委員會為推廣全民登山運動，自各縣市遴選一百座平易近人的郊山，鼓勵民眾多多親近山林，享受自然。</p>
+                        <p v-if="currentFilter === 'mm'">中級山介於郊山與高山之間，大多泛指那些高度約一千初到三千公尺的深山，有些中級山難度甚至還比百岳困難。</p>
+                        <p v-if="currentFilter === 'trail'">除了高山與中級山之外的山基本皆可稱作郊山，通常距離都市不遠，易達性高，挑戰難度低。</p>
+                    </div>
                     <ul class="photo-list">
                         <li class="photo-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
