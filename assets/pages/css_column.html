@@ -15,28 +15,178 @@
                 <div class="text-content">
 <!-- Content start -->
 <h2>前言</h2>
-<p>CSS3 中的 <em>column</em> 屬性可以用來設定文章的排版方式，使其具有多欄式陳列內容的風格，另外也有人用其實現「瀑布流」（Masonry）布局。</p>
+<p>假設有個排版的需求，希望網頁上的文章能像報章雜誌那樣呈現多欄排列的樣貌，一般我們可能會使用 <em>float</em> 或 <em>display: inline-block</em> 屬性達到預期效果。不過在 CSS3 中，Column 系列屬性就能直接將一段文字分割成欄，使其具有多欄式陳列內容的編排方式，此外，也有人活用其特性，實現過往得搭配 JavaScript 才能做到的「瀑布流」（Masonry）布局。</p>
 <p><br></p>
 
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">基本概念</a></li>
-        <li><a href="#act2">濾鏡介紹</a></li>
-        <li><a href="#act3">相容性支援</a></li>
+        <li><a href="#act2">columns</a></li>
+        <li><a href="#act3">column-gap</a></li>
+        <li><a href="#act4">column-rule</a></li>
+        <li><a href="#act5">column-span</a></li>
+        <li><a href="#act6">瀑布流佈局</a></li>
     </ul>
 </div>
 
 <h2 id="act1">基本概念</h2>
+<p>或許有些人看完前言，仍然對 Column 用途懵懵懂懂，以下用一張圖解大概示意其功用：</p>
+<figure>
+    <img src="@@webRoot/images/css/column-1.jpg">
+</figure>
+<p>當然，Column 只是個屬性統稱，它底下有數個功能各自不同的相關屬性：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f3">用途</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>columns</em></div>
+        <div class="t-f3">設定欄寬與數量，為 <em>column-width</em> 與 <em>column-count</em> 的組合寫法</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>column-gap</em></div>
+        <div class="t-f3">設定欄與欄之間的間距</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>column-rule</em></div>
+        <div class="t-f3">設定欄與欄之間的邊線樣式，為 <em>column-rule-width</em>、<em>column-rule-style</em>、<em>column-rule-color</em> 的組合寫法</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>column-span</em></div>
+        <div class="t-f3">設定是否受 <em>columns</em> 影響，或者說是否讓指定元素橫跨多個欄位</div>
+    </div>
+</div>
+<p><br></p>
 
+<h2 id="act2">columns</h2>
+<p><em>columns</em> 屬性主要用於定義指定元素的寬度與欄位數量，其語法為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    columns: column-width column-count;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>column-width</em> 代表寬度，<em>column-count</em> 則表示數量，兩者順序可以顛倒，假如設定的寬度低於版面整體的寬度時，則各欄位會平均分配直至填滿整個版寬。</p>
+<p>例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyYwROe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: Column-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/dyYwROe">
+        CSS3: Column-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>因為 <em>columns</em> 是 <em>column-width</em> 與 <em>column-count</em> 的組合寫法，所以這兩個屬性也可以單獨拉出來設定，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    column-width: 100px;
+    column-count: 3;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>兩屬性的預設值皆為 <em>auto</em>，當 <em>column-width</em> 為 <em>auto</em>，表示欄位寬度為均分；而 <em>column-count</em> 為 <em>auto</em> 時，意味著該元素內容不作分欄的效果。</p>
+<p><br></p>
 
+<h2 id="act3">column-gap</h2>
+<p><em>column-gap</em> 用來設定欄與欄之間的間距。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    column-gap: normal;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>normal</em> 為預設值，表示分欄間的間距值以瀏覽器的預設值為主，通常是 <em>16px</em>。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="ExVGXXv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: Column-2">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/ExVGXXv">
+          CSS3: Column-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>可以和前一個實例作對比，更能明顯看見 <em>column-gap</em> 之於欄位間距的變化。</p>
+<p><br></p>
+
+<h2 id="act4">column-rule</h2>
+<p><em>column-rule</em> 用來設定欄與欄之間的邊線樣式，是 <em>column-rule-width</em>、<em>column-rule-style</em>、<em>column-rule-color</em> 的組合寫法。毋須懷疑，它的用法其實就和 <em>border</em> 一樣。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    column-rule: 4px dotted #f00;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="vYNvZJV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: Column-3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/vYNvZJV">
+        CSS3: Column-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>當然，要將寬度、樣式、顏色獨立定義也是可以的。</p>
+<p><br></p>
+
+<h2 id="act5">column-span</h2>
+<p><em>column-span</em> 用來設定已經定義 <em>columns</em> 屬性之父元素裡的子元素，是否會受到 <em>columns</em> 分欄效果的影響。如果這樣說不好咀嚼，也可以換個方向想，<em>column-span</em> 可以讓指定的元素跨越 <em>columns</em> 分割的欄位，而不會跟著被分割。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">selector {
+    column-span: none;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>none</em> 是預設值，表示指定元素會受到父元素 <em>columns</em> 的影響，若不想超過限制則填入 <em>all</em> 參數值。</p>
+<p>範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="NWGegyP" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: Column-4">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/NWGegyP">
+        CSS3: Column-4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>與前一個範例作比較，可以發現使用了 <em>column-span: all;</em> 的 <em>&lt;h1&gt;</em> 元素直接橫跨多欄限制，獨自佔據了整列版寬，因此本屬性一般大多用於分欄文章的主標題。</p>
+<p><br></p>
+
+<h2 id="act6">瀑布流佈局</h2>
+<p>最後來講講瀑布流佈局，所謂瀑布流（Masonry），指的是向下排列卡片式物件的一種編排模式，尤其是各物件高度不一的情況下，透過瀑布流進行編排是相當常見的作法，知名的設計師平台 <a href="https://www.pinterest.com/">Pinterest</a> 便是其中一例經典。</p>
+<figure>
+    <img src="@@webRoot/images/css/column-2.jpg">
+    <figcaption>Pinterest 的瀑布流佈局排版。</figcaption>
+</figure>
+<p>要實現瀑布流效果基本需要通過 JavaScript 實現，不過後來有人發現，利用 CSS3 Column 屬性同樣也可以達成瀑布流的視覺效果，不僅語法簡單，而且還不需要依賴第三方套件（例如 jQuery），我們可以透過下方實例看看 CSS3 Column 是如何做到的：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="480" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="BaKYzeG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: Column-5">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/BaKYzeG">
+          CSS3: Column-5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>僅需要 <em>columns-count</em> 和 <em>columns-gap</em> 兩個屬性分別設定欄數與間距即可，儘管輕鬆簡單，但仔細看排版其實會覺得效果倒也不是完美無瑕，例如我們可以從實例中的圖片編號發現，其物件是採先上下後左右的均分方式進行排序，而非先左右後上下的正常邏輯，當要進行特定條件的篩選排序（例如：時間）時，使用 CSS3 Column 實現的瀑布流佈局顯然會存在難以善了的問題。JavaScript 與 CSS3 的瀑布流佈局皆有各自優缺之處，要採用哪一種方式實現就自行斟酌囉。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="http://blog.shihshih.com/css-filter/" target="_blank">簡單究好--CSS濾鏡效果</a></li>
-        <li><a href="https://zhuanlan.zhihu.com/p/125137964" target="_blank">知乎--CSS filter与前端滤镜</a></li>
-        <li><a href="https://www.cnblogs.com/fsjohnhuang/p/4127888.html" target="_blank">CSS3魔法堂：CSS3滤镜及Canvas、SVG和IE滤镜替代方案详解</a></li>
+        <li><a href="https://wcc723.github.io/css/2015/07/23/css-column/" target="_blank">CSS column 教學</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10195002?sc=rss.iron" target="_blank">CSS：column 瀑布流版型</a></li>
     </ul>
 </div>
 <!-- Content end -->

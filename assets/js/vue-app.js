@@ -1311,9 +1311,9 @@ const hikData = [
     {
         id: 0,
         href: 'hiking_001',
-        time: '2020.08.10',
+        time: '2020.08.08',
         name: '學田山',
-        title: '漫步知高圳──綠草青青，學田山悠然賞夕',
+        title: '漫步知高圳──學田山',
         catalog: 'trail',
         tag: true,
         tag_name: '台中市',
@@ -1322,13 +1322,24 @@ const hikData = [
     {
         id: 1,
         href: 'hiking_002',
-        time: '2020.08.15',
+        time: '2020.08.11',
         name: '鳶嘴山',
-        title: '「台中天然岩場」之體感零分的鳶嘴山紀實',
+        title: '體感零分的鳶嘴山紀實',
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
         img_name: '20191005/p07'
+    },
+    {
+        id: 2,
+        href: 'hiking_003',
+        time: '2020.08.19',
+        name: '火炎山',
+        title: '小百岳 No.35：火炎山',
+        catalog: 'sm100',
+        tag: true,
+        tag_name: '苗栗縣',
+        img_name: '20190428/p07'
     },
 ]
 

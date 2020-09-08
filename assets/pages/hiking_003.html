@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20190428/p00.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>火炎山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>苗栗縣苑裡鎮</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>2,180m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.04.28</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>全程約 4.1K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>火炎山登山口</span><span>南火炎山</span><span>大峽谷</span><span>火炎山三角點</span><span>南鞍古道</span><span>火炎山登山口</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<p></p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20190428/p01.jpg">
+    </figure>
+    <p>鳶嘴山登山入口位於大雪山林道２７Ｋ處，從導覽地圖中可以清楚得知，入口到山頂不過才一公里，看上去很簡單，但其實沿途一路陡上，後半段更是需要手腳並用，花費時間與里程數顯然不成正比。</p>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
