@@ -9890,6 +9890,12 @@ footer {
   word-wrap: break-word;
 }
 
+.text-head h2 {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #999;
+}
+
 .text-list {
   position: fixed;
   top: 0;
@@ -10982,8 +10988,13 @@ footer {
 }
 
 .photo-item hgroup h2 {
-  height: 3rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
+  font-size: .813rem;
+  color: #999;
+}
+
+.photo-item hgroup h3 {
+  line-height: 1.5rem;
   font-size: 1rem;
   color: #444;
 }
