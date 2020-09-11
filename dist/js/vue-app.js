@@ -491,7 +491,57 @@ const appData = [
         img: false,
         img_name: 'thumb_vscode'
     },
-    
+]
+
+const hikData = [
+    {
+        id: 0,
+        href: 'hiking_001',
+        time: '2020.08.08',
+        name: '學田山',
+        s_title: '漫步知高圳',
+        title: '學田山',
+        catalog: 'trail',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20200807/p01'
+    },
+    {
+        id: 1,
+        href: 'hiking_002',
+        time: '2020.08.11',
+        name: '鳶嘴山',
+        s_title: '中部馳名的天然岩場',
+        title: '鳶嘴山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191005/p07'
+    },
+    {
+        id: 2,
+        href: 'hiking_003',
+        time: '2020.08.19',
+        name: '火炎山',
+        s_title: '宛如焚焚烈火的惡地環走',
+        title: '小百岳 No.35：火炎山',
+        catalog: 'sm100',
+        tag: true,
+        tag_name: '苗栗縣',
+        img_name: '20190428/p07'
+    },
+    {
+        id: 3,
+        href: 'hiking_004',
+        time: '2020.08.24',
+        name: '大橫屏山',
+        s_title: '披荊不斬棘',
+        title: '小百岳 No.45：大橫屏山',
+        catalog: 'sm100',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20200809/p07'
+    },
 ]
 
 const resData = [
@@ -1304,45 +1354,6 @@ const resData = [
         tag: 'media',
         img: true,
         img_name: 'fotor'
-    },
-]
-
-const hikData = [
-    {
-        id: 0,
-        href: 'hiking_001',
-        time: '2020.08.08',
-        name: '學田山',
-        s_title: '漫步知高圳',
-        title: '學田山',
-        catalog: 'trail',
-        tag: true,
-        tag_name: '台中市',
-        img_name: '20200807/p01'
-    },
-    {
-        id: 1,
-        href: 'hiking_002',
-        time: '2020.08.11',
-        name: '鳶嘴山',
-        s_title: '中部馳名的天然岩場',
-        title: '鳶嘴山',
-        catalog: 'mm',
-        tag: true,
-        tag_name: '台中市',
-        img_name: '20191005/p07'
-    },
-    {
-        id: 2,
-        href: 'hiking_003',
-        time: '2020.08.19',
-        name: '火炎山',
-        s_title: '宛如焚焚烈火的惡地環走',
-        title: '小百岳 No.35：火炎山',
-        catalog: 'sm100',
-        tag: true,
-        tag_name: '苗栗縣',
-        img_name: '20190428/p07'
     },
 ]
 
