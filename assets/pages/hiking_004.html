@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-4 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-4 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-4 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p07.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>大橫屏山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市太平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>1,206m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.08.09</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回約 9K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>碧山農場</span><span>大橫屏山登山口</span><span>大橫屏山三角點</span><span>原路折返</span><span>碧山農場</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<p>西元２０２０年因為疫情的關係，許多人都無法出國旅遊，只好紛紛將遊子之心轉向國內，只要是稍具知名度的景點總是人滿為患，甚至還出現「報復性出遊」這樣奇怪的名詞。其實，除了一般大眾景點，人山人海的盛況在登山界也不例外，某日和友人討論希望假日能去較鮮為人知的中部小百岳爬爬，名單攤開來瞅著瞅著，便瞅到了「大橫屏山」，在網路上大略搜尋過網友分享的心得遊記，大橫屏山不僅風景漂亮，登山客也不多，遂立刻拍板決定大橫屏山就是該週的目標。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p01.jpg">
+    </figure>
+    <p>大橫屏山位於台中太平區與南投國姓鄉的交界，但台中人要前往大橫屏山一般還是需要從南投國姓鄉的產業道路進入，既沒有顯著地標，路況不是很好且很狹窄，根據小百岳的定義實在很難想像為什麼會把大橫屏山列為小百岳之一。總之我們依照網友的建議，將導航鎖定「碧山農場」，經過多番蜿蜒後順利抵達通往大橫屏山登山口附近，然後找個好腹地將車輛安置。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p02.jpg">
+    </figure>
+    <p>照片中間隆起的山頭便是大橫屏山，聽說稜脊瘦如刀鋒，頗有「橫看成嶺側成峰」的山容氣勢。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p03.jpg">
+    </figure>
+    <p>由於大橫屏山的登山口不太明顯，我們循著土徑一度走過頭到沒有路才驚覺可能錯過登山口，後來又上切錯路，在滿佈台灣黃藤的樹林中迷途好一陣子才回切到正確的登山路徑，有一點點小驚魂，當下也就忘記拍下正確的登山口模樣。如果看到廢棄紅色車輛（照片中是往回走的視角），就代表已經錯過登山口，請立即折返尋找綁滿登山布條的小土徑。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p04.jpg">
+    </figure>
+    <p>大橫屏山登山步道大多是原始土石徑，部分路段需要拉繩輔上，上稜線後半段則較多攀岩地形。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200809/p05.jpg">
+    </figure>
+    <p>爬大橫屏山千萬不要一味埋首苦爬，滿佈山野的台灣黃藤很可能猝不及防地將頭扎成蜂窩。</p>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
