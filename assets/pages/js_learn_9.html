@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-9 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-9 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p></p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1"></a></li>
+    </ul>
+</div>
+
+<h2 id="act1"></h2>
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN web docs</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-10.html" target="_blank">JavaScript 快速入門（10/10）－ 使用內建物件</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

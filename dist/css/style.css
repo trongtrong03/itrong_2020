@@ -10407,7 +10407,35 @@ footer {
 .text-quote {
   background-color: #EEE;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+}
+
+.text-quote p {
+  padding: 0;
+}
+
+.text-quote p::before, .text-quote p::after {
+  font-size: 2rem;
+  color: #999;
+}
+
+.text-quote p::before {
+  content: '“';
+}
+
+.text-quote p::after {
+  content: '”';
+}
+
+.text-quote span {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+.text-quote span::before {
+  content: '──';
+  margin-right: 0.5rem;
 }
 
 .text-ul ul {

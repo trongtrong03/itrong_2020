@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-8 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-8 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<p>「JavaScript 是個『弱型別』的程式語言」──這是剛接觸 JavaScript 常聽到的其中一句金言，意即弱型別程式語言的變數本身不具有資料型別，它（變數）的「值」才有資料型別的資訊。順便再簡單提強型別程式語言的殊異，有別於弱型別，強型別程式語言定義的變數在宣告時期就必須指定該變數的型別是什麼，如果該變數執行了不是它型別的運算，程式就會出現非預期的問題。</p>
+<p>複習過強、弱型別程式語言的概念，接著再來重新溫習 JavaScript 定義的資料型別分別有哪些：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">型別</div>
+        <div class="t-f1">說明</div>
+        <div class="t-f3">範例</div>
+    </div>
+    <div>
+        <div class="t-f1">Number</div>
+        <div class="t-f1">數值</div>
+        <div class="t-f3"><em>1</em>、<em>-2000</em>、<em>3.14</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">String</div>
+        <div class="t-f1">字串</div>
+        <div class="t-f3"><em>"abc"</em>、<em>'hello world'</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">Boolean</div>
+        <div class="t-f1">布林</div>
+        <div class="t-f3"><em>true</em>、<em>false</em></div>
+    </div>
+    <div>
+        <div class="t-f1">Object</div>
+        <div class="t-f1">物件</div>
+        <div class="t-f3"><em>[1, 2, 3]</em>、<em>{ name: 'iTrong' }</em>、<em>function foo(){}</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">Null</div>
+        <div class="t-f1">空值</div>
+        <div class="t-f3"></div>
+    </div>
+    <div>
+        <div class="t-f1">Undefined</div>
+        <div class="t-f1">未定義</div>
+        <div class="t-f3"></div>
+    </div>
+    <div>
+        <div class="t-f1">Symbol</div>
+        <div class="t-f1">標誌</div>
+        <div class="t-f3">於 ES6 新定義</div>
+    </div>
+</div>
+<p><br></p>
+
+<p>這是先前變數一文做的資料型別表格，事實上，JavaScript 將這些資料型更上一層歸類成兩類：Primitive（基本型別）與 Object（物件型別）。</p>
+<h4>Primitive（基本型別）：</h4>
+<div class="text-quote">
+    <p>In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods.</p>
+    <span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">MDN web docs</a></span>
+</div>
+<p>根據 MDN 的解釋，基本型別的值是除了物件之外，原始定義的純值。它囊括以下六種類型：Number、String、Boolean、Null、Undefined 與 Symbol。</p>
+<p><br></p>
+
+<h4>Object（物件型別）：</h4>
+<p>物件型別只有一種型別，那就是物件（Object），它是一個由 Name 與 Value 組成（又稱鍵值配對）的集合體，一個集合體即是物件的「屬性」（Property）。此外，物件型別還有「次型別」（subtype），例如函式物件、陣列物件等。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var obj = {
+    // 函式物件，又稱物件方法
+    Meth: function(){
+        document.write('Hello world!') ;
+    },
+
+    // 陣列物件
+    Arr: ['apple', 'orange', 'banana'],
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">MDN web docs</a></li>
+        <li><a href="https://luffy.website/2019/08/10/weird-JavaScript-10/#%E8%B3%87%E6%96%99%E5%9E%8B%E5%88%A5%EF%BC%88Data-Type%EF%BC%89" target="_blank">Weird-JavaScript 10：基本型別（純值）與物件型別</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

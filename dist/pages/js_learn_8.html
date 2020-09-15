@@ -74,111 +74,90 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-11 }).title"></h1>
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-8 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-11 }).time"></time>
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-8 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<!-- 大綱 -->
-<div class="text-catalog">
-    <ul>
-        <li><a href="#act1">複習</a></li>
-        <li><a href="#act2">Data</a></li>
-        <li><a href="#act3">Template</a></li>
-    </ul>
+<p>「JavaScript 是個『弱型別』的程式語言」──這是剛接觸 JavaScript 常聽到的其中一句金言，意即弱型別程式語言的變數本身不具有資料型別，它（變數）的「值」才有資料型別的資訊。順便再簡單提強型別程式語言的殊異，有別於弱型別，強型別程式語言定義的變數在宣告時期就必須指定該變數的型別是什麼，如果該變數執行了不是它型別的運算，程式就會出現非預期的問題。</p>
+<p>複習過強、弱型別程式語言的概念，接著再來重新溫習 JavaScript 定義的資料型別分別有哪些：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">型別</div>
+        <div class="t-f1">說明</div>
+        <div class="t-f3">範例</div>
+    </div>
+    <div>
+        <div class="t-f1">Number</div>
+        <div class="t-f1">數值</div>
+        <div class="t-f3"><em>1</em>、<em>-2000</em>、<em>3.14</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">String</div>
+        <div class="t-f1">字串</div>
+        <div class="t-f3"><em>"abc"</em>、<em>'hello world'</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">Boolean</div>
+        <div class="t-f1">布林</div>
+        <div class="t-f3"><em>true</em>、<em>false</em></div>
+    </div>
+    <div>
+        <div class="t-f1">Object</div>
+        <div class="t-f1">物件</div>
+        <div class="t-f3"><em>[1, 2, 3]</em>、<em>{ name: 'iTrong' }</em>、<em>function foo(){}</em> ...</div>
+    </div>
+    <div>
+        <div class="t-f1">Null</div>
+        <div class="t-f1">空值</div>
+        <div class="t-f3"></div>
+    </div>
+    <div>
+        <div class="t-f1">Undefined</div>
+        <div class="t-f1">未定義</div>
+        <div class="t-f3"></div>
+    </div>
+    <div>
+        <div class="t-f1">Symbol</div>
+        <div class="t-f1">標誌</div>
+        <div class="t-f3">於 ES6 新定義</div>
+    </div>
 </div>
-
-<h2 id="act1">複習</h2>
-<p>在解析之前先回頭看看上一篇創建的 Vue 實體結構：</p>
-<div class="text-code is-vue">
-<pre class="text-pre"><code class="javascript">var app = new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!'
-    }
-});</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>儘管關於 Vue 資料的部分上篇已略述過，不過這裡仍重新筆記一次：</p>
-<p>通常我們需要先宣告一個名稱（例如 <em>app</em>、<em>vm</em>（viewmodel））建立 Vue 的實體。</p>
-<p>實體需要指定一個 HTML 對象，才可以將資料綁定過去。對象可以是純元素標籤或是 CSS 選擇器（<em>#ID</em> 或 <em>.class</em>），如果不在指定對象內的元素，則無法與 Vue 實體產生互動。</p>
 <p><br></p>
 
-<h2 id="act2">Data</h2>
-<p><em>data</em> 是一個物件屬性，代表「資料」，資料的屬性值可以是數字、字串、布林值，也可以是陣列或別的物件。除了 <em>data</em> 之外，Vue 實體還可以使用 <em>methods</em>（方法）、<em>computed</em>（運算）等屬性，這些屬性保留日後再行筆記。</p>
-<p>建立基本的 Vue 實體後，我們需要在 HTML 結構作點文章去綁定資料，好讓 DOM 可以順利將 Vue 實體裡的資料渲染出來。</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
-    {{ message }}
-&lt;/div&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
+<p>這是先前變數一文做的資料型別表格，事實上，JavaScript 將這些資料型更上一層歸類成兩類：Primitive（基本型別）與 Object（物件型別）。</p>
+<h4>Primitive（基本型別）：</h4>
+<div class="text-quote">
+    <p>In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods.</p>
+    <span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">MDN web docs</a></span>
 </div>
+<p>根據 MDN 的解釋，基本型別的值是除了物件之外，原始定義的純值。它囊括以下六種類型：Number、String、Boolean、Null、Undefined 與 Symbol。</p>
 <p><br></p>
 
-<h2 id="act3">Template</h2>
-<p>寫在 HTML 的東西我們稱之為「樣板」（Template）或「模板」，注意喔，模板必須和要綁定 Vue 實體的 <em>el</em> 相對應才有作用。關於樣板的使用方式基本上有以下三種：</p>
-<h3>文本綁定：</h3>
-<p>上面範例中由兩對花括號（大括號）<em>{{</em> <em>}}</em> 組成的內容就是 Vue 將資料數值以文本方式插入樣板的基本寫法，而插入內容的名稱須與 <em>data</em> 的屬性值名稱互相對應，才能將實體的值綁定到樣板上，當 <em>data</em> 綁定數據發生改變，則樣板插入的內容也會一併更新。</p>
-<p><br></p>
-<h3>指令綁定：</h3>
-<p>另一種資料綁定的方式是透過屬性（Attribute）雙向綁定，此時它的寫法規則就不是透過雙大括號，而是利用以 <em>v-</em> 開頭的特殊屬性來實現效果，這些 <em>v-</em> 前綴開頭的特殊詞彙在 Vue 稱之為「指令」。舉例來說：</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;img id="app" src="image.jpg" v-bind:title="message"&gt;</code></pre>
+<h4>Object（物件型別）：</h4>
+<p>物件型別只有一種型別，那就是物件（Object），它是一個由 Name 與 Value 組成（又稱鍵值配對）的集合體，一個集合體即是物件的「屬性」（Property）。此外，物件型別還有「次型別」（subtype），例如函式物件、陣列物件等。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var obj = {
+    // 函式物件，又稱物件方法
+    Meth: function(){
+        document.write('Hello world!') ;
+    },
+
+    // 陣列物件
+    Arr: ['apple', 'orange', 'banana'],
+}</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><em>v-bind</em> 即為指令，將原本 HTML 元素標籤裡的 <em>title</em> 屬性值與資料數據的 <em>message</em> 屬性值綁定在一起，當滑鼠懸停圖片上方時就會出現「Hello Vue!」的字串。</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;input id="app" type="text" v-model="message"&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>又或者是 <em>v-model</em> 指令，令 <em>&lt;input&gt;</em> 的 value 值與 <em>data</em> 中 <em>message</em> 屬性值綁定，當 <em>message</em> 值發生改變，<em>&lt;input&gt;</em> 的值也會跟著改變。</p>
-<p><br></p>
-<h3>組件：</h3>
-<p>組件（Component）是 Vue 相當重要的功能，我們可以將樣板內容寫在 Vue 實體之前或裡面（又稱全域或局部註冊）使其組件化，於 HTML 裡直接調用該組件即可，例如：</p>
-<div class="text-code is-vue">
-<pre class="text-pre"><code class="javascript" v-pre>Vue.component("component-layout", {
-    template: `&lt;p&gt;{{ text }}&lt;/p&gt;`,
-    data(){
-        return{
-            text:'我是全域註冊'
-        }
-    }
-});
-let app = new Vue({
-    el: "#app"
-});</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html" v-pre>&lt;div id="app"&gt;
-    &lt;component-layout&gt;&lt;/component-layout&gt;
-&lt;/div&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>關於組件的林林總總一時半刻也記錄不完，此刻僅需先瞭解個大概即可，日後會有更詳細的學習筆記作記錄。</p>
-<p><br></p>
-<p>以上就是 Vue 關於樣板語法與實體資料的簡單記錄，理解 Vue 基本的綁定運作方式後，就可以慢慢由簡入深，利用更多樣的屬性和指令建構各種前端需要的使用者介面。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="https://cn.vuejs.org/v2/guide/syntax.html" target="_blank">模板语法 — Vue.js</a></li>
-        <li><a href="https://ithelp.ithome.com.tw/articles/10215066" target="_blank">Vue 的聲明式渲染、樣板與資料</a></li>
-        <li><a href="https://medium.com/pierceshih/vue-js-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-day15-vue-component-%E5%85%83%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-a414e2333e2b" target="_blank">「Vue.js 學習筆記 Day15」- Vue component 元件基本用法</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">MDN web docs</a></li>
+        <li><a href="https://luffy.website/2019/08/10/weird-JavaScript-10/#%E8%B3%87%E6%96%99%E5%9E%8B%E5%88%A5%EF%BC%88Data-Type%EF%BC%89" target="_blank">Weird-JavaScript 10：基本型別（純值）與物件型別</a></li>
     </ul>
 </div>
 <!-- Content end -->

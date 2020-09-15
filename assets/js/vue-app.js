@@ -200,7 +200,7 @@ const jsData = [
     {
         id: 0,
         href: 'js_learn_1',
-        title: 'Javascript 學習筆記（一）：變數',
+        title: 'Javascript 學習筆記（一）：變數與資料型別',
         time: '2019.07.05',
         tag1: false,
         tag1_name: 'false',
@@ -283,6 +283,30 @@ const jsData = [
     },
     {
         id: 7,
+        href: 'js_learn_8',
+        title: 'Javascript 學習筆記（八）：基本型別與物件型別',
+        time: '2019.08.23',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 8,
+        href: 'js_learn_9',
+        title: 'Javascript 學習筆記（九）：內建物件',
+        time: '2019.08.29',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 9,
         href: 'js_vue_intro',
         title: '認識 Vue.js',
         time: '2019.11.21',
@@ -294,7 +318,7 @@ const jsData = [
         img_name: 'thumb_vue'
     },
     {
-        id: 8,
+        id: 10,
         href: 'js_vue_data',
         title: 'Vue 學習筆記（一）：資料（Data）與樣板（Template）',
         time: '2019.11.23',
@@ -306,7 +330,7 @@ const jsData = [
         img_name: ''
     },
     {
-        id: 9,
+        id: 11,
         href: 'js_vue_text',
         title: 'Vue 學習筆記（二）：v-text 與 v-html',
         time: '2019.11.29',
@@ -1354,6 +1378,15 @@ const resData = [
         tag: 'media',
         img: true,
         img_name: 'fotor'
+    },
+    {
+        id: 90,
+        href: 'https://loading.io/',
+        title: 'LOADING.IO',
+        desc: '一款基於多種款式自訂讀取（Loading）圖樣的線上工具，有許多免費款式可以自由挑選、修改。',
+        tag: 'webfront',
+        img: false,
+        img_name: ''
     },
 ]
 

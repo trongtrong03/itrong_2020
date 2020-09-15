@@ -433,7 +433,30 @@
 .text-quote {
     background-color: #EEE;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    p {
+        padding: 0;
+        &::before,
+        &::after {
+            font-size: 2rem;
+            color: #999;
+        }
+        &::before {
+            content: '“';
+        }
+        &::after {
+            content: '”';
+        }
+    }
+    span {
+        display: block;
+        text-align: right;
+        font-style: italic;
+        &::before {
+            content: '──';
+            margin-right: 0.5rem;
+        }
+    }
 }
 
 // 列表
