@@ -566,6 +566,18 @@ const hikData = [
         tag_name: '台中市',
         img_name: '20200809/p07'
     },
+    {
+        id: 4,
+        href: 'hiking_005',
+        time: '2020.09.01',
+        name: '奇萊主山南峰',
+        s_title: '人生初百岳，從十崇開始',
+        title: '百岳 No.41：奇萊主山南峰',
+        catalog: 'bm100',
+        tag: true,
+        tag_name: '南投縣',
+        img_name: '20181013/p32'
+    },
 ]
 
 const resData = [
