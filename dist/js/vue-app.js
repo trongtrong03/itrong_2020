@@ -578,6 +578,18 @@ const hikData = [
         tag_name: '南投縣',
         img_name: '20181013/p32'
     },
+    {
+        id: 5,
+        href: 'hiking_006',
+        time: '2020.09.15',
+        name: '波津加山',
+        s_title: '谷關七雄 ● 老四',
+        title: '波津加山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191201/p15'
+    },
 ]
 
 const resData = [

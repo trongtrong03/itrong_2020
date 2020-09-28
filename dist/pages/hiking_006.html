@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-6 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-6 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-6 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="../images/hiking/20191201/p13.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>波津加山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>1,772m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.12.01</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回約 9K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>谷關</span><span>捎來吊橋</span><span>捎來步道</span><span>波津加山步道</span><span>波津加山三角點</span><span>原路折返</span><span>谷關</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<p>谷關七雄是台中乃至全台灣皆聞名的中級山群峰，市政府自多年前起每年舉辦攀爬七雄蒐集徽章、紀念證書的登山活動，以鼓勵民眾多出門健走，最近這一兩年開始頻繁地四處爬山的我們今年決定也試著挑戰看看。首先第一座挑戰是七雄中排行中間的老四──波津加山。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p01.jpg">
+    </figure>
+    <p>在谷關停好車之後，我們從谷關溫泉公園一旁的步道起行，計畫由捎來步道岔接波津加山的登山步道。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p02.jpg">
+    </figure>
+    <p>走過捎來吊橋，底下的溪流是台中重要的大溪──「大甲溪」，其上游起源在遙遠的南湖大山東峰。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p03.jpg">
+    </figure>
+    <p>捎來步道是很多遊客來谷關泡湯之餘，於傍晚或清晨時分前來散策的好去處。其首尾處分別在捎來吊橋與谷關吊橋，而波津加山登山步道的入口則在捎來步道途中。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p04.jpg">
+    </figure>
+    <p>前面捎來步道一公里路程只是暖身，真正的波津加山挑戰現在才要開始。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p05.jpg">
+    </figure>
+    <p>由導覽地圖可知波津加山步道單程３．６Ｋ，行前有先爬文過，得知步道海拔高低落差約一千公尺，是很硬抖的一座中級山。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p06.jpg">
+    </figure>
+    <p>步道一開始就是一長串的直線下降，走得令人背脊發涼。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p07.jpg">
+    </figure>
+    <p>爾後就是一波未平一波又起的陡坡，波津加又名坡真抖（台語）實非浪得虛名。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p08.jpg">
+        <img src="../images/hiking/20191201/p09.jpg">
+    </figure>
+    <p>地貌除了土坡之外，還有連綿的石瀑群，不好走但很有趣。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p10.jpg">
+        <img src="../images/hiking/20191201/p11.jpg">
+    </figure>
+    <p>隨著爬升高度越來越高，展望也變得越來越開闊，從這個方向看過去應該是八仙山、馬崙山等谷關七雄的其他老大哥們。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p12.jpg">
+    </figure>
+    <p>爬得很辛苦，但好險沿途林蔭蠻多。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p13.jpg">
+    </figure>
+    <p>經過３Ｋ里程碑之後，視野又比之前更佳遼闊，谷關七雄們與身後的中央山脈群峰巍峨的身姿更加顯著撩人。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p14.jpg">
+    </figure>
+    <p>終於成功登頂！第一座谷關七雄，完成。和其他兄弟相比，網路上有關波津加的歷史脈絡不多，大多都是講述祂有多抖多艱辛諸如此類心得云云。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p15.jpg">
+    </figure>
+    <p>在山頂前有一處向外突出的尖石，是個很適合取景拍照的攝點。從這裡將視線投射出去，位於大雪山林道的鳶嘴山、稍來山等中部知名中級山亦一覽無遺。</p>
+</div>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20191201/p16.jpg">
+    </figure>
+    <p>儘管波津加步道的總長在七雄裡不算很長，但深Ｖ的抖上抖下令我們耗費不少時間在休息和拉筋上，回抵捎來步道時，天幕已接近向晚時分，早已飢腸轆轆的我們，只想著趕緊回到谷關大啖那裡的野味美食。</p>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../hiking.html'"></button>
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                    
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterHik" :key="item.id">
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+                <div class="overlay" :class="{ 'is-active' : listActive}"></div>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
