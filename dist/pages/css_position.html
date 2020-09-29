@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="#0" title="My Profile">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a
+                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-12 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-12 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>包含筆者在內，對絕大多數的網頁前端初學者而言，<em>position</em> 無非是 CSS 中難以跨越的關卡之一，但偏偏許多排版的呈現，都必須借重 <em>position</em> 的特性，達到理想中的布局效果。其實只要多花一些時間理解概念並多加練習，<em>position</em> 也沒有想像中那樣困難，本篇文章將一一介紹其幾種固有布局模式屬性的運用概念，以及 CSS3 新增的 <em>sticky</em> 屬性。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">基礎概念</a></li>
+        <li><a href="#act2">無定位（static）</a></li>
+        <li><a href="#act3">相對定位（relative）</a></li>
+        <li><a href="#act4">絕對定位（absolute）</a></li>
+        <li><a href="#act5">固定定位（fixed）</a></li>
+        <li><a href="#act6">黏性定位（sticky）</a></li>
+        <li><a href="#act7">補充</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">基礎概念</h2>
+<p>首先我們要知道，<em>position</em> 可以改變元素與父元素或瀏覽器的布局位置，除了通過屬性值直接變更外，還可搭配偏移屬性（<em>top</em>、<em>right</em>、<em>bottom</em>、<em>left</em>）調整該元素的位置，或是設置 Z 軸（<em>z-index</em>）來決定不同元素發生重疊時的先後順序。</p>
+<p>那麼接著來看看 <em>position</em> 有哪些設置參數：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f1">用途</div>
+        <div class="t-f3">偏移與Z軸影響</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>static</em></div>
+        <div class="t-f1">無定位</div>
+        <div class="t-f3">不受影響</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>relative</em></div>
+        <div class="t-f1">相對定位</div>
+        <div class="t-f3">受影響</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>absolute</em></div>
+        <div class="t-f1">絕對定位</div>
+        <div class="t-f3">受影響</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>fixed</em></div>
+        <div class="t-f1">固定定位</div>
+        <div class="t-f3">受影響</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>sticky</em></div>
+        <div class="t-f1">黏性定位</div>
+        <div class="t-f3">受影響</div>
+    </div>
+</div>
+<p><br></p>
+
+<h2 id="act2">無定位（static）</h2>
+<figure>
+    <img src="../images/css/position-1.jpg">
+</figure>
+<p>此為 <em>position</em> 屬性的預設值，表示元素完全不受偏移屬性與 <em>z-index</em> 的影響。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="yLOrmXr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/yLOrmXr">
+        CSS: position-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>從實作練習中可以看到屬性值為 <em>static</em> 的元素，儘管同時設定了 <em>top</em> 與 <em>left</em> 屬性，但其位置完全不受影響，當然 <em>z-index</em> 亦同。</p>
+<p><br></p>
+
+<h2 id="act3">相對定位（relative）</h2>
+<p>設置此屬性值的元素會受到偏移屬性與 <em>z-index</em> 的影響，但偏移不影響後續其他元素，且原本佔據的空間依然佔據著。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="OJNGKdB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/OJNGKdB">
+        CSS: position-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>值得注意的是，偏移的基準點是由元素的左上角為起始點作偏移。</p>
+<p><br></p>
+
+<h2 id="act4">絕對定位（absolute）</h2>
+
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyMEbod" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/dyMEbod">
+        CSS: position-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+
+
+
+
+
+
+
+http://dez.logdown.com/posts/2017/06/01/huli-frontend-intermediate-course-1
+https://www.cnblogs.com/coco1s/p/6402723.html
+https://ithelp.ithome.com.tw/articles/10194075
+
+https://kknews.cc/zh-tw/news/ek294ln.html
+https://kknews.cc/code/r8qnjqn.html
+https://kknews.cc/code/5bgark6.html
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://wcc723.github.io/css/2015/07/23/css-column/" target="_blank">CSS column 教學</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10195002?sc=rss.iron" target="_blank">CSS：column 瀑布流版型</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../css.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                    
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        <li v-for="item in filterCss" :key="item.id">
+                        
+                        
+                        
+                        
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+                <div class="overlay" :class="{ 'is-active' : listActive}"></div>
+            </section>
+        </main>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -194,6 +194,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 11,
+        href: 'css_position',
+        title: 'Position 的各種模式與 sticky 黏性定位',
+        time: '2020.08.29',
+        tag1: true,
+        tag1_name: 'CSS3',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [
