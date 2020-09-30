@@ -197,7 +197,7 @@ const cssData = [
     {
         id: 11,
         href: 'css_position',
-        title: 'Position 的各種模式與 sticky 黏性定位',
+        title: 'Position 的各種定位模式',
         time: '2020.08.29',
         tag1: true,
         tag1_name: 'CSS3',

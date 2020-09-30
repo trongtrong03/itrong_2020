@@ -153,6 +153,9 @@
 <p><br></p>
 
 <h2 id="act3">相對定位（relative）</h2>
+<figure>
+    <img src="../images/css/position-2.jpg">
+</figure>
 <p>設置此屬性值的元素會受到偏移屬性與 <em>z-index</em> 的影響，但偏移不影響後續其他元素，且原本佔據的空間依然佔據著。</p>
 <div class="text-codepen">
     <code>
@@ -167,7 +170,10 @@
 <p><br></p>
 
 <h2 id="act4">絕對定位（absolute）</h2>
-
+<figure>
+    <img src="../images/css/position-3.jpg">
+</figure>
+<p>絕對定位與相對定位最大的差別在於使用絕對定位的元素，將不再佔據空間，意即原本所處的空間將由後續其他元素填補，而它則會像「懸浮」般的貼在畫面上。</p>
 <div class="text-codepen">
     <code>
         <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="dyMEbod" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-3">
@@ -177,28 +183,74 @@
         </p>
     </code>
 </div>
-
-
-
-
-
-
-
-http://dez.logdown.com/posts/2017/06/01/huli-frontend-intermediate-course-1
-https://www.cnblogs.com/coco1s/p/6402723.html
-https://ithelp.ithome.com.tw/articles/10194075
-
-https://kknews.cc/zh-tw/news/ek294ln.html
-https://kknews.cc/code/r8qnjqn.html
-https://kknews.cc/code/5bgark6.html
-
-<!-- 參考資料 -->
-<div class="text-refer">
-    <ul>
-        <li><a href="https://wcc723.github.io/css/2015/07/23/css-column/" target="_blank">CSS column 教學</a></li>
-        <li><a href="https://ithelp.ithome.com.tw/articles/10195002?sc=rss.iron" target="_blank">CSS：column 瀑布流版型</a></li>
-    </ul>
+<p>絕對定位（<em>absolute</em>）大概也是最多人學習 <em>position</em> 屬性時最難咀嚼下嚥的難關，最常聽到的問題是為什麼設置 <em>absolute</em> 的元素，定位並不在自己預期中的位置，或是為什麼不在父容器之內等等，舉例來說：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="rNegpNR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-4">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/rNegpNR">
+        CSS: position-4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
 </div>
+<p>從這個案例可以看到子元素的定位（<em>top: 0px</em>、<em>left: 100px</em>）並沒有確實落在父元素左上角開始算起的位置，這是為什麼？</p>
+<p>主要是因為絕對定位的元素，會向上參考是否有其他定位（除了 <em>static</em> 之外的定位屬性）的父元素，如果有，則會以該元素作為基準點進行偏移，假如沒有，則會繼續向上找直到根元素（<em>&lt;html&gt;</em>）為止。<em>z-index</em> 的概念亦同
+。回到上面的範例，由於包含子元素的父元素本身沒有設定 <em>position</em> 屬性，則瀏覽器將採預設值──也就是 <em>static</em>，無定位的情況下屬性為絕對定位的子元素則繼續向上尋求定位基準，最後碰到了根元素，便以其左上角作偏移基準點。</p>
+<p>如果我們給父元素加上 <em>position: relative</em>，就會得到子元素定位基準以父元素為依據的結果。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWNRQye" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-5">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/QWNRQye">
+        CSS: position-5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h2 id="act5">固定定位（fixed）</h2>
+<figure>
+    <img src="../images/css/position-4.jpg">
+</figure>
+<p>固定定位與絕對定位的特性有那麼一些類似，都是「浮貼」在畫面上不佔據實體空間。然而不同的是，設定為 <em>fixed</em> 的子元素不會參考父元素是否為除了 <em>static</em> 以外的定位屬性，而是直接以根元素（<em>&lt;html&gt;</em>）的左上角作基準點偏移。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="gOrJvGq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-6">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/gOrJvGq">
+        CSS: position-6</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>光看上面範例可能感受不出 <em>fixed</em> 有別於 <em>absolute</em> 的妙用，其實兩者最大的區別在於畫面捲動的時候，設置 <em>fixed</em> 的元素會始終固定在畫面上，後者則不會。光用文字敘述不易理解，以下直接看範例比較快：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="ExKzQqE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-7">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ExKzQqE">
+        CSS: position-7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>請嘗試捲動畫面，就會發現固定定位與絕對定位明顯的差異。</p>
+<p><br></p>
+
+<h2 id="act6">黏性定位（sticky）</h2>
+<figure>
+    <img src="../images/css/position-5.jpg">
+</figure>
+<p><em>sticky</em> CSS3 新增的定位屬性參數，它同時結合了 <em>relative</em> 與 <em>fixed</em> 特性，多用於畫面捲動到一定程度時，指定的元素隨即固定在畫面上的場合。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWNRmZO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-7">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/QWNRmZO">
+          CSS: position-7</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+
+
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
@@ -206,6 +258,7 @@ https://kknews.cc/code/5bgark6.html
                     
                     
                         <button id="sideBack" title="Back" onclick="javascript:location.href='../css.html'"></button>
+                        <button id="sideCatalog" title="Catalog"></button>
                     
                     
                     
@@ -213,7 +266,6 @@ https://kknews.cc/code/5bgark6.html
                     
                     <a href="#wrap" id="sideTop" title="Top"></a>
                     <button id="sideList" title="List"></button>
-                    
                 </aside>
 
                 <div class="text-list">

@@ -2,27 +2,29 @@
     <button id="sideHome" title="Home" onclick="javascript:location.href='@@webRoot/index.html'"></button>
     @@if (context.html===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/html.html'"></button>
+        <button id="sideCatalog" title="Catalog"></button>
     }
     @@if (context.css===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/css.html'"></button>
+        <button id="sideCatalog" title="Catalog"></button>
     }
     @@if (context.js===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/javascript.html'"></button>
+        <button id="sideCatalog" title="Catalog"></button>
     }
     @@if (context.app===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/app.html'"></button>
+        <button id="sideCatalog" title="Catalog"></button>
     }
     @@if (context.misc===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/misc.html'"></button>
+        <button id="sideCatalog" title="Catalog"></button>
     }
     @@if (context.hike===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/hiking.html'"></button>
     }
     <a href="#wrap" id="sideTop" title="Top"></a>
     <button id="sideList" title="List"></button>
-    @@if (context.hike===false ) {
-        <button id="sideCatalog" title="Catalog"></button>
-    }
 </aside>
 
 <div class="text-list">
