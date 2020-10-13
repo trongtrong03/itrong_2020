@@ -33,7 +33,7 @@
             </li>
         </ul>
         <div class="nav-bottom">
-            <a href="#0" title="My Profile">
+            <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
                 <i class="far fa-user"></i>
             </a>
             <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
@@ -42,8 +42,7 @@
             <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
                 <i class="fab fa-codepen"></i>
             </a>
-            <a
-              class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+            <a class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
             <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
@@ -54,3 +53,4 @@
         <button class="nav-close" @click="navActive = !navActive"></button>
     </nav>
 </header>
+<div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>

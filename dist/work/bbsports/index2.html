@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="first zh-cn rookie"><!-- 1.rookie 2.star 3.allstar -->
+<head>
+    <meta charset="utf-8">
+    <title>BB世足送千萬活動</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div id="mainBody">
+        <!-- page-header -->
+        <div id="page-header"></div>
+        <!-- page-container -->
+        <div id="page-container">
+            <div id="page-body">
+                <!-- 標題 -->
+                <div class="first-title-wrap"></div>
+                <!-- 流程圖 -->
+                <div class="first-process-wrap">
+                    <span class="title"></span>
+                    <a href="#0" class="link in"></a>
+                    <a href="#0" class="link bb"></a>
+                    <a href="#0" class="link newbb"></a>
+                </div>
+                <!-- 活動盤面 -->
+                <div class="first-game-wrap">
+                    <div class="first-game-level">
+                        <div class="first-game-counterbar">
+                            <img src="image/game_counterbar_rookie.png" class="percent-0"><!-- percent 0 5 10 15...100 -->
+                        </div>
+                        <a href="#0" class="first-game-btn-howToUpLv"></a>
+                    </div>
+                    <div class="first-game-level-info">
+                        <div class="text">
+                            <p>您目前活动等级为：XX球員</p>
+                            <p>单盘可领取奖金范围：¥ 0,000,000~0,000,000</p>
+                        </div>
+                        <div class="text">
+                            <p><strong>再累积 ¥ 00,000,000</strong> 即可升级为「XX球員」</p>
+                            <p>单盘可领取奖金范围：¥ 0,000,000~0,000,000</p>
+                        </div>
+                    </div>
+                    <div class="first-game-status">
+                        <h2 class="info1">活动累积注额</h2>
+                        <p class="info2">¥00,000,000</p>
+                    </div>
+                    <div class="first-game-select">尚未选盘</div>
+                    <!-- 遊戲盤面 -->
+                    <div class="first-game-area">
+                        <div class="first-game-wall close"><!-- 1.end 2.close -->
+                            <div class="clearfix">
+                                <span class="first-game-items goal">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 選擇盤面 -->
+                    <!-- <div id="js-ele-slideshow" class="ele-slideshow-wrap">
+                        <div class="js-ele-slideshow-scroll ele-slideshow-scroll">
+                            <ul>
+                                <li data-autoplaytime="5000">
+                                    <div class="first-game-wall">
+                                        <div class="clearfix">
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-autoplaytime="5000">
+                                    <div class="first-game-wall">
+                                        <div class="clearfix">
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-autoplaytime="5000">
+                                    <div class="first-game-wall">
+                                        <div class="clearfix">
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                            <span class="first-game-items">￥0,000,000</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="js-ele-slideshow-control-wrap ele-slideshow-control-wrap"></div>
+                        </div>
+                    </div> -->
+                    <!-- 開始選盤確認彈窗 -->
+                    <!-- <div class="first-game-popup-wrap select">
+                        <div class="first-game-popup-main">
+                            <div class="first-game-popup-article">
+                                <h2>确定开始选盘吗？</h2>
+                                <div class="text">
+                                    <p>点击「开始踢球」将依您目前活动球员等级随机出现奖金盘， 于连线获得奖金前无法更换奖金盘喔！</p>
+                                </div>
+                                <div class="text">
+                                    <p>您目前活动球员等极为XX球员</p>
+                                    <p>单盘可领取奖金范围：¥ 0,000,000~0,000,000</p>
+                                </div>
+                                <div class="text">
+                                    <p><strong>再累积 ¥ 0,000,000</strong> 即可升级为「XX球員」</p>
+                                    <p>单盘可领取奖金范围：¥ 0,000,000~0,000,000</p>
+                                </div>
+                                <div class="first-game-popup-btn">
+                                    <button class="instructions">等级说明</button>
+                                    <button class="back">暂不进行</button>
+                                    <button class="start">开始踢球</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="first-game-popup-close"></button>
+                    </div> -->
+                    <!-- 確認選盤彈窗 -->
+                    <!-- <div class="first-game-popup-wrap check">
+                        <div class="first-game-popup-main">
+                            <div class="first-game-popup-article">
+                                <h2>确定选择「第X盘」吗？</h2>
+                                <div class="text">
+                                    <p>于连线获得奖金前</p>
+                                    <p>无法更换奖金盘喔！</p>
+                                </div>
+                                <div class="first-game-popup-btn">
+                                    <button class="back">返回</button>
+                                    <button class="confirm">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="first-game-popup-close"></button>
+                    </div> -->
+                </div>
+                <!-- 遊戲介面 -->
+                <div class="first-game-ctrl-wrap locked"><!-- 0.locked 1.select 2.confirm 3.play 4.play-locked 5.end -->
+                    <span class="first-game-ctrl-arrow"></span>
+                    <span class="first-game-ctrl-ball"></span>
+                    <button class="first-game-btn-instructions"></button>
+                    <button class="first-game-btn-play"></button>
+                    <!-- 0.射獎金 -->
+                    <div class="first-game-text">
+                        <div class="info1">
+                            <p>活动即将开始</p>
+                            <p>敬请期待</p>
+                        </div>
+                        <div class="info2">
+                            <p>再投注<span>¥00,000,000</span>即可踢球</p>
+                        </div>
+                    </div>
+                    <!-- 1.選盤開踢 -->
+                    <!-- <div class="first-game-text">
+                        <div class="info1">
+                            <p>将依目前活动球员等级</p>
+                            <p>提供三种盘面供您选择</p>
+                        </div>
+                        <div class="info2">
+                        </div>
+                    </div> -->
+                    <!-- 2.確定選盤 -->
+                    <!-- <div class="first-game-text">
+                        <div class="info1">
+                            <p>可点选<span>上、下一盘</span>进行切换</p>
+                            <p>目前选择：第X盘</p>
+                        </div>
+                        <div class="info2">
+                        </div>
+                    </div> -->
+                    <!-- 3.射獎金 -->
+                    <!-- <div class="first-game-text">
+                        <div class="info1">
+                            <p>踢一球扣活动累积注额</p>
+                            <p> <span>¥00,000,000</span></p>
+                            <p>目前可踢 <span>00</span> 球</p>
+                        </div>
+                        <div class="info2">
+                            <p>再投注<span>¥00,000,000</span>即可踢球</p>
+                        </div>
+                    </div> -->
+                    <!-- 4.活動結束 -->
+                    <!-- <div class="first-game-text">
+                        <div class="info1">
+                            <p>活动已结束</p>
+                        </div>
+                        <div class="info2">
+                        </div>
+                    </div> -->
+                </div>
+                <!-- 遊戲連線成功 -->
+                <div class="first-bingo-wrap">
+                    <div class="first-bingo-main">
+                        <div class="first-game-wall">
+                            <div class="clearfix">
+                                <!-- goal: 擊中 / bingo: 連線 -->
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items bingo">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items bingo">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items">￥0,000,000</span>
+                                <span class="first-game-items bingo">￥0,000,000</span>
+                            </div>
+                        </div>
+                        <p>恭喜连线成功！</p>
+                        <p>获得奖金 <strong>¥0,000,000</strong></p>
+                        <button class="first-bingo-close"></button>
+                    </div>
+                </div>
+                <!-- 教學影片 -->
+                <!-- <div class="first-video-wrap">
+                    <video width="668" height="960" autoplay>
+                        <source src="video.mp4" type="video/mp4">
+                        <p>您的瀏覽器不支援此 HTML5 影片標籤</p>
+                    </video>
+                </div> -->
+                <!-- 注意事項 -->
+                <div class="first-notice-wrap">
+                    <ul>
+                        <li>「活动累积注额」与「球员经验值」系统每5分钟将自动进行更新</li>
+                        <li>因每位玩家网速差异，故累积注额可能非呈现实时数值，如投注后累积注额未立即更新请稍候下次更新</li>
+                        <li>开始选盘即锁定目前活动球员等级提供对应奖金盘，选择盘面后无法更换，直到连线成功为止</li>
+                        <li>获得奖金后可选取「选盘开踢」，将重新对应当前活动球员等级提供奖金盘选择，并可再次进行踢球活动</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- page-footer -->
+        <div id="page-footer"></div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/tween.slideshow.js"></script>
+    <script>
+        $('#js-ele-slideshow').slideshow({
+            animationType: 'fade', // 動畫效果 fade=漸變, overlay=疊加, slideh=區塊左右, slidev=區塊上下
+            isNav: 1, // 是否需要 dots 是=1, 否=0
+            isNumber: 0, // 是否需要 數值 是=1, 否=0
+            navPosition: 'center', // 繼承上一問題__dots 位置
+            isArrow: 1, // 是否需要 箭頭 是=1, 否=0
+            isRunLine: 0, // 是否需要 runline 是=1, 否=0
+            isAutoPlay: 0
+        });
+    </script>
+</body>
+</html>

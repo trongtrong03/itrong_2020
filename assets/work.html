@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+@@include("_head.html")
+<body>
+    <article id="wrap">
+        @@include("_header.html")
+        <main>
+            <section class="container-wrap">
+                <h1>專案集錦</h1>
+                <div class="work-wrap">
+                    <div class="work-column">
+                        <div class="work-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in wk_list" :key="item.id">
+                            <a :href="'pages/' + item.href + '.html'" target="_blank">
+                                <figure>
+                                    <img :src="'images/work/' + item.img + '.jpg'">
+                                    <figcaption v-text="item.name"></figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("_footer.html")
+    </article>
+    @@include("_js.html")
+</body>
+</html>

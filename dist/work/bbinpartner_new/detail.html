@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="detail">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>BBIN TEMPLATE</title>
+    <link href="image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <article id="mainBody">
+        <main class="container-wrap">
+            <section class="detail-wrap">
+                <div class="detail-main">
+                    <div class="detail-top">
+                        <figure class="detail-screen">
+                            <span>
+                                <img src="image/example/A19080801.jpg">
+                            </span>
+                        </figure>
+                        <hgroup>
+                            <h1>A19080801</h1>
+                            <a href="livedemo.html" target="_blank">LIVE DEMO</a>
+                            <p>
+                                <span>首页廣告轮播圖片尺吋不限依設計為主，如有特殊要求請告知。</span>
+                                <br>
+                                <span>导览列/网页字型：预设系统字。</span>
+                                <br>
+                                <span>网页语系，功能按钮，</span>
+                                <span>标题名称皆与BBIN为主。</span>
+                            </p>
+                        </hgroup>
+                        <div>
+                            <button class="is-prev"></button>
+                            <button class="is-next"></button>
+                        </div>
+                    </div>
+                    <div class="detail-slider">
+                        <div>
+                            <img src="image/example/01.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/02.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/03.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/04.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/05.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/06.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/07.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/08.jpg">
+                        </div>
+                        <div>
+                            <img src="image/example/09.jpg">
+                        </div>
+                    </div>
+                </div>
+                <button onclick="javascript:window.close();"></button>
+            </section>
+        </main>
+    </article>
+    <script src="js/slick.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(".detail-slider").slick({
+            dots: true,
+            arrows: true,
+            fade: true,
+            adaptiveHeight: true,
+        });
+    </script>
+</body>
+</html>

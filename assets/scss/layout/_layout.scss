@@ -1,9 +1,3 @@
-// 清除浮動
-.clearfix {
-    @include clearfix;
-}
-
-
 // 全站設定
 * {
     box-sizing: border-box;
@@ -12,6 +6,7 @@
 
 html,
 body {
+    height: 100%;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -70,6 +65,9 @@ body {
     padding-left: 15rem;
     animation-name: fadeIn;
     animation-duration: .5s;
+    .iframe & {
+        padding-left: 0;
+    }
     @include MQ(max-1024) {
         padding-left: 0;
     }
@@ -82,6 +80,17 @@ main {
     @include MQ(max-1024) {
         padding: 5rem 1rem 0;
     }
+}
+
+// 清除浮動
+.clearfix {
+    @include clearfix;
+}
+
+// No-scroll
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
 }
 
 .container-wrap {
@@ -263,3 +272,5 @@ main {
         animation-fill-mode: forward;
     }
 }
+
+

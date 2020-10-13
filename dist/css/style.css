@@ -9086,19 +9086,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   height: 100%;
 }
 
-.clearfix {
-  *zoom: 1;
-}
-
-.clearfix:before, .clearfix:after {
-  content: "";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -9120,6 +9107,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -9197,6 +9185,10 @@ body::-webkit-scrollbar-thumb {
   background: #81D8D0;
 }
 
+.iframe body {
+  padding-left: 0;
+}
+
 @media only screen and (max-width: 1024px) {
   body {
     padding-left: 0;
@@ -9213,6 +9205,24 @@ main {
   main {
     padding: 5rem 1rem 0;
   }
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
 }
 
 .container-wrap {
@@ -9582,13 +9592,13 @@ nav > ul li:last-child {
   nav {
     position: fixed;
     top: 0;
-    right: -15rem;
+    left: -15rem;
     z-index: 101;
     width: 15rem;
     height: 100%;
     background-color: #81D8D0;
     padding-top: 4rem;
-    transition: right .3s ease;
+    transition: left .3s ease;
   }
   nav > ul {
     height: 100%;
@@ -9607,7 +9617,7 @@ nav > ul li:last-child {
     background: #FFF;
   }
   nav.is-active {
-    right: 0;
+    left: 0;
     box-shadow: 0 5px 12px 1px rgba(32, 42, 64, 0.25);
   }
 }
@@ -9642,7 +9652,7 @@ nav > ul li:last-child {
   .nav-btn {
     position: absolute;
     top: calc(50% - 2rem);
-    right: 0;
+    left: 0;
     display: block;
     width: 4rem;
     height: 4rem;
@@ -9753,6 +9763,168 @@ footer {
     padding-right: 1rem;
     padding-left: 1rem;
   }
+}
+
+.profile-wrap {
+  position: fixed;
+  top: 150vh;
+  left: 0;
+  z-index: 200;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: top .5s;
+}
+
+.profile-wrap.is-active {
+  top: 0;
+}
+
+.profile-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #444;
+}
+
+.profile-close::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.profile-main {
+  height: 100%;
+  overflow-y: auto;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-main::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.profile-main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #81D8D0;
+}
+
+.profile-main::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 25rem;
+  background-image: url("../images/profile_bg.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-main::before {
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .profile-main::before {
+    height: 15rem;
+  }
+}
+
+.profile-photo {
+  margin-bottom: 2rem;
+}
+
+.profile-photo::before {
+  content: '';
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  background-image: url("../images/profile_img.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 0.5rem solid #FFF;
+  border-radius: 100%;
+  margin: -5rem auto 1rem;
+}
+
+.profile-photo h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.profile-article {
+  max-width: 40rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+.profile-article hgroup {
+  line-height: 1.5;
+  color: #878787;
+  margin-bottom: 3rem;
+}
+
+.profile-article hgroup h2 {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.profile-article hgroup div,
+.profile-article hgroup p {
+  display: block;
+  margin-top: .75rem;
+  margin-bottom: 1rem;
+}
+
+.profile-article hgroup div time,
+.profile-article hgroup div b,
+.profile-article hgroup p time,
+.profile-article hgroup p b {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #81D8D0;
+}
+
+.profile-article hgroup div span,
+.profile-article hgroup p span {
+  display: block;
+}
+
+.profile-article hgroup div:last-child,
+.profile-article hgroup p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-article hgroup li {
+  display: inline-block;
+}
+
+.profile-article hgroup li::after {
+  content: '/';
+  margin: 0 .5rem;
+}
+
+.profile-article hgroup li:last-child::after {
+  display: none;
 }
 
 .notes-wrap {
@@ -10859,8 +11031,9 @@ footer {
 .filter-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   width: calc(100% - 6rem);
-  height: 3rem;
+  padding-top: 0.5rem;
   float: left;
 }
 
@@ -10871,6 +11044,7 @@ footer {
   color: #fff;
   background-color: #444;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0 .5rem;
   transition: opacity .3s;
   opacity: 0.4;
@@ -10878,6 +11052,12 @@ footer {
 
 .filter-list button.is-active {
   opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .filter-list {
+    width: 100%;
+  }
 }
 
 .switch-list {
@@ -10917,7 +11097,7 @@ footer {
   content: '\f03a';
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .switch-list {
     display: none;
   }
@@ -10983,7 +11163,6 @@ footer {
 .photo-item figure {
   position: relative;
   display: block;
-  height: 16vh;
   overflow: hidden;
 }
 
@@ -11069,6 +11248,157 @@ footer {
 
 .index .photo-item {
   margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .photo-item {
+    width: calc(50% - 1rem / 2);
+  }
+  .photo-item:nth-child(3n) {
+    margin-right: 1rem;
+  }
+  .photo-item:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .photo-item {
+    width: 100%;
+  }
+  .photo-item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .photo-item:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.work-wrap {
+  padding-bottom: 5rem;
+}
+
+.iframe .work-wrap {
+  height: 100%;
+  padding-bottom: 0;
+}
+
+.work-column {
+  -moz-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 1.5rem;
+  column-gap: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .work-column {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work-column {
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+
+.work-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.work-item a {
+  position: relative;
+  display: block;
+  transition: all .3s ease;
+}
+
+.work-item a figure {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  overflow: hidden;
+  transition: border .3s ease;
+}
+
+.work-item a figure img {
+  display: block;
+  width: 100%;
+}
+
+.work-item a figcaption {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  color: #444;
+  padding: .5rem 1rem;
+}
+
+.work-item a:hover {
+  z-index: 5;
+  transform: scale(1.15, 1.15);
+}
+
+.work-item a:hover figure {
+  border-color: #81D8D0;
+}
+
+.work-head {
+  position: relative;
+  z-index: 5;
+  display: block;
+  line-height: 5rem;
+  text-align: center;
+  background-color: #444;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  padding: 0 5rem;
+}
+
+.work-head > h1 {
+  font-size: 2rem;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.work-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #444;
+  background-color: #81D8D0;
+  border: 0;
+}
+
+.work-close::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.work-iframe-wrap {
+  height: calc(100% - 5rem);
+}
+
+.work-iframe-content {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+.work-iframe-content iframe {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .form-wrap {

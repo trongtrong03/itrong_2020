@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="signup">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>極速傳說  車神爭霸</title>
+    <link href="image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <main id="mainBody">
+        <header id="page-header">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <span><b>極速傳說</b><b>車神爭霸</b></span>
+                    <span>技術事業群 X'mas party game</span>
+                </a>
+            </div>
+            <nav class="nav-wrap">
+                <div class="nav-main">
+                    <div class="nav-item">
+                        <a href="index.html">首頁</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="rule.html">跑跑卡丁車Rush+ </a>
+                    </div>
+                    <div class="nav-item is-info">
+                        <span>賽事資訊<i></i></span>
+                        <div class="nav-sub">
+                            <div>
+                                <a href="team.html">參賽隊伍</a>
+                            </div>
+                            <div>
+                                <a href="schedule.html">賽程表<b>11/06 公布賽程</b></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="reward.html">賽事獎勵</a>
+                    </div>
+                    <div class="nav-item is-registration">
+                        <button onClick="window.location.href='signup.html'">我要報名</button>
+                        <p>報名開放時間　10/12~10/30</p>
+                    </div>
+                </div>
+            </nav>
+            <button class="nav-btn"></button>
+        </header>
+        <main id="page-container">
+            <div class="page-wrap">
+                <div class="page-title">
+                    <div>
+                        <span><i></i></span>
+                    </div>
+                </div>
+                <div class="page-main">
+                    <div class="page-content">
+                        <div class="signup-wrap">
+                            <div class="signup-form">
+                                <form action="">
+                                    <!-- 隊伍名稱 -->
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-tname">
+                                            <h2>隊伍名稱</h2>
+                                            <input type="text" placeholder="限8個全形字元以內">
+                                            <button>檢查隊伍名稱</button>
+                                            <p class="is-passed"><span>隊伍名稱無重覆</span></p>
+                                            <!-- <p class="is-warn"><span>隊伍名稱重覆，請重新取名</span></p> -->
+                                        </div>
+                                    </div>
+                                    <div class="signup-input-tips">
+                                        <p>上傳圖檔限制4MB以內，附檔名JPG / PNG</p>
+                                    </div>
+                                    <!-- 隊員資料 -->
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-player">
+                                            <div class="si-form-wrap">
+                                                <h2>隊長</h2>
+                                                <div class="si-form-input">
+                                                    <div>
+                                                        <label for="">1. 部門選擇</label>
+                                                        <select>
+                                                            <option>多媒體創意發展處_MCD</option>
+                                                            <option>研一_RD1</option>
+                                                            <option>研一_RD2</option>
+                                                            <option>研一_RD3</option>
+                                                            <option>研一_RD4</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">2. 公司暱稱</label>
+                                                        <input type="text" list="i1">
+                                                        <datalist id="i1">
+                                                            <option value="bandy">
+                                                            <option value="blue">
+                                                            <option value="brook">
+                                                            <option value="broom">
+                                                        </datalist>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">3. 識別證號</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div>
+                                                        <label for="">4. Game ID</label>
+                                                        <input type="text" placeholder="請輸入跑跑遊戲暱稱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="si-image-wrap">
+                                                <div class="si-image-head">
+                                                    <h2>遊戲個人截圖</h2>
+                                                    <span>格式錯誤</span>
+                                                </div>
+                                                <div class="si-image-content">
+                                                    <input type="file" id="input-file" acept="image/png image/jpeg">
+                                                    <label class="drop-box" id="drop-box" for="input-file">
+                                                        <span>將個人資料圖片拖曳到這裡</span>
+                                                        <span>-或-</span>
+                                                        <span>從電腦選取一張圖片</span>
+                                                    </label>
+                                                    <div id="image-preview">
+                                                        <button class="btn-del"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-player">
+                                            <div class="si-form-wrap">
+                                                <h2>隊員2</h2>
+                                                <div class="si-form-input">
+                                                    <div>
+                                                        <label for="">1. 部門選擇</label>
+                                                        <select>
+                                                            <option>多媒體創意發展處_MCD</option>
+                                                            <option>研一_RD1</option>
+                                                            <option>研一_RD2</option>
+                                                            <option>研一_RD3</option>
+                                                            <option>研一_RD4</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">2. 公司暱稱</label>
+                                                        <input type="text" list="i1">
+                                                        <datalist id="i1">
+                                                            <option value="bandy">
+                                                            <option value="blue">
+                                                            <option value="brook">
+                                                            <option value="broom">
+                                                        </datalist>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">3. 識別證號</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div>
+                                                        <label for="">4. Game ID</label>
+                                                        <input type="text" placeholder="請輸入跑跑遊戲暱稱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="si-image-wrap">
+                                                <div class="si-image-head">
+                                                    <h2>遊戲個人截圖</h2>
+                                                    <span>格式錯誤</span>
+                                                </div>
+                                                <div class="si-image-content">
+                                                    <input type="file" id="input-file" acept="image/png image/jpeg">
+                                                    <label class="drop-box" id="drop-box" for="input-file">
+                                                        <span>將個人資料圖片拖曳到這裡</span>
+                                                        <span>-或-</span>
+                                                        <span>從電腦選取一張圖片</span>
+                                                    </label>
+                                                    <div id="image-preview">
+                                                        <button class="btn-del"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-player">
+                                            <div class="si-form-wrap">
+                                                <h2>隊員3</h2>
+                                                <div class="si-form-input">
+                                                    <div>
+                                                        <label for="">1. 部門選擇</label>
+                                                        <select>
+                                                            <option>多媒體創意發展處_MCD</option>
+                                                            <option>研一_RD1</option>
+                                                            <option>研一_RD2</option>
+                                                            <option>研一_RD3</option>
+                                                            <option>研一_RD4</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">2. 公司暱稱</label>
+                                                        <input type="text" list="i1">
+                                                        <datalist id="i1">
+                                                            <option value="bandy">
+                                                            <option value="blue">
+                                                            <option value="brook">
+                                                            <option value="broom">
+                                                        </datalist>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">3. 識別證號</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div>
+                                                        <label for="">4. Game ID</label>
+                                                        <input type="text" placeholder="請輸入跑跑遊戲暱稱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="si-image-wrap">
+                                                <div class="si-image-head">
+                                                    <h2>遊戲個人截圖</h2>
+                                                    <span>格式錯誤</span>
+                                                </div>
+                                                <div class="si-image-content">
+                                                    <input type="file" id="input-file" acept="image/png image/jpeg">
+                                                    <label class="drop-box" id="drop-box" for="input-file">
+                                                        <span>將個人資料圖片拖曳到這裡</span>
+                                                        <span>-或-</span>
+                                                        <span>從電腦選取一張圖片</span>
+                                                    </label>
+                                                    <div id="image-preview">
+                                                        <button class="btn-del"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-player">
+                                            <div class="si-form-wrap">
+                                                <h2>隊員4</h2>
+                                                <div class="si-form-input">
+                                                    <div>
+                                                        <label for="">1. 部門選擇</label>
+                                                        <select>
+                                                            <option>多媒體創意發展處_MCD</option>
+                                                            <option>研一_RD1</option>
+                                                            <option>研一_RD2</option>
+                                                            <option>研一_RD3</option>
+                                                            <option>研一_RD4</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">2. 公司暱稱</label>
+                                                        <input type="text" list="i1">
+                                                        <datalist id="i1">
+                                                            <option value="bandy">
+                                                            <option value="blue">
+                                                            <option value="brook">
+                                                            <option value="broom">
+                                                        </datalist>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">3. 識別證號</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div>
+                                                        <label for="">4. Game ID</label>
+                                                        <input type="text" placeholder="請輸入跑跑遊戲暱稱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="si-image-wrap">
+                                                <div class="si-image-head">
+                                                    <h2>遊戲個人截圖</h2>
+                                                    <span>格式錯誤</span>
+                                                </div>
+                                                <div class="si-image-content">
+                                                    <input type="file" id="input-file" acept="image/png image/jpeg">
+                                                    <label class="drop-box" id="drop-box" for="input-file">
+                                                        <span>將個人資料圖片拖曳到這裡</span>
+                                                        <span>-或-</span>
+                                                        <span>從電腦選取一張圖片</span>
+                                                    </label>
+                                                    <div id="image-preview">
+                                                        <button class="btn-del"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="signup-input-blk">
+                                        <div class="signup-input-player">
+                                            <div class="si-form-wrap">
+                                                <h2>候補5</h2>
+                                                <div class="si-form-input">
+                                                    <div>
+                                                        <label for="">1. 部門選擇</label>
+                                                        <select>
+                                                            <option>多媒體創意發展處_MCD</option>
+                                                            <option>研一_RD1</option>
+                                                            <option>研一_RD2</option>
+                                                            <option>研一_RD3</option>
+                                                            <option>研一_RD4</option>
+                                                            <option>...</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">2. 公司暱稱</label>
+                                                        <input type="text" list="i1">
+                                                        <datalist id="i1">
+                                                            <option value="bandy">
+                                                            <option value="blue">
+                                                            <option value="brook">
+                                                            <option value="broom">
+                                                        </datalist>
+                                                    </div>
+                                                    <div>
+                                                        <label for="">3. 識別證號</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div>
+                                                        <label for="">4. Game ID</label>
+                                                        <input type="text" placeholder="請輸入跑跑遊戲暱稱">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="si-image-wrap">
+                                                <div class="si-image-head">
+                                                    <h2>遊戲個人截圖</h2>
+                                                    <span>格式錯誤</span>
+                                                </div>
+                                                <div class="si-image-content">
+                                                    <input type="file" id="input-file" acept="image/png image/jpeg">
+                                                    <label class="drop-box" id="drop-box" for="input-file">
+                                                        <span>將個人資料圖片拖曳到這裡</span>
+                                                        <span>-或-</span>
+                                                        <span>從電腦選取一張圖片</span>
+                                                    </label>
+                                                    <div id="image-preview">
+                                                        <button class="btn-del"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 同意&送出 -->
+                                    <div class="signup-input-bottom">
+                                        <input type="checkbox" id="agree">
+                                        <label for="agree">
+                                            <span>已經詳細閱讀過<a href="" target="_blank">「跑跑卡丁車RUSH+」</a>活動說明且確認所有填寫資料無誤。</span>
+                                        </label>
+                                        <button>送出</button>
+                                        <div class="result is-error">
+                                            <p>資訊不齊全</p>
+                                        </div>
+                                        <!-- <div class="result is-success">
+                                            <p>報名成功</p>
+                                            <p>請至【參賽隊伍】頁面查看</p>
+                                        </div> -->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="page-footer">
+            <p>Copyright © 2020  X’mas PARTY GAME Reserved</p>
+        </footer>
+        <button class="btn-top"><i></i></button>
+        <div class="popup-overlay"></div>
+    </main>
+    <script src="js/vue.min.js"></script>
+    <script src="js/page.js"></script>
+    <script>
+        const dragBox = document.getElementById('drop-box');
+        const imagePreview = document.getElementById('image-preview');
+        const inputFile =  document.getElementById('input-file');
+
+        function uploadImage(src) {
+            const imagePreviewImg = document.createElement('img');
+            imagePreviewImg.src = src;
+            dragBox.classList.add('is-dragged');
+            imagePreview.appendChild(imagePreviewImg);
+        }
+
+        inputFile.onchange = function(event) {
+            const imageSrc = URL.createObjectURL(inputFile.files[0]);
+            uploadImage(imageSrc);
+        }
+
+        dragBox.ondrop = function(event) {
+            event.preventDefault()
+            dragBox.classList.remove('is-dragon');
+            const imageSrc = URL.createObjectURL(event.dataTransfer.files[0]);
+            uploadImage(imageSrc);
+        }
+
+        dragBox.ondragover = function() {
+            dragBox.classList.add('is-dragon');
+            return false;
+        }
+
+        dragBox.ondragleave = function() {
+            dragBox.classList.remove('is-dragon');
+            return false;
+        }
+
+        // focus
+        $(".signup-input-blk").click(function(){
+            $(".signup-input-blk").removeClass("is-focus");
+            $(this).addClass("is-focus");
+        });
+
+        // remove
+        $(".btn-del").click(function() {
+        });
+    </script>
+</body>
+
+</html>

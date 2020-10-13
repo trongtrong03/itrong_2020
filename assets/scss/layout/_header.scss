@@ -92,19 +92,19 @@ nav {
     @include MQ(max-1024) {
         position: fixed;
         top: 0;
-        right: -15rem;
+        left: -15rem;
         z-index: 101;
         width: 15rem;
         height: 100%;
         background-color: $first;
         padding-top: 4rem;
-        transition: right .3s ease;
+        transition: left .3s ease;
         > ul {
             height: 100%;
             @include scrollbar(#FFF);
         }
         &.is-active {
-            right: 0;
+            left: 0;
             box-shadow: 0 5px 12px 1px rgba(32, 42, 64, 0.25);
         }
     }
@@ -135,7 +135,7 @@ nav {
     @include MQ(max-1024) {
         position: absolute;
         top: calc(50% - 2rem);
-        right: 0;
+        left: 0;
         display: block;
         width: 4rem;
         height: 4rem;

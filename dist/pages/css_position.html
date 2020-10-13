@@ -50,7 +50,7 @@
                     </li>
                 </ul>
                 <div class="nav-bottom">
-                    <a href="#0" title="My Profile">
+                    <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
                         <i class="far fa-user"></i>
                     </a>
                     <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
@@ -59,8 +59,7 @@
                     <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
                         <i class="fab fa-codepen"></i>
                     </a>
-                    <a
-                      class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                    <a class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
@@ -71,6 +70,7 @@
                 <button class="nav-close" @click="navActive = !navActive"></button>
             </nav>
         </header>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
@@ -94,7 +94,7 @@
         <li><a href="#act4">絕對定位（absolute）</a></li>
         <li><a href="#act5">固定定位（fixed）</a></li>
         <li><a href="#act6">黏性定位（sticky）</a></li>
-        <li><a href="#act7">補充</a></li>
+        <li><a href="#act7">座標偏移＆z-index</a></li>
     </ul>
 </div>
 
@@ -133,6 +133,11 @@
         <div class="t-f3">受影響</div>
     </div>
 </div>
+<p>定位示意圖：</p>
+<figure>
+    <img src="../images/css/position-6.jpg">
+</figure>
+<p>如果看不懂也不用緊張，以下各節將一一介紹各定位屬性值的原理。</p>
 <p><br></p>
 
 <h2 id="act2">無定位（static）</h2>
@@ -239,7 +244,7 @@
 <figure>
     <img src="../images/css/position-5.jpg">
 </figure>
-<p><em>sticky</em> CSS3 新增的定位屬性參數，它同時結合了 <em>relative</em> 與 <em>fixed</em> 特性，多用於畫面捲動到一定程度時，指定的元素隨即固定在畫面上的場合。</p>
+<p><em>sticky</em> CSS3 新增的定位屬性參數，它同時結合了 <em>relative</em> 與 <em>fixed</em> 特性，一般多用於畫面捲動到一定程度時，指定的元素隨即固定在畫面上的場合。</p>
 <div class="text-codepen">
     <code>
         <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="QWNRmZO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS: position-7">
@@ -249,8 +254,84 @@
         </p>
     </code>
 </div>
+<p>請在上方範例中試著滾動視窗右側卷軸，會發現使用 <em>sticky</em> 屬性值的元素，不若 <em>fixed</em> 那樣會直接固定在畫面不作任何變化，而是會在它所處的區域開始移動時，依據其設定的 <em>top</em> 值定位於畫面上。</p>
+<p>過往要實現這樣的效果大多需要依賴 JavaScript 的幫助，但 CSS3 新增此屬性值後只要幾行樣式就能搞定，非常方便。儘管如此，和其他 CSS3 屬性相同，無法為舊版本瀏覽器所相容，因此使用前仍須評估是否要兼顧舊版本的瀏覽器使用者體驗。</p>
+<p><br></p>
 
+<h2 id="act7">座標偏移＆z-index</h2>
+<p>最後來補充一些關於座標偏移與 <em>z-index</em> 等屬性的幾個觀念：</p>
+<h4>座標偏移：</h4>
+<p>指的就是 <em>top</em>、<em>right</em>、<em>bottom</em>、<em>left</em> 這四個屬性，分別代表向上、右、下、左偏移。屬性數值的單位可以是任何絕對或相對單位，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    position: relative;
+    top: 50px;
+    left: 10%;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當元素定位為 <em>relative</em>，其座標以父元素左上角為原點作偏移，而 <em>absolute</em> 則是以父元素整體作偏移。例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="JjdKwzB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-learn: position1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JjdKwzB">
+        CSS-learn: position1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>需要注意的是，若 <em>top</em> 與 <em>bottom</em> 同時存在時，則偏移會以 <em>top</em> 值為先，而 <em>left</em> 則優先於 <em>right</em>，除非 <em>top</em>、<em>left</em> 設置為 <em>auto</em>（預設值），才會以另外兩個偏移屬性的參數為主。</p>
+<p><br></p>
+<p>另外，當元素同時設置四個方向的偏移屬性且其值皆為 <em>0</em> 的時候，可以有以下兩種效果運用：</p>
+<p>1. 父子元素沒有明確寬高，子元素寬高會填滿整個父元素，等同 <em>width: 100%</em> 與 <em>height: 100%</em> 的效果。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="PoqzXMw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-learn: position2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/PoqzXMw">
+        CSS-learn: position2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>2. 父子元素都有明確寬高，子元素加入 <em>margin: auto</em> 屬性，可實現子元素水平垂直居中的效果。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="vYOKbYq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-learn: position3">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/vYOKbYq">
+        CSS-learn: position3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
 
+<h4>z-index：</h4>
+<p><em>z-index</em> 屬性用來設定非無定位（<em>static</em>）之定位元素發生重疊時的前後順序，其預設值是 <em>auto</em>，也可以視作為 <em>0</em>。</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    position: relative;
+    z-index: 5;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>參數為純數值，參數值可設定正數和負數，正數數字越大代表越上面。在此語法範例中，只要同階層其他元素的 <em>z-index</em> 小於 <em>5</em>，重疊時皆在該元素之後（或稱下方），假設同時存在複數個參數值皆為 <em>5</em> 的元素發生交疊，則以原始碼較後方的元素會覆蓋前方元素之前。</p>
+<p><br></p>
+<p>另外，多個 <em>z-index</em> 的子元素重疊順序只在擁有 <em>z-index</em> 的第一個父元素內進行比較，假設向上遍歷父元素直至根元素都沒有碰到任何一個 <em>z-index</em>，子元素的 <em>z-index</em> 才可和其他不同父元素及其附屬的子元素比大小。請見下例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="ZEGOwOr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-learn: z-index">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ZEGOwOr">
+        CSS-learn: z-index</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
@@ -283,9 +364,98 @@
                     </ul>
                     <button class="text-close"></button>
                 </div>
-                <div class="overlay" :class="{ 'is-active' : listActive}"></div>
             </section>
         </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
         <div class="particles-bg"></div>
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
     </article>
@@ -314,7 +484,5 @@
     </script>
     <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
     
-
-    <script src="../js/script.js"></script>
 </body>
 </html>

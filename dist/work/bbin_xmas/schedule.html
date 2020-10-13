@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="schedule">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>極速傳說  車神爭霸</title>
+    <link href="image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <main id="mainBody">
+        <header id="page-header">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <span><b>極速傳說</b><b>車神爭霸</b></span>
+                    <span>技術事業群 X'mas party game</span>
+                </a>
+            </div>
+            <nav class="nav-wrap">
+                <div class="nav-main">
+                    <div class="nav-item">
+                        <a href="index.html">首頁</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="rule.html">跑跑卡丁車Rush+ </a>
+                    </div>
+                    <div class="nav-item is-active is-info">
+                        <span>賽事資訊<i></i></span>
+                        <div class="nav-sub">
+                            <div>
+                                <a href="team.html">參賽隊伍</a>
+                            </div>
+                            <div>
+                                <a href="schedule.html" class="is-active">賽程表<b>11/06 公布賽程</b></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="reward.html">賽事獎勵</a>
+                    </div>
+                    <div class="nav-item is-registration">
+                        <button onClick="window.location.href='signup.html'">我要報名</button>
+                        <p>報名開放時間　10/12~10/30</p>
+                    </div>
+                </div>
+            </nav>
+            <button class="nav-btn"></button>
+        </header>
+        <main id="page-container">
+            <div class="page-wrap">
+                <div class="page-title">
+                    <div>
+                        <span><i></i></span>
+                    </div>
+                </div>
+                <div class="page-main">
+                    <div class="page-content">
+                        <div class="schedule-wrap is-playoffs">
+                            <div class="schedule-outer">
+                                <div class="schedule-inner">
+                                    <!-- 賽制 -->
+                                    <div class="schedule-process-wrap removeTextNodes">
+                                        <div class="schedule-process-item">
+                                            <h2>預選賽</h2>
+                                            <h3>11/06 ~ 11/30</h3>
+                                            <ul>
+                                                <li>自行約戰</li>
+                                                <li>請勝方於11/30前</li>
+                                                <li>回傳戰果</li>
+                                            </ul>
+                                        </div>
+                                        <div class="schedule-process-item is-active"><!-- 進行中: is-active -->
+                                            <h2>16強賽</h2>
+                                            <h3>12/04</h3>
+                                            <ul>
+                                                <li>14:00報到</li>
+                                                <li>現場賽</li>
+                                                <li>鼎盛25F訓練教室</li>
+                                            </ul>
+                                        </div>
+                                        <div class="schedule-process-item">
+                                            <h2>8強賽</h2>
+                                            <h3>12/11</h3>
+                                            <ul>
+                                                <li>14:00報到</li>
+                                                <li>現場賽</li>
+                                                <li>鼎盛25F訓練教室</li>
+                                            </ul>
+                                        </div>
+                                        <div class="schedule-process-item">
+                                            <h2>4強賽</h2>
+                                            <h3>12/18</h3>
+                                            <ul>
+                                                <li>14:00報到</li>
+                                                <li>現場賽</li>
+                                                <li>鼎盛25F訓練教室</li>
+                                            </ul>
+                                        </div>
+                                        <div class="schedule-process-item">
+                                            <h2>冠軍賽</h2>
+                                            <h3>12/25</h3>
+                                            <ul>
+                                                <li>14:00報到</li>
+                                                <li>現場賽</li>
+                                                <li>臻愛花園飯店</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- 對戰組合 -->
+                                    <div class="schedule-playoffs-wrap">
+                                        <div class="schedule-playoffs-bg">
+                                            <div class="is-active"><!-- 進行中: is-active -->
+                                                <span><b>16</b></span>
+                                            </div>
+                                            <div>
+                                                <span><b>8</b></span>
+                                            </div>
+                                            <div>
+                                                <span><b>4</b></span>
+                                            </div>
+                                            <div>
+                                                <span><b>2</b></span>
+                                            </div>
+                                            <div>
+                                                <span><b>Champion</b></span>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-playoffs-list">
+                                            <!-- 16強 -->
+                                            <div class="playoffs-t16">
+                                                <div class="p-title">16強賽</div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active"><!-- 進行中: is-active / 贏家: is-winner / 輸家: is-loser -->
+                                                        <hgroup>
+                                                            <h2>衝一點別太龜</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>灌水超級高手</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>先拿個冠軍亞季軍</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>尬車狂</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>AAA</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>BBB</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>CCC</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>DDD</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>EEE</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>FFFF</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>GGGGGG</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>HHH</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>III</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>JJJ</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>K</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team is-active">
+                                                        <hgroup>
+                                                            <h2>LLLLL</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 8強 -->
+                                            <div class="playoffs-t8">
+                                                <div class="p-title">8強賽</div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 4強 -->
+                                            <div class="playoffs-t4">
+                                                <div class="p-title">4強賽</div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 冠亞 -->
+                                            <div class="playoffs-t2">
+                                                <div class="p-title">冠軍賽</div>
+                                                <div class="p-matchup">
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                    <div class="p-team">
+                                                        <hgroup>
+                                                            <h2>--------</h2>
+                                                            <b>-</b>
+                                                        </hgroup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 冠軍 -->
+                                            <div class="playoffs-champ">
+                                                <h2>--------</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="page-footer">
+            <p>Copyright © 2020  X’mas PARTY GAME Reserved</p>
+        </footer>
+        <button class="btn-top"><i></i></button>
+        <div class="popup-overlay"></div>
+    </main>
+    <script src="js/vue.min.js"></script>
+    <script src="js/page.js"></script>
+</body>
+
+</html>

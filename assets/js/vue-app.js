@@ -305,54 +305,54 @@ const jsData = [
         img: false,
         img_name: ''
     },
-    {
-        id: 8,
-        href: 'js_learn_9',
-        title: 'Javascript 學習筆記（九）：內建物件',
-        time: '2019.08.29',
-        tag1: false,
-        tag1_name: 'false',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: ''
-    },
-    {
-        id: 9,
-        href: 'js_vue_intro',
-        title: '認識 Vue.js',
-        time: '2019.11.21',
-        tag1: true,
-        tag1_name: 'vue',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: 'thumb_vue'
-    },
-    {
-        id: 10,
-        href: 'js_vue_data',
-        title: 'Vue 學習筆記（一）：資料（Data）與樣板（Template）',
-        time: '2019.11.23',
-        tag1: true,
-        tag1_name: 'vue',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: ''
-    },
-    {
-        id: 11,
-        href: 'js_vue_text',
-        title: 'Vue 學習筆記（二）：v-text 與 v-html',
-        time: '2019.11.29',
-        tag1: true,
-        tag1_name: 'vue',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: ''
-    },
+    // {
+    //     id: 8,
+    //     href: 'js_learn_9',
+    //     title: 'Javascript 學習筆記（九）：內建物件',
+    //     time: '2019.08.29',
+    //     tag1: false,
+    //     tag1_name: 'false',
+    //     tag2: false,
+    //     tag2_name: 'false',
+    //     img: false,
+    //     img_name: ''
+    // },
+    // {
+    //     id: 9,
+    //     href: 'js_vue_intro',
+    //     title: '認識 Vue.js',
+    //     time: '2019.11.21',
+    //     tag1: true,
+    //     tag1_name: 'vue',
+    //     tag2: false,
+    //     tag2_name: 'false',
+    //     img: false,
+    //     img_name: 'thumb_vue'
+    // },
+    // {
+    //     id: 10,
+    //     href: 'js_vue_data',
+    //     title: 'Vue 學習筆記（一）：資料（Data）與樣板（Template）',
+    //     time: '2019.11.23',
+    //     tag1: true,
+    //     tag1_name: 'vue',
+    //     tag2: false,
+    //     tag2_name: 'false',
+    //     img: false,
+    //     img_name: ''
+    // },
+    // {
+    //     id: 11,
+    //     href: 'js_vue_text',
+    //     title: 'Vue 學習筆記（二）：v-text 與 v-html',
+    //     time: '2019.11.29',
+    //     tag1: true,
+    //     tag1_name: 'vue',
+    //     tag2: false,
+    //     tag2_name: 'false',
+    //     img: false,
+    //     img_name: ''
+    // },
 ]
 
 const miscData = [
@@ -515,18 +515,18 @@ const appData = [
         img: false,
         img_name: ''
     },
-    {
-        id: 4,
-        href: 'app_vscode_install',
-        title: '‍Visual Studio Code 介紹與安裝教學',
-        time: '2020.02.15',
-        tag1: true,
-        tag1_name: '編輯器',
-        tag2: true,
-        tag2_name: 'VSCode',
-        img: false,
-        img_name: 'thumb_vscode'
-    },
+    // {
+    //     id: 4,
+    //     href: 'app_vscode_install',
+    //     title: '‍Visual Studio Code 介紹與安裝教學',
+    //     time: '2020.02.15',
+    //     tag1: true,
+    //     tag1_name: '編輯器',
+    //     tag2: true,
+    //     tag2_name: 'VSCode',
+    //     img: false,
+    //     img_name: 'thumb_vscode'
+    // },
 ]
 
 const hikData = [
@@ -540,7 +540,7 @@ const hikData = [
         catalog: 'trail',
         tag: true,
         tag_name: '台中市',
-        img_name: '20200807/p01'
+        img_name: '20200807'
     },
     {
         id: 1,
@@ -552,7 +552,7 @@ const hikData = [
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
-        img_name: '20191005/p07'
+        img_name: '20191005'
     },
     {
         id: 2,
@@ -564,7 +564,7 @@ const hikData = [
         catalog: 'sm100',
         tag: true,
         tag_name: '苗栗縣',
-        img_name: '20190428/p07'
+        img_name: '20190428'
     },
     {
         id: 3,
@@ -576,7 +576,7 @@ const hikData = [
         catalog: 'sm100',
         tag: true,
         tag_name: '台中市',
-        img_name: '20200809/p07'
+        img_name: '20200809'
     },
     {
         id: 4,
@@ -588,7 +588,7 @@ const hikData = [
         catalog: 'bm100',
         tag: true,
         tag_name: '南投縣',
-        img_name: '20181013/p32'
+        img_name: '20181013'
     },
     {
         id: 5,
@@ -600,7 +600,19 @@ const hikData = [
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
-        img_name: '20191201/p15'
+        img_name: '20191201'
+    },
+    {
+        id: 6,
+        href: 'hiking_007',
+        time: '2020.09.22',
+        name: '東卯山',
+        s_title: '谷關七雄 ● 老五',
+        title: '東卯山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191214'
     },
 ]
 
@@ -1426,6 +1438,135 @@ const resData = [
     },
 ]
 
+const wkData = [
+    {
+        id: 0,
+        href: 'work_bbcall',
+        name: 'BB Call',
+        img: 'bbcall'
+    },
+    {
+        id: 2,
+        href: 'work_bbintemp',
+        name: 'BBIN 網版官網',
+        img: 'bbin_template'
+    },
+    {
+        id: 3,
+        href: 'work_bbinin',
+        name: 'BBIN iN GAMING',
+        img: 'bbin_in'
+    },
+    {
+        id: 4,
+        href: 'work_bbsports',
+        name: 'BB世足瘋',
+        img: 'bbsports'
+    },
+    {
+        id: 5,
+        href: 'work_kwpk',
+        name: '「單挑」電腦版遊戲介面',
+        img: 'kiwigo_pk'
+    },
+    {
+        id: 6,
+        href: 'work_kwlottery',
+        name: '「快彩」電腦版遊戲介面',
+        img: 'kiwigo_lottery'
+    },
+    {
+        id: 7,
+        href: 'work_kwroulette',
+        name: '「俄羅斯輪盤」電腦版遊戲介面',
+        img: 'kiwigo_roulette'
+    },
+    {
+        id: 8,
+        href: 'work_kwnctume',
+        name: '國立交通大學機械工程學系官網',
+        img: 'kiwigo_nctume'
+    },
+    {
+        id: 9,
+        href: 'work_kwsnialhome',
+        name: '蝸牛居家',
+        img: 'kiwigo_snialhome'
+    },
+    {
+        id: 10,
+        href: 'work_kwbuh',
+        name: 'BUH',
+        img: 'kiwigo_buh'
+    },
+    {
+        id: 11,
+        href: 'work_kwjy',
+        name: '久益數位科技',
+        img: 'kiwigo_jy'
+    },
+    {
+        id: 12,
+        href: 'work_kwlbs',
+        name: '巷仔內',
+        img: 'kw_lbs'
+    },
+    {
+        id: 13,
+        href: 'work_kwwanjiu',
+        name: '丸久娛樂城',
+        img: 'kw_wanjiu'
+    },
+    {
+        id: 14,
+        href: 'work_kwtrafiti',
+        name: 'Trafiti',
+        img: 'kw_trafiti'
+    },
+    {
+        id: 15,
+        href: 'work_kwlottery2',
+        name: '彩票模板網站',
+        img: 'kiwigo_lottery2'
+    },
+    {
+        id: 16,
+        href: 'work_kwgreatmoney',
+        name: '閎捷科技',
+        img: 'kiwigo_greatmoney'
+    },
+    {
+        id: 17,
+        href: 'work_kwyuyang',
+        name: '昱洋企業社',
+        img: 'kiwigo_yuyang'
+    },
+    {
+        id: 18,
+        href: 'work_kwsc1788',
+        name: '神棋Online官網',
+        img: 'kiwigo_sc1788'
+    },
+    {
+        id: 19,
+        href: 'work_kwgame',
+        name: 'Casino Game',
+        img: 'kiwigo_game'
+    },
+    {
+        id: 20,
+        href: 'work_bbintemp2',
+        name: 'BBIN 網版官網2020',
+        img: 'bbin_template2'
+    },
+    {
+        id: 21,
+        href: 'work_bbinxmas',
+        name: 'BBIN 2020聖誕活動網頁',
+        img: 'bbin_xmas'
+    },
+]
+
 
 var wrap = new Vue({
     el: '#wrap',
@@ -1437,9 +1578,11 @@ var wrap = new Vue({
         a_list: appData.reverse(),
         r_list: resData,
         hk_list: hikData.reverse(),
+        wk_list: wkData.reverse(),
         query: "",
         isActive: 1,
         navActive: false,
+        pfActive: false,
         listActive: false,
         cleanActive: false,
         currentFilter: 'all',
@@ -1471,6 +1614,10 @@ var wrap = new Vue({
             return hk_list[index] || {}
         },
 
+        getWorkIndex({ wk_list = [], index = 0 }) {
+            return wk_list[index] || {}
+        },
+
         // 重置搜尋框的值
         resetSearchInput: function(e) {
             e.preventDefault()
@@ -1482,7 +1629,71 @@ var wrap = new Vue({
         // 篩選
         setFilter: function(filter) {
             this.currentFilter = filter;
-        }
+        },
+
+        // jquery
+        runJquery() {
+            //Remove inline-block node
+            $('.removeTextNodes').contents().filter(function() {
+                return this.nodeType === 3;
+            }).remove();
+
+            // 粒子特效
+            $('.particles-bg').particleground({
+                dotColor: '#F6F6F6',
+                lineColor: '#F6F6F6',
+            });
+
+            // go top
+            // $("#sideTop").click(function() {
+            //     $('body, html').animate({
+            //         scrollTop: 0
+            //     }, 500);
+            // });
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 240) {
+                    $("#sideTop").fadeIn(300);
+                } else {
+                    $("#sideTop").fadeOut(300);
+                }
+            });
+
+            // catalog
+            $("#sideCatalog").click(function() {
+                $(".text-catalog").addClass("is-popup");
+                $(".overlay").addClass("is-active");
+            });
+
+            $("#sideList").click(function() {
+                $(".text-list").addClass("is-active");
+                $(".overlay").addClass("is-active");
+            });
+
+            $(".text-close").click(function() {
+                $(".text-list").removeClass("is-active");
+                $(".overlay").removeClass("is-active");
+            });
+
+            $(".text-catalog li a").click(function() {
+                $(".overlay").removeClass("is-active");
+                $(".text-catalog").removeClass("is-popup");
+            });
+
+            // nav
+            $(".nav-btn, .nav-profile").click(function() {
+                $("html, body").addClass("no-scroll");
+            });
+            $(".nav-close, .overlay, .profile-close").click(function() {
+                $("html, body").removeClass("no-scroll");
+            });
+
+            // text
+            $(".overlay").click(function() {
+                $(this).removeClass("is-active");
+                $(".text-list").removeClass("is-active");
+                $(".text-catalog").removeClass("is-popup");
+            });
+        },
     },
 
     computed: {
@@ -1549,4 +1760,8 @@ var wrap = new Vue({
             }
         }
     },
+
+    mounted(){
+        this.runJquery();
+    }
 })

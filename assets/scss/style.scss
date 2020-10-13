@@ -1,32 +1,34 @@
 // base
-@import 'base/normalize.scss';
-@import 'base/variables.scss';
-@import 'base/grid.scss';
-@import 'base/mixin.scss';
+@import "base/normalize.scss";
+@import "base/variables.scss";
+@import "base/grid.scss";
+@import "base/mixin.scss";
 
 // fontawesome
-@import 'fontawesome/brands.scss';
-@import 'fontawesome/regular.scss';
-@import 'fontawesome/solid.scss';
-@import 'fontawesome/v4-shims.scss';
-@import 'fontawesome/fontawesome.scss';
+@import "fontawesome/brands.scss";
+@import "fontawesome/regular.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/v4-shims.scss";
+@import "fontawesome/fontawesome.scss";
 
 // mods
 @import "mods/highlight";
 @import "mods/particles";
 
 // common
-@import 'layout/layout';
-@import 'layout/header';
-@import 'layout/footer';
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
 
 // pages
 @import "pages/index";
+@import "pages/profile";
 @import "pages/note";
 @import "pages/text";
 @import "pages/list";
 @import "pages/contact";
 
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");

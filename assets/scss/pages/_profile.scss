@@ -1,0 +1,129 @@
+// 個人資料
+.profile-wrap {
+    position: fixed;
+    top: 150vh;
+    left: 0;
+    z-index: 200;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: top .5s;
+    &.is-active {
+        top: 0;
+    }
+}
+
+.profile-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: $second;
+    &::before {
+        content: '\f00d';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+}
+
+.profile-main {
+    height: 100%;
+    @include scrollbar($first);
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 25rem;
+        background-image: url('../images/profile_bg.jpg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    @include MQ(max-768) {
+        &::before {
+            height: 20rem;
+        }
+    }
+    @include MQ(max-480) {
+        &::before {
+            height: 15rem;
+        }
+    }
+}
+
+.profile-photo {
+    margin-bottom: 2rem;
+    &::before {
+        content: '';
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        background-image: url('../images/profile_img.jpg');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border: 0.5rem solid #FFF;
+        border-radius: 100%;
+        margin: -5rem auto 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+.profile-article {
+    max-width: 40rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+    hgroup {
+        line-height: 1.5;
+        color: #878787;
+        margin-bottom: 3rem;
+        h2 {
+            font-size: 1.5rem;
+            color: $second;
+        }
+        div,
+        p {
+            display: block;
+            margin-top: .75rem;
+            margin-bottom: 1rem;
+            time,
+            b {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: normal;
+                color: $first;
+            }
+            span {
+                display: block;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        li {
+            display: inline-block;
+            &::after {
+                content: '/';
+                margin: 0 .5rem;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

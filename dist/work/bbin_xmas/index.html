@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="index">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>極速傳說  車神爭霸</title>
+    <link href="image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <main id="mainBody">
+        <header id="page-header">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <span><b>極速傳說</b><b>車神爭霸</b></span>
+                    <span>技術事業群 X'mas party game</span>
+                </a>
+            </div>
+            <nav class="nav-wrap">
+                <div class="nav-main">
+                    <div class="nav-item is-active">
+                        <a href="index.html">首頁</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="rule.html">跑跑卡丁車Rush+ </a>
+                    </div>
+                    <div class="nav-item is-info">
+                        <span>賽事資訊<i></i></span>
+                        <div class="nav-sub">
+                            <div>
+                                <a href="team.html">參賽隊伍</a>
+                            </div>
+                            <div>
+                                <a href="schedule.html">賽程表<b>11/06 公布賽程</b></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="reward.html">賽事獎勵</a>
+                    </div>
+                    <div class="nav-item is-registration">
+                        <button onClick="window.location.href='signup.html'">我要報名</button>
+                        <p>報名開放時間　10/12~10/30</p>
+                    </div>
+                </div>
+            </nav>
+            <button class="nav-btn"></button>
+        </header>
+        <main id="page-container">
+            <div class="index-top-wrap parallax">
+                <div class="index-top-main">
+                    <div class="index-top-logo">
+                        <img src="image/index_top_logo.png">
+                    </div>
+                    <div class="index-top-title">
+                        <img src="image/index_top_title.png">
+                    </div>
+                    <div class="index-top-player01">
+                        <img src="image/index_top_player01.png">
+                    </div>
+                    <div class="index-top-player02">
+                        <img src="image/index_top_player02.png">
+                    </div>
+                    <div class="index-top-btn">
+                        <button>我要報名</button>
+                        <p>報名開放時間  10/12~10/30</p>
+                    </div>
+                    <div class="index-top-process">
+                        <div class="is-now">
+                            <hgroup>
+                                <h2>10/12</h2>
+                                <h3>12:00</h3>
+                                <h4>報名開始</h4>
+                            </hgroup>
+                        </div>
+                        <b></b>
+                        <div>
+                            <hgroup>
+                                <h2>10/30</h2>
+                                <h3>18:00</h3>
+                                <h4>報名截止</h4>
+                            </hgroup>
+                        </div>
+                        <b></b>
+                        <div>
+                            <hgroup>
+                                <h2>11/06</h2>
+                                <h3>12:00</h3>
+                                <h4>公布預選賽程</h4>
+                            </hgroup>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-parallax-wrap">
+                <div class="index-info-wrap">
+                    <div class="index-info-top">
+                        <div class="index-info-title"><i></i></div>
+                    </div>
+                    <div class="index-info-main">
+                        <div class="index-info-slider">
+                            <v-slider-wrap :perspective="0" :display="3" :clickable="true" :autoplay="true" :autoplay-timeout="4000">
+                                <v-slider-item :index="0">
+                                    <figure style="background-image: url('image/index_slider01.png')" class="is-championship">
+                                        <img src="image/index_slider01_a.png">
+                                    </figure>
+                                </v-slider-item>
+                                <v-slider-item :index="1">
+                                    <figure style="background-image: url('image/index_slider03.png')">
+                                        <img src="image/index_slider03_a.png">
+                                    </figure>
+                                </v-slider-item>
+                                <v-slider-item :index="2">
+                                    <figure style="background-image: url('image/index_slider02.png')">
+                                        <img src="image/index_slider02_a.png">
+                                    </figure>
+                                </v-slider-item>
+                            </v-slider-wrap>
+                            <span class="is-hidden">
+                                <img src="image/index_slider01.png">
+                            </span>
+                        </div>
+                        <div class="index-info-vote">
+                            <hgroup>
+                                <h2>預測冠軍</h2>
+                                <h3>
+                                    <span>預測冠軍隊伍成功同仁，</span>
+                                    <span>有機會抽取「神預測」獎金！</span>
+                                </h3>
+                            </hgroup>
+                        </div>
+                    </div>
+                    <div class="index-info-arrow"></div>
+                </div>
+                <div class="index-date-wrap">
+                    <div class="index-date-main">
+                        <div class="index-date-title">
+                            <span>11/06 線上預選賽準時開打!</span>
+                        </div>
+                        <div class="index-date-content">
+                            <a href="">比賽規則</a>
+                            <div class="index-date-list">
+                                <div class="index-date-item is-preliminary is-active">
+                                    <hgroup>
+                                        <h2>線上預選賽</h2>
+                                        <h3>3戰2勝</h3>
+                                        <h4>
+                                            <span>11/06<b>~ 11/30</b></span>
+                                        </h4>
+                                    </hgroup>
+                                </div>
+                                <div class="index-date-item is-round16">
+                                    <hgroup>
+                                        <h2>強賽</h2>
+                                        <h3>3戰2勝</h3>
+                                        <h4>
+                                            <span>12/04</span>
+                                        </h4>
+                                    </hgroup>
+                                </div>
+                                <div class="index-date-item is-round8">
+                                    <hgroup>
+                                        <h2>強賽</h2>
+                                        <h3>3戰2勝</h3>
+                                        <h4>
+                                            <span>12/11</span>
+                                        </h4>
+                                    </hgroup>
+                                </div>
+                                <div class="index-date-item is-round4">
+                                    <hgroup>
+                                        <h2>強賽</h2>
+                                        <h3>3戰2勝</h3>
+                                        <h4>
+                                            <span>12/18</span>
+                                        </h4>
+                                    </hgroup>
+                                </div>
+                                <div class="index-date-item is-championship">
+                                    <hgroup>
+                                        <h2></h2>
+                                        <h3>5戰3勝</h3>
+                                        <h4>
+                                            <span>12/25</span>
+                                        </h4>
+                                    </hgroup>
+                                    <a href="">比賽規則</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="index-date-app">
+                            <a href="https://play.google.com/store/apps/details?id=com.nexon.kart&hl=zh_TW" class="is-gplay" target="_blank"></a>
+                            <a href="https://apps.apple.com/tw/app/id1466736988" class="is-ios" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+                <footer id="page-footer">
+                    <p>Copyright © 2020  X’mas PARTY GAME Reserved</p>
+                </footer>
+            </div>
+        </main>
+        <button class="btn-top"><i></i></button>
+        <div class="popup-overlay"></div>
+    </main>
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-carousel-3d.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

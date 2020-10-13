@@ -1,0 +1,280 @@
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:10 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:24 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:32 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:44 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:58 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:11:59 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'suhosin.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/suhosin.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mcrypt.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mcrypt.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysql.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysql.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mysqlnd_mysqli.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mysqlnd_mysqli.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_mysqlnd.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/pdo_mysqlnd.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'sockets.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so: cannot open shared object file: No such file or directory), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/sockets.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'bcmath' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'calendar' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'ctype' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'curl' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'dom' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'exif' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'fileinfo' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'ftp' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'gd' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'gettext' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'iconv' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'imap' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'intl' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'mbstring' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'mysqlnd' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'Phar' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'posix' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'pspell' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'SimpleXML' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'soap' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'sqlite3' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'tokenizer' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'xml' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'xmlwriter' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'xsl' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'pdo_pgsql' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'pdo_sqlite' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'wddx' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'xmlreader' already loaded in Unknown on line 0
+[05-Jun-2019 13:12:17 UTC] PHP Warning:  Module 'xmlrpc' already loaded in Unknown on line 0
