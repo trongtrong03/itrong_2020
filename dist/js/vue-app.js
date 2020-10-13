@@ -595,8 +595,8 @@ const hikData = [
         href: 'hiking_006',
         time: '2020.09.15',
         name: '波津加山',
-        s_title: '谷關七雄 ● 老四',
-        title: '波津加山',
+        s_title: '波津加x金價x坡真陡',
+        title: '谷關七雄 ● 老四：波津加山',
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
@@ -607,12 +607,24 @@ const hikData = [
         href: 'hiking_007',
         time: '2020.09.22',
         name: '東卯山',
-        s_title: '谷關七雄 ● 老五',
-        title: '東卯山',
+        s_title: '360度環繞的群峰視覺盛宴',
+        title: '谷關七雄 ● 老五：東卯山',
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
         img_name: '20191214'
+    },
+    {
+        id: 7,
+        href: 'hiking_008',
+        time: '2020.09.24',
+        name: '唐麻丹山',
+        s_title: '山與瀑',
+        title: '谷關七雄 ● 老么：唐麻丹山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191215_1'
     },
 ]
 
