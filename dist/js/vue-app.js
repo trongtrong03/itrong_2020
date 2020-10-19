@@ -626,6 +626,18 @@ const hikData = [
         tag_name: '台中市',
         img_name: '20191215_1'
     },
+    {
+        id: 8,
+        href: 'hiking_009',
+        time: '2020.10.01',
+        name: '屋我尾山',
+        s_title: '可甜可鹹可甘也可苦',
+        title: '谷關七雄 ● 老三：屋我尾山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20191215_2'
+    },
 ]
 
 const resData = [
