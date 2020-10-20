@@ -379,7 +379,7 @@
         margin-bottom: 1rem;
     }
 
-    @include MQ(max-1024) {
+    @include MQ(max-1280) {
         width: calc(50% - 1rem / 2);
         &:nth-child(3n) {
             margin-right: 1rem;

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-10 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-10 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-10 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="../images/hiking/20200104/p04.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>馬崙山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>2,305m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.01.04</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回 14K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>停車處</span><span>馬崙山登山口</span><span>八壯士樹</span><span>馬崙新山線步道</span><span>新山國小遺址</span><span>馬崙山三角點</span><span>折返</span><span>斯可巴步道</span><span>停車處</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+<p>自上次在谷關住宿一晚，一口氣斬獲東卯山、唐麻丹山、屋我尾山三座七雄之後，我們的谷關七雄完登活動挑戰已臻過半，其實起初是打算把馬崙山放進兩天一夜的行程裡的，畢竟祂山徑很長，冬季又天黑的早，不想摸黑下山的話勢必得早早出發...不過諸多考量衡度之下，最終我們還是決定另外擇日拜訪，使其成為我們挑戰七兄弟的第五個目標。</p>
+<p>馬崙山不僅步道里程數是諸雄中最長，其地理位置也屬最深處──須穿過谷關商店街，繼續往管制站挺進，於台電分電廠前拐入小巷，沿曲折山路駛進馬崙山步道登山口。由於個人屬於極度容易暈車的體質，加上睡眠不足，從車子由東勢轉向谷關後，不舒服感就開始累積，一路糾纏著我進入馬崙山...看樣子今天這趟山旅將比以往更加艱峻。</p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p01.jpg">
+    </figure>
+    <p>冬季的馬崙山溫度大概介於十二、三度上下，雖然覺得寒冷，但太陽仍在林木間灑下一絲絲溫暖人心的光芒。馬崙山的爬升高度約落在１２５０公尺左右，看上去有些令人卻步，不過單程七公里長的步道，算是淡化了許多爬坡陡上的考驗。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p02.jpg">
+    </figure>
+    <p>馬崙山的登山口有兩條，一條叫做斯可巴──看名字就知道和當地原住民的生活息息相關；另一條則叫八壯士，也就是我們上山選擇的路線，前面會先踢一段石子路，然後接上登山步道。八壯士，意指八棵雄壯威武的五葉松，它們沿著懸崖根生，根基相連像是守護著當地泰雅族人生活的斯可巴台地。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p03.jpg">
+    </figure>
+    <p>來到八壯士與斯可巴兩條登山線的交會點，它們會合處離馬崙山山頂還很遙遠。許多山友會計畫上下山走不同的路線，我們也是作如此盤算。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p04.jpg">
+    </figure>
+    <p>就如同網路評價，馬崙山步道是五星級的登山步道，山徑寬敞且平緩好走，林蔭滿佈所以曝曬少。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p05.jpg">
+    </figure>
+    <p>儘管如此，為身體狀況欠佳所苦的我，每一個五百公尺相隔的里程樁都走得異常艱辛。我坐在長椅上一邊調整呼吸，一邊思索是否要放棄，所幸經過半小時休息，不適感消褪許多，決定繼續往上爬。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p06.jpg">
+    </figure>
+    <p>由於馬崙山登山步道全程幾乎沐浴在林木交織的芬多精下，能看到遠方大景的機會不多，這是某處觀景台往外遠眺的山景，除了可以看見東卯山（在畫面外的左前方）、屋我尾山兩座馬崙山兄弟外，還能看到山勢尖如鳥喙的鳶嘴山。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p07.jpg">
+    </figure>
+    <p>不止是八壯士五葉松群，感覺馬崙山裡的一樹一木都十分氣勢吞天。說起樹，馬崙山與人類不單單只有登山這樣淺層的連結而已。在日據時期，台灣有三大林場分別是太平山林場、阿里山林場與八仙山林場，而馬崙山正隸屬八仙山林場的一部份，而此刻足下所踩的這條路，便是早年修築用來運送補給品和木頭的山徑。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p08.jpg">
+        <img src="../images/hiking/20200104/p09.jpg">
+    </figure>
+    <p>隨著越往上推進，歷史遺跡的殘香亦越發濃郁。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p10.jpg">
+    </figure>
+    <p>踏蹴在谷關七雄少見的枕木階梯上，鑽出芒草對列的叢牆，映入眼簾的又是另一處人文的痕跡。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p11.jpg">
+    </figure>
+    <p>這裡是「新山國小」的遺址，對，你沒看錯，就是學校的遺址。新山國小是早期提供新山林場員工的孩子就學念書的地方，很難想像在這塊只能用雙腳到達的山野裡，竟然會設立學校，更難想像過去這裡有多繁華。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p12.jpg">
+        <img src="../images/hiking/20200104/p13.jpg">
+    </figure>
+    <p>前面看到的只是新山國小遺址的一小部分，稍微偏離主步道可以看見更完整的景貌與介紹。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p14.jpg">
+    </figure>
+    <p>回到登山步道繼續前進，見一棵外型獨特的大樹半倚在石階上，宛如從土壤裡忽地竄出的章魚觸手。步道後段較少與前期之字那般緩上的舒適節奏，馬崙山似是透過一波又一波的陡上告訴來者：「再怎麼說我好歹也是谷關七雄的老二，豈能讓你們太好過。」</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p15.jpg">
+    </figure>
+    <p>馬崙山與八仙山是谷關七雄中唯二海拔超過兩千公尺的中級山，當箭竹林越見頻繁時，代表爬升高度越接近甚至超過兩千公尺高。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p16.jpg">
+    </figure>
+    <p>很高興自己沒有選擇放棄，馬崙山，２３０５公尺，成功登頂。馬崙山屬於白姑大山向西延伸的山脈，因此從馬崙山山頂可以沿著稜線，繼續往素有「中橫四辣」之稱的白姑大山前進，世稱「白姑橫斷」。（是說怎麼不叫白馬縱走呀？）</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p17.jpg">
+    </figure>
+    <p>因為前期身體不適走走停停好幾回的緣故，我們抵達山頂時已是下午兩點，故沒能休息太長時間便又啟程下山。是說每一座七雄除了東卯山以外，我們似乎都沒在山頂停留很長時間。怎麼來怎麼去，不過回到斯可巴與八壯士的岔口時，我們改道斯可巴方向，走一個迷你版的Ｏ型軌跡。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p18.jpg">
+    </figure>
+    <p>似是與八壯士遙遙相映，斯可巴路線也有守護者，名叫「五葉松媽媽」。網路有一說法是樹木軀幹雙叉不成材，因此這棵巨大的五葉松未受砍伐。而八壯士木是其下一代，因此她便冠上了媽媽的稱呼。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p19.jpg">
+    </figure>
+    <p>本以為一路向下，殊不知斯可巴步道有幾處上上下下的波段，又折騰了我們好一會兒。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p20.jpg">
+    </figure>
+    <p>早年台電輸送電力建立的木製電桿。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200104/p21.jpg">
+    </figure>
+    <p>偶遇盛開的山櫻花，為馬崙山先苦後甘的記憶留下更深刻的印記。</p>
+</div>
+
+<p>...先苦後甘？天真。</p>
+<p>本來以為前期極度的不舒適只是睡眠不足、暈車，或輕微高山症的關係，然而爬完馬崙山的隔天，起床時竟感頭暈目眩，只好向公司請假去看醫生，才發現原來自己感冒了，而且竟然還有發燒症狀，估計是在休息途中沒有做好保暖導致患了風寒...真是屋漏偏逢連夜雨啊！</p>
+
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../hiking.html'"></button>
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterHik" :key="item.id">
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+            </section>
+        </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+</body>
+</html>
