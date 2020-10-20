@@ -535,7 +535,7 @@ const hikData = [
         href: 'hiking_001',
         time: '2020.08.08',
         name: '學田山',
-        s_title: '漫步知高圳',
+        s_title: '漫步知高圳，登高望學田。',
         title: '學田山',
         catalog: 'trail',
         tag: true,
@@ -559,7 +559,7 @@ const hikData = [
         href: 'hiking_003',
         time: '2020.08.19',
         name: '火炎山',
-        s_title: '宛如焚焚烈火的惡地環走',
+        s_title: '黃雲掩地春草死，烈火誰分瓦與珠。',
         title: '小百岳 No.35：火炎山',
         catalog: 'sm100',
         tag: true,
@@ -571,7 +571,7 @@ const hikData = [
         href: 'hiking_004',
         time: '2020.08.24',
         name: '大橫屏山',
-        s_title: '披荊不斬棘',
+        s_title: '巒壠有合沓，往來無蹤轍。',
         title: '小百岳 No.45：大橫屏山',
         catalog: 'sm100',
         tag: true,
@@ -583,7 +583,7 @@ const hikData = [
         href: 'hiking_005',
         time: '2020.09.01',
         name: '奇萊主山南峰',
-        s_title: '人生初百岳，從十崇開始',
+        s_title: '籃輿衝雨過南蠻，路入奇萊曠野間。',
         title: '百岳 No.41：奇萊主山南峰',
         catalog: 'bm100',
         tag: true,
@@ -607,7 +607,7 @@ const hikData = [
         href: 'hiking_007',
         time: '2020.09.22',
         name: '東卯山',
-        s_title: '360度環繞的群峰視覺盛宴',
+        s_title: '橫看成嶺側成峰，遠近高低各不同。',
         title: '谷關七雄 ● 老五：東卯山',
         catalog: 'mm',
         tag: true,
@@ -619,7 +619,7 @@ const hikData = [
         href: 'hiking_008',
         time: '2020.09.24',
         name: '唐麻丹山',
-        s_title: '山與瀑',
+        s_title: '今古長如白練飛，一條界破青山色。',
         title: '谷關七雄 ● 老么：唐麻丹山',
         catalog: 'mm',
         tag: true,
@@ -631,14 +631,43 @@ const hikData = [
         href: 'hiking_009',
         time: '2020.10.01',
         name: '屋我尾山',
-        s_title: '可甜可鹹可甘也可苦',
+        s_title: '花徑不曾緣客掃，蓬門今始為君開。',
         title: '谷關七雄 ● 老三：屋我尾山',
         catalog: 'mm',
         tag: true,
         tag_name: '台中市',
         img_name: '20191215_2'
     },
+    {
+        id: 9,
+        href: 'hiking_010',
+        time: '2020.10.07',
+        name: '馬崙山',
+        s_title: 'XXX',
+        title: '谷關七雄 ● 老二：馬崙山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20200104'
+    },
 ]
+
+// 一上一上又一上，一上直到高山上。
+// 舉頭紅日白雲低，四海五湖皆一望。
+// 花蹊十里入龍眠，臨眺三春踏翠巔。
+// 千疊蒼山披絮帽，萬重古木抱晴煙。
+// 當空流瀑逐雲下，平地飛峰倚日邊。
+// 身在虛無縹緲處，人間莫不又經年？
+// 古木濃蔭遮石徑，閒雲縹緲掩山巔。
+// 欄邊下瞰川流白，階上回眸夕照煙。
+// 一山孤立大江邊，直上生空問九天。
+// 登峰追憶千秋事，臨閣尋思萬古緣。
+// 峨峨東岳高，秀極衝青天
+// 青冥倚天開，彩錯疑畫出。
+// 只有天在上，更無山與齊。
+// 舉頭紅日近，回首白雲低。
+// 會當凌絕頂，一覽眾山小
+// http://www.ziliao9.com/z/41823.html
 
 const resData = [
     {

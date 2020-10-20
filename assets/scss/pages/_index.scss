@@ -1,20 +1,35 @@
 .index-wrap {
     max-width: 60rem;
     margin: 0 auto;
+
     > h2 {
+        position: relative;
         display: block;
         font-weight: bold;
         font-size: 3rem;
         color: $first;
         margin-bottom: 1rem;
         padding-top: 3rem;
+
+        a {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 1rem;
+            font-weight: normal;
+            color: $second;
+        }
     }
+
     section {
         margin-bottom: 2rem;
+
         > h3 {
             display: block;
             line-height: 2rem;
+
             @include clearfix;
+
             span {
                 font-size: 1rem;
                 color: #FFF;
@@ -22,17 +37,20 @@
                 padding: 0 .75rem;
                 float: left;
             }
+
             a {
                 font-size: .875rem;
                 color: $first;
                 float: right;
                 transition: color .3s;
+
                 &:hover {
                     color: $second;
                 }
             }
         }
     }
+
     @include MQ(max-1024) {
         padding-right: 1rem;
         padding-left: 1rem;

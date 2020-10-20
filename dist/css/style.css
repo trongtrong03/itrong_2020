@@ -9712,12 +9712,22 @@ footer {
 }
 
 .index-wrap > h2 {
+  position: relative;
   display: block;
   font-weight: bold;
   font-size: 3rem;
   color: #81D8D0;
   margin-bottom: 1rem;
   padding-top: 3rem;
+}
+
+.index-wrap > h2 a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #444;
 }
 
 .index-wrap section {
@@ -11139,7 +11149,7 @@ footer {
   display: block;
   width: calc(33.33% - 2rem / 3);
   margin-right: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   float: left;
   -webkit-animation-name: filterFadeIn;
   animation-name: filterFadeIn;
