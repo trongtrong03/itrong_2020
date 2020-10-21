@@ -560,7 +560,7 @@ const hikData = [
         time: '2020.08.19',
         name: '火炎山',
         s_title: '黃雲掩地春草死，烈火誰分瓦與珠。',
-        title: '小百岳 No.35：火炎山',
+        title: '小百岳 #35：火炎山',
         catalog: 'sm100',
         tag: true,
         tag_name: '苗栗縣',
@@ -572,7 +572,7 @@ const hikData = [
         time: '2020.08.24',
         name: '大橫屏山',
         s_title: '巒壠有合沓，往來無蹤轍。',
-        title: '小百岳 No.45：大橫屏山',
+        title: '小百岳 #45：大橫屏山',
         catalog: 'sm100',
         tag: true,
         tag_name: '台中市',
@@ -584,7 +584,7 @@ const hikData = [
         time: '2020.09.01',
         name: '奇萊主山南峰',
         s_title: '籃輿衝雨過南蠻，路入奇萊曠野間。',
-        title: '百岳 No.41：奇萊主山南峰',
+        title: '百岳 #41：奇萊主山南峰',
         catalog: 'bm100',
         tag: true,
         tag_name: '南投縣',
@@ -650,6 +650,30 @@ const hikData = [
         tag_name: '台中市',
         img_name: '20200104'
     },
+    {
+        id: 10,
+        href: 'hiking_011',
+        time: '2020.10.10',
+        name: '白毛山',
+        s_title: '峭壁擁雙扉，亭亭夾翠微。',
+        title: '谷關七雄 ● 老六：白毛山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20200118'
+    },
+    {
+        id: 11,
+        href: 'hiking_012',
+        time: '2020.10.17',
+        name: '八仙山',
+        s_title: '山口含糊半吐雲，林頭時見綠紛紛。',
+        title: '谷關七雄 ● 老大：八仙山',
+        catalog: 'mm',
+        tag: true,
+        tag_name: '台中市',
+        img_name: '20200209'
+    },
 ]
 
 // https://sou-yun.cn/CharInClause.aspx
@@ -678,7 +702,6 @@ const hikData = [
 // 崩騰山忽斷，陡絶勢難平。
 // 峭拔聳青天，巍峨鎮方國。
 // 峭壁倚層霄，長松蔭幽壑。
-// 峭壁擁雙扉，亭亭夾翠微。
 // 峭壁咫尺間，敬畏驀然起。
 // 峭峰頂上著危亭，四面山開雲錦屏。
 // 峭排直上幾千尺，下有石路莓苔青。

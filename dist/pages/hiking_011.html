@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a class="ig" href="https://www.instagram.com/trongtrongchen/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="../images/hiking/20200118/p20.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>白毛山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>1,522m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.01.18</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回 8K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>停車處</span><span>虹橋</span><span>白毛山步道登山口</span><span>白毛山三角點</span><span>原路折返</span><span>停車處</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>如果行前有先在網路上檢視其他山友前輩分享的ＧＰＸ軌跡，會發現多半由東關路（台８線）白鹿吊橋啟行，或是從更深處一點的馬鞍壩開始，但估計這類山友應該都是搭乘公眾交通工具前來。假如自己驅車前往，則可以從馬鞍壩上方駛過，一路直奔白毛山登山步道的登山口。如此就能節省掉前面大約２．７公里左右，一大段百般無聊的石頭路。</p>
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p01.jpg">
+    </figure>
+    <p>不過我們開的是低底盤車輛，只能在渡槽前靠邊安置車輛，然後踢１．７Ｋ的產業道路。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p02.jpg">
+    </figure>
+    <p>乍看兩側林木庇蔭很舒爽，但這段石頭路幾乎全程陡上，令遲遲不見登山口的我們來說走得十分厭世。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p03.jpg">
+    </figure>
+    <p>用紅色油漆註明的「山神土地公」，吸引了這方目光佇足一探究竟。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p04.jpg">
+    </figure>
+    <p>距離登山口還有０．８Ｋ，其實作行前功課的時候就有討論過是否要以機車代步，以應付登山口前的石頭路。只是騎機車就要花更多時間在交通上，而且行囊也無處安放，兩權相害取其輕，最後還是決定開車吧。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p05.jpg">
+    </figure>
+    <p>終於到達白毛山...登山口。還好白毛山步道的總長僅２．２Ｋ，對於歷經馬崙山、東卯山、波津加山洗禮過的我們來說，這數字已無法使我們皺眉。話說回來，白毛山的登山口除了白鹿橋、馬鞍壩這條路線外，尚有一條白毛山林道支線，須從台２１線進入，雖然距離白毛山更近，但此前曲折的山路可能會對我這類容易暈車的人帶來莫大考驗。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p06.jpg">
+    </figure>
+    <p>果然爬山就是要走這種山徑才對味。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p07.jpg">
+    </figure>
+    <p>破風處展望帶來的是山頭明顯隆起的東卯山，而谷關大道院就倚靠在其山腳旁。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p08.jpg">
+    </figure>
+    <p>行至１Ｋ處。雖然里程不長，但走起來也是挺累人的，後來詳查資料才驚覺白毛山的高度落差有９５０公尺，怪不得時不時有一種在爬波津加的既視感。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p09.jpg">
+    </figure>
+    <p>隨著高度越推越高，視野也越來越開闊。儘管如此，東卯山獨特的山形在一列山巒間依然格外惹人聚焦，而稍微為雲層遮掩的遠方群峰則是雪山山脈一干百岳。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p10.jpg">
+        <img src="../images/hiking/20200118/p11.jpg">
+    </figure>
+    <p>一路上參差亂石層層疊疊的地形不少，有些路段需要拉繩上下。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p12.jpg">
+    </figure>
+    <p>２Ｋ里程樁距離山頂三角點剩下兩百公尺。到這裡算是走在稜線上了，地勢相比之前平坦緩和許多，而白毛山最著名的瘦稜景觀就在前方兩箭之地處。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p13.jpg">
+    </figure>
+    <p>脫離林線，看到的是一條筆直的裸露瘦稜，剛拍完照的輕熟女隊伍告訴我們上面還有一條更美的瘦稜，心想那裏應該才是白毛山最熱門的打卡地標。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p14.jpg">
+    </figure>
+    <p>一樣的方向，一樣的東卯山，不一樣的是除了制高點更高，視線也不再受限於林木伸展的枝葉。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p15.jpg">
+    </figure>
+    <p>很快地來到第二條瘦稜，稜線只容一人通行，從底部捲上來的寒風使人不由得直打哆嗦，如果兩側沒有護欄保護，這一段路的危險性可想而知。粗略拍完幾張照片，我們決定先去摸三角點，回程下山時再拍個夠。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p16.jpg">
+    </figure>
+    <p>白毛山，海拔１５２２公尺，是谷關七雄中的老六。關於白毛山名稱的由來，曾於社團法人高雄市野鳥學會的書刊介紹到，其傳說有二。一是時間在日治時期，當地曾有一戶人家，產下一對雙胞胎，一個紅毛、一個白毛，白毛嬰誕生不久後去世，與此同時全社瘟疫肆虐，族人視其不祥，便稱該社為「白毛社」，白毛山因而連坐得名。另一說法則是早年泰雅族祖先移居至此，該地有大杉木，故以Ｍｅ－ｂａｓｉｎ為社名，後來漢人認為Ｍｅ－ｂａ發音與漢字「毛白」（Ｍｏｕ－ｐａ）相似，遂倒換成「白毛」。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p17.jpg">
+    </figure>
+    <p>我們１１點１５分從登山口起登，於下午１點順利抵達三角點，白毛山山頂都是樹木，雖說沒有什麼展望可言，不過卻建有一座涼亭，許多山友都會在此一邊休息，一邊煮食聊天，享受著沒有空氣汙染的清新氛圍。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p19.jpg">
+        <img src="../images/hiking/20200118/p18.jpg">
+    </figure>
+    <p>來爬白毛山的這天天氣不太好，天空總是瀰漫著縷縷陰白，不過下瘦稜時天色意外轉好許多。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200118/p20.jpg">
+    </figure>
+    <p>不是大山，卻給人有種立於大山邈天下的感覺，這就是白毛山。</p>
+</div>
+
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../hiking.html'"></button>
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterHik" :key="item.id">
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+            </section>
+        </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+</body>
+</html>
