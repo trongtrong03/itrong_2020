@@ -206,6 +206,30 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 12,
+        href: 'css_stylus_1',
+        title: 'CSS 預處理器語言──Stylus 教學（一）',
+        time: '2020.10.20',
+        tag1: true,
+        tag1_name: 'Stylus',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 13,
+        href: 'css_stylus_2',
+        title: 'CSS 預處理器語言──Stylus 教學（二）',
+        time: '2020.10.21',
+        tag1: true,
+        tag1_name: 'Stylus',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [

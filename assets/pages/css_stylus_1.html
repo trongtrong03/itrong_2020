@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-13 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-13 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<figure>
+    <img src="@@webRoot/images/css/stylus-1.png">
+</figure>
+<p><a href="https://stylus-lang.com/" target="_blank">Stylus</a> 是 CSS 的預處理器工具之一。什麼是預處理器？預處理器（Preprocessor）是程式中處理輸入資料，產生能用來輸入到其他程式的資料的程式。看上去有點饒舌，但沒關係，我們只要知道 CSS 的預處理器能讓我們更快速、方便地編寫 CSS 樣式即可。而本篇文章將來對 Stylus 的用途、語法、與其他預處理器的異同、優缺點等作一系列的介紹。如果你在接觸 Stylus 之前已經學會 Sass，那麼 Stylus 的語法應該也難不倒你。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">如何安裝</a></li>
+        <li><a href="#act2">如何編譯</a></li>
+        <li><a href="#act3">指令列表</a></li>
+        <li><a href="#act4">Autoprefixer</a></li>
+        <li><a href="#act5">預處理器語言</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">如何安裝</h2>
+<p>首先，我們得知道 Stylus 是來自於 <a href="https://nodejs.org/en/">Node.js</a>，因此使用之前，必須先確認工作電腦是否有安裝 Node.js 環境，我們可以打開命令提示字元，透過下方指令確認電腦是否已有安裝：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">node -v</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這個指令是用來查詢 Node.js 的版本，假如電腦已安裝，則會回應電腦目前安裝的版本號。如果沒有，請先執行下載與安裝的動作。</p>
+<p>安裝好 Node.js 後，接著要透過 <em>npm</em> 來安裝 Stylus 了，其指令為：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">npm install stylus -g</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>指令中的 <em>-g</em> 指的是全域安裝，經由全域安裝我們就可以在任何專案直接執行 Stylus 的操作。換句話說，安裝 Stylus 的實質步驟其實就只有這一步而已。</p>
+<p><br></p>
+
+<h2 id="act2">如何編譯</h2>
+<h4>單一檔案編譯：</h4>
+<p>Stylus 樣式表的副檔名為 <em>.styl</em>，所以當我們要開始開發專案的時候，記得先在專案目錄裡建立 <em>.styl</em> 格式的檔案，例如：</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-2.jpg">
+</figure>
+<p>假設我們已經在 <em>.styl</em> 檔案寫完樣式，現在要將其編譯輸出可讓瀏覽器閱讀的 <em>.css</em> 文件，請輸入下方指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus index.syle</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>index.syle</em> 是範例中的檔案名稱，可自行更換專案裡使用的命名。編譯成功則會返回 compiled 輸出檔案之名稱的訊息，如：</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-3.jpg">
+</figure>
+<p>此時再去檢視專案目錄，就可以看到資料夾內多出與 <em>.styl</em> 檔案名稱相同的 <em>.css</em> 文件。</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-4.jpg">
+</figure>
+<figure>
+    <img src="@@webRoot/images/css/stylus-5.jpg">
+    <figcaption>左邊是 <em>.styl</em> 格式的原始碼，右邊則是輸出後的 <em>.css</em> 格式。</figcaption>
+</figure>
+<p><br></p>
+<p>除了直接編譯輸出之外，也可以在指令裡加入 <em>--compress</em> 指令，使 Stylus 輸出成經過壓縮的 CSS 文件，以節省檔案空間。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus --compress index.syle</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<figure>
+    <img src="@@webRoot/images/css/stylus-6.jpg">
+</figure>
+<p><br></p>
+
+<h4>多個檔案編譯：</h4>
+<p>如果同時有好幾個 <em>.styl</em> 檔案需要處理，我們可以一次全部執行，不需要逐一編譯每一個檔案，舉例來說：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus p1.styl p2.styl p3.styl</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>資料夾編譯：</h4>
+<p>當然，如果 <em>.styl</em> 文件很多，即便可以一次處理全部，但要一個個輸入檔案名稱不免仍覺得麻煩，且多數開發者也無法容許各種類型的檔案文件通通擁塞在同一層資料夾結構裡。通常我們會依據格式類型將檔案分門別類，例如 <em>.styl</em> 檔案通通放進名稱為 <em>styl</em> 的資料夾，這種情況下我們就可以直接編譯整個資料夾，省去逐一輸入檔名的麻煩。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus styl</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>指令中的 <em>styl</em> 為 <em>.styl</em> 文件所屬的資料夾名稱。</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-7.jpg">
+</figure>
+<figure>
+    <img src="@@webRoot/images/css/stylus-8.jpg">
+</figure>
+<p><br></p>
+
+<h4>編譯至其他位置：</h4>
+<p>一路看範例到這裡的你應該已經嗅到不對勁的氛圍，沒錯，目前無論是單一檔案、多個檔案還是整個資料夾編譯，輸出的 <em>.css</em> 文件都生成於與 <em>.styl</em> 相同的資料夾層級。通常我們會將預處理器的檔案與生成的檔案分開管理，才不會混淆在一起。那麼我們要如何將 <em>.styl</em> 生成到指定的資料夾呢？</p>
+<p>方式其實不難，只要在編譯指令間加入 <em>--out</em>，後方加上要導出的資料夾名稱即可，例如：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus styl --out css</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>操作結果：</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-9.jpg">
+</figure>
+<p>如果是更深層的資料夾目錄，則指名路徑即可。例：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus styl --out public/css</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>監聽編譯：</h4>
+<p>透過 <em>watch</em> 指令，可以令 Stylus 即時監測 <em>.styl</em> 檔案的變化，只要一儲存，便會自動執行編譯的動作，就不需要每編輯一次檔案就要下達一次編譯的指令了。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus --watch index.styl</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<figure>
+    <img src="@@webRoot/images/css/stylus-10.jpg">
+</figure>
+<p><br></p>
+
+<h2 id="act3">指令列表</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">指令</div>
+        <div class="t-f1">縮寫</div>
+        <div class="t-f4">用途</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>--compress</em></div>
+        <div class="t-f1"><em>-c</em></div>
+        <div class="t-f4">輸出壓縮格式的 CSS 文件</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>--out</em></div>
+        <div class="t-f1"><em>-o</em></div>
+        <div class="t-f4">將 <em>.styl</em> 編譯輸出到外層其他路徑資料夾</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>--watch</em></div>
+        <div class="t-f1"><em>-w</em></div>
+        <div class="t-f4">即時監測 <em>.styl</em> 變化</div>
+    </div>
+</div>
+<p><br></p>
+<p>以下分享個人常用的懶人指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus -w styl -o css</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>指令意思為當 <em>styl</em> 資料夾裡的 <em>.styl</em> 文件一旦有所變更，儲存檔案時就會立即執行編譯，並輸出 CSS 文件至外層的 <em>css</em> 資料夾中。</p>
+<p><br></p>
+
+<h2 id="act4">Autoprefixer</h2>
+<p><a href="https://www.npmjs.com/package/autoprefixer-stylus" target="_blank">Autoprefixer</a> 是用來處理部份 CSS3 語法在不同瀏覽器需要添加指定前綴的工具，如果有瀏覽器兼容性要求的開發者建議安裝這個套件。安裝指令為：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">npm install autoprefixer-stylus -g</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>執行 Stylus 編譯時的指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus -u autoprefixer-stylus index.styl</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>結合懶人包：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="bash">stylus -w -u autoprefixer-stylus styl -o css</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>套件結果展示：</p>
+<figure>
+    <img src="@@webRoot/images/css/stylus-11.jpg">
+    <figcaption>這是沒有使用 Autoprefixer，一般編譯輸出的結果。</figcaption>
+</figure>
+<figure>
+    <img src="@@webRoot/images/css/stylus-12.jpg">
+    <figcaption>使用 Autoprefixer 編譯輸出的結果。</figcaption>
+</figure>
+<p><br></p>
+
+<h2 id="act5">預處理器語言比較</h2>
+<p>CSS 的預處理器主流有三款，分別是 Sass、Less 與本篇主角 Stylus。其中以 Sass 的發展最早，以換行與縮排的方式大幅簡化 CSS 的語法編寫方式，但後來也已兼容傳統添加分號、花括號的寫法，成為比 Sass 語法更容易閱讀的 SCSS。</p>
+<p>Less 則以 JavaScript 為依歸，毋須像 Sass 使用前必須得先安裝 Ruby、Compass 等額外環境，Less 只需將 less.js 下載下來就能直接在專案裡使用，不經編譯的動作即可在網頁呈現 .less 格式的樣式表。然而相對 Sass 而言，Less 的編寫並不若其那般簡單自由。</p>
+<p>Stylus 來自 Node.js，是三者中最晚誕生的預處理器，知名度與使用度並未前兩者廣泛，不過現今的網頁專案開發許多都會利用 Node.js，幾乎每名網頁工程師的電腦都有安裝，因此如果使用 Stylus 只需要幾個 npm 指令就可以搞定。</p>
+<p><br></p>
+<p>我們可以由下表比較一下三款預處理器語言。</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1"></div>
+        <div class="t-f2">Sass</div>
+        <div class="t-f2">Less</div>
+        <div class="t-f2">Stylus</div>
+    </div>
+    <div>
+        <div class="t-f1">發展</div>
+        <div class="t-f2">2007</div>
+        <div class="t-f2">2009</div>
+        <div class="t-f2">2010</div>
+    </div>
+    <div>
+        <div class="t-f1">媒介</div>
+        <div class="t-f2">Ruby、Compass</div>
+        <div class="t-f2">JavaScript</div>
+        <div class="t-f2">Node.js</div>
+    </div>
+    <div>
+        <div class="t-f1">自由度</div>
+        <div class="t-f2">高</div>
+        <div class="t-f2">普通</div>
+        <div class="t-f2">高</div>
+    </div>
+    <div>
+        <div class="t-f1">符號省略</div>
+        <div class="t-f2">可</div>
+        <div class="t-f2">不可</div>
+        <div class="t-f2">可</div>
+    </div>
+</div>
+<p>它們雖各有優缺，卻沒有絕對的好或不好，只有適不適合自己的開發需求，選擇適當的 CSS 預處理器語言並導入專案裡，就能讓專案開發更加輕鬆、快速。以上就是 Stylus 的基本簡介及使用方法，下一篇文章將介紹 Stylus 的語法和函數。</p>
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://stylus-lang.com/" target="_blank">stylus</a></li><!-- https://stylus.bootcss.com/ -->
+        <li><a href="https://www.jianshu.com/p/c22dd5d95bf2" target="_blank">css预处理器stylus基本用法 - 简书</a></li>
+        <li><a href="https://developer.ibm.com/zh/technologies/web-development/articles/wa-stylus-css-preprocessor-enhancer/" target="_blank">Stylus — 一剂 CSS 预处理的增强剂</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

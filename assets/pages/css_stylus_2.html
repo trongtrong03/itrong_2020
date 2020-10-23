@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-14 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-14 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p><a href="https://stylus-lang.com/" target="_blank">Stylus</a> 是 CSS 的預處理器工具之一。什麼是預處理器？預處理器（Preprocessor）是程式中處理輸入資料，產生能用來輸入到其他程式的資料的程式。看上去有點饒舌，但沒關係，我們只要知道 CSS 的預處理器能讓我們更快速、方便地編寫 CSS 樣式即可。而本篇文章將來對 Stylus 的用途、語法、與其他預處理器的異同、優缺點等作一系列的介紹。如果你在接觸 Stylus 之前已經學會 Sass，那麼 Stylus 的語法應該也難不倒你。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">語法格式</a></li>
+        <li><a href="#act2">嵌套語法</a></li>
+        <li><a href="#act3">使用變數</a></li>
+        <li><a href="#act4">運算</a></li>
+        <li><a href="#act5">顏色函數</a></li>
+        <li><a href="#act6">函數（@mixins）</a></li>
+        <li><a href="#act7">繼承（@extend）</a></li>
+        <li><a href="#act8">程式區塊（@block）</a></li>
+        <li><a href="#act9">條件式（if）</a></li>
+        <li><a href="#act10">迭代（for）</a></li>
+        <li><a href="#act11">註解</a></li>
+        <li><a href="#act12">導入（@import）</a></li>
+        <li><a href="#act13">媒體查詢（@media）</a></li>
+        <li><a href="#act14">關鍵影格（@keyframes）</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">語法格式</h2>
+<p><br></p>
+
+<h2 id="act2">嵌套語法</h2>
+<p><br></p>
+
+<h2 id="act3">使用變數</h2>
+<p><br></p>
+
+<h2 id="act4">運算</h2>
+<p><br></p>
+
+<h2 id="act5">顏色函數</h2>
+<p><br></p>
+
+<h2 id="act6">函數（@mixins）</h2>
+<p><br></p>
+
+<h2 id="act7">繼承（@extend）</h2>
+<p><br></p>
+
+<h2 id="act8">程式區塊（@block）</h2>
+<p><br></p>
+
+<h2 id="act9">條件式（if）</h2>
+<p><br></p>
+
+<h2 id="act10">迭代（for）</h2>
+<p><br></p>
+
+<h2 id="act11">註解</h2>
+<p><br></p>
+
+<h2 id="act12">導入（@import）</h2>
+<p><br></p>
+
+<h2 id="act13">媒體查詢（@media）</h2>
+<p><br></p>
+
+<h2 id="act14">關鍵影格（@keyframes）</h2>
+<p><br></p>
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://stylus-lang.com/" target="_blank">stylus</a></li><!-- https://stylus.bootcss.com/ -->
+        <li><a href="https://www.jianshu.com/p/c22dd5d95bf2" target="_blank">css预处理器stylus基本用法 - 简书</a></li>
+        <li><a href="https://developer.ibm.com/zh/technologies/web-development/articles/wa-stylus-css-preprocessor-enhancer/" target="_blank">Stylus — 一剂 CSS 预处理的增强剂</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
