@@ -74,289 +74,175 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-14 }).title"></h1>
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-15 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-14 }).time"></time>
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-15 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<h2>前言</h2>
-<p>從這篇開始的接下來幾篇文章，我們將介紹 Stylus 的語法及函數，來源資料主要參考的是他們的<a href="https://stylus-lang.com/" target="_blank">官方文件</a>，看不懂英文也沒關係，官方文件也有<a href="https://stylus.bootcss.com/" target="_blank">簡體中文</a>的版本，雖說翻譯沒有十分完整，但多看多練習應該多少能克服語言問題。那麼以下開始吧。</p>
-<p><br></p>
-
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">語法格式</a></li>
-        <li><a href="#act2">使用變數</a></li>
-        <li><a href="#act3">數學運算</a></li>
-        <li><a href="#act4">註解</a></li>
+        <li><a href="#act1">內建函式</a></li>
+        <li><a href="#act2">混合（@mixins）</a></li>
+        <li><a href="#act3">繼承（@extend）</a></li>
+        <li><a href="#act4">程式區塊（@block）</a></li>
+        <li><a href="#act5">條件式（if）</a></li>
+        <li><a href="#act6">迭代（for）</a></li>
+        <li><a href="#act7">導入（@import）</a></li>
+        <li><a href="#act8">媒體查詢（@media）</a></li>
+        <li><a href="#act9">關鍵影格（@keyframes）</a></li>
     </ul>
 </div>
 
-<h2 id="act1">語法格式</h2>
-<p>儘管 Stylus 允許開發者將傳統的 CSS 書寫方式直接沿用到 Stylus 樣式表裡，但作為預處理器程式語言，Stylus 自然有一套大幅簡化 CSS 語法結構的方式。</p>
-<h4>1. 縮排：</h4>
-<p>以往 CSS 會透過「嵌套」（<em>{ }</em>）方式將屬性寫進選擇器裡，例如：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">p {
-    line-height: 2;
-    font-size: 14px;
-    color: #f00;
-}</code></pre>
+<h2 id="act1">內建函式</h2>
+<p>Stylus 有內建很多函式提供給開發者使用，因為功能實在太多了所以就不一一介紹，只列舉幾項個人比較常使用的。其餘可自行點擊<a href="https://stylus-lang.com/docs/bifs.html" target="_blank">列表連結</a>前往察看。</p>
+<h4>1. Alpha 透明度（alpha）：</h4>
+<p><em>alpha</em> 函式通常用於顏色相關的透明度設定，其函式結構為：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">selector
+    property alpha(color, value)</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>但是 Stylus 可以用縮排取代嵌套，像上面的例子就可以這樣表示：</p>
+<p>例如：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">p
-    line-height 2
-    font-size 14px
-    color: #f00
+<pre class="text-pre"><code class="scss">div
+    background-color alpha(#fff, 0.5)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    background-color: rgba(255,255,255,0.5);
+}
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>CSS 屬性的縮排一般以二或四個空白字元較常見，但縮排只突出一個也是可以的，重點是同一個選擇器的屬性縮排空白字元格必須一致。假如今天我們的 Stylus 寫成這樣：</p>
+<p>以下為一些不正確的寫法：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">p
-    line-height 1.5
-        font-size 14px
-    color: #f00
-</code></pre>
+<pre class="text-pre"><code class="scss">alpha(#fff)
+// 輸出結果為 1
+
+alpha(rgba(0,0,0,0.4))
+// 輸出結果為 0.4</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>那麼輸出就會變成：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">p {
-    color: #f00;
-}
-p line-height 1.5 {
-    font-size: 14px;
-}</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>透過上面的輸出結果，我們可以瞭解每一次縮排即為進入下一個階層。因此，當我們要指定選擇器裡其他元素的屬性時，就不用換行重寫選擇器完整的名稱，直接以換行縮排的方式表示即可。舉例來說：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.list {
-    width: 80%;
-    margin: 0 auto;
-}
-.list .item {
-    display: inline-block;
-}
-.list .item img {
-    display: block;
-    width: 100%;
-}</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>如果要指定某個選擇器裡其他元素的屬性，就得將選擇器重複寫一遍，然後再加上指定的元素名稱。假如選擇器是 <em>.class</em> 名稱──如同上面範例，寫起來既費時又不易閱讀，而 Stylus 則可以大幅簡化成：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">.list
-    width 80%
-    margin 0 auto
-    .item
-        display inline-block
-        img
-            display block
-            width 100%
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>我們只要熟知縮排的概念，便能輕鬆表示複雜的選擇器結構。</p>
+<p>由此可知 <em>alpha</em> 函式必須填入 <em>value</em> 值。此外，<em>value</em> 值也可以使用百分比表示，例如 <em>50%</em>。</p>
 <p><br></p>
 
-<h4>2. 符號省略：</h4>
-<p>先前的例子已經展示出：在 Stylus 文件裡，屬性的結尾符號（<em>;</em>）可以省略不寫。除此之外，我們用來分隔選擇器的逗號（<em>,</em>）也可以以換行的方式表示。例如：</p>
+<h4>2. 亮度（lightness）：</h4>
+<p><em>lightness</em> 用來調整有關顏色屬性的色碼亮度，其函式結構為：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">input
-select
-textarea
-button
-    background-color #CCC
+<pre class="text-pre"><code class="scss">selector
+    property lightness(color, value)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    background-color lightness(#f00, 0%)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    ackground-color: #000;
+}
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>編譯的結果為：</p>
+<p>因為亮度設定為 <em>0%</em>，所以輸出結果為黑色。順便一提，<em>value</em> 裡的百分比符號（<em>%</em>）可以省略。</p>
+<p><br></p>
+
+<h4>3. 加深（darken）/減輕（lighten）：</h4>
+<p>這兩者分別可以使顏色加深或減輕，函式結構為：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">selector
+    property darken(color, value)
+    property lighten(color, value)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    background-color darken(#F00, 50%)
+    color lighten(#F00, 50%)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
 <div class="text-code is-css">
-<pre class="text-pre"><code class="css">input,
-select,
-textarea,
-button {
-    background-color: #ccc;
-}</code></pre>
+<pre class="text-pre"><code class="css">div {
+    background-color: #800000;
+    color: #ff8080;
+}
+</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
 <p><br></p>
 
-<h4>3. 父級選擇器引用：</h4>
-<p>在多數預處理器程式語言中，會使用 <em>&</em> 符號表示父級選擇器。什麼意思呢？假設我們要設定某個選擇器的偽類別選擇器（<em>hover</em>、<em>active</em>、<em>focus</em>...）CSS，就要在偽類別選擇器之前先指定選擇器的名稱，例如：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">button {
-    background-color: #00f;
-}
-button:hover {
-    background-color: #f00;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>在 Stylus 中只需要這樣表示：</p>
+<h4>4. 顏色反轉（invert）：</h4>
+<p>這個函式可把顏色屬性的色碼倒置，例如把白色（<em>#FFF</em>）反轉為黑色（<em>#000</em>）。其函式結構為：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">button
-    background-color #00f
-    &:hover
-        background-color #f00
-</code></pre>
+<pre class="text-pre"><code class="scss">selector
+    property invert(color)</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><br></p>
-<p>同樣的概念我們也可以用在 <em>.class</em> 上，當 <em>.class</em> 前面加上 <em>&</em> 時，表示指定選擇器含有 <em>.class</em> 時套用其樣式。以下為範例：</p>
+<p>例如：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">button
-    &.btn-cancel
-        background-color #ccc
-</code></pre>
+<pre class="text-pre"><code class="scss">div
+    background-color invert(#FFF)</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>編譯成 CSS：</p>
+<p>編譯結果：</p>
 <div class="text-code is-css">
-<pre class="text-pre"><code class="css">button.btn-cancel {
-    background-color: #ccc;
+<pre class="text-pre"><code class="css">div {
+    background-color: #000;
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><br></p>
-<p>如果把 <em>&</em> 放在指定的選擇器後方，則反過來表示上一階層選擇器必須在指定選擇器內才能套用屬性。例如：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">button
-    .form &
-        border 1px solid #000
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>編譯成 CSS：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.form button {
-    border: 1px solid #000;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>需要注意的是，上方這種像是反轉階層的使用方式，<em>&</em> 與選擇器之間必須相隔至少一格的空白字元，否則會被判定令該指定選擇器與上一階層的選擇器相連。</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">a
-    .link&
-        text-decoration underline
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>輸出後會變成：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.linka {
-    text-decoration: underline;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p><br></p>
-<p>不過我們也可以反過來利用這樣的特性，充分建立起 CSS Coding style 中很重要的一項原則：前綴命名法──將相同功能區塊使用到的 <em>.class</em> 以相同前綴名稱表示它們的關係，增加檢視的易讀性。比如說：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">.photo
-    &-wrap
-        background-color #CCC
-        padding 1rem
-    &-list
-        background-color #EEE
-    &-item
-        border 1px solid #000
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>編譯輸出後：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.photo-wrap {
-    background-color: #ccc;
-    padding: 1rem;
-}
-.photo-list {
-    background-color: #eee;
-}
-.photo-item {
-    border: 1px solid #000;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>至於要寫得多複雜就看各自開發者或團隊的意思了，走火入魔想連接個四五層以上都是沒問題的：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">.photo
-    &-list
-        &-item
-            &-image
-                img
-                    border 1px solid #000
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.photo-list-item-image img {
-    border: 1px solid #000;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>不過依照個人開發經驗，建議階層盡量不要使用太多，否則縱使當下串連的很開心，但過段時間要維護時，階層過多反而會帶來嚴重的閱讀障礙。因此，適度地使用即可。</p>
 <p><br></p>
 
-<h2 id="act2">使用變數</h2>
-<p>Stylus 提供將屬性值以變數形式進行事先定義的功能，方便我們快速把屬性值透過變數代入到不同選擇器。當要修改屬性值的時候，只需要編輯該變數即可，不需要逐一修改每個選擇器的值。我們可以直接定義變數的名稱，並指定（<em>=</em>）值即可，或是在變數名稱前加上 <em>$</em> 符號以利辨別。舉例來說：</p>
+<h4>5. 加總（sum）：</h4>
+<p>前面幾個都是與顏色有關的函式（事實上內建函式大多也確實與顏色有關），這裡介紹運算型的「加總」函式，可將函式內的數值通通加起來。它的函式結構為：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">itemWidth = 100px
-div
-    width itemWidth
-</code></pre>
+<pre class="text-pre"><code class="scss">selector
+    property sum(value)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    width sum(10px 20px 30px 40px)</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -371,46 +257,22 @@ div
     <span>COPY</span>
 </button>
 </div>
-<p>也能加入 <em>$</em> 字符：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">$font-size = 5rem
-p
-    font-size $font-size
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>編譯結果：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">p {
-    font-size: 5rem;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p><br></p>
-<p>儘管變數可以幫助開發者更方便引用、管理屬性值，但使用時仍須注意一些細節：</p>
-<div class="text-ol">
-    <ol>
-        <li>雖然變數可以直接以屬性名稱命名（如<em>width</em>、<em>font-size</em>...），但仍應盡量減少使用避免產生混淆。</li>
-        <li>變數名稱可使用駝峰命名法或以 <em>-</em> 相接。</li>
-        <li>不能使用 <em>$</em> 以外的特殊符號。</li>
-        <li><em>$</em> 除了可以放在最前面，也可以插入在變數名稱中，但應該很少人會這樣做。</li>
-    </ol>
-</div>
+<p>有些人也許會想：「我直接在屬性後方寫運算式加加減減不就好了嗎？」...嗯，是的。</p>
 <p><br></p>
 
-<h2 id="act3">數學運算</h2>
-<p>如果要在 CSS 裡進行運算，要通過 CSS3 的 <em>calc</em> 屬性來達成。但就和其他預處理器程式語言相同，Stylus 可以直接在屬性值裡進行簡單的數學運算。</p>
+<h4>6. 平均值（avg）：</h4>
+<p>相比加總（sum），平均值的實用性就比較高了，我們只要把要平均的數字通通丟進平均值函式裡，它就會自動幫我們輸出加總平均後的結果。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">selector
+    property avg(value)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 <p>例如：</p>
 <div class="text-code is-stylus">
 <pre class="text-pre"><code class="scss">div
-    width 100px - 10px
-    height 100px * 2
-    margin 10px + 10px auto 0</code></pre>
+    width avg(10px 20px 30px 40px)</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -418,9 +280,7 @@ p
 <p>編譯結果：</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
-    width: 90px;
-    height: 200px;
-    margin: 20px auto 0;
+    width: 25px;
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -428,11 +288,21 @@ p
 </button>
 </div>
 <p><br></p>
-<p>只有 <em>/</em> 比較特別，必須把運算式括號起來，否則整個運算式會直接被編譯出去。</p>
+
+<h4>7. 取得影像尺寸（image-size）：</h4>
+<p>這是個頗實用的功能函式，我們可以透過此函式直接取得指定影像的尺寸，代入到寬度與高度，節省查詢影像尺寸的動作。其函式結構為：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">selector
+    property image-size(path)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
 <div class="text-code is-stylus">
 <pre class="text-pre"><code class="scss">div
-    width 100px / 10
-    height (100px / 10)</code></pre>
+    width image-size('logo.png')[0]
+    height image-size('logo.png')[1]</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -440,20 +310,30 @@ p
 <p>編譯結果：</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
-    width: 100px/10;
-    height: 10px;
+    width: 200px;
+    height: 50px;
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
+<p><em>image-size</em> 後方的陣列位置 <em>[0]</em> 代表影像的寬度值，<em>[1]</em> 則是影像高度的值。單位為像素（<em>px</em>）。</p>
 <p><br></p>
-<p>當然 Stylus 裡的運算式也有「先乘除後加減」的概念，如果要先執行加減再執行乘除，加減的式子一樣得用括號括起來。譬如：</p>
+
+<h4>8. 嵌入連結（embedurl）：</h4>
+<p><em>embedurl</em> 可以把影像編碼化，函式語法為：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">selector
+    property embedurl(path)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
 <div class="text-code is-stylus">
 <pre class="text-pre"><code class="scss">div
-    width 100px + 10px * 5
-    height (100px + 10px) * 5</code></pre>
+    background-image embedurl('logo.jpg')</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -461,64 +341,54 @@ p
 <p>編譯結果：</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
-    width: 150px;
-    height: 550px;
+    background-image: url("data:image/jpeg;base64,77+977+977+977+9ABBKRklGAAEBAQEsASwAAO+/ve+...(略)...Q==");
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
+<p>預設編碼格式為 <em>base64</em>，如果要採用 <em>utf8</em>，則僅需在路徑的後方加上 <em>utf8</em> 即可。譬如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    background-image embedurl('logo.jpg', 'utf8')</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>此函式好處是即便有一天影像毀損或遺失了，因為已經將該影像編碼化，故不影響 CSS 顯示其內容。然而，取而代之的壞處就是程式碼的暴增，尤其當影像很複雜的時候，輸出的編碼更是令人瞠目結舌。</p>
 <p><br></p>
-<p>值得一提的是，相比 Sass，Stylus 更能處理不同計量單位的運算式。打個比方：</p>
+
+
+<h2 id="act2">混合（@mixins）</h2>
+<p>有些中文教學文章會將 <em>mixins</em> 稱為「混入」語法，不管怎樣，它的概念類似函式，只是要定義的是一連串的屬性。使用 <em>mixins</em> 時，先宣告函式名稱，然後加上括號，接著在嵌套（<em>{ }</em>）裡加入 CSS 屬性或其他敘述句，嵌套在 Stylus 中可以省略不寫。</p>
+<p>範例：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">div
-    width 100% - 10px</code></pre>
+<pre class="text-pre"><code class="scss">text-style()
+    line-height 1.5
+    font-size 16px
+    font-weight bold
+    color #000</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>Sass 遇到這種單位不同的數值運算通常會噴出錯誤訊息，但 Stylus 對這類無法計算出結果的運算式容許度較高，它會自動將像後面的單位通通轉換為和第一個數值相同的單位進行計算，像上面的範例在 Stylus 會編譯出這樣的結果：</p>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">div {
-    width: 90%;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>再看一例：</p>
+<p>這樣就是定義一個名為 <em>text-style</em> 的函式了。記住！作為 <em>mixins</em>，名稱後方的括號不可省略，否則 Stylus 編譯時會誤以為 <em>text-style</em> 是一個選擇器。</p>
+<p>之後我們如果要使用這個函式，直接在選擇器下方調用即可：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">div
-    width 100px - 10% - 5cm</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">div {
-    width: 85px;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>畢竟經過容錯計算出來的結果，未必是開發者原先預期的答案。如果不像 Sass 直接回返錯誤訊息，就有可能遺漏了錯誤，因此這種高容錯究竟是好還是不好，就見仁見智了。</p>
-<p><br></p>
-<p>再補充一個「平方數」，在 Stylus 要使用平方數，使用的不是 <em>^</em>，而是以 <em>**</em> 表示。例如：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">div
-    width 2px ** 8</code></pre>
+<pre class="text-pre"><code class="scss">p
+    text-style()</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
 <p>編譯結果為：</p>
 <div class="text-code is-css">
-<pre class="text-pre"><code class="css">div {
-    width: 256px;
+<pre class="text-pre"><code class="css">p {
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -526,18 +396,71 @@ p
 </button>
 </div>
 <p><br></p>
-<p>最後，學以致用的你可能會問，運算式能和變數作結合嗎？答案是肯定的。</p>
+<p>也可以使屬性的參數值成為變數，例如：</p>
 <div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">$result = 100px + 100px
-div
-    width $result</code></pre>
+<pre class="text-pre"><code class="scss">item-size(w, h)
+    width w
+    height h</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
+<p>選擇器調用時直接填入參數值即可。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    item-size(100px, 50px)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
 <div class="text-code is-css">
 <pre class="text-pre"><code class="css">div {
-    width: 200px;
+    width: 100px;
+    height: 50px;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+<p>當然，既然我們將屬性值成為變數，便意味著可以先指定值給它，達到預設值的功用。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">item-size(w = 100px, h = 50px)
+    width w
+    height h
+
+div
+    item-size()</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    width: 100px;
+    height: 50px;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>直接在選擇器調用時填入新的值，就能取代原本的預設值：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    item-size(50%, 200px)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    width: 50%;
+    height: 200px;
 }
 </code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -546,84 +469,26 @@ div
 </div>
 <p><br></p>
 
-<h2 id="act4">註解</h2>
-<p>Stylus 提供三種註解方式：</p>
-<h4>1. 單行註解：</h4>
-<p>語法格式為 <em>//</em>，這種註解只會存在於 Sytlus 文件裡，不會被編譯輸出。</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">// 首頁
-.index-wrap
-    background-color #eee   // 背景色</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">.index-wrap {
-    background-color: #eee;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
+<h2 id="act6">繼承（@extend）</h2>
 <p><br></p>
-<h4>2. 多行註解：</h4>
-<p>和以往 CSS 使用的註解格式一樣，由 <em>/*</em> 開頭，<em>*/</em> 結尾，中間則是註解內容，允許寫很多行。</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">/*
-    第一行
-    第二行
-    第三行
-*/
-.index-wrap
-    background-color #eee</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">/*
-    第一行
-    第二行
-    第三行
-*/
-.index-wrap {
-    background-color: #eee;
-}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>這種註解格式在一般編譯輸出模式下會保留，但如果是壓縮（<em>compress</em>）格式裡就不會被輸出。</p>
+
+<h2 id="act7">程式區塊（@block）</h2>
 <p><br></p>
-<h4>3. 多行緩衝（buffered）註解：</h4>
-<p>承襲多行註解在壓縮模式下不會被編譯輸出這一點，如果希望註解即使是壓縮模式下也能輸出，則在開頭 <em>/*</em> 後方加上 <em>!</em> 符號。例如：</p>
-<div class="text-code is-stylus">
-<pre class="text-pre"><code class="scss">/*!
-    第一行
-    第二行
-    第三行
-*/
-.index-wrap
-    background-color #eee</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<div class="text-code is-css">
-<pre class="text-pre"><code class="css">/*
-    第一行
-    第二行
-    第三行
-*/
-.index-wrap{background-color:#eee;border:1px solid #000}
-</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
+
+<h2 id="act8">條件式（if）</h2>
+<p><br></p>
+
+<h2 id="act9">迭代（for）</h2>
+<p><br></p>
+
+<h2 id="act11">導入（@import）</h2>
+<p><br></p>
+
+<h2 id="act12">媒體查詢（@media）</h2>
+<p><br></p>
+
+<h2 id="act13">關鍵影格（@keyframes）</h2>
+<p><br></p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
