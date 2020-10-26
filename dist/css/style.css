@@ -10711,6 +10711,14 @@ footer {
   content: 'SCSS:';
 }
 
+.text-code.is-sass::before {
+  content: 'Sass:';
+}
+
+.text-code.is-stylus::before {
+  content: 'Stylus:';
+}
+
 .text-code.is-js::before {
   content: 'JAVASCRIPT:';
 }

@@ -116,6 +116,10 @@
 </button>
 </div>
 <p>指令中的 <em>-g</em> 指的是全域安裝，經由全域安裝我們就可以在任何專案直接執行 Stylus 的操作。換句話說，安裝 Stylus 的實質步驟其實就只有這一步而已。</p>
+<figure>
+    <img src="../images/css/stylus-13.jpg">
+    <figcaption>安裝成功。</figcaption>
+</figure>
 <p><br></p>
 
 <h2 id="act2">如何編譯</h2>
@@ -126,7 +130,7 @@
 </figure>
 <p>假設我們已經在 <em>.styl</em> 檔案寫完樣式，現在要將其編譯輸出可讓瀏覽器閱讀的 <em>.css</em> 文件，請輸入下方指令：</p>
 <div class="text-code is-bash">
-<pre class="text-pre"><code class="bash">stylus index.syle</code></pre>
+<pre class="text-pre"><code class="bash">stylus index.styl</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -219,26 +223,49 @@
 <p><br></p>
 
 <h2 id="act3">指令列表</h2>
+<p>除了上一章節介紹的指令之外，Stylus 的指令其實還有很多，以下列舉幾項個人認為一般開發者可能比較常使用的指令：</p>
 <div class="text-flex">
     <div class="f-title">
-        <div class="t-f1">指令</div>
+        <div class="t-f2">指令</div>
         <div class="t-f1">縮寫</div>
         <div class="t-f4">用途</div>
+        <div class="t-f3">範例</div>
     </div>
     <div>
-        <div class="t-f1"><em>--compress</em></div>
+        <div class="t-f2"><em>--compress</em></div>
         <div class="t-f1"><em>-c</em></div>
         <div class="t-f4">輸出壓縮格式的 CSS 文件</div>
+        <div class="t-f3">sylus -c file.styl</div>
     </div>
     <div>
-        <div class="t-f1"><em>--out</em></div>
+        <div class="t-f2"><em>--out</em></div>
         <div class="t-f1"><em>-o</em></div>
         <div class="t-f4">將 <em>.styl</em> 編譯輸出到外層其他路徑資料夾</div>
+        <div class="t-f3">stylus file1 -o file2</div>
     </div>
     <div>
-        <div class="t-f1"><em>--watch</em></div>
+        <div class="t-f2"><em>--watch</em></div>
         <div class="t-f1"><em>-w</em></div>
         <div class="t-f4">即時監測 <em>.styl</em> 變化</div>
+        <div class="t-f3">stylus -w file.styl</div>
+    </div>
+    <div>
+        <div class="t-f2"><em>--css</em></div>
+        <div class="t-f1"><em>-C</em></div>
+        <div class="t-f4">將 CSS 文件轉換為 Stylus 格式</div>
+        <div class="t-f3">stylus -C file.css</div>
+    </div>
+    <div>
+        <div class="t-f2"><em>--sourcemap</em></div>
+        <div class="t-f1"><em>-m</em></div>
+        <div class="t-f4">輸出 CSS Source Maps 文件</div>
+        <div class="t-f3">stylus -m file.styl</div>
+    </div>
+    <div>
+        <div class="t-f2"><em>--version</em></div>
+        <div class="t-f1"><em>-V</em></div>
+        <div class="t-f4">查詢 Stylus 目前的版本</div>
+        <div class="t-f3">stylus -V</div>
     </div>
 </div>
 <p><br></p>

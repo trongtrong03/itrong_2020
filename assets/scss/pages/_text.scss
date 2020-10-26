@@ -546,6 +546,16 @@
             content: 'SCSS:';
         }
     }
+    &.is-sass {
+        &::before {
+            content: 'Sass:';
+        }
+    }
+    &.is-stylus {
+        &::before {
+            content: 'Stylus:';
+        }
+    }
     &.is-js {
         &::before {
             content: 'JAVASCRIPT:';

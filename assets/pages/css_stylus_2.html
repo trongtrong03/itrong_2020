@@ -15,7 +15,7 @@
                 <div class="text-content">
 <!-- Content start -->
 <h2>前言</h2>
-<p><a href="https://stylus-lang.com/" target="_blank">Stylus</a> 是 CSS 的預處理器工具之一。什麼是預處理器？預處理器（Preprocessor）是程式中處理輸入資料，產生能用來輸入到其他程式的資料的程式。看上去有點饒舌，但沒關係，我們只要知道 CSS 的預處理器能讓我們更快速、方便地編寫 CSS 樣式即可。而本篇文章將來對 Stylus 的用途、語法、與其他預處理器的異同、優缺點等作一系列的介紹。如果你在接觸 Stylus 之前已經學會 Sass，那麼 Stylus 的語法應該也難不倒你。</p>
+<p>這篇文章將介紹 Stylus 的語法，來源資料主要參考的是他們的<a href="https://stylus-lang.com/" target="_blank">官方文件</a>，看不懂英文也沒關係，官方文件也有<a href="https://stylus.bootcss.com/" target="_blank">簡體中文</a>的版本，雖說翻譯沒有十分完整，但多看多練習應該多少能克服語言問題。那麼以下開始吧。</p>
 <p><br></p>
 
 <!-- 大綱 -->
@@ -39,6 +39,258 @@
 </div>
 
 <h2 id="act1">語法格式</h2>
+<p>儘管 Stylus 允許開發者將傳統的 CSS 書寫方式直接沿用到 Stylus 樣式表裡，但作為預處理器程式語言，Stylus 自然有一套大幅簡化 CSS 語法結構的方式。</p>
+<h4>1. 縮排：</h4>
+<p>以往 CSS 會透過「嵌套」（<em>{ }</em>）方式將屬性寫進選擇器裡，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">p {
+    line-height: 2;
+    font-size: 14px;
+    color: #f00;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但是 Stylus 可以用縮排取代嵌套，像上面的例子就可以這樣表示：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">p
+    line-height 2
+    font-size 14px
+    color: #f00
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>CSS 屬性的縮排一般以二或四個空白字元較常見，但縮排只突出一個也是可以的，重點是同一個選擇器的屬性縮排空白字元格必須一致。假如今天我們的 Stylus 寫成這樣：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">p
+    line-height 1.5
+        font-size 14px
+    color: #f00
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>那麼輸出就會變成：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">p {
+    color: #f00;
+}
+p line-height 1.5 {
+    font-size: 14px;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>透過上面的輸出結果，我們可以瞭解每一次縮排即為進入下一個階層。因此，當我們要指定選擇器裡其他元素的屬性時，就不用換行重寫選擇器完整的名稱，直接以換行縮排的方式表示即可。舉例來說：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.list {
+    width: 80%;
+    margin: 0 auto;
+}
+.list .item {
+    display: inline-block;
+}
+.list .item img {
+    display: block;
+    width: 100%;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果要指定某個選擇器裡其他元素的屬性，就得將選擇器重複寫一遍，然後再加上指定的元素名稱。假如選擇器是 <em>.class</em> 名稱──就像上面範例，寫起來既費時又不易閱讀，而 Stylus 則可以大幅簡化成：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">.list
+    width 80%
+    margin 0 auto
+    .item
+        display inline-block
+        img
+            display block
+            width 100%
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們只要熟知縮排的概念，就能輕鬆表示複雜的選擇器結構。</p>
+<p><br></p>
+
+<h4>2. 符號省略：</h4>
+<p>先前的例子已經展示出在 Stylus 文件裡，屬性的結尾符號（<em>;</em>）可以省略不寫。除此之外，我們用來分隔選擇器的逗號（<em>,</em>）也可以以換行的方式表示。例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">input
+select
+textarea
+button
+    background-color #CCC
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯的結果為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input,
+select,
+textarea,
+button {
+    background-color: #ccc;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>3. 父級選擇器引用：</h4>
+<p>在多數預處理器程式語言中，會使用 <em>&</em> 符號表示父級選擇器。什麼意思呢？假設我們要設定某個選擇器的偽類別選擇器（<em>hover</em>、<em>active</em>、<em>focus</em>...）CSS，就要在偽類別選擇器之前先指定選擇器的名稱，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">button {
+    background-color: #00f;
+}
+button:hover {
+    background-color: #f00;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在 Stylus 中只需要這樣表示：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">button
+    background-color #00f
+    &:hover
+        background-color #f00
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>同樣的概念我們也可以用在 <em>.class</em> 上，當 <em>.class</em> 前面加上 <em>&</em> 時，就表示指定選擇器含有 <em>.class</em> 時套用其樣式。以下為範例：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">button
+    &.btn-cancel
+        background-color #ccc
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯成 CSS：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">button.btn-cancel {
+    background-color: #ccc;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>如果把 <em>&</em> 放在指定的選擇器後方，則反過來表示上一階層選擇器必須在指定選擇器內才能套用屬性。例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">button
+    .form &
+        border 1px solid #000
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯成 CSS：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.form button {
+    border: 1px solid #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>需要注意的是，上方這種像是反轉階層的使用方式，<em>&</em> 與選擇器之間必須相隔至少一格的空白字元，否則會被判定令該指定選擇器與上一階層的選擇器相連。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">a
+    .link&
+        text-decoration underline
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>輸出後會變成：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.linka {
+    text-decoration: underline;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>不過我們也可以反過來利用這樣的特性，充分建立起 CSS Coding style 中很重要的一項原則：前綴命名法──將相同功能區塊使用到的 <em>.class</em> 以相同前綴名稱表示它們的關係，增加檢視的易讀性。比如說：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">.photo
+    &-wrap
+        background-color #CCC
+        padding 1rem
+    &-list
+        background-color #EEE
+    &-item
+        border 1px solid #000
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯輸出後：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.photo-wrap {
+    background-color: #ccc;
+    padding: 1rem;
+}
+.photo-list {
+    background-color: #eee;
+}
+.photo-item {
+    border: 1px solid #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>至於要寫得多複雜就看各自開發者或團隊的意思了，走火入魔想連接個四五層以上都是沒問題的：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">.photo
+    &-list
+        &-item
+            &-image
+                img
+                    border 1px solid #000
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.photo-list-item-image img {
+    border: 1px solid #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>不過依照個人開發經驗，建議階層盡量不要使用太多，否則縱使當下串連的很開心，但過段時間要維護時，階層過多反而會帶來嚴重的閱讀障礙。因此，適度地使用即可。</p>
 <p><br></p>
 
 <h2 id="act2">嵌套語法</h2>
