@@ -254,6 +254,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 16,
+        href: 'css_stylus_5',
+        title: 'CSS 預處理器語言──Stylus 教學（五）：條件式＆迭代',
+        time: '2020.10.25',
+        tag1: true,
+        tag1_name: 'Stylus',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [

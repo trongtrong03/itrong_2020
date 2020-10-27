@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-17 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-17 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>條件式（If）與迭代（Iteration）於多數程式語言中是很常被使用的語法，預處理器程式語言也不例外，一起來看看如何使用。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">條件式（if）</a></li>
+        <li><a href="#act2">迭代（Iteration）</a></li>
+        <!-- <li><a href="#act7">導入（@import）</a></li>
+        <li><a href="#act8">媒體查詢（@media）</a></li>
+        <li><a href="#act9">關鍵影格（@keyframes）</a></li> -->
+    </ul>
+</div>
+
+<h2 id="act1">條件式（if）</h2>
+<p>我們可以用條件式定義一系列的判斷規則，標準的條件式語法由 <em>if</em> 與 <em>else</em> 組成。若條件不止兩個，則第二個之後的條件以 <em>else if</em> 表示，最後一樣以 <em>else</em> 結尾。<a href="https://stylus-lang.com/docs/conditionals.html" target="_blank">官方文件</a>提供幾種使用方式，以下就來練習如何定義條件式。</p>
+<h4>1. 範例一：</h4>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">demo = true
+
+if demo
+    size(w, h)
+        width w
+        height h
+
+div
+    size(100px, 50px)</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在此範例中，我們先宣告一個變數，並指定起始狀態為 <em>true</em> 的值給它。接著是條件式的內容，範例在條件式裡加入了一個 <em>@mixin</em> 函式，然後我們在 <em>div</em> 調用該 <em>@mixin</em>。最後實際看看輸出結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    width: 100px;
+    height: 50px;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當 <em>demo</em> 為 <em>true</em>，其條件式內容就會執行。由於一開始定義時即給了它 <em>true</em> 初始值，因此其條件式內容就會編譯輸出到 CSS 文件。</p>
+<p><br></p>
+
+<h4>2. 範例二：</h4>
+<p>前一個範例是將 <em>@mixin</em> 寫在條件式裡，而這個範例則展示如何在 <em>@mixin</em> 加入條件式（但概念是一樣的）。請看程式碼：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">size(w, h, use = false)
+    if use
+        width w
+        height h
+
+div
+    size(100px, 50px, true)
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    width: 100px;
+    height: 50px;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這種方式的好處是讓具有條件式的 <em>@mixin</em> 更靈活地被使用，較彈性、非固定性的屬性可以寫在條件式裡，讓每個調用 <em>@mixin</em> 的選擇器單獨設定是否要輸出條件式的內容。</p>
+<p><br></p>
+
+<h4>3. 範例三：</h4>
+<p>通常條件式除了 <em>if</em> 之外還有 <em>else</em>，表示未滿足 <em>if</em> 條件時，則執行 <em>else</em> 裡面的內容。舉例來說：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">size(w, h, use = false)
+    if use
+        width w
+        height h
+    else
+        width h
+        height w
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>然後分別在不同選擇器調用：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">.div-1
+    size(100px, 50px, true)
+  
+.div-2
+    size(100px, 50px)
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.div-1 {
+    width: 100px;
+    height: 50px;
+}
+.div-2 {
+    width: 50px;
+    height: 100px;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>4. 範例四：</h4>
+<p>如果條件式需要很多個條件判斷的時候，會在 <em>if</em> 與 <em>else</em> 之間加入 <em>else if</em>。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">font-color($color)
+    if $color == Red
+        color #F00
+
+    else if $color == Blue
+        color #00F
+
+    else if $color == Green
+        color #0f0
+
+    else
+        color #000
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當變數 <em>$color</em> 填入的參數為 <em>Red</em> 時，<em>color</em> 屬性值為 <em>#F00</em>。若參數是 <em>Blue</em>，則 <em>color</em> 屬性值為 <em>#00F</em>...依此類推。假如參數不符合任一條件，則輸出 <em>else</em> 的內容。</p>
+<p>調用：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">.text-1
+    font-color(Red)
+
+.text-2
+    font-color(Blue)
+
+.text-3
+    font-color(Green)
+
+.text-4
+    font-color(false)
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.text-1 {
+    color: #f00;
+}
+
+.text-2 {
+    color: #00f;
+}
+
+.text-3 {
+    color: #0f0;
+}
+
+.text-4 {
+    color: #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>5. 範例五：</h4>
+<p>前面範例都在講當判定符合條件時輸出其內容，這邊要展示的則是直接定義「不符合」的條件，這種條件式通常適用在「除了某某條件外的情況」。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">font-color($color)
+    if (!($color == red))
+        color #000
+    else
+        color #F00
+
+div
+    font-color(white)
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>此條件式用字面解釋意思就是：代入參數除了 <em>red</em> 之外的參數，文字顏色通通是黑色（<em>#000</em>）。讓我們來看輸出結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    color: #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>不過像「除非」這樣的概念，別於上面 <em>(!(expr))</em>，Stylus 還提供另一種語法，叫做 <em>unless</em>。例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">font-color($color)        
+    unless $color == red
+        color #000
+
+div
+    font-color(white)
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    color: #000;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h2 id="act2">迭代（Iteration）</h2>
+<p>在 Stylus 中用來表示迭代的語法為 <em>for ... in</em>，同樣地，迭代有幾種手法可以運用，以下一一介紹。</p>
+<h4>1. 範例一：</h4>
+<p>看到 <em>for</em>，最直覺聯想到的當屬迴圈敘述了，我們可以設定一組數字範圍，透過迭代重複輸出迴圈裡的敘述句，直到變數與設定條件不符合為止。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">div
+    for num in 1 .. 5
+        z-index num
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們先看結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    z-index: 1;
+    z-index: 2;
+    z-index: 3;
+    z-index: 4;
+    z-index: 5;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://stylus-lang.com/" target="_blank">stylus</a></li><!-- https://stylus.bootcss.com/ -->
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
