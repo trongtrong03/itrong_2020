@@ -209,7 +209,7 @@ const cssData = [
     {
         id: 12,
         href: 'css_stylus_1',
-        title: 'CSS 預處理器語言──Stylus 教學（一）',
+        title: 'CSS 預處理器語言──Stylus 教學（一）：安裝與使用',
         time: '2020.10.20',
         tag1: true,
         tag1_name: 'Stylus',
@@ -221,7 +221,7 @@ const cssData = [
     {
         id: 13,
         href: 'css_stylus_2',
-        title: 'CSS 預處理器語言──Stylus 教學（二）',
+        title: 'CSS 預處理器語言──Stylus 教學（二）：基本語法',
         time: '2020.10.21',
         tag1: true,
         tag1_name: 'Stylus',
@@ -233,8 +233,20 @@ const cssData = [
     {
         id: 14,
         href: 'css_stylus_3',
-        title: 'CSS 預處理器語言──Stylus 教學（三）',
+        title: 'CSS 預處理器語言──Stylus 教學（三）：內建函式',
         time: '2020.10.23',
+        tag1: true,
+        tag1_name: 'Stylus',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 15,
+        href: 'css_stylus_4',
+        title: 'CSS 預處理器語言──Stylus 教學（四）：@mixins、@extend、@block',
+        time: '2020.10.24',
         tag1: true,
         tag1_name: 'Stylus',
         tag2: false,
