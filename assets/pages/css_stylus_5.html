@@ -23,9 +23,6 @@
     <ul>
         <li><a href="#act1">條件式（if）</a></li>
         <li><a href="#act2">迭代（Iteration）</a></li>
-        <!-- <li><a href="#act7">導入（@import）</a></li>
-        <li><a href="#act8">媒體查詢（@media）</a></li>
-        <li><a href="#act9">關鍵影格（@keyframes）</a></li> -->
     </ul>
 </div>
 
@@ -245,7 +242,14 @@ div
 <p><br></p>
 
 <h2 id="act2">迭代（Iteration）</h2>
-<p>在 Stylus 中用來表示迭代的語法為 <em>for ... in</em>，同樣地，迭代有幾種手法可以運用，以下一一介紹。</p>
+<p>在 Stylus 中用來表示迭代的語法為 <em>for ... in</em>，具體的語法規則為下：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">for &lt;val-name&gt; [, &lt;key-name&gt;] in &lt;expression&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>同樣地，迭代有幾種手法可以運用，以下一一介紹。</p>
 <h4>1. 範例一：</h4>
 <p>看到 <em>for</em>，最直覺聯想到的當屬迴圈敘述了，我們可以設定一組數字範圍，透過迭代重複輸出迴圈裡的敘述句，直到變數與設定條件不符合為止。</p>
 <div class="text-code is-stylus">
@@ -271,8 +275,151 @@ div
     <span>COPY</span>
 </button>
 </div>
-<p>這就是 <em>for</em> 的功用，首先在 <em>for</em> 後方給予一個變數名稱，然後定義其範圍，<em>..</em> 指的就是「到」的意思（包含前後值本身）。條件設定完成後，編譯時就會依照條件逐一執行 <em>for</em> 裡的內容，直至條件不符合時結束...也就是當變數 <em>num</em> 值為 <em>6</em> 的時候。</p>
+<p>首先在 <em>for</em> 後方給予一個變數名稱，然後定義其範圍，<em>..</em> 指的就是「到」的意思（包含前後值本身）。條件設定完成後，編譯時就會依照條件逐一執行 <em>for</em> 裡的內容，直至條件不符合時結束...也就是當變數 <em>num</em> 值為 <em>6</em> 的時候。</p>
+<p><br></p>
 
+<h4>2. 範例二：</h4>
+<p>當然啦，我們寫 CSS 不可能像範例一那樣在選擇器裡重複迭代相同的屬性，如果要令選擇器進行迭代應該要怎麼做？答案很簡單，只要把選擇器寫在 <em>for</em> 敘述裡即可，例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">for num in 1 .. 5
+    .layout-{num}
+        z-index num
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果選擇器名稱也要跟著迭代，則將變數名稱以嵌套 <em>{ }</em> 包覆起來即可。最後編譯結果為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.layout-1 {
+    z-index: 1;
+}
+
+.layout-2 {
+    z-index: 2;
+}
+
+.layout-3 {
+    z-index: 3;
+}
+
+.layout-4 {
+    z-index: 4;
+}
+
+.layout-5 {
+    z-index: 5;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>3. 範例三：</h4>
+<p>假如要迭代的對象是一組資料，那麼我們只要先宣告一個變數並指定好資料，接著讓 <em>for</em> 直接迭代該變數即可。具體作法為下：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">$names = john, peter, tom
+for name in $names
+    .user-{name}
+        background-image url('images/' + name + '.jpg')
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.user-john {
+    background-image: url("images/john.jpg");
+}
+
+.user-peter {
+    background-image: url("images/peter.jpg");
+}
+
+.user-tom {
+    background-image: url("images/tom.jpg");
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>範例四：</h4>
+<p>承襲上一個範例，我們也可以加入陣列的觀念，讓迭代裡的內容分別去指定位置。</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">$colors = is-red #F00, is-blue #00F, is-green #0F0
+for color in $colors
+    .{color[0]}
+        background-color color[1]
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.is-red {
+    background-color: #f00;
+}
+
+.is-blue {
+    background-color: #00f;
+}
+
+.is-green {
+    background-color: #0f0;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>範例五：</h4>
+<p>迭代的條件也可以進行運算，例如：</p>
+<div class="text-code is-stylus">
+<pre class="text-pre"><code class="scss">for num in 1 .. 5
+    .percent-{num * 10}
+        width 10% * num
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>編譯結果：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">.percent-10 {
+    width: 10%;
+}
+
+.percent-20 {
+    width: 20%;
+}
+
+.percent-30 {
+    width: 30%;
+}
+
+.percent-40 {
+    width: 40%;
+}
+
+.percent-50 {
+    width: 50%;
+}
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>以上就是迭代的使用方法，善用迭代的功能不僅可以使程式碼更加簡潔，也可以增加開發者的工作效率。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
