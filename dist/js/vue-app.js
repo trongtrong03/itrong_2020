@@ -607,11 +607,10 @@ const hikData = [
         href: 'hiking_001',
         time: '2020.08.08',
         name: '學田山',
-        s_title: '漫步知高圳，登高望學田。',
         title: '學田山',
         catalog: 'trail',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20200807'
     },
     {
@@ -619,11 +618,10 @@ const hikData = [
         href: 'hiking_002',
         time: '2020.08.11',
         name: '鳶嘴山',
-        s_title: '峭壁奇岩千仞立，半山人在霧中行。',
         title: '鳶嘴山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20191005'
     },
     {
@@ -631,11 +629,10 @@ const hikData = [
         href: 'hiking_003',
         time: '2020.08.19',
         name: '火炎山',
-        s_title: '黃雲掩地春草死，烈火誰分瓦與珠。',
         title: '小百岳 #35：火炎山',
         catalog: 'sm100',
         tag: true,
-        tag_name: '苗栗縣',
+        site: '苗栗縣',
         img_name: '20190428'
     },
     {
@@ -643,11 +640,10 @@ const hikData = [
         href: 'hiking_004',
         time: '2020.08.24',
         name: '大橫屏山',
-        s_title: '巒壠有合沓，往來無蹤轍。',
         title: '小百岳 #45：大橫屏山',
         catalog: 'sm100',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20200809'
     },
     {
@@ -655,11 +651,10 @@ const hikData = [
         href: 'hiking_005',
         time: '2020.09.01',
         name: '奇萊主山南峰',
-        s_title: '籃輿衝雨過南蠻，路入奇萊曠野間。',
         title: '百岳 #41：奇萊主山南峰',
         catalog: 'bm100',
         tag: true,
-        tag_name: '南投縣',
+        site: '南投縣',
         img_name: '20181013'
     },
     {
@@ -667,11 +662,10 @@ const hikData = [
         href: 'hiking_006',
         time: '2020.09.15',
         name: '波津加山',
-        s_title: '峭陟窮登眺遠時，千峰雲外碧如圍。',
         title: '谷關七雄 ● 老四：波津加山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20191201'
     },
     {
@@ -679,11 +673,10 @@ const hikData = [
         href: 'hiking_007',
         time: '2020.09.22',
         name: '東卯山',
-        s_title: '橫看成嶺側成峰，遠近高低各不同。',
         title: '谷關七雄 ● 老五：東卯山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20191214'
     },
     {
@@ -691,11 +684,10 @@ const hikData = [
         href: 'hiking_008',
         time: '2020.09.24',
         name: '唐麻丹山',
-        s_title: '今古長如白練飛，一條界破青山色。',
         title: '谷關七雄 ● 老么：唐麻丹山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20191215_1'
     },
     {
@@ -703,11 +695,10 @@ const hikData = [
         href: 'hiking_009',
         time: '2020.10.01',
         name: '屋我尾山',
-        s_title: '管領寒溪揖怪峰，徑穿鉅竹綠陰濃。',
         title: '谷關七雄 ● 老三：屋我尾山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20191215_2'
     },
     {
@@ -715,11 +706,10 @@ const hikData = [
         href: 'hiking_010',
         time: '2020.10.07',
         name: '馬崙山',
-        s_title: '悠悠虞坂路欹斜，遲日和風簇野花。',
         title: '谷關七雄 ● 老二：馬崙山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20200104'
     },
     {
@@ -727,11 +717,10 @@ const hikData = [
         href: 'hiking_011',
         time: '2020.10.10',
         name: '白毛山',
-        s_title: '峭壁擁雙扉，亭亭夾翠微。',
         title: '谷關七雄 ● 老六：白毛山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20200118'
     },
     {
@@ -739,56 +728,24 @@ const hikData = [
         href: 'hiking_012',
         time: '2020.10.17',
         name: '八仙山',
-        s_title: '山口含糊半吐雲，林頭時見綠紛紛。',
         title: '谷關七雄 ● 老大：八仙山',
         catalog: 'mm',
         tag: true,
-        tag_name: '台中市',
+        site: '台中市',
         img_name: '20200209'
     },
+    {
+        id: 12,
+        href: 'hiking_013',
+        time: '2020.10.29',
+        name: '阿冷山',
+        title: '谷關第「八」雄：小奇萊 ● 阿冷山',
+        catalog: 'mm',
+        tag: true,
+        site: '台中市',
+        img_name: '20200228'
+    },
 ]
-
-// https://sou-yun.cn/CharInClause.aspx
-// 一上一上又一上，一上直到高山上。
-// 舉頭紅日白雲低，四海五湖皆一望。
-// 花蹊十里入龍眠，臨眺三春踏翠巔。
-// 千疊蒼山披絮帽，萬重古木抱晴煙。
-// 當空流瀑逐雲下，平地飛峰倚日邊。
-// 身在虛無縹緲處，人間莫不又經年？
-// 古木濃蔭遮石徑，閒雲縹緲掩山巔。
-// 欄邊下瞰川流白，階上回眸夕照煙。
-// 一山孤立大江邊，直上生空問九天。
-// 登峰追憶千秋事，臨閣尋思萬古緣。
-// 峨峨東岳高，秀極衝青天
-// 青冥倚天開，彩錯疑畫出。
-// 只有天在上，更無山與齊。
-// 舉頭紅日近，回首白雲低。
-// 會當凌絕頂，一覽眾山小
-// 上頭壁立起千尋，下列群峰次第深。
-// 带岫凝全碧，障霞隐半红。
-// 瀉霧傾煙撼撼雷，滿山風雨助喧豗。
-// 霧重曉風輕，山高殘月午。
-// 山頂一陣風，霧向眼中漫。
-// 陡出三尺崖，下臨千尺地。
-// 亂石嶙峋似虎橫，陡然長嘯應風聲。
-// 崩騰山忽斷，陡絶勢難平。
-// 峭拔聳青天，巍峨鎮方國。
-// 峭壁倚層霄，長松蔭幽壑。
-// 峭壁咫尺間，敬畏驀然起。
-// 峭峰頂上著危亭，四面山開雲錦屏。
-// 峭排直上幾千尺，下有石路莓苔青。
-// 峭壁一重還一重，江流曲折亂山中。
-// 峭壁遙撐落照危，蜿蜿曲隴繞脩陂。
-// 峭壁千尋出世塵，下看煙火碧無垠。
-// 九十九峰何處是，峭帆已過利州城。
-// 峭壁奇峰抹遠天，山根環繞鏡含煙。
-// 霧靄濕空山，招提路未分。
-// 亭上橫看十六峰，峰頭煙靄碧連空。
-// 峰巒綿亙幾千里，半霽半陰輕靄中。
-// 悠悠風斾繞山川，山驛空濛雨似煙。
-
-
-
 
 const resData = [
     {

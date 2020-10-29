@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="page">
 <head>
     <title>iTrong work studio</title>
     <meta charset="UTF-8">
@@ -7,17 +7,17 @@
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- icon -->
-    <link href="./images/favicon.ico" rel="shortcut icon">
+    <link href="../images/favicon.ico" rel="shortcut icon">
     <!-- css -->
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <!-- jquery -->
-    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
     <article id="wrap">
         <header>
             <figure class="logo">
-                <a href="./index.html">
+                <a href="../index.html">
                     <span>iTrong <b>work studio</b></span>
                 </a>
             </figure>
@@ -25,28 +25,28 @@
             <nav :class="{ 'is-active' : navActive}">
                 <ul>
                     <li>
-                        <a  href="./index.html"><b>HOME</b></a>
+                        <a  href="../index.html"><b>HOME</b></a>
                     </li>
                     <li>
-                        <a  href="./html.html"><b>HTML</b></a>
+                        <a  href="../html.html"><b>HTML</b></a>
                     </li>
                     <li>
-                        <a  href="./css.html"><b>CSS</b></a>
+                        <a  href="../css.html"><b>CSS</b></a>
                     </li>
                     <li>
-                        <a  href="./javascript.html"><b>JavaScript</b></a>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
                     </li>
                     <li>
-                        <a  href="./app.html"><b>Applications</b></a>
+                        <a  href="../app.html"><b>Applications</b></a>
                     </li>
                     <li>
-                        <a  href="./misc.html"><b>Miscellaneous Notes</b></a>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
                     </li>
                     <li>
-                        <a  href="./resource.html"><b>Resources</b></a>
+                        <a  href="../resource.html"><b>Resources</b></a>
                     </li>
                     <li>
-                        <a  class="active"  href="./hiking.html"><b>Hiking</b></a>
+                        <a  class="active"  href="../hiking.html"><b>Hiking</b></a>
                     </li>
                 </ul>
                 <div class="nav-bottom">
@@ -63,7 +63,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
-                    <a class="msg" href="./contact.html" title="Contact me">
+                    <a class="msg" href="../contact.html" title="Contact me">
                         <i class="far fa-envelope"></i>
                     </a>
                 </div>
@@ -72,49 +72,82 @@
         </header>
         <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
         <main>
-            <section class="container-wrap">
-                <h1>Hiking</h1>
-                <div class="search-wrap">
-                    <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
-                    <datalist id="data">
-                        <!-- <option value="網頁前端"></option> -->
-                    </datalist>
-                    <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-13 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-13 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-13 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="../images/hiking/20200228/p11.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>阿冷山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>1,540m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.02.28</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>去回約 10K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>台中谷野會館</span><span>果園登山口</span><span>阿冷山北北峰</span><span>阿冷山主峰</span><span>折返</span><span>阿冷山前峰</span><span>折返</span><span>停車處</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>八仙山，位於八仙山國家森林遊樂區內，為谷關七雄之首。許多人看到名字，多半會將其與道教八仙產生聯想，然而實際上兩者並無關聯。在日據時期，八仙山原擬名八千山，是因其高度將近八千日尺的緣故，但後來則以名稱更為脫俗典雅的「仙」字定名至今。而八仙山也是我們挑戰谷關七雄完登的最後一站。</p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20200228/p01.jpg">
+    </figure>
+    <p>有些山友會從松鶴部落上八仙山，來回約１６公里，我們走的則是傳統路線，由八仙山森林遊樂區出發。八仙山早年日據時期是台灣三大林場之一，後來轉型森林遊樂區後，保留許多歷史遺跡，像是日本神社的遺址、台灣八景紀念碑等。</p>
+</div>
+
+
+<!-- Content end -->
                 </div>
-                <div class="photo-wrap">
-                    <div class="features-wrap">
-                        <div class="filter-list">
-                            <button :class="{ 'is-active': currentFilter === 'all' }" @click="setFilter('all')">全部</button>
-                            <button :class="{ 'is-active': currentFilter === 'bm100' }" @click="setFilter('bm100')">百岳</button>
-                            <button :class="{ 'is-active': currentFilter === 'sm100' }" @click="setFilter('sm100')">小百岳</button>
-                            <button :class="{ 'is-active': currentFilter === 'mm' }" @click="setFilter('mm')">中級山</button>
-                            <button :class="{ 'is-active': currentFilter === 'trail' }" @click="setFilter('trail')">郊山</button>
-                            <button :class="{ 'is-active': currentFilter === 'others' }" @click="setFilter('others')">其他</button>
-                        </div>
-                    </div>
-                    <div class="photo-tips">
-                        <p v-if="currentFilter === 'bm100'">百岳是指從台灣２５８座海拔超過３０００公尺的高山中，挑選出符合既定門檻的一百座高山。</p>
-                        <p v-if="currentFilter === 'sm100'">小百岳是行政院體育委員會為推廣全民登山運動，自各縣市遴選一百座平易近人的郊山，鼓勵民眾多多親近山林，享受自然。</p>
-                        <p v-if="currentFilter === 'mm'">中級山介於郊山與高山之間，大多泛指那些高度約一千初到三千公尺的深山，有些中級山難度甚至還比百岳困難。</p>
-                        <p v-if="currentFilter === 'trail'">除了高山與中級山之外的山基本皆可稱作郊山，通常距離都市不遠，易達性高，挑戰難度低。</p>
-                    </div>
-                    <ul class="photo-list">
-                        <li class="photo-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
-                            <a :href="'pages/' + item.href + '.html'">
-                                <figure>
-                                    <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
-                                    <figcaption v-text="item.name"></figcaption>
-                                </figure>
-                                <hgroup>
-                                    <h2 v-text="item.site"></h2>
-                                    <h3 v-text="item.title"></h3>
-                                </hgroup>
-                                <div>
-                                    <time v-text="item.time"></time>
-                                </div>
-                            </a>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../hiking.html'"></button>
+                    
+                    <a href="#wrap" id="sideTop" title="Top"></a>
+                    <button id="sideList" title="List"></button>
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterHik" :key="item.id">
+                        
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
                         </li>
                     </ul>
+                    <button class="text-close"></button>
                 </div>
             </section>
         </main>
@@ -160,7 +193,7 @@
                                 <time>2018.04 ~ 現在</time>
                                 <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
                             </p>
-                            <!-- <p><a href="./work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
                         </hgroup>
                         <hgroup>
                             <h2>Competency</h2>
@@ -211,10 +244,30 @@
         <div class="particles-bg"></div>
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
     </article>
-    <script src="./js/jquery.particleground.js"></script>
-    <script src="./js/vue.min.js"></script>
-    <script src="./js/vue-app.js"></script>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
 
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
     
 </body>
 </html>

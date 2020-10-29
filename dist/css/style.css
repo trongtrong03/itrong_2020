@@ -11244,10 +11244,6 @@ footer {
   content: 'published @ ';
 }
 
-.photo-item div time::after {
-  content: ' / ';
-}
-
 .photo-item div span {
   display: inline-block;
   vertical-align: top;
