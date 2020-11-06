@@ -283,11 +283,13 @@
 .photo-item {
     position: relative;
     z-index: 1;
-    display: block;
+    display: inline-block;
+    vertical-align: top;
     width: calc(33.33% - 2rem / 3);
+    list-style-type: none;
     margin-right: 1rem;
     margin-bottom: 3rem;
-    float: left;
+    // float: left;
     animation-name: filterFadeIn;
     animation-duration: .5s;
     animation-fill-mode: both;

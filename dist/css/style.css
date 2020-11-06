@@ -11155,11 +11155,12 @@ footer {
 .photo-item {
   position: relative;
   z-index: 1;
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   width: calc(33.33% - 2rem / 3);
+  list-style-type: none;
   margin-right: 1rem;
   margin-bottom: 3rem;
-  float: left;
   -webkit-animation-name: filterFadeIn;
   animation-name: filterFadeIn;
   -webkit-animation-duration: .5s;

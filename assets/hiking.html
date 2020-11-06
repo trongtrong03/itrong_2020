@@ -31,7 +31,7 @@
                         <p v-if="currentFilter === 'mm'">中級山介於郊山與高山之間，大多泛指那些高度約一千初到三千公尺的深山，有些中級山難度甚至還比百岳困難。</p>
                         <p v-if="currentFilter === 'trail'">除了高山與中級山之外的山基本皆可稱作郊山，通常距離都市不遠，易達性高，挑戰難度低。</p>
                     </div>
-                    <ul class="photo-list">
+                    <ul class="photo-list removeTextNodes">
                         <li class="photo-item" v-if="currentFilter === item.catalog || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>

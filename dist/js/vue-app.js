@@ -610,7 +610,7 @@ const hikData = [
         title: '學田山',
         catalog: 'trail',
         tag: true,
-        site: '台中市',
+        site: '台中市烏日區',
         img_name: '20200807'
     },
     {
@@ -621,7 +621,7 @@ const hikData = [
         title: '鳶嘴山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20191005'
     },
     {
@@ -632,7 +632,7 @@ const hikData = [
         title: '小百岳 #35：火炎山',
         catalog: 'sm100',
         tag: true,
-        site: '苗栗縣',
+        site: '苗栗縣苑裡鎮',
         img_name: '20190428'
     },
     {
@@ -643,7 +643,7 @@ const hikData = [
         title: '小百岳 #45：大橫屏山',
         catalog: 'sm100',
         tag: true,
-        site: '台中市',
+        site: '台中市太平區',
         img_name: '20200809'
     },
     {
@@ -654,7 +654,7 @@ const hikData = [
         title: '百岳 #41：奇萊主山南峰',
         catalog: 'bm100',
         tag: true,
-        site: '南投縣',
+        site: '南投縣仁愛鄉',
         img_name: '20181013'
     },
     {
@@ -665,7 +665,7 @@ const hikData = [
         title: '谷關七雄 ● 老四：波津加山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20191201'
     },
     {
@@ -676,7 +676,7 @@ const hikData = [
         title: '谷關七雄 ● 老五：東卯山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20191214'
     },
     {
@@ -687,7 +687,7 @@ const hikData = [
         title: '谷關七雄 ● 老么：唐麻丹山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20191215_1'
     },
     {
@@ -698,7 +698,7 @@ const hikData = [
         title: '谷關七雄 ● 老三：屋我尾山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20191215_2'
     },
     {
@@ -709,7 +709,7 @@ const hikData = [
         title: '谷關七雄 ● 老二：馬崙山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20200104'
     },
     {
@@ -720,7 +720,7 @@ const hikData = [
         title: '谷關七雄 ● 老六：白毛山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20200118'
     },
     {
@@ -731,7 +731,7 @@ const hikData = [
         title: '谷關七雄 ● 老大：八仙山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20200209'
     },
     {
@@ -742,8 +742,19 @@ const hikData = [
         title: '谷關第「八」雄：小奇萊 ● 阿冷山',
         catalog: 'mm',
         tag: true,
-        site: '台中市',
+        site: '台中市和平區',
         img_name: '20200228'
+    },
+    {
+        id: 13,
+        href: 'hiking_014',
+        time: '2020.11.04',
+        name: '審馬陣山',
+        title: '帝王座巡禮（一）百岳 #83：審馬陣山',
+        catalog: 'bm100',
+        tag: true,
+        site: '台中市和平區',
+        img_name: '20191011'
     },
 ]
 
