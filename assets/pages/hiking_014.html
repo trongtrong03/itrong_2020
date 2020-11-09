@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-14 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-14 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-14 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191011/p30.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>審馬陣山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>3,141m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.10.11</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span><!-- 去回約 10K --></span></p>
+            </div>
+            <div class="is-path">
+                <p><span>[D1]思源埡口</span><span>勝光山</span><span>6.8K登山口紮營</span><span>[D2]出發</span><span>多加屯山</span><span>雲稜山莊</span><span>審馬陣山</span><span>審馬陣山屋</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>在動漫圈長年流傳一段戲言：「四天王有五個，這是常識」，這句話如今也能套用在谷關七雄身上，有一座山景秀麗，富有挑戰性，被廣大山友評為谷關七雄遺珠，是為七雄隱藏角色。祂，就是阿冷山。</p>
+<p>完成谷關七雄完登活動的我們，自然是不會漏掉這座早有耳聞的隱藏第八雄，趁著穩定晴朗的二月份即將結束之際，趕緊前往讓整個谷關七雄挑戰更加圓滿完整。</p>
+<p>阿冷山較為人熟知的路線有兩處，我們走的是果園線，這裡發生了一小段插曲──原先我們打算直接驅車上果園登山口，但不巧那天部落正在舉行喪禮，因此實施車輛出入管制，我們的車只能被迫留在台中谷野會館下方，阿冷山與唐麻丹山兩路之間的橋樑附近。</p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191011/p01.jpg">
+    </figure>
+    <p>因此我們多踢了很長一段石頭路，這段爬升的過程不禁令我們想起了白毛山，正好白毛山也在附近，阿冷山的旁邊，因此常有山友將兩座山排在一起健走，簡稱「阿白縱走」。</p>
+    <p>順帶一提，這裡的露營區很多（應該說整個谷關的露營區多如繁星）。</p>
+</div>
+
+
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
