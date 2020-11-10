@@ -278,6 +278,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 18,
+        href: 'css_input_style',
+        title: '關於表單元素（input、select、textarea...）的三兩事',
+        time: '2020.11.10',
+        tag1: true,
+        tag1_name: 'CSS',
+        tag2: true,
+        tag2_name: 'CSS3',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [

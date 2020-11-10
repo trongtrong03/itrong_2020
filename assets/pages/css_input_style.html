@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "css": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getCssIndex({ c_list, index: c_list.length-19 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getCssIndex({ c_list, index: c_list.length-19 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>關於表單元素（<em>&lt;input&gt;</em>、<em>&lt;select&gt;</em>、<em>&lt;textarea&gt;</em>...）的樣式呈現，一直以來都是設計師與前端工程師之間溝通的難題之一。對大部分的設計師來說，並不喜歡瀏覽器呈現的表單元素原生樣式──儘管部份表單元素類別可以兼容 CSS 直接設定的屬性內容，但像核選方塊（<em>checkbox</em>）、單選按鈕（<em>radio</em>）等就無法直接套用指定樣式，必須透過其他方式來達成我們想要的設計。本篇將介紹如何實現上述那些類型的表單元素客製化樣式的方法，除此之外，也將介紹一些 CSS3 針對表單元素提供的新增屬性。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">checkbox / radio</a></li>
+        <li><a href="#act2">file</a></li>
+        <li><a href="#act3">appearance</a></li>
+        <li><a href="#act4">resize</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">checkbox / radio</h2>
+
+
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://stylus-lang.com/" target="_blank">stylus</a></li><!-- https://stylus.bootcss.com/ -->
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "css": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
