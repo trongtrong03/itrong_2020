@@ -762,11 +762,22 @@ const hikData = [
         href: 'hiking_014',
         time: '2020.11.04',
         name: '審馬陣山',
-        title: '帝王座巡禮（一）百岳 #83：審馬陣山',
+        title: '帝王座巡禮── 百岳 #83：審馬陣山',
         catalog: 'bm100',
         tag: true,
         site: '台中市和平區',
         img_name: '20191011'
+    },
+    {
+        id: 13,
+        href: 'hiking_015',
+        time: '2020.11.10',
+        name: '南湖北山',
+        title: '帝王座巡禮── 百岳 #22：南湖北山',
+        catalog: 'bm100',
+        tag: true,
+        site: '宜蘭縣南澳鄉',
+        img_name: '20191012_1'
     },
 ]
 

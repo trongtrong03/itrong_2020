@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-15 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-15 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-15 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p10.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>南湖北山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>宜蘭縣南澳鄉</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>3,536m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.10.12</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span><!-- 去回約 10K --></span></p>
+            </div>
+            <div class="is-path">
+                <p><span>[D3]審馬陣山屋</span><span>南湖北山</span><span>五岩峰</span><span>南湖圈谷</span><span>南湖山屋</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>前情提要：<br>原本預計第二天抵達南湖山屋的我們，由於一些因素決定提前於審馬陣山屋歇腳，儘管後續行程多少受到影響，但爬山嘛，計畫趕不上變化也是常有的事。套句２０１５年經典山難電影《聖母峰》（Everest）裡的經典台詞──「山永遠都在那裡」，少爬一兩座也不會怎麼樣，不僅未來有的是機會，也可以是說服自己再次造訪同一條山路的藉口。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p01.jpg">
+    </figure>
+    <p>凌晨４：００，山裡的夜風冷得令人直打哆嗦，看著遠方山腳燈火通明，內心不禁產生「別人在溫暖的被窩裡睡大覺，為什麼我卻在這裡受苦受凍」的負面思緒。然而身處深山中的我們別無選擇，與其放棄行程下山之後感到懊悔，不如操著髒話繼續向前邁進，畢竟行前不知已看過多少山友分享的照片，未來親眼所見、親身所感的一切，絕對和「後悔」兩字扯不上關聯。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p02.jpg">
+    </figure>
+    <p>山形上的光點不是星空，而是山友額際上的頭燈。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p03.jpg">
+    </figure>
+    <p>時間５：３０，天幕掀起一抹魚白，我們來到南湖北山與南湖山屋交會的岔口，與審馬陣山一樣，南湖北山只需要十幾分鐘就能登頂。雖然打在臉上的寒風十分刺骨，但想起再不一會兒就能迎接人生第一道高山上的曙光，熾熱的心火正在體內熊熊燃燒著。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p04.jpg">
+        <img src="@@webRoot/images/hiking/20191012_1/p05.jpg">
+    </figure>
+    <p>在白色自黑幕間暈染調和之後，上帝的水彩筆劃開的是一線朱紅。撇開飀飀強風不談，南湖北山的山徑十分清楚好走。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p06.jpg">
+        <img src="@@webRoot/images/hiking/20191012_1/p07.jpg">
+        <img src="@@webRoot/images/hiking/20191012_1/p08.jpg">
+    </figure>
+    <p>南湖北山，百岳編號２２，海拔３５３６公尺。看名字就知道祂和南湖東峰、南峰等同屬南湖大山山群，值得注意的是，南湖北山是灌溉蘭陽平原，為宜蘭縣最主要的河川──蘭陽溪的源頭。所以當你登上南湖北山時，可以看到標示山名及高度的木樁上，還多了一塊刻印著「蘭陽溪源頭」的石碣。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p09.jpg">
+    </figure>
+    <p>迎接從海平面底下逐漸升起的太陽，看來今天也是一個晴朗的早晨。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_1/p10.jpg">
+        <img src="@@webRoot/images/hiking/20191012_1/p11.jpg">
+    </figure>
+    <p>1</p>
+</div>
+
+
+
+
+
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
