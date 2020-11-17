@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "hike": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-16 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-16 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-16 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_2/p35.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>南湖大山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市和平區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>3,740m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2019.10.12</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span><!-- 去回約 10K --></span></p>
+            </div>
+            <div class="is-path">
+                <p><span>[D3]南湖山屋</span><span>南湖大山</span><span>南湖山屋</span><span>[D4]折返</span><span>思源埡口</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>前情提要：<br>原本預計第二天抵達南湖山屋的我們，由於一些因素決定提前於審馬陣山屋歇腳，儘管後續行程多少受到影響，但爬山嘛，計畫趕不上變化也是常有的事。套句２０１５年經典山難電影《聖母峰》（Everest）裡的經典台詞──「山永遠都在那裡」，少爬一兩座也不會怎麼樣，不僅未來有的是機會，也可以是說服自己再次造訪同一條山路的藉口。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20191012_2/p01.jpg">
+    </figure>
+    <p>凌晨４：００，山裡的夜風冷得令人直打哆嗦，看著遠方山腳燈火通明，內心不禁產生「別人在溫暖的被窩裡睡大覺，為什麼我卻在這裡受苦受凍」的負面思緒。然而身處深山中的我們別無選擇，與其放棄行程下山之後感到懊悔，不如操著髒話繼續向前邁進，畢竟行前不知已看過多少山友分享的照片，未來親眼所見、親身所感的一切，絕對和「後悔」兩字扯不上關聯。</p>
+</div>
+
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

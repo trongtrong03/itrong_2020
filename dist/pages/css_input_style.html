@@ -96,6 +96,29 @@
 </div>
 
 <h2 id="act1">checkbox / radio</h2>
+<p>首先要介紹的是 <em>&lt;input&gt;</em> 的 <em>checkbox</em> Type，這種類別我們通常稱之為核選方塊，許多設計師都不甚喜歡瀏覽器預設的樣式，如下：</p>
+<p><input type="checkbox"> 項目一<br><input type="checkbox"> 項目二<br><input type="checkbox"> 項目三</p>
+<p>我們可以透過以下方法，自訂核選方塊的樣式。首先，HTML 原始碼結構長這樣：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;input type="checkbox" id="c1" name="cc" &gt;
+&lt;label for="c1"&gt;&lt;span&gt;&lt;/span&gt;項目一&lt;/label&gt;
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>使用 <em>&lt;label&gt;</em> 標籤並添加 <em>for</em> 屬性，可以指定點擊時連攜對應的 <em>&lt;input&gt;</em> ID 名稱。此外，在 <em>&lt;label&gt;</em> 內加入 <em>&lt;span&gt;</em> 目的為用其來設定核選方塊的樣式，當然，要使用別的標籤也可以，但須注意是否合乎內容模型規則。</p>
+
+<p>再來是 CSS 的部分：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input[type="checkbox"] {
+　　display: none;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
 
 
 

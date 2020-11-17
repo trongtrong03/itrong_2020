@@ -779,6 +779,17 @@ const hikData = [
         site: '宜蘭縣南澳鄉',
         img_name: '20191012_1'
     },
+    {
+        id: 14,
+        href: 'hiking_016',
+        time: '2020.11.16',
+        name: '南湖大山',
+        title: '帝王座巡禮── 百岳 #8：南湖大山',
+        catalog: 'bm100',
+        tag: true,
+        site: '台中市和平區',
+        img_name: '20191012_2'
+    },
 ]
 
 const resData = [
