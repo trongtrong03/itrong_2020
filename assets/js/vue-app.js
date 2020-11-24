@@ -1621,6 +1621,60 @@ const resData = [
         img: true,
         img_name: 'maxiang'
     },
+    {
+        id: 92,
+        href: 'https://uidesigndaily.com/',
+        title: 'UI Design Daily',
+        desc: '固定每天更新一款網站 UI 設計，可免費使用。',
+        tag: 'material',
+        img: true,
+        img_name: 'uidesigndaily'
+    },
+    {
+        id: 93,
+        href: 'https://graygrids.com/',
+        title: 'GRAYGRIDS',
+        desc: '免費的 Bootstrap 主題範本。',
+        tag: 'material',
+        img: true,
+        img_name: 'graygrids'
+    },
+    {
+        id: 94,
+        href: 'https://www.magicpattern.design/tools/css-backgrounds?fbclid=IwAR0MPswKX1IrCpKXnLHojIHQ_I78c-OqM-Amh6HdPTXZBQUc8e9j2Q_PwQ8',
+        title: 'MagicPattern',
+        desc: '線上生成 CSS 背景樣式，除了可依照使用者需求客製化，也有海量範本可以直接複製語法使用。',
+        tag: 'webfront',
+        img: true,
+        img_name: 'magicpattern'
+    },
+    {
+        id: 95,
+        href: 'https://getcssscan.com/css-box-shadow-examples',
+        title: 'CSS Scan',
+        desc: '提供 83 款由 CSS 寫成的陰影（box-shadow）樣式。',
+        tag: 'webfront',
+        img: true,
+        img_name: 'cssscan'
+    },
+    {
+        id: 96,
+        href: 'https://www.giftofspeed.com/?fbclid=IwAR176Y4lTmWzP_KsAOtCnu7aGZSJ-Cb1Hq4wl6DwOLZE6ZzWixXs93OxirU',
+        title: 'GiftOfSpeed',
+        desc: '一款檢測網站效能的線上工具，測試並列出網站需要改善的建議。',
+        tag: 'webfront',
+        img: true,
+        img_name: 'giftofspeed'
+    },
+    {
+        id: 97,
+        href: 'https://screenshot.rocks/?fbclid=IwAR3zl09EzHWh0wlPJf4fb1p40wouYZZ54Vu-oj1-nAL7zLLfqgAfXY3GNDI',
+        title: 'Screenshot.Rocks',
+        desc: '如果需要將網頁製作成瀏覽器或手機瀏覽器模型，可以透過此線上工具輕鬆達到需求。',
+        tag: 'material',
+        img: true,
+        img_name: 'screenshot'
+    },
 ]
 
 const wkData = [
