@@ -65,6 +65,7 @@ body {
     padding-left: 15rem;
     animation-name: fadeIn;
     animation-duration: .5s;
+    .hiking &,
     .iframe & {
         padding-left: 0;
     }
@@ -79,6 +80,9 @@ main {
     padding: 2rem 2rem 0;
     @include MQ(max-1024) {
         padding: 5rem 1rem 0;
+        .hiking & {
+            padding-top: 3rem;
+        }
     }
 }
 
@@ -227,7 +231,8 @@ main {
                 content: '\f060';
             }
         }
-        &#sideList {
+        &#sideList,
+        &#hikList {
             &::before {
                 content: '\f550';
             }
@@ -247,6 +252,9 @@ main {
             color: $second;
             background-color: $first;
         }
+    }
+    .hiking & {
+        left: 50%;
     }
     @include MQ(max-1024) {
         display: none;
@@ -274,3 +282,43 @@ main {
 }
 
 
+// btn
+.btn-home {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    display: block;
+    width: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $first;
+    background-color: rgba(255, 255, 255, .5);
+    border: 0;
+    &::before {
+        content: '\f015';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+}
+
+.btn-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    display: block;
+    width: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $first;
+    background-color: rgba(255, 255, 255, .5);
+    border: 0;
+    &::before {
+        content: '\f077';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+}

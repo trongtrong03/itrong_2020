@@ -402,6 +402,62 @@
 }
 
 
+// 健行列表
+.hiking-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: block;
+    width: 30rem;
+    height: 100%;
+    background-color: $first;
+    padding-top: 5rem;
+    transform: translateX(-100%);
+    transition: transform .3s;
+    ul {
+        height: 100%;
+        @include scrollbar(#FFF);
+    }
+    li {
+        display: block;
+        @include clearfix;
+        padding: 0.5rem 1rem;
+        transition: background-color .3s;
+        figure {
+            width: 4rem;
+            padding-left: 1rem;
+            float: left;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        h2 {
+            width: calc(100% - 4rem);
+            line-height: 3rem;
+            font-size: 1rem;
+            color: $second;
+            padding: 0 1rem;
+            float: left;
+            transition: color .3s;
+            @include text-overflow;
+        }
+        &:hover {
+            background-color: $second;
+            h2 {
+                color: #fff;
+            }
+        }
+    }
+    &.is-active {
+        box-shadow: 2px 0 14px 0px rgba(0, 0, 0, 0.4);
+        transform: translateX(0%);
+    }
+}
+
+
+
 // work
 .work-wrap {
     padding-bottom: 5rem;

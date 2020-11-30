@@ -3,28 +3,39 @@
     @@if (context.html===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/html.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
     }
     @@if (context.css===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/css.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
     }
     @@if (context.js===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/javascript.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
     }
     @@if (context.app===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/app.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
     }
     @@if (context.misc===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/misc.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
     }
     @@if (context.hike===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/hiking.html'"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="hikList" title="List"></button>
     }
-    <a href="#wrap" id="sideTop" title="Top"></a>
-    <button id="sideList" title="List"></button>
+    
 </aside>
 
 <div class="text-list">
@@ -44,11 +55,22 @@
         @@if (context.misc===true ) {
         <li v-for="item in filterMisc" :key="item.id">
         }
-        @@if (context.hike===true ) {
+    </ul>
+    <button class="text-close"></button>
+</div>
+
+@@if (context.hike===true ) {
+<div class="hiking-list">
+    <ul>
         <li v-for="item in filterHik" :key="item.id">
-        }
-            <a :href="item.href + '.html'" v-text="item.title"></a>
+            <a :href="item.href + '.html'">
+                <figure>
+                    <img :src="'../images/hiking/' + item.img_name + '/cover.jpg'">
+                </figure>
+                <h2 v-text="item.title"></h2>
+            </a>
         </li>
     </ul>
     <button class="text-close"></button>
 </div>
+}

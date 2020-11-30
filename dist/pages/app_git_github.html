@@ -70,7 +70,6 @@
                 <button class="nav-close" @click="navActive = !navActive"></button>
             </nav>
         </header>
-        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
@@ -122,11 +121,12 @@
                     
                         <button id="sideBack" title="Back" onclick="javascript:location.href='../app.html'"></button>
                         <button id="sideCatalog" title="Catalog"></button>
+                        <a href="#wrap" id="sideTop" title="Top"></a>
+                        <button id="sideList" title="List"></button>
                     
                     
                     
-                    <a href="#wrap" id="sideTop" title="Top"></a>
-                    <button id="sideList" title="List"></button>
+    
                 </aside>
 
                 <div class="text-list">
@@ -138,12 +138,11 @@
                         <li v-for="item in filterApp" :key="item.id">
                         
                         
-                        
-                            <a :href="item.href + '.html'" v-text="item.title"></a>
-                        </li>
                     </ul>
                     <button class="text-close"></button>
                 </div>
+
+                
             </section>
         </main>
         <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
@@ -239,6 +238,7 @@
         </div>
         <div class="particles-bg"></div>
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
     </article>
     <script src="../js/jquery.particleground.js"></script>
     <script src="../js/vue.min.js"></script>

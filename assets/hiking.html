@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="hiking">
 @@include("_head.html")
 <body>
     <article id="wrap">
-        @@include("_header.html", { "hike": "active" })
+        <!-- @@include("_header.html", { "hike": "active" }) -->
         <main>
             <section class="container-wrap">
                 <h1>Hiking</h1>
@@ -50,6 +50,8 @@
                     </ul>
                 </div>
             </section>
+            <a href="index.html" class="btn-home"></a>
+            <a href="#wrap" class="btn-top"></a>
         </main>
         @@include("_footer.html")
     </article>

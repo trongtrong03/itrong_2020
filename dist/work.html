@@ -70,7 +70,6 @@
                 <button class="nav-close" @click="navActive = !navActive"></button>
             </nav>
         </header>
-        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
         <main>
             <section class="container-wrap">
                 <h1>專案集錦</h1>
@@ -181,6 +180,7 @@
         </div>
         <div class="particles-bg"></div>
         <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
     </article>
     <script src="./js/jquery.particleground.js"></script>
     <script src="./js/vue.min.js"></script>

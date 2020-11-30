@@ -1908,8 +1908,13 @@ var wrap = new Vue({
                 $(".overlay").addClass("is-active");
             });
 
+            $("#hikList").click(function() {
+                $(".hiking-list").addClass("is-active");
+                $(".overlay").addClass("is-active");
+            });
+
             $(".text-close").click(function() {
-                $(".text-list").removeClass("is-active");
+                $(".text-list, .hiking-list").removeClass("is-active");
                 $(".overlay").removeClass("is-active");
             });
 
@@ -1929,7 +1934,7 @@ var wrap = new Vue({
             // text
             $(".overlay").click(function() {
                 $(this).removeClass("is-active");
-                $(".text-list").removeClass("is-active");
+                $(".text-list, .hiking-list").removeClass("is-active");
                 $(".text-catalog").removeClass("is-popup");
             });
         },
