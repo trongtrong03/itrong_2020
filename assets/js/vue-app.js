@@ -769,7 +769,7 @@ const hikData = [
         img_name: '20191011'
     },
     {
-        id: 13,
+        id: 14,
         href: 'hiking_015',
         time: '2020.11.10',
         name: '南湖北山',
@@ -780,7 +780,7 @@ const hikData = [
         img_name: '20191012_1'
     },
     {
-        id: 14,
+        id: 15,
         href: 'hiking_016',
         time: '2020.11.16',
         name: '南湖大山',
@@ -789,6 +789,17 @@ const hikData = [
         tag: true,
         site: '台中市和平區',
         img_name: '20191012_2'
+    },
+    {
+        id: 16,
+        href: 'hiking_017',
+        time: '2020.11.29',
+        name: '九九峰',
+        title: '九九峰森林步道',
+        catalog: 'others',
+        tag: true,
+        site: '南投縣草屯區',
+        img_name: '20201128'
     },
 ]
 
