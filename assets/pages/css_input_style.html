@@ -22,9 +22,8 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">checkbox / radio</a></li>
-        <li><a href="#act2">file</a></li>
-        <li><a href="#act3">appearance</a></li>
-        <li><a href="#act4">resize</a></li>
+        <li><a href="#act2">appearance</a></li>
+        <li><a href="#act3">resize</a></li>
     </ul>
 </div>
 
@@ -51,17 +50,146 @@
     <span>COPY</span>
 </button>
 </div>
+<p>將 <em>&lt;input&gt;</em> 顯示模型指定為隱藏。</p>
 
-
-
-
-
-<!-- 參考資料 -->
-<div class="text-refer">
-    <ul>
-        <li><a href="https://stylus-lang.com/" target="_blank">stylus</a></li><!-- https://stylus.bootcss.com/ -->
-    </ul>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input[type="checkbox"] + label span {
+    /* CSS */ 
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
 </div>
+<p>利用組合選擇器的概念，把想要呈現的樣式寫在 <em>span</em> 或你自行指定的其他元素裡。這部份設定的是未核選時的狀態，我們必須再加上核選時的樣式，語法為下：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input[type="checkbox"]:checked + label span {
+    /* CSS */
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>:checked</em> 表示當 <em>input</em> 元素被選取時。以下觀看實際範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="gLWXBa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-checkbox-select style">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/gLWXBa">
+          CSS-checkbox-select style</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>至於單選按鈕 <em>radio</em> 也是相同作法，只需要將 CSS <em>input</em> 中的 <em>type</em> 參數改為 <em>radio</em> 即可。</p>
+<p><br></p>
+
+<h2 id="act2">appearance</h2>
+<p>appearance 翻成中文意為「出現」，在 CSS 世界中，這個屬性則是用於改變指定元素對象的「外觀」，什麼意思呢？舉例來說，像 <em>&lt;input&gt;</em>、<em>&lt;select&gt;</em>、<em>&lt;button&gt;</em> ...這些可與使用者觸發互動的表單元素，在各大瀏覽器中都有其預設的基本樣式。例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="qBabOPj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: appearance">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/qBabOPj">
+          CSS3: appearance</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如果我們想改變或重置它們的外觀，就能透過這個屬性去指定想賦予的外觀類型，例如：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    appearance: button;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>將 <em>div</em> 元素設定為按鈕的外觀。</p>
+<p>關於其可使用的參數值非常繁多，有興趣的可以直接到 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance" target="_blank">MDN web docs</a> 的相關介紹頁面查看。儘管參數值林林總總，一般較常使用到的場合仍是將元素預設外觀重置（類似空白的概念）的時候。例：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>也因為 <em>appearance</em> 屬性仍長期處於非完全被瀏覽器完全相容的狀態，使用時保險起見都會加上不同瀏覽器的前綴詞（Prefix）。</p>
+<figure>
+    <img src="@@webRoot/images/css/input-style-1.jpg">
+    <figcaption><a href="https://caniuse.com/?search=appearance" target="_blank">Can I use</a> 的相容性一覽表。</figcaption>
+</figure>
+<p>最後來看看我們將前一個範例裡的表單元素通通添加 <em>appearance: none</em> 的結果會變成什麼樣子：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="MWjKaVa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: appearance-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/MWjKaVa">
+        CSS3: appearance-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>嗯......似乎有些微妙。</p>
+<p><br></p>
+
+<h2 id="act3">resize</h2>
+<p><em>resize</em> 也是 CSS3 中新增的屬性，其目的用於使指定元素是否可以讓使用者調整大小，就像 <em>&lt;textarea&gt;</em> 文字區域元素範圍右下角的那顆可以拖曳尺寸的小三角形。語法：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">div {
+    resize: none;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>none</em> 為預設值，表示目標對象的大小不可調整，所以這個屬性值一般會用在 <em>&lt;textarea&gt;</em> 上。例如：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="qBabbyL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: resize-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBabbyL">
+        CSS3: resize-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>如果要在其他元素上使用這個屬性，則必須另外加上 <em>overflow</em>，且屬性值非 <em>visible</em>，否則 <em>resize</em> 將沒有作用。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="xxEZZmQ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS3: resize-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/xxEZZmQ">
+        CSS3: resize-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>resize</em> 值為 <em>both</em> 表示元素寬高皆允許使用者拖曳調整尺寸。下方列出 <em>resize</em> 可使用的參數值：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">屬性</div>
+        <div class="t-f3">用途</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>none</em></div>
+        <div class="t-f3">預設值，表示不允許使用者調整大小</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>both</em></div>
+        <div class="t-f3">表示寬高皆可調整</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>horizontal</em></div>
+        <div class="t-f3">僅允許調整寬度</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>vertical</em></div>
+        <div class="t-f3">僅允許調整高度</div>
+    </div>
+</div>
+<p>最後談談有關 <em>resize</em> 瀏覽器相容性的問題，雖然 <em>resize</em> 沒有支援瀏覽器前綴詞，但透過 <a href="https://caniuse.com/css-resize" target="_blank">Can I use</a> 可以發現大多主流瀏覽器都已能正確理解該屬性。</p>
+<figure>
+    <img src="@@webRoot/images/css/input-style-2.jpg">
+</figure>
 <!-- Content end -->
                 </div>
                 @@include("../_aside.html", { "css": true, "pages": true })
