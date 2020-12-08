@@ -621,6 +621,7 @@ const hikData = [
         name: '學田山',
         title: '學田山',
         catalog: 'trail',
+        area: 'center',
         tag: true,
         site: '台中市烏日區',
         img_name: '20200807'
@@ -632,6 +633,7 @@ const hikData = [
         name: '鳶嘴山',
         title: '鳶嘴山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191005'
@@ -643,6 +645,7 @@ const hikData = [
         name: '火炎山',
         title: '小百岳 #35：火炎山',
         catalog: 'sm100',
+        area: 'north',
         tag: true,
         site: '苗栗縣苑裡鎮',
         img_name: '20190428'
@@ -654,6 +657,7 @@ const hikData = [
         name: '大橫屏山',
         title: '小百岳 #45：大橫屏山',
         catalog: 'sm100',
+        area: 'center',
         tag: true,
         site: '台中市太平區',
         img_name: '20200809'
@@ -665,6 +669,7 @@ const hikData = [
         name: '奇萊主山南峰',
         title: '百岳 #41：奇萊主山南峰',
         catalog: 'bm100',
+        area: 'center',
         tag: true,
         site: '南投縣仁愛鄉',
         img_name: '20181013'
@@ -676,6 +681,7 @@ const hikData = [
         name: '波津加山',
         title: '谷關七雄 ● 老四：波津加山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191201'
@@ -687,6 +693,7 @@ const hikData = [
         name: '東卯山',
         title: '谷關七雄 ● 老五：東卯山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191214'
@@ -698,6 +705,7 @@ const hikData = [
         name: '唐麻丹山',
         title: '谷關七雄 ● 老么：唐麻丹山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191215_1'
@@ -709,6 +717,7 @@ const hikData = [
         name: '屋我尾山',
         title: '谷關七雄 ● 老三：屋我尾山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191215_2'
@@ -720,6 +729,7 @@ const hikData = [
         name: '馬崙山',
         title: '谷關七雄 ● 老二：馬崙山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20200104'
@@ -731,6 +741,7 @@ const hikData = [
         name: '白毛山',
         title: '谷關七雄 ● 老六：白毛山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20200118'
@@ -742,6 +753,7 @@ const hikData = [
         name: '八仙山',
         title: '谷關七雄 ● 老大：八仙山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20200209'
@@ -753,6 +765,7 @@ const hikData = [
         name: '阿冷山',
         title: '谷關第「八」雄：小奇萊 ● 阿冷山',
         catalog: 'mm',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20200228'
@@ -764,6 +777,7 @@ const hikData = [
         name: '審馬陣山',
         title: '帝王座巡禮── 百岳 #83：審馬陣山',
         catalog: 'bm100',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191011'
@@ -775,6 +789,7 @@ const hikData = [
         name: '南湖北山',
         title: '帝王座巡禮── 百岳 #22：南湖北山',
         catalog: 'bm100',
+        area: 'easth',
         tag: true,
         site: '宜蘭縣南澳鄉',
         img_name: '20191012_1'
@@ -786,6 +801,7 @@ const hikData = [
         name: '南湖大山',
         title: '帝王座巡禮── 百岳 #8：南湖大山',
         catalog: 'bm100',
+        area: 'center',
         tag: true,
         site: '台中市和平區',
         img_name: '20191012_2'
@@ -797,6 +813,7 @@ const hikData = [
         name: '九九峰',
         title: '九九峰森林步道',
         catalog: 'others',
+        area: 'center',
         tag: true,
         site: '南投縣草屯區',
         img_name: '20201128'

@@ -42,18 +42,28 @@
     <ul>
         @@if (context.html===true ) {
         <li v-for="item in filterHtml" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
         }
         @@if (context.css===true ) {
         <li v-for="item in filterCss" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
         }
         @@if (context.js===true ) {
         <li v-for="item in filterJs" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
         }
         @@if (context.app===true ) {
         <li v-for="item in filterApp" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
         }
         @@if (context.misc===true ) {
         <li v-for="item in filterMisc" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
         }
     </ul>
     <button class="text-close"></button>

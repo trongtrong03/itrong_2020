@@ -204,6 +204,8 @@ let app = new Vue({
                         
                         
                         <li v-for="item in filterJs" :key="item.id">
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
                         
                         
                         

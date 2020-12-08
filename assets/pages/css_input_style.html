@@ -24,6 +24,7 @@
         <li><a href="#act1">checkbox / radio</a></li>
         <li><a href="#act2">appearance</a></li>
         <li><a href="#act3">resize</a></li>
+        <li><a href="#act4">placeholder</a></li>
     </ul>
 </div>
 
@@ -190,6 +191,38 @@
 <figure>
     <img src="@@webRoot/images/css/input-style-2.jpg">
 </figure>
+<p><br></p>
+
+<h2 id="act4">placeholder</h2>
+<p><em>placeholder</em> 屬性用於設定表單元素提示訊息的樣式，語法為：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input::placeholder {
+    /* CSS */
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>儘管主流最新版本的瀏覽器皆能識別 <em>::placeholder</em>，但保守起見，個人通常還是會把前綴加上去：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input::-webkit-input-placeholder { /* CSS */ }
+input::-moz-placeholder { /* CSS */ }
+input:-ms-input-placeholder { /* CSS */ }
+input:-moz-placeholder { /* CSS */ }</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="css,result" data-user="itrong" data-slug-hash="JbNLwx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS-placeholder">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/JbNLwx">
+        CSS-placeholder</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
 <!-- Content end -->
                 </div>
                 @@include("../_aside.html", { "css": true, "pages": true })
