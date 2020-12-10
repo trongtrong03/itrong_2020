@@ -818,6 +818,30 @@ const hikData = [
         site: '南投縣草屯區',
         img_name: '20201128'
     },
+    {
+        id: 17,
+        href: 'hiking_018',
+        time: '2020.12.03',
+        name: '加里山',
+        title: '小百岳 #34：加里山',
+        catalog: 'sm100',
+        area: 'north',
+        tag: true,
+        site: '苗栗縣南庄鄉',
+        img_name: '20190929'
+    },
+    {
+        id: 18,
+        href: 'hiking_019',
+        time: '2020.12.05',
+        name: '頭嵙山',
+        title: '小百岳 #41：頭嵙山',
+        catalog: 'sm100',
+        area: 'center',
+        tag: true,
+        site: '台中市新社區',
+        img_name: '20180929'
+    },
 ]
 
 const resData = [

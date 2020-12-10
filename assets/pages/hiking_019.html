@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="hiking page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-19 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-19 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-19 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20180929/p12.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>頭嵙山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>台中市新社區</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>859m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2018.09.29</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>約 4K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>中正露營區</span><span>長青橋</span><span>大坑四號步道</span><span>大坑五號步道</span><span>頭嵙山三角點</span><span>原路折返</span><span>中正露營區</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>素有「台中陽明山」之稱的大坑風景區內有十數條登山步道，是每逢假日遊客便紛至沓來的熱門健行景點。而在這十數條交錯連貫的登山步道中，為舊台中市最高點，同時也是小百岳之一的「頭嵙山」便位於此。當踏上山頂時，人們築起的建物就密密麻麻的排佈在山腳彼方。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20180929/p01.jpg">
+    </figure>
+    <p>看地圖可得知通往加里山的入口有好幾處，而我們從鹿場登山口出發，距離山頂大約三公里多一點的路程。</p>
+</div>
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
