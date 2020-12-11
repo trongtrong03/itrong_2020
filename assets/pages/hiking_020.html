@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="hiking page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p13.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>馬那邦山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>苗栗縣泰安鄉</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>1,407m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.03.22</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回約 4.5K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>錦雲山莊附近停車</span><span>上湖登山口</span><span>馬那邦山登山步道</span><span>古戰場紀念碑</span><span>馬那邦山三角點</span><span>原路折返</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>馬那邦山又稱馬拉邦山，是當地泰雅族族民的聖山。西元１８９５年清朝因甲午戰爭戰敗，將台灣割讓給日本，當地原住民曾與日軍激烈抗戰，死傷慘重。事件結束之後，有人在馬那邦山山中修立紀念碑，以供後人憑弔。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p01.jpg">
+        <img src="@@webRoot/images/hiking/20200322/p02.jpg">
+    </figure>
+    <p>馬那邦山登山口一共有三處，分別是天然湖線、上湖線與珠湖線。此行我們選的是上湖線，產業道路有點小條，不是很好會車，我們把車停在錦雲山莊旁邊的停車場，著裝完畢後用雙腳踢完到登山口之前剩下的水泥路。沿途風景還不錯，可以俯瞰泰安鄉與大湖鄉的景色。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p03.jpg">
+    </figure>
+    <p>我們大約於１０：３０出發，上湖登山口距離馬那邦山三角點約１．５至２Ｋ之間，算是比較短距離的登山行程，如果想走長一點可以從其他登山口出去，類似Ｏ型繞走的方式。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p04.jpg">
+        <img src="@@webRoot/images/hiking/20200322/p05.jpg">
+    </figure>
+    <p>步道沿途大多在細長的孟宗竹群聚而成的竹林延伸蜿蜒。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p06.jpg">
+    </figure>
+    <p>１１：２０，走了大概０．８Ｋ，來到馬那邦山古戰場紀念碑。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p07.jpg">
+    </figure>
+    <p>此處立有解說牌講解紀念碑背後的歷史故事。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p08.jpg">
+    </figure>
+    <p>離開古戰場紀念碑沒多久，隨即看見一顆似是斷裂成兩半，並取名「石門」的隘口，根據資料記載，石門曾是泰雅族人抵抗日軍的屏障，當日軍搶下石門後也在附近建立起防線，現場仍依稀可以看見營區殘存的痕跡。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200322/p09.jpg">
+    </figure>
+    <p>一改先前平緩好走的山徑，從過石門後地勢陡起，一連串的階梯令人不禁氣喘吁吁，有人稱這段是好漢坡。一旦撐過好漢坡，會與天然湖登山路線交會，一同登上馬那邦山山頂只剩下不到幾十公尺的距離。</p>
+</div>
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

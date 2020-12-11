@@ -842,6 +842,18 @@ const hikData = [
         site: '台中市新社區',
         img_name: '20180929'
     },
+    {
+        id: 19,
+        href: 'hiking_020',
+        time: '2020.12.08',
+        name: '馬那邦山',
+        title: '小百岳 #37：馬那邦山',
+        catalog: 'sm100',
+        area: 'center',
+        tag: true,
+        site: '苗栗縣泰安鄉',
+        img_name: '20200322'
+    },
 ]
 
 const resData = [
