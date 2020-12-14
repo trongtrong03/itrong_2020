@@ -854,6 +854,18 @@ const hikData = [
         site: '苗栗縣泰安鄉',
         img_name: '20200322'
     },
+    {
+        id: 20,
+        href: 'hiking_021',
+        time: '2020.12.09',
+        name: '稍來山',
+        title: '小百岳 #39：稍來山',
+        catalog: 'sm100',
+        area: 'center',
+        tag: true,
+        site: '台中市和平區',
+        img_name: '20200411'
+    },
 ]
 
 const resData = [
