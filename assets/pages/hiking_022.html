@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="hiking page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h2 v-text="getHikIndex({ hk_list, index: hk_list.length-22 }).s_title"></h2>
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-22 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getHikIndex({ hk_list, index: hk_list.length-22 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200719/p06.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span>水社大山</span></p>
+            </div>
+            <div class="is-site">
+                <p><span>南投縣魚池鄉</span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span>2,059m</span></p>
+            </div>
+            <div class="is-date">
+                <p><span>2020.07.19</span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>來回約 11K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>伊達邵</span><span>組合屋登山口</span><span>水社大山</span><span>原路折返</span><span>伊達邵</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>一般遊客提到日月潭多半率先想到的是湖畔周邊的知名景點，例如文武廟、慈恩塔、水社碼頭、向山遊客中心、九族文化村．．．等等。不過對岳界的山友而言，和日月潭有關的話題，卻總是脫離不了著名的「明潭四秀」，明潭四秀指的是環抱日月潭的四座名山──後尖山、大尖山、貓囒山，以及本篇主角「水社大山」。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200719/p01.jpg">
+    </figure>
+    <p>000</p>
+</div>
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

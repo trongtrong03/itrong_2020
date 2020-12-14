@@ -866,6 +866,18 @@ const hikData = [
         site: '台中市和平區',
         img_name: '20200411'
     },
+    {
+        id: 21,
+        href: 'hiking_022',
+        time: '2020.12.11',
+        name: '水社大山',
+        title: '明潭四秀 ● 一：水社大山',
+        catalog: 'mm',
+        area: 'center',
+        tag: true,
+        site: '南投市魚池鄉',
+        img_name: '20200719'
+    },
 ]
 
 const resData = [
