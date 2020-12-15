@@ -89,16 +89,16 @@
                 <h2>Hiking <a href="hiking.html">More</a></h2>
                 <section>
                     <ul class="photo-list removeTextNodes">
-                        <li class="photo-item" v-for="item in hk_list.slice(0, 6)" :key="item.id">
+                        <li class="photo-item" v-for="item in hk_list.slice(0, 10)" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
                                     <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
-                                    <figcaption v-text="item.name"></figcaption>
                                 </figure>
                                 <hgroup>
+                                    <h4 v-text="item.height"></h4>
                                     <!-- <time v-text="item.time"></time> -->
                                     <h2 v-text="item.site"></h2>
-                                    <h3 v-text="item.title"></h3>
+                                    <h3 v-text="item.name"></h3>
                                 </hgroup>
                             </a>
                         </li>

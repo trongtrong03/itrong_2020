@@ -261,19 +261,6 @@
 // 照片
 .photo-wrap {}
 
-.photo-tips {
-    p {
-        line-height: 1.5;
-        font-size: 0.875rem;
-        color: #555;
-        margin-bottom: 0.5rem;
-        animation-name: fadeIn;
-        animation-duration: .5s;
-        animation-fill-mode: both;
-        animation-timing-function: ease;
-    }
-}
-
 .photo-list {
     margin-bottom: 5rem;
     padding-top: 1rem;
@@ -285,10 +272,10 @@
     z-index: 1;
     display: inline-block;
     vertical-align: top;
-    width: calc(33.33% - 2rem / 3);
+    width: calc(20% - 4rem / 5);
     list-style-type: none;
     margin-right: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     // float: left;
     animation-name: filterFadeIn;
     animation-duration: .5s;
@@ -298,13 +285,11 @@
     a {
         position: relative;
         display: block;
-        background-color: #FFF;
-        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
-        border-bottom: 4px solid $first;
     }
     figure {
         position: relative;
         display: block;
+        border-radius: 1rem;
         overflow: hidden;
         img {
             display: block;
@@ -330,6 +315,7 @@
     }
     hgroup {
         position: relative;
+        text-align: center;
         padding: 0.5rem 1rem;
         h2 {
             line-height: 1.5rem;
@@ -340,6 +326,18 @@
             line-height: 1.5rem;
             font-size: 1rem;
             color: $second;
+        }
+        h4 {
+            line-height: 1.5rem;
+            font-size: 0.813rem;
+            color: #999;
+            &::before {
+                content: '▲';
+                color: $red;
+            }
+            &::after {
+                content: 'm';
+            }
         }
     }
     div {
@@ -373,7 +371,7 @@
             }
         }
     }
-    &:nth-child(3n) {
+    &:nth-child(5n) {
         margin-right: 0;
     }
 

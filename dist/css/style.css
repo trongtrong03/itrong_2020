@@ -9519,7 +9519,6 @@ main {
   text-align: center;
   font-size: 1.5rem;
   color: #81D8D0;
-  background-color: rgba(255, 255, 255, 0.5);
   border: 0;
 }
 
@@ -10110,9 +10109,7 @@ footer {
 }
 
 .text-head {
-  border-bottom: 1px solid #81D8D0;
-  margin-bottom: 2rem;
-  padding-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .text-head h1 {
@@ -11173,21 +11170,6 @@ footer {
   }
 }
 
-.photo-tips p {
-  line-height: 1.5;
-  font-size: 0.875rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
-
 .photo-list {
   margin-bottom: 5rem;
   padding-top: 1rem;
@@ -11208,10 +11190,10 @@ footer {
   z-index: 1;
   display: inline-block;
   vertical-align: top;
-  width: calc(33.33% - 2rem / 3);
+  width: calc(20% - 4rem / 5);
   list-style-type: none;
   margin-right: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   -webkit-animation-name: filterFadeIn;
   animation-name: filterFadeIn;
   -webkit-animation-duration: .5s;
@@ -11226,14 +11208,12 @@ footer {
 .photo-item a {
   position: relative;
   display: block;
-  background-color: #FFF;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-  border-bottom: 4px solid #81D8D0;
 }
 
 .photo-item figure {
   position: relative;
   display: block;
+  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -11263,6 +11243,7 @@ footer {
 
 .photo-item hgroup {
   position: relative;
+  text-align: center;
   padding: 0.5rem 1rem;
 }
 
@@ -11276,6 +11257,21 @@ footer {
   line-height: 1.5rem;
   font-size: 1rem;
   color: #444;
+}
+
+.photo-item hgroup h4 {
+  line-height: 1.5rem;
+  font-size: 0.813rem;
+  color: #999;
+}
+
+.photo-item hgroup h4::before {
+  content: '▲';
+  color: #CF5341;
+}
+
+.photo-item hgroup h4::after {
+  content: 'm';
 }
 
 .photo-item div {
@@ -11309,7 +11305,7 @@ footer {
   transform: scale(1.1, 1.1);
 }
 
-.photo-item:nth-child(3n) {
+.photo-item:nth-child(5n) {
   margin-right: 0;
 }
 
