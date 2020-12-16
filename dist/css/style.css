@@ -11270,10 +11270,6 @@ footer {
   color: #CF5341;
 }
 
-.photo-item hgroup h4::after {
-  content: 'm';
-}
-
 .photo-item div {
   position: absolute;
   bottom: -1.5rem;

@@ -15,16 +15,16 @@
         <img src="@@webRoot/images/hiking/20200118/p20.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>白毛山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>台中市和平區</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>1,522m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2020.01.18</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-11 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>去回約 8K</span></p>

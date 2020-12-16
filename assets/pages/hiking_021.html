@@ -15,16 +15,16 @@
         <img src="@@webRoot/images/hiking/20200411/p10.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>稍來山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-21 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>台中市和平區</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-21 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>2,307m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-21 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2020.04.11</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-21 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>來回約 4K</span></p>

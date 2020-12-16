@@ -27,16 +27,16 @@
         <img src="../images/hiking/20201009/p22.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>嘉南雲峰</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-23 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>雲林縣古坑鄉</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-23 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>1,795m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-23 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2020.07.19</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-23 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>約 6K</span></p>

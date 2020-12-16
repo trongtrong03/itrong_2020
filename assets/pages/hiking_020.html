@@ -15,16 +15,16 @@
         <img src="@@webRoot/images/hiking/20200322/p13.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>馬那邦山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>苗栗縣泰安鄉</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>1,407m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2020.03.22</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-20 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>來回約 4.5K</span></p>

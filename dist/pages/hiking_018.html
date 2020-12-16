@@ -27,16 +27,16 @@
         <img src="../images/hiking/20190929/p18.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>加里山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-18 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>苗栗縣南庄鄉</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-18 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>2,220m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-18 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2019.09.29</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-18 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>來回約 6.5K</span></p>

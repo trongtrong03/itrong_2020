@@ -15,16 +15,16 @@
         <img src="@@webRoot/images/hiking/20181013/p30.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>奇萊主山南峰</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-5 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>南投縣仁愛鄉</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-5 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>3,358m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-5 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2018.10.13 ~ 2018.10.14</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-5 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>去回約 35K</span></p>

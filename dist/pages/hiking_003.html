@@ -27,16 +27,16 @@
         <img src="../images/hiking/20190428/p00.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>火炎山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>苗栗縣苑裡鎮</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>602m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2019.04.28</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-3 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>去回約 4.1K</span></p>

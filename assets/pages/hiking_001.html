@@ -15,16 +15,16 @@
         <img src="@@webRoot/images/hiking/20200807/p01.jpg">
         <figcaption>
             <div class="is-name">
-                <p><span>學田山</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).name"></span></p>
             </div>
             <div class="is-site">
-                <p><span>台中市烏日區</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).site"></span></p>
             </div>
             <div class="is-altitude">
-                <p><span>139m</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).height"></span></p>
             </div>
             <div class="is-date">
-                <p><span>2020.08.07</span></p>
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-1 }).date"></span></p>
             </div>
             <div class="is-mileage">
                 <p><span>去回約 3K</span></p>
