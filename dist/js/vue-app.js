@@ -902,6 +902,18 @@ const hikData = [
         date: '2020.08.20',
         img_name: '20200820_1'
     },
+    {
+        id: 24,
+        href: 'hiking_025',
+        name: '合歡尖山',
+        title: '合歡群峰走透透 ● 二：合歡尖山',
+        catalog: 'lv1',
+        tag: true,
+        site: '南投縣仁愛鄉',
+        height: '3,217m',
+        date: '2020.08.20',
+        img_name: '20200820_2'
+    },
 ]
 
 const resData = [
