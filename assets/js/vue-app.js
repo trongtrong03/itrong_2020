@@ -914,6 +914,18 @@ const hikData = [
         date: '2020.08.20',
         img_name: '20200820_2'
     },
+    {
+        id: 25,
+        href: 'hiking_026',
+        name: '石門山',
+        title: '合歡群峰走透透 ● 三：石門山＆石門山北峰',
+        catalog: 'bm100',
+        tag: true,
+        site: '南投縣仁愛鄉',
+        height: '3,237m',
+        date: '2020.08.20',
+        img_name: '20200820_3'
+    },
 ]
 
 const resData = [

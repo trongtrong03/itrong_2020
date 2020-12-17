@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="hiking page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-25 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p02.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-25 }).name"></span></p>
+            </div>
+            <div class="is-site">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-25 }).site"></span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-25 }).height"></span></p>
+            </div>
+            <div class="is-date">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-25 }).date"></span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>約 1K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>合歡山莊</span><span>合歡尖山</span><span>合歡山公路</span><span>往石門山</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>合歡尖山位於合歡山 3158 Café 隔壁，是一座外形呈角錐狀的山頭，若站在咖啡廳外抬頭往上探，可能會覺得合歡尖山不怎麼高聳，登山步道總程也不長，僅大約四百公尺左右。比起其他除了西合歡山之外相對親民的合歡山群峰，合歡尖山又更平易近人了些，很常可以看到穿著帆布鞋甚至是拖鞋就來爬的遊客。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p01.jpg">
+    </figure>
+    <p>第一座登頂的合歡山東峰與即將要爬的合歡尖山，都位於南投縣仁愛鄉與花蓮縣秀林鄉的交界處，在行政區域劃分上皆屬前者。不過有趣的是，依偎在祂們身旁的松雪樓、合歡山莊以及咖啡廳等，則隸屬花蓮縣秀林鄉管轄範疇。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p02.jpg">
+    </figure>
+    <p>合歡尖山之所以有這麼特殊的山容，主要來自於冰河作用的結果。這種地形學名上叫做冰斗峰，是冰河時期由多條冰河往不同方向挖削而形成。合歡尖山登山步道的南面沒有人工階梯，而是天然的岩層與土徑，至於北面往石門山一側則是新建的階梯木棧道。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p03.jpg">
+    </figure>
+    <p>雖說步道很短，但一路向上坡度陡峭，加上高山空氣稀薄與強烈曝曬的影響下，多少還是會覺得氣喘吁吁。至於展望自不必多說，奇萊、南湖等群峰皆一覽無遺。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p04.jpg">
+        <img src="@@webRoot/images/hiking/20200820_2/p05.jpg">
+        <img src="@@webRoot/images/hiking/20200820_2/p06.jpg">
+    </figure>
+    <p>石門山與北合歡山、西合歡山則在前方與遠方。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p07.jpg">
+    </figure>
+    <p>合歡尖山海拔３２１７公尺，我們從咖啡廳起登到山頂約耗時２０分鐘。也許是合歡群峰已經太多座入選百岳了，合歡尖山即使山容、步道、視野各方面都堪稱完美，卻沒能在百岳名單之列，感覺有些可惜。不過話說回來，若不是分類上合歡尖山屬於三千公尺以上的高山，否則以交通易達性與登山安全性而言，合歡尖山肯定能在小百岳輕易獲得一個編號。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p08.jpg">
+    </figure>
+    <p>本來是要指著下一座目標──石門山，但角度沒擺好，反倒指向更遠方的高山群峰去了．．．．．．沒關係，總有一天我會在彼岸指回來的？</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p09.jpg">
+    </figure>
+    <p>即使換另一座山遙望奇萊，奇萊依舊是那散發十足神秘不可測氣息的黑色奇萊。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20200820_2/p10.jpg">
+    </figure>
+    <p>原本是要折返合歡山莊停車場開車去石門山，眼見上來的車輛越來越多，我們很快就打消了念頭，改由北側階梯木棧道下山，直接步行前往石門山。等爬完石門山與石門山北峰之後，再踢馬路回停車場取車。</p>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

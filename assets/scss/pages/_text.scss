@@ -263,14 +263,14 @@
                 }
                 &.is-mileage {
                     &::before {
-                        content: "\f54b";
+                        content: "\f6ec";
                     }
                 }
                 &.is-path {
                     display: block;
                     margin-left: 0;
                     &::before {
-                        content: "\f6ec";
+                        content: "\f54b";
                     }
                 }
             }

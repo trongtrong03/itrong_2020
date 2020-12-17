@@ -10429,7 +10429,7 @@ footer {
 }
 
 .hiking-box figure figcaption div.is-mileage::before {
-  content: "\f54b";
+  content: "\f6ec";
 }
 
 .hiking-box figure figcaption div.is-path {
@@ -10438,7 +10438,7 @@ footer {
 }
 
 .hiking-box figure figcaption div.is-path::before {
-  content: "\f6ec";
+  content: "\f54b";
 }
 
 .hiking-text {
