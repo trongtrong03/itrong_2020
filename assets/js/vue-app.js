@@ -926,6 +926,30 @@ const hikData = [
         date: '2020.08.20',
         img_name: '20200820_3'
     },
+    {
+        id: 26,
+        href: 'hiking_027',
+        name: '合歡山主峰',
+        title: '合歡群峰走透透 ● 四：合歡山主峰',
+        catalog: 'bm100',
+        tag: true,
+        site: '南投縣仁愛鄉',
+        height: '3,417m',
+        date: '2020.08.20',
+        img_name: '20200820_4'
+    },
+    {
+        id: 27,
+        href: 'hiking_028',
+        name: '南合歡山',
+        title: '合歡群峰走透透 ● 五：南合歡山',
+        catalog: 'lv1',
+        tag: true,
+        site: '南投縣仁愛鄉',
+        height: '3,220m',
+        date: '2020.08.20',
+        img_name: '20200820_5'
+    },
 ]
 
 const resData = [
