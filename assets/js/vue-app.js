@@ -970,9 +970,33 @@ const hikData = [
         catalog: 'sm100',
         tag: true,
         site: '台中市太平區',
-        height: '486m',
+        height: '480m',
         date: '2020.11.23',
         img_name: '20201123'
+    },
+    {
+        id: 30,
+        href: 'hiking_031',
+        name: '聚興山',
+        title: '小百岳 #40：聚興山',
+        catalog: 'sm100',
+        tag: true,
+        site: '台中市潭子區',
+        height: '500m',
+        date: '2020.11.28',
+        img_name: '20201128_2'
+    },
+    {
+        id: 31,
+        href: 'hiking_032',
+        name: '飛鳳山',
+        title: '小百岳 #27：飛鳳山',
+        catalog: 'sm100',
+        tag: true,
+        site: '新竹縣芎林鄉',
+        height: '462m',
+        date: '2020.11.29',
+        img_name: '20201129_1'
     },
 ]
 
