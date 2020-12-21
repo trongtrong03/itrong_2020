@@ -950,6 +950,30 @@ const hikData = [
         date: '2020.08.20',
         img_name: '20200820_5'
     },
+    {
+        id: 28,
+        href: 'hiking_029',
+        name: '北合歡山',
+        title: '合歡群峰走透透 ● 六：北合歡山',
+        catalog: 'bm100',
+        tag: true,
+        site: '南投縣仁愛鄉',
+        height: '3,422m',
+        date: '2020.08.21',
+        img_name: '20200821'
+    },
+    {
+        id: 29,
+        href: 'hiking_030',
+        name: '三汀山',
+        title: '小百岳 #43：三汀山',
+        catalog: 'sm100',
+        tag: true,
+        site: '台中市太平區',
+        height: '486m',
+        date: '2020.11.23',
+        img_name: '20201123'
+    },
 ]
 
 const resData = [
