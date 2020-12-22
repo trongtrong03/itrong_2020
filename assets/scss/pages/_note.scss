@@ -69,6 +69,24 @@
             }
         }
     }
+    @include MQ(max-768) {
+        a {
+            hgroup {
+                h2 {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+    @include MQ(max-480) {
+        a {
+            hgroup {
+                h2 {
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
 }
 
 .notes-tags {

@@ -55,4 +55,20 @@
         padding-right: 1rem;
         padding-left: 1rem;
     }
+
+
+    @include MQ(max-768) {
+        > h2 {
+            font-size: 2.5rem;
+            padding-top: 2rem;
+        }
+    }
+
+
+    @include MQ(max-480) {
+        > h2 {
+            font-size: 1.5rem;
+            padding-top: 1rem;
+        }
+    }
 }
