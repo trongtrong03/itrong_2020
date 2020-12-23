@@ -9211,6 +9211,13 @@ main {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  main {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .clearfix {
   *zoom: 1;
 }

@@ -84,6 +84,10 @@ main {
             padding-top: 3rem;
         }
     }
+    @include MQ(max-480) {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 // 清除浮動
