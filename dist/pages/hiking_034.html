@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="hiking page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-34 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="../images/hiking/20201207_1/p17.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-34 }).name"></span></p>
+            </div>
+            <div class="is-site">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-34 }).site"></span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-34 }).height"></span></p>
+            </div>
+            <div class="is-date">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-34 }).date"></span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>約 2K</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>三元宮</span><span>梅花路步道</span><span>望風斷崖</span><span>茶園農路</span><span>太平山</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p>日前受到客戶邀約，南下雲林為他的員工上課，心想單純來回一趟只為了教書似乎不夠意思，遂決定乾脆跟公司多請一天特休，留在雲林嘉義地區爬個山再回去。因為是一個人爬山，原則上盡量避免爬難度較高的中級山，或是需要舟車勞頓一大頓才能抵達的山岳，在網路上翻了翻、瞅了瞅，看見了「雲嘉七連峰」縱走，詳查得知這條路線是雲嘉地區相當著名的縱走行程。這七連峰海拔皆坐落在８００至１３００左右，其中還包含數座台灣小百岳，難度不高且相對親民，因此不再作他想，一躍成為此行的主要目標。</p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p01.jpg">
+    </figure>
+    <p>教完課後，驅車來到住宿地點──位於嘉義鄉梅山鄉太平老街下方的雲海大飯店。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p02.jpg">
+    </figure>
+    <p>說到太平老街，最著名的莫過於號稱海拔最高的景觀吊橋「太平雲梯」，除了海拔高度最高之外，太平雲梯長度２８１公尺同時也是台灣目前最長的吊橋。不過抵達太平雲梯售票口時已接近關閉時間，所以就沒進去走走，但從旁欣賞夕陽逐漸穿過雲梯墜落的過程，也別具一番滋味。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p03.jpg">
+    </figure>
+    <p>雲海大飯店外建有一處觀景涼亭，站在平台上有不錯的展望視野，可以一覽雲嘉地區的夜景。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p04.jpg">
+    </figure>
+    <p>以及每晚限定時間會點燈的太平雲梯，據說在可見度佳的夜晚，就連嘉義市區都能看見太平雲梯七彩斑斕的輪廓，遠遠看上去就像一條微笑曲線，因此也有人給太平雲梯取了個「微笑天梯」的綽號。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p05.jpg">
+    </figure>
+    <p>雲嘉七連峰指的是獨立山、大巃頂、太平山、梨子腳山、馬鞍山、二尖山、大尖山七座山，這一趟縱走平均大概要走２５公里，所以要挑戰雲嘉七連峰，一般會選在獨立山山腳下的樟腦寮，或是華山一帶的民宿下榻，以方便隔日起登。假如選在大巃頂與太平山之間的太平老街住宿，在沒有接駁的情況下，要走七連峰南北勢必都得多走一趟重複的路程，因此從太平老街出發的山友大半走的是五連峰──也就是捨棄獨立山、大巃頂的北行路線。當初我也是在七連峰與五連峰縱走之間躊躇許久，但是看看以上這些美景，就是為什麼最後堅持要在太平老街住上一宿的原因。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p06.jpg">
+    </figure>
+    <p>網路上許多山友建議把車停在三元宮，但最近又看到網友提醒三元宮已不再歡迎登山客將車停在他們寺廟停車場，退宿前曾向雲海大飯店業者打聽此事，然而他們紛紛表示不知情，不過他們也說就算三元宮裡不給停車，平日路邊應該也不難找到停車空間。如同他們所述，隔日一大早驅車駛到三元宮外的只有我一台車，路邊寬廣好停，三元宮是否已不再讓登山客借停這件事也不重要了。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p07.jpg">
+    </figure>
+    <p>從太平老街起登的五連峰順序依序為太平山、梨子腳山、馬鞍山、二尖山與大尖山，第一個目標是「太平山」──與對望的龜山共同串聯起太平雲梯，睥睨著腳下廣闊無垠的嘉南平原，與當地村民生活關係密切的一座山。不過在前往太平山之前，地圖上的「望風斷崖」標記令我十分在意，因此決定先走去那裏一探究竟。但不管是要去望風斷崖還是太平山，基本上都會從三元宮旁邊的梅花路步道上行前往。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p08.jpg">
+    </figure>
+    <p>梅花路步道走到頂會接續一條僅容一輛小車通行的農業道路，若要往太平山往右，往望風斷崖則取左。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p09.jpg">
+    </figure>
+    <p>步道終點一旁建有觀景平台，對面龜山、大巃頂，與被群山環繞的太平聚落都一覽無遺。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p10.jpg">
+    </figure>
+    <p>沿著柏油路繼續走，一路上左顧右盼都是蜘蛛網，令人感覺有些不舒服。走著走著終會看見一棟建有電塔的建築物，望風斷崖就在其旁邊的小路盡頭。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p11.jpg">
+    </figure>
+    <p>甩開電台建築，隨即走入飄著淡淡清香的茶園之中，前方就是望風斷崖，今天運氣很好，不是撞到白牆的日子，放眼望去視野十分開闊。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p12.jpg">
+    </figure>
+    <p>根據下載的ＧＰＸ軌跡，電台大門前方的小路可以通往太平山三角點位置，但宛如紅外線一般密布整個半天際的蜘蛛網，令我打消了勇往直前的念頭。畫面裡正中央看到白色線條橫向交錯的全都是蜘蛛絲，右邊垂直的白色豎線也是蜘蛛絲．．．．．．爬了數十座大小山也從未看過密度這麼高的蜘蛛網生態，到底是環境使然，還是這裡鮮少有人車經過？</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p13.jpg">
+    </figure>
+    <p>總之我是打了退堂鼓，循著柏油路穿過梅花路步道來到私人茶園的農路，這座茶園的主人很好心，願意開放民眾進入茶園健行、攝影，不過大前提是不能開車闖入，畢竟農路狹小，技術不好很容易刁車。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p14.jpg">
+    </figure>
+    <p>漫步在半山坡都是茶叢的土徑上，前方隆起的山頭是小百岳梨子腳山，遠方則是台灣的脊梁──中央山脈。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p15.jpg">
+    </figure>
+    <p>打開ＡＰＰ比對山頭，除了遙遠的玉山，其他大多都是首次見聞的中級山。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p16.jpg">
+    </figure>
+    <p>另一側則可以俯視太平雲梯。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p17.jpg">
+        <img src="../images/hiking/20201207_1/p18.jpg">
+    </figure>
+    <p>純然的一片綠油油。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p19.jpg">
+    </figure>
+    <p>太平山的三角點就在前方工寮的旁邊。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p20.jpg">
+    </figure>
+    <p>太平山，海拔１０８２公尺，雖然不是台灣小百岳，但卻是雲嘉五連峰、七連峰縱走都會前來踩點的山，當然不全然是為了三角點，也是為了一睹其滿盈身腰的綠意盎然。</p>
+</div>
+
+<div class="hiking-text">
+    <figure>
+        <img src="../images/hiking/20201207_1/p21.jpg">
+    </figure>
+    <p>雲嘉五連峰縱走旗開得勝之後，接下來要面對的是前方明顯隆起的山頭──梨子腳山了，而第三道關卡馬鞍山也默默地藏身在梨子腳山後方，虎視眈眈地看向這裡。</p>
+</div>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../hiking.html'"></button>
+                        <a href="#wrap" id="sideTop" title="Top"></a>
+                        <button id="hikList" title="List"></button>
+                    
+    
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+
+                
+                <div class="hiking-list">
+                    <ul>
+                        <li v-for="item in filterHik" :key="item.id">
+                            <a :href="item.href + '.html'">
+                                <figure>
+                                    <img :src="'../images/hiking/' + item.img_name + '/cover.jpg'">
+                                </figure>
+                                <h2 v-text="item.title"></h2>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+                
+            </section>
+        </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>Stylus</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+</body>
+</html>

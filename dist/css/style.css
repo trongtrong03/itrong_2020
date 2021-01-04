@@ -11252,6 +11252,11 @@ footer {
   clear: both;
 }
 
+.photo-list:hover .photo-item figure img {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+
 .photo-item {
   position: relative;
   z-index: 1;
@@ -11287,7 +11292,9 @@ footer {
 .photo-item figure img {
   display: block;
   width: 100%;
-  transition: transform .3s;
+  transition: transform .3s, -webkit-filter .3s;
+  transition: transform .3s, filter .3s;
+  transition: transform .3s, filter .3s, -webkit-filter .3s;
 }
 
 .photo-item figure figcaption {
@@ -11318,12 +11325,14 @@ footer {
   line-height: 1.5rem;
   font-size: .813rem;
   color: #999;
+  transition: color .3s;
 }
 
 .photo-item hgroup h3 {
   line-height: 1.5rem;
   font-size: 1rem;
   color: #444;
+  transition: color .3s;
 }
 
 .photo-item hgroup h4 {
@@ -11365,7 +11374,14 @@ footer {
 }
 
 .photo-item:hover figure img {
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
   transform: scale(1.1, 1.1);
+}
+
+.photo-item:hover hgroup h2,
+.photo-item:hover hgroup h3 {
+  color: #81D8D0;
 }
 
 .photo-item:nth-child(5n) {

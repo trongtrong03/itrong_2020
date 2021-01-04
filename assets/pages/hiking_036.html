@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="hiking page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getHikIndex({ hk_list, index: hk_list.length-36 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<div class="hiking-box">
+    <figure>
+        <img src="@@webRoot/images/hiking/20201207_3/p06.jpg">
+        <figcaption>
+            <div class="is-name">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-36 }).name"></span></p>
+            </div>
+            <div class="is-site">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-36 }).site"></span></p>
+            </div>
+            <div class="is-altitude">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-36 }).height"></span></p>
+            </div>
+            <div class="is-date">
+                <p><span v-text="getHikIndex({ hk_list, index: hk_list.length-36 }).date"></span></p>
+            </div>
+            <div class="is-mileage">
+                <p><span>約 10K（含回程至三元宮）</span></p>
+            </div>
+            <div class="is-path">
+                <p><span>馬鞍山</span><span>龍興宮</span><span>二尖山休閒茶園</span><span>二尖山</span><span>大尖山</span><span>原路折返</span><span>三元宮</span></p>
+            </div>
+        </figcaption>
+    </figure>
+</div>
+
+<p></p>
+<p><br></p>
+
+<div class="hiking-text">
+    <figure>
+        <img src="@@webRoot/images/hiking/20201207_3/p01.jpg">
+    </figure>
+    <p>成功順利地在太平山拔得雲嘉五連峰的頭籌之後，接下來要邁向第二道關卡「梨子腳山」。</p>
+</div>
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "hike": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

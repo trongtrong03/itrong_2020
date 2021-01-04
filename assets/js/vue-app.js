@@ -998,6 +998,54 @@ const hikData = [
         date: '2020.11.29',
         img_name: '20201129_1'
     },
+    {
+        id: 32,
+        href: 'hiking_033',
+        name: '飛鳳山',
+        title: '小百岳 #30：五指山',
+        catalog: 'sm100',
+        tag: true,
+        site: '新竹縣竹東鎮',
+        height: '1,062m',
+        date: '2020.11.29',
+        img_name: '20201129_2'
+    },
+    {
+        id: 33,
+        href: 'hiking_034',
+        name: '太平山',
+        title: '雲嘉五連峰＋１ ● 一：太平山',
+        catalog: 'lv3',
+        tag: true,
+        site: '嘉義縣梅山鄉',
+        height: '1,082m',
+        date: '2020.12.07',
+        img_name: '20201207_1'
+    },
+    {
+        id: 34,
+        href: 'hiking_035',
+        name: '梨子腳山',
+        title: '雲嘉五連峰＋１ ● 二：梨子腳山＆馬鞍山',
+        catalog: 'sm100',
+        tag: true,
+        site: '嘉義縣梅山鄉',
+        height: '1,176m',
+        date: '2020.12.07',
+        img_name: '20201207_2'
+    },
+    {
+        id: 35,
+        href: 'hiking_036',
+        name: '雲嘉大尖山',
+        title: '雲嘉五連峰＋１ ● 三：二尖山＆大尖山',
+        catalog: 'sm100',
+        tag: true,
+        site: '雲林縣古坑鄉',
+        height: '1,305m',
+        date: '2020.12.07',
+        img_name: '20201207_3'
+    },
 ]
 
 const resData = [
