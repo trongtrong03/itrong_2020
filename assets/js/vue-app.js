@@ -1046,6 +1046,18 @@ const hikData = [
         date: '2020.12.07',
         img_name: '20201207_3'
     },
+    {
+        id: 36,
+        href: 'hiking_037',
+        name: '獨立山',
+        title: '雲嘉五連峰＋１ ● 四：獨立山',
+        catalog: 'sm100',
+        tag: true,
+        site: '嘉義縣竹崎鄉',
+        height: '840m',
+        date: '2020.12.07',
+        img_name: '20201207_4'
+    },
 ]
 
 const resData = [
