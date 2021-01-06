@@ -30,7 +30,9 @@
                         <li class="photo-item" v-if="currentFilter === item.catalog || currentFilter === item.area || currentFilter === 'all'" v-for="item in filterHik" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
-                                    <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
+                                    <span>
+                                        <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
+                                    </span>
                                 </figure>
                                 <hgroup>
                                     <h4 v-text="item.height"></h4>

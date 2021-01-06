@@ -1058,6 +1058,18 @@ const hikData = [
         date: '2020.12.07',
         img_name: '20201207_4'
     },
+    {
+        id: 37,
+        href: 'hiking_038',
+        name: '關刀山',
+        title: '小百岳 #36：關刀山',
+        catalog: 'sm100',
+        tag: true,
+        site: '苗栗縣三義鄉',
+        height: '889m',
+        date: '2020.12.12',
+        img_name: '20201212_1'
+    },
 ]
 
 const resData = [

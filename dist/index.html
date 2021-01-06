@@ -158,7 +158,9 @@
                         <li class="photo-item" v-for="item in hk_list.slice(0, 10)" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <figure>
-                                    <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
+                                    <span>
+                                        <img :src="'images/hiking/' + item.img_name + '/cover.jpg'">
+                                    </span>
                                 </figure>
                                 <hgroup>
                                     <h4 v-text="item.height"></h4>

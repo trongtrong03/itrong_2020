@@ -277,9 +277,7 @@
     &:hover {
         .photo-item {
             figure {
-                img {
-                    filter: grayscale(0.5);
-                }
+                filter: grayscale(1);
             }
         }
     }
@@ -307,12 +305,15 @@
     figure {
         position: relative;
         display: block;
-        border-radius: 1rem;
         overflow: hidden;
+        transition: all .3s;
+        span {
+            display: block;
+        }
         img {
             display: block;
             width: 100%;
-            transition: transform .3s, filter .3s;
+            border-radius: 1rem;
         }
         figcaption {
             position: absolute;
@@ -383,10 +384,8 @@
     &:hover {
         z-index: 2;
         figure {
-            img {
-                filter: grayscale(0) !important;
-                transform: scale(1.1, 1.1);
-            }
+            filter: grayscale(0) !important;
+            transform: scale(1.1, 1.1);
         }
         hgroup {
             h2,
