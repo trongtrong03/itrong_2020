@@ -389,18 +389,18 @@ const jsData = [
         img: false,
         img_name: ''
     },
-    // {
-    //     id: 8,
-    //     href: 'js_learn_9',
-    //     title: 'Javascript 學習筆記（九）：內建物件',
-    //     time: '2019.08.29',
-    //     tag1: false,
-    //     tag1_name: 'false',
-    //     tag2: false,
-    //     tag2_name: 'false',
-    //     img: false,
-    //     img_name: ''
-    // },
+    {
+        id: 8,
+        href: 'js_learn_9',
+        title: 'Javascript 學習筆記（九）：物件模型---上',
+        time: '2019.10.30',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
     // {
     //     id: 9,
     //     href: 'js_vue_intro',

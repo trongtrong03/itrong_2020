@@ -15,17 +15,133 @@
                 <div class="text-content">
 <!-- Content start -->
 <h2>前言</h2>
-<p></p>
+<p>在學習網頁設計的基礎中，初學者都會被灌輸網頁是由 HTML、CSS、JavaScript 構成的說法：HTML 是骨幹、CSS 負責美化，而 JavaScript 則用來實現網頁與使用者之間的互動行為。然而深入探討後就會發現，真正實現網頁互動行為的操作方法是由 JavaScript 的執行平台──也就是「瀏覽器」所提供，它們（操作方法）基本上會由「BOM」和「DOM」兩個物件持有，前端開發者即透過 JavaScript 去呼叫 BOM 與 DOM 提供的 API 來控制瀏覽器的行為與網頁的內容。</p>
+<p>除了 BOM 與 DOM 兩大物件模型外，JavaScript 亦內建以 ECMAScript 標準為基礎的標準物件，接下來的幾篇文章將來記錄這些物件模型與其操作方法的內容。</p>
 <p><br></p>
 
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1"></a></li>
+        <li><a href="#act1">BOM（瀏覽器物件模型）</a></li>
+        <li><a href="#act1">DOM（文件物件模型）</a></li>
+        <li><a href="#act1">BOM 與 DOM 的差異</a></li>
     </ul>
 </div>
 
-<h2 id="act1"></h2>
+<h2 id="act1">BOM（瀏覽器物件模型）</h2>
+<p>Browser Object Model，簡稱 BOM，中文意為瀏覽器物件模型，顧名思義是瀏覽器提供的物件，是一組與瀏覽器視窗有關的物件模型。其核心物件為 <em>window</em> 物件，指的是目前瀏覽器的視窗或頁籤，它在瀏覽器主要扮演著「操作全域物件（Global Object）」及「JavaScript 用來與瀏覽器溝通的窗口」兩個角色。</p>
+<p>首先我們來談談「全域物件」的部份，全域物件（Global Object）指的是在全域作用範圍內宣告的變數、物件、函式...等，通通都會自動變成全域物件的屬性。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var myName = 'itrong';</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這樣以 <em>myName</em> 宣告的變數，我們稱之為全域變數，可以透過 <em>window</em> 去取得它們。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">console.log(window.myName);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這裡額外需要瞭解的是，在全域作用範圍內宣告的全域變數，無法直接用 <em>delete</em> 關鍵字移除變數，譬如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var myName = 'itrong';
+console.log(window.myName);     // "itrong"
+
+delete window.myName;
+console.log(window.myName);     // "itrong"</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但如果是用 <em>window</em> 物件指定的屬性就能透過 <em>delete</em> 關鍵字移除：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.myName = 'itrong';
+console.log(window.myName);     // "itrong"
+
+delete window.myName;
+console.log(window.myName);     // undefined</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>至於「JavaScript 用來與瀏覽器溝通的窗口」，在初心者時期最常接觸到的莫過於「<em>alert()</em>」了，這個方法可以呼叫出瀏覽器內建的警告框。舉例來說：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.alert("Hello!");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>通過這樣的程式碼，瀏覽器就能彈出帶有「Hello!」訊息的警告對話框，又或者是用 <em>window.confirm()</em>、<em>window.prompt()</em>，同樣也能實現類似的功用。</p>
+<figure>
+    <img src="@@webRoot/images/js/learn-bom-1.jpg">
+    <figcaption>window.alert()</figcaption>
+</figure>
+<figure>
+    <img src="@@webRoot/images/js/learn-bom-2.jpg">
+    <figcaption>window.confirm()</figcaption>
+</figure>
+<figure>
+    <img src="@@webRoot/images/js/learn-bom-3.jpg">
+    <figcaption>window.prompt()</figcaption>
+</figure>
+
+
+<!-- https://www.fooish.com/javascript/object.html
+https://ithelp.ithome.com.tw/articles/10214769
+https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/278723/
+http://www.victsao.com/blog/81-javascript/360-javascript-bom
+https://medium.com/%E9%A6%AC%E6%A0%BC%E8%95%BE%E7%89%B9%E7%9A%84%E5%86%92%E9%9A%AA%E8%80%85%E6%97%A5%E8%AA%8C/js-bom-%E7%AD%86%E8%A8%98-6dedea7155ea
+https://www.happycoding.today/posts/43
+https://ithelp.ithome.com.tw/articles/10235079
+https://ithelp.ithome.com.tw/articles/10191666
+https://www.itread01.com/content/1546565070.html
+https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb -->
+
+<p><br></p>
+<p>在其之下還有這些子物件：</p>
+<div class="text-ul">
+    <ul>
+        <li>document</li>
+        <li>history</li>
+        <li>location</li>
+        <li>navigator</li>
+        <li>screen</li>
+        <li>frames</li>
+    </ul>
+</div>
+
+<h4>document</h4>
+<p><em>document</em> 指的是視窗裡目前顯示的文件物件，它其實就是「DOM」文件物件模型，換言之，DOM 乃 BOM 核心 <em>window</em> 的子物件之一。</p>
+
+<p><br></p>
+<h4>history</h4>
+
+<p><br></p>
+<h4>location</h4>
+
+<p><br></p>
+<h4>navigator</h4>
+
+<p><br></p>
+<h4>screen</h4>
+
+<p><br></p>
+<h4>frames</h4>
+
+
+
+
+<p>以上這些物件既是 <em>window</em> 的子物件，同時也是它的屬性，當然，<em>window</em> 包含的屬性不只有這些...</p>
+
+
+
+<p><br></p>
+<h2 id="act2">DOM（文件物件模型）</h2>
+
+
 
 
 <!-- 參考資料 -->

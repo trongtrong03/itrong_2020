@@ -10564,6 +10564,7 @@ footer {
 }
 
 .text-content em {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   font-size: 1rem;
   font-style: normal;
   color: #CF5341;
