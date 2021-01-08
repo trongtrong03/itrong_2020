@@ -23,7 +23,7 @@
 <div class="text-catalog">
     <ul>
         <li><a href="#act1">BOM 簡介</a></li>
-        <li><a href="#act2">常見子物件</a></li>
+        <li><a href="#act2">常見屬性</a></li>
         <li><a href="#act3">常見方法</a></li>
     </ul>
 </div>
@@ -90,8 +90,8 @@ console.log(window.myName);     // undefined</code></pre>
 <p>當我們使用 <em>window</em> 內的物件，前面的 <em>window</em> 是可以省略不寫的，因此我們才會看到或曾經直接使用 <em>alert()</em> 操作程式碼內容的寫法。</p>
 <p><br></p>
 
-<h2 id="act2">常見子物件</h2>
-<p>不管是 <em>alert()</em>、<em>confirm()</em> 還是 <em>prompt()</em>，它們其實都是 <em>window</em> 的子物件（它們既是「方法」，卻同時也是物件），<em>window</em> 的子物件很多，以下列舉一些常見的子物件並作簡單介紹：</p>
+<h2 id="act2">常見屬性</h2>
+<p>不管是 <em>alert()</em>、<em>confirm()</em> 還是 <em>prompt()</em>，它們其實都是 <em>window</em> 的子物件（它們既是「方法」，卻同時也是物件，屬性亦然），<em>window</em> 的子物件很多，以下列舉一些常見的屬性並作簡單介紹：</p>
 <div class="text-ul">
     <ul>
         <li>document</li>
@@ -99,7 +99,6 @@ console.log(window.myName);     // undefined</code></pre>
         <li>history</li>
         <li>location</li>
         <li>navigator</li>
-        <li>frames</li>
     </ul>
 </div>
 
@@ -131,48 +130,48 @@ console.log(window.myName);     // undefined</code></pre>
 <p>其他還有一些屬性可以提供螢幕不同的資訊，以下用一張表格簡單敘述之：</p>
 <div class="text-flex">
     <div class="f-title">
-        <div class="t-f0"></div>
-        <div class="t-f1">用途</div>
+        <div class="t-f1"></div>
+        <div class="t-f3">用途</div>
     </div>
     <div>
-        <div class="t-f0"><em>width</em></div>
-        <div class="t-f1">回傳螢幕的總寬度</div>
+        <div class="t-f1"><em>width</em></div>
+        <div class="t-f3">回傳螢幕的總寬度。</div>
     </div>
     <div>
-        <div class="t-f0"><em>height</em></div>
-        <div class="t-f1">回傳螢幕的總高度</div>
+        <div class="t-f1"><em>height</em></div>
+        <div class="t-f3">回傳螢幕的總高度。</div>
     </div>
     <div>
-        <div class="t-f0"><em>left</em></div>
-        <div class="t-f1">回傳指定元素與螢幕左側之間的水平距離</div>
+        <div class="t-f1"><em>left</em></div>
+        <div class="t-f3">回傳指定元素與螢幕左側之間的水平距離。</div>
     </div>
     <div>
-        <div class="t-f0"><em>top</em></div>
-        <div class="t-f1">回傳指定元素與螢幕頂端之間的垂直距離</div>
+        <div class="t-f1"><em>top</em></div>
+        <div class="t-f3">回傳指定元素與螢幕頂端之間的垂直距離。</div>
     </div>
     <div>
-        <div class="t-f0"><em>availWidth</em></div>
-        <div class="t-f1">回傳螢幕的可用寬度</div>
+        <div class="t-f1"><em>availWidth</em></div>
+        <div class="t-f3">回傳螢幕的可用寬度。</div>
     </div>
     <div>
-        <div class="t-f0"><em>availHeight</em></div>
-        <div class="t-f1">回傳螢幕的可用高度</div>
+        <div class="t-f1"><em>availHeight</em></div>
+        <div class="t-f3">回傳螢幕的可用高度。</div>
     </div>
     <div>
-        <div class="t-f0"><em>availLeft</em></div>
-        <div class="t-f1">回傳指定元素與螢幕可用區域左側之間的水平距離</div>
+        <div class="t-f1"><em>availLeft</em></div>
+        <div class="t-f3">回傳指定元素與螢幕可用區域左側之間的水平距離。</div>
     </div>
     <div>
-        <div class="t-f0"><em>availTop</em></div>
-        <div class="t-f1">回傳指定元素與螢幕可用區域頂端之間的垂直距離</div>
+        <div class="t-f1"><em>availTop</em></div>
+        <div class="t-f3">回傳指定元素與螢幕可用區域頂端之間的垂直距離。</div>
     </div>
     <div>
-        <div class="t-f0"><em>colorDepth</em></div>
-        <div class="t-f1">回傳螢幕的色彩深度</div>
+        <div class="t-f1"><em>colorDepth</em></div>
+        <div class="t-f3">回傳螢幕的色彩深度。</div>
     </div>
     <div>
-        <div class="t-f0"><em>pixelDepth</em></div>
-        <div class="t-f1">回傳螢幕的色彩分辨率</div>
+        <div class="t-f1"><em>pixelDepth</em></div>
+        <div class="t-f3">回傳螢幕的色彩分辨率。</div>
     </div>
 </div>
 
@@ -220,24 +219,24 @@ window.history.go(0);    // 等同重新整理當前頁面</code></pre>
 <p>除了上述的 <em>href</em>，還有這些屬性方法可以使用：</p>
 <div class="text-flex">
     <div class="f-title">
-        <div class="t-f0"></div>
-        <div class="t-f1">用途</div>
+        <div class="t-f1"></div>
+        <div class="t-f3">用途</div>
     </div>
     <div>
-        <div class="t-f0"><em>hostname</em></div>
-        <div class="t-f1">回傳網頁主機的域名</div>
+        <div class="t-f1"><em>hostname</em></div>
+        <div class="t-f3">回傳網頁主機的域名。</div>
     </div>
     <div>
-        <div class="t-f0"><em>pathname</em></div>
-        <div class="t-f1">回傳目前頁面的路徑與文件名稱</div>
+        <div class="t-f1"><em>pathname</em></div>
+        <div class="t-f3">回傳目前頁面的路徑與文件名稱。</div>
     </div>
     <div>
-        <div class="t-f0"><em>port</em></div>
-        <div class="t-f1">回傳網頁主機的端口</div>
+        <div class="t-f1"><em>port</em></div>
+        <div class="t-f3">回傳網頁主機的端口。</div>
     </div>
     <div>
-        <div class="t-f0"><em>protocol</em></div>
-        <div class="t-f1">回傳網頁使用的傳輸協定（http: 或 https:）</div>
+        <div class="t-f1"><em>protocol</em></div>
+        <div class="t-f3">回傳網頁使用的傳輸協定（http: 或 https:）。</div>
     </div>
 </div>
 <p>另外要提的是 <em>location.assign</em> 與 <em>location.replace</em>，<em>location.assign</em> 相當於 HTML 中的 <em>&lt;a&gt;</em> 元素，可直接令網頁連接到指定的 URL，因此可以點擊上一頁返回前一個歷史記錄；而 <em>location.replace</em> 則是將指定的 URL 替換目前網頁的內容，即使點擊上一頁也無法返回前一個瀏覽的記錄。</p>
@@ -263,19 +262,284 @@ window.history.go(0);    // 等同重新整理當前頁面</code></pre>
         </p>
     </code>
 </div>
-
+<p>有關 <em>navigator</em> 的深入探討可以閱讀這篇：<a href="https://segmentfault.com/a/1190000011316167" target="_blank">window.navigator详解和使用场景</a>，本篇就不詳細轉述了。</p>
 <p><br></p>
-<h4>frames：</h4>
 
-
-
-
-<p>以上這些物件既是 <em>window</em> 的子物件，同時也是它的屬性，當然，<em>window</em> 包含的屬性不只有這些...</p>
-
-
+<p>當然 <em>window</em> 的屬性不單只有這些，其他還有像是：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1"></div>
+        <div class="t-f3">用途</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.outerWidth</em></div>
+        <div class="t-f3">回傳瀏覽器的寬度。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.outerHeight</em></div>
+        <div class="t-f3">回傳瀏覽器的高度。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.innerWidth</em></div>
+        <div class="t-f3">回傳包含卷軸在內的瀏覽器可視範圍的寬度。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.innerHeight</em></div>
+        <div class="t-f3">回傳包含卷軸在內的瀏覽器可視範圍的高度。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.length</em></div>
+        <div class="t-f3">回傳 <em>&lt;frame&gt;</em>、<em>&lt;iframe&gt;</em> 的數量。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.name</em></div>
+        <div class="t-f3">回傳瀏覽器的 <em>name</em> 值。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.pageXOffset</em></div>
+        <div class="t-f3">回傳網頁水平方向的位移值，等同 <em>window.scrollX</em>。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.pageYOffset</em></div>
+        <div class="t-f3">回傳網頁水平方向的位移值，等同 <em>window.scrollY</em>。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.scrollMaxX</em></div>
+        <div class="t-f3">回傳網頁卷軸的最大水平位移值。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.scrollMaxY</em></div>
+        <div class="t-f3">回傳網頁卷軸的最大垂直位移值。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.screenX</em></div>
+        <div class="t-f3">回傳瀏覽器視窗在螢幕的 X 座標。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.screenY</em></div>
+        <div class="t-f3">回傳瀏覽器視窗在螢幕的 Y 座標。</div>
+    </div>
+    
+    <div>
+        <div class="t-f1"><em>window.opener</em></div>
+        <div class="t-f3">回傳開啟瀏覽器視窗的物件參考。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.closed</em></div>
+        <div class="t-f3">回傳瀏覽器視窗視窗是否被關閉。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.parent</em></div>
+        <div class="t-f3">回傳目前瀏覽器視窗或是子框架如 <em>&lt;iframe&gt;</em> 、 <em>&lt;frame&gt;</em> 、 <em>&lt;object&gt;</em> 等的親代物件。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.self</em></div>
+        <div class="t-f3">回傳瀏覽器本身的參考，通常用來判斷是否為子框架。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.top</em></div>
+        <div class="t-f3">回傳最頂層瀏覽器的參考。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>window.status</em></div>
+        <div class="t-f3">用來設定或存取狀態列。</div>
+    </div>
+</div>
 
 <p><br></p>
 <h2 id="act3">常見方法</h2>
+<h4>alert()：</h4>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.alert("Hello!");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>前面有提過，這個方法可以令瀏覽器跳出一個帶有文字訊息的警示對話框，與它相似的還有 <em>confirm()</em>（含「確認」與「取消」按鈕的詢問式對話框）、<em>prompt()</em>（可輸入訊息的詢問式對話框）。</p>
+<p>這裡補充一個豆知識，假如填入的文字訊息想要換行的話，可加入 <em>\n</em> 進行換行。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.alert("Hello! \n JavaScript!");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>open()：</h4>
+<p><em>open()</em> 方法可用來新增一個瀏覽器視窗，或是查詢一個已經存在的瀏覽器視窗。其語法為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.open(strUrl, strWindowName, [strWindowFeatures]);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>前兩個參數從字面意義上推敲應該不難理解，即各自表示要在新增視窗裡打開的 URL 網址及名稱。<em>[strWindowFeatures]</em> 則是一種可選參數，用來加入與視窗有關的設定，例如寬高、開啟方式等，假如沒有要指定參數條件的話，則可以省略不寫。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.open("https://www.google.com.tw/", "This is Google");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但如果像是名稱不指定，URL 與可選參數則需要指定參數的情況下，<em>strWindowName</em> 仍必須存在（可用空內容），否則 <em>[strWindowFeatures]</em> 的參數內容會被視為 <em>strWindowName</em> 的參數。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.open("https://www.google.com.tw/", "", "_blank");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>起初在練習的時候，以為 <em>strWindowName</em> 輸入的字串是瀏覽器上方的 <em>title</em>，實際情況則不然，那 <em>strWindowName</em> 加不加究竟有什麼差別？其實除了可以提供其他屬性或方法調用外，它還可以讓透過 <em>open()</em> 方法打開的 URL 重複覆蓋打開的瀏覽器頁籤或視窗裡，舉例來說：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="qBaydaO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: open()-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/qBaydaO">
+        JS-learn: open()-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>假設我們不設置 <em>strWindowName</em> 或給它們相同的名稱，那麼不管你執行哪一個 <em>open()</em>，其連結都會在同一個新增的視窗上開啟。但相同例子，我們分別賦予這兩個函式不同的 <em>strWindowName</em>，它們就不會有互相覆蓋視窗的情況：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="GRjBJGy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: open()-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/GRjBJGy">
+        JS-learn: open()-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>由此可知，<em>strWindowName</em> 指的並不是瀏覽器新開視窗上面的 <em>title</em>，而是對該瀏覽器新視窗本身的命名。</p>
+<p><br></p>
+
+<h4>close()：</h4>
+<p>既然有 <em>open()</em>，那肯定就有 <em>close()</em> 方法。與 <em>open()</em> 相反，<em>close()</em> 方法用於關閉瀏覽器視窗或頁籤。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.close();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們也可以關閉指定的瀏覽器視窗或頁籤，像是關閉用 <em>open()</em> 方法新增的視窗：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="MWjBwRW" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: close()-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/MWjBwRW">
+        JS-learn: close()-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>resizeTo()、resizeBy()：</h4>
+<p>如果是由 Jquery 入門 JavaScript 程式語言的人，可能會直接誤用 <em>window.resize()</em> 調整瀏覽器視窗大小，但事實上 JavaScript 並沒有 <em>resize()</em> 方法，用來控制瀏覽器視窗的方法則分別有 <em>resizeTo()</em> 及 <em>resizeBy()</em> 這兩種，且用法和 Jquery 的 <em>resize()</em> 有些不同。</p>
+<p><em>resizeTo()</em> 用於將瀏覽器視窗調整為指定的寬高，它的語法公式為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.resizeTo(width, height);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>裏頭的寬高值是絕對值，且必須為整數（其單位為像素），假設我的函式為透過 <em>open()</em> 方法新增一個視窗並將寬高參數值分別設定為 600 與 300，那麼新增的視窗大小就會是 600px x 300px。此外，也可以結合 <em>screen</em> 的 <em>availWidth</em>、<em>availHeight</em> 屬性，令視窗調整為可視畫面寬高指定比例的大小。如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.resizeTo(
+    window.screen.availWidth / 2,
+    window.screen.availHeight / 2
+);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>寬高各除以 2，相當於調整後的視窗大小為螢幕可視區域內的 1/4。</p>
+<p><br></p>
+
+<p><em>resizeBy()</em> 雖然同樣也是用來調整瀏覽器視窗的大小，但有別於 <em>resizeTo()</em> 為絕對單位，<em>resizeBy()</em> 的參數值是相對單位。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.resizeBy(xDelta, yDelta);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這個方法會相對目前視窗畫面的大小，依填入參數調整新的尺寸，<em>xDelta</em>、<em>yDelta</em> 分別代表視窗水平方向、垂直方向的數值，若值為正數，代表調整的畫面增加大小，反過來若值為負數，代表畫面縮小。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.resizeBy(-100, 100);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果我在函式中一樣經由 <em>open()</em> 定義了新增視窗的敘述句，並指定它新增的視窗大小為 400x400，加入上方範例的調整數值後，那麼經過調整的新視窗寬高將會是 300x500。</p>
+<p><br></p>
+
+<h4>home()：</h4>
+<p><em>home()</em> 方法可以令目前網頁回到瀏覽器設定的首頁。然而，根據 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/home" target="_blank">MDN Web Docs</a> 的敘述，這個方法屬於非標準化（Non-standard）的方法，即表示可能部份瀏覽器支援，但其他瀏覽器卻不支援它。尤其 <em>home()</em> 被目前主流瀏覽器視為過時的方法，原則上應避免使用，之所以會在這裡提出來，一方面也是提醒自己以後不可誤用。</p>
+<p><br></p>
+
+<h4>setInterval()、setTimeout()：</h4>
+<p>所謂 JavaScript 計時事件，指的是經過設定的時間間隔時，執行或停止該事件裡的函式，<em>setInterval()</em>、<em>setInterval()</em> 皆屬於計時事件裡的方法，用來執行特定的函式。它們的語法規則相同，皆為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.setInterval(function, delay);
+window.setTimeout(function, delay);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">setInterval(function () {
+    document.write("Hello!" + "&lt;br&gt;");
+}, 3000);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>表示瀏覽器載入後每經過三秒，便會自動執行一次 <em>setInterval()</em> 中 <em>function</em> 裡的敘述句，也就是在文件裡寫入「Hello!」的字樣，並加入換行元素。而我們也可以先用函式定義好計時事件，再透過 HTML 元素去觸發該函式：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="YzGjybB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: setInterval-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/YzGjybB">
+        JS-learn: setInterval-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>如果函式裡的敘述句很多，一股腦兒地倒在 <em>setInterval()</em> 的 <em>function</em> 覺得不易閱讀，或者該函式不止一個地方會用到，那麼可將函式單獨拉到外面去定義，而 <em>setInterval()</em> 只需直接指定該函式的名稱即可，例如上方的實例就可以改寫成：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">function demo() {
+    setTimeout(demoText, 3000);
+}
+
+function demoText() {
+    document.write("hello!" + "&lt;br&gt;");
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p><em>setTimeout()</em> 與 <em>setInterval()</em> 差別在於前者載入延遲時間後，只會執行一次裡面的函式。後者則是載入後每隔指定的時間就會執行一次，且不斷重複。以下是 <em>setTimeout()</em> 的實作範例，可以和前面 <em>setInterval()</em> 的範例作個對比：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="ZEpjQzJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: setTimeout-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ZEpjQzJ">
+        JS-learn: setTimeout-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>clearInterval()、clearTimeout()：</h4>
+<p>同樣屬於計時事件，不過 <em>clearInterval()</em> 和 <em>clearTimeout()</em> 則是分別用來取消 <em>setInterval()</em>、<em>setTimeout()</em> 的動作。基本上 <em>setInterval()</em>、<em>setTimeout()</em> 會經由變數宣告，因此 <em>clearInterval()</em>、<em>clearTimeout()</em> 通常只要指定該變數即可。</p>
+<p><br></p>
+
+<h4>scroll()：</h4>
+https://pydoing.blogspot.com/2011/10/javascript-window-scroll.html
+
+
+
+
+
+
 
 
 
