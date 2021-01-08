@@ -88,13 +88,13 @@
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">BOM（瀏覽器物件模型）</a></li>
-        <li><a href="#act1">DOM（文件物件模型）</a></li>
-        <li><a href="#act1">BOM 與 DOM 的差異</a></li>
+        <li><a href="#act1">BOM 簡介</a></li>
+        <li><a href="#act2">常見子物件</a></li>
+        <li><a href="#act3">常見方法</a></li>
     </ul>
 </div>
 
-<h2 id="act1">BOM（瀏覽器物件模型）</h2>
+<h2 id="act1">BOM 簡介</h2>
 <p>Browser Object Model，簡稱 BOM，中文意為瀏覽器物件模型，顧名思義是瀏覽器提供的物件，是一組與瀏覽器視窗有關的物件模型。其核心物件為 <em>window</em> 物件，指的是目前瀏覽器的視窗或頁籤，它在瀏覽器主要扮演著「操作全域物件（Global Object）」及「JavaScript 用來與瀏覽器溝通的窗口」兩個角色。</p>
 <p>首先我們來談談「全域物件」的部份，全域物件（Global Object）指的是在全域作用範圍內宣告的變數、物件、函式...等，通通都會自動變成全域物件的屬性。例如：</p>
 <div class="text-code is-js">
@@ -153,49 +153,185 @@ console.log(window.myName);     // undefined</code></pre>
     <img src="../images/js/learn-bom-3.jpg">
     <figcaption>window.prompt()</figcaption>
 </figure>
-
-
-<!-- https://www.fooish.com/javascript/object.html
-https://ithelp.ithome.com.tw/articles/10214769
-https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/278723/
-http://www.victsao.com/blog/81-javascript/360-javascript-bom
-https://medium.com/%E9%A6%AC%E6%A0%BC%E8%95%BE%E7%89%B9%E7%9A%84%E5%86%92%E9%9A%AA%E8%80%85%E6%97%A5%E8%AA%8C/js-bom-%E7%AD%86%E8%A8%98-6dedea7155ea
-https://www.happycoding.today/posts/43
-https://ithelp.ithome.com.tw/articles/10235079
-https://ithelp.ithome.com.tw/articles/10191666
-https://www.itread01.com/content/1546565070.html
-https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb -->
-
+<p>當我們使用 <em>window</em> 內的物件，前面的 <em>window</em> 是可以省略不寫的，因此我們才會看到或曾經直接使用 <em>alert()</em> 操作程式碼內容的寫法。</p>
 <p><br></p>
-<p>在其之下還有這些子物件：</p>
+
+<h2 id="act2">常見子物件</h2>
+<p>不管是 <em>alert()</em>、<em>confirm()</em> 還是 <em>prompt()</em>，它們其實都是 <em>window</em> 的子物件（它們既是「方法」，卻同時也是物件），<em>window</em> 的子物件很多，以下列舉一些常見的子物件並作簡單介紹：</p>
 <div class="text-ul">
     <ul>
         <li>document</li>
+        <li>screen</li>
         <li>history</li>
         <li>location</li>
         <li>navigator</li>
-        <li>screen</li>
         <li>frames</li>
     </ul>
 </div>
 
-<h4>document</h4>
-<p><em>document</em> 指的是視窗裡目前顯示的文件物件，它其實就是「DOM」文件物件模型，換言之，DOM 乃 BOM 核心 <em>window</em> 的子物件之一。</p>
+<h4>document：</h4>
+<p><em>document</em> 指的是視窗裡目前顯示的文件物件，它其實就是「DOM」文件物件模型，換言之，DOM 乃 BOM 核心 <em>window</em> 的子物件之一。所以關於 <em>document</em> 的詳細內容，暫且留到下一個章節再作說明。</p>
 
 <p><br></p>
-<h4>history</h4>
+<h4>screen：</h4>
+<p><em>screen</em> 與使用者瀏覽網頁時的裝置螢幕有關，可透過不同的屬性來取得螢幕的相關資訊。比方來說，我可以用 <em>screen.width</em> 與 <em>screen.height</em> 取得螢幕的總寬高。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="oNzyajx" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="js-learn: screen-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/oNzyajx">
+        js-learn: screen-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>抑或是使用 <em>screen.availWidth</em>、<em>screen.availHeight</em> 獲取螢幕的可用寬高：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="jOMKeMe" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="js-learn: screen-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/jOMKeMe">
+        js-learn: screen-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p>其他還有一些屬性可以提供螢幕不同的資訊，以下用一張表格簡單敘述之：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0"></div>
+        <div class="t-f1">用途</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>width</em></div>
+        <div class="t-f1">回傳螢幕的總寬度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>height</em></div>
+        <div class="t-f1">回傳螢幕的總高度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>left</em></div>
+        <div class="t-f1">回傳指定元素與螢幕左側之間的水平距離</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>top</em></div>
+        <div class="t-f1">回傳指定元素與螢幕頂端之間的垂直距離</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>availWidth</em></div>
+        <div class="t-f1">回傳螢幕的可用寬度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>availHeight</em></div>
+        <div class="t-f1">回傳螢幕的可用高度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>availLeft</em></div>
+        <div class="t-f1">回傳指定元素與螢幕可用區域左側之間的水平距離</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>availTop</em></div>
+        <div class="t-f1">回傳指定元素與螢幕可用區域頂端之間的垂直距離</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>colorDepth</em></div>
+        <div class="t-f1">回傳螢幕的色彩深度</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>pixelDepth</em></div>
+        <div class="t-f1">回傳螢幕的色彩分辨率</div>
+    </div>
+</div>
 
 <p><br></p>
-<h4>location</h4>
+<h4>history：</h4>
+<p><em>history</em> 可以用來操作瀏覽器頁面的歷史記錄，例如常見的載入瀏覽歷史的上一頁與下一頁。</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.history.back();   // 上一頁
+window.history.forward();   // 下一頁</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>我們也可以透過 <em>go()</em> 方法，令網頁移動到特定的歷史記錄，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.history.go(-1);    // 上一頁
+window.history.go(1);    // 下一頁
+window.history.go(0);    // 等同重新整理當前頁面</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>在 HTML5 中還加入了 <em>history.pushState()</em> 和 <em>history.replaceState()</em> 方法，可用來加入或修改歷史記錄，這裡僅先作拋磚引玉，留到未來有機會再深入研究。</p>
+<p><br></p>
+
+<h4>location：</h4>
+<p><em>location</em> 可對網頁的 URL 網址進行操作，像是取得目前頁面的網址，或是將瀏覽器導向指定的頁面。以下我們直接看範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="MWjXBvj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="js-learn: location-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/MWjXBvj">
+        js-learn: location-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>location.href</em> 可返回目前網頁的 URL 值，我們也可以指定網址給它，讓使用者點擊指定元素時將瀏覽器導向指定網址，例如：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;button onClick="window.location.href='https://www.google.com.tw/'" Value="Click"&gt;點我&lt;/button&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>除了上述的 <em>href</em>，還有這些屬性方法可以使用：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f0"></div>
+        <div class="t-f1">用途</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>hostname</em></div>
+        <div class="t-f1">回傳網頁主機的域名</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>pathname</em></div>
+        <div class="t-f1">回傳目前頁面的路徑與文件名稱</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>port</em></div>
+        <div class="t-f1">回傳網頁主機的端口</div>
+    </div>
+    <div>
+        <div class="t-f0"><em>protocol</em></div>
+        <div class="t-f1">回傳網頁使用的傳輸協定（http: 或 https:）</div>
+    </div>
+</div>
+<p>另外要提的是 <em>location.assign</em> 與 <em>location.replace</em>，<em>location.assign</em> 相當於 HTML 中的 <em>&lt;a&gt;</em> 元素，可直接令網頁連接到指定的 URL，因此可以點擊上一頁返回前一個歷史記錄；而 <em>location.replace</em> 則是將指定的 URL 替換目前網頁的內容，即使點擊上一頁也無法返回前一個瀏覽的記錄。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="240" data-theme-id="dark" data-default-tab="html,result" data-user="itrong" data-slug-hash="abmKjRY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="js-learn: location-2">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/abmKjRY">
+        js-learn: location-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+
+<h4>navigator：</h4>
+<p><em>navigator</em> 用來取得瀏覽器相關的資訊，包含檢視目前網頁的瀏覽器官方名稱、版本、ID、語系編碼...等，或是回傳是否可以寫入 Cookie、是否有連線...等等。以下直接看範例：</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="OJREarJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="js-learn: navigator-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/OJREarJ">
+        js-learn: navigator-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
 
 <p><br></p>
-<h4>navigator</h4>
-
-<p><br></p>
-<h4>screen</h4>
-
-<p><br></p>
-<h4>frames</h4>
+<h4>frames：</h4>
 
 
 
@@ -205,7 +341,7 @@ https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%
 
 
 <p><br></p>
-<h2 id="act2">DOM（文件物件模型）</h2>
+<h2 id="act3">常見方法</h2>
 
 
 
@@ -213,8 +349,14 @@ https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN web docs</a></li>
-        <li><a href="http://www.kangting.tw/2013/12/javascript-10.html" target="_blank">JavaScript 快速入門（10/10）－ 使用內建物件</a></li>
+        <li><a href="https://www.itread01.com/content/1546565070.html" target="_blank">BOM（瀏覽器物件模型）和DOM(文件物件模型)</a></li>
+        <li><a href="https://www.happycoding.today/posts/43" target="_blank">JavaScript入門系列：BOM和DOM筆記</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10214769" target="_blank">JavaScript 初心者筆記: JS 內建物件 - 全域物件篇</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10191666" target="_blank">重新認識 JavaScript: Day 11 前端工程師的主戰場：瀏覽器裡的 JavaScript</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10235079" target="_blank">DAY 2 BOM 、 DOM 是什麼？</a></li>
+        <li><a href="https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb" target="_blank">瀏覽器的物件模型：Bom vs Dom</a></li>
+        <!-- <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN web docs</a></li>
+        <li><a href="http://www.kangting.tw/2013/12/javascript-10.html" target="_blank">JavaScript 快速入門（10/10）－ 使用內建物件</a></li> -->
     </ul>
 </div>
 <!-- Content end -->
