@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-10 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-10 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>前一篇主角的是 BOM，這一篇要來談的是 DOM。DOM 對網頁程式語言稍有涉略的人來說應該都不陌生，心想不就是一顆由許多 HTML 元素組成的樹嗎？雖說這樣總的的結論並不算錯，但若能更深入、全盤地了解 DOM 的觀念，會更能幫助我們理解 JavaScript 與瀏覽器之間的關係。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">DOM 簡介</a></li>
+        <li><a href="#act2">常見屬性</a></li>
+        <li><a href="#act3">常見方法</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">DOM 簡介</h2>
+<p>DOM 全名為 Document Object Model，直譯成中文一般都稱之為「文件物件模型」。在前一篇文章曾說到瀏覽器物件模型（BOM），其核心物件 <em>window</em> 底下還包含其他許多子物件，這之中包含了 <em>document</em>，而這個 <em>document</em> 其實就是 DOM。我們可由下圖了解 BOM 與 DOM 之間的關聯性：</p>
+<figure>
+    <img src="@@webRoot/images/js/learn-dom-1.jpg">
+</figure>
+<p><em>document</em> 底下的物件即構成網頁的 HTML 元素，一個元素會由「標籤」與「內容」組成，而內容可以是文字，也可以是圖片，這些物件最終會形成一個樹狀結構，例如下圖：</p>
+<figure>
+    <img src="@@webRoot/images/js/learn-dom-2.jpg">
+</figure>
+<p>DOM 的樹狀結構中的每一個資料皆可以稱為「節點」（Node），每一個節點皆為物件，因此也有人稱之為節點物件，這些節點物件擁有各自的屬性與方法。在往後的 <em>document</em> 屬性方法介紹中，我們將很容易看見一些字樣包含 <em>node</em> 的方法名稱。而由上面範例中我們可以歸納出四種節點的類型：</p>
+<h4>1. Document：</h4>
+<p>指的就是網頁文件本身，樹狀結構裡的所有節點都是從這裡向下展開。</p>
+<h4>2. Element：</h4>
+<p>指的是 HTML 各種標籤，例如 <em>&lt;body&gt;</em>、<em>&lt;h1&gt;</em>、<em>&lt;div&gt;</em> ...等族繁不及備載。</p>
+<h4>3. Text：</h4>
+<p>指的是由 HTML 標籤包裹起來的內容，通常是文字字串。</p>
+<h4>4. Attribute：</h4>
+<p>指的是各 HTML 標籤裡的屬性，例如 <em>id</em>、<em>class</em>、<em>style</em> 這些全域屬性（意指所有標籤都有的屬性），或者是 <em>href</em>、<em>src</em>、<em>type</em> ...等只有特定幾種標籤才擁有的屬性。</p>
+<p><br></p>
+<p>另外我們還要知道的是節點（Node）之間的關係，這在 DOM 遍歷中是很重要的觀念。而節點彼此關聯分為兩種：</p>
+<h4>1. 父子：</h4>
+<p>父子關係也就是上下層，節點垂直方向的上面一層為父層，稱為 Parent Node；下一層（裡面）則為子層，稱為 Child Node。</p>
+<h4>2. 兄弟：</h4>
+<p>兄弟關係則是指同一層水平方向之間的節點，指定對象節點的前一個節點為 Previous，後一個則是 Next。</p>
+<p><br></p>
+<p>總結來說，DOM 乃是由 W3C 制定的其中一種介面定義，目的是規範百家爭鳴的瀏覽器們能遵循其規則去設計瀏覽器，DOM 透過節點組成樹狀的文件結構，提供給 JavaScript 存取或改變文件的風格、內容，甚至是結構。所以回到多數人關心的問題：「BOM 與 DOM 的差異是什麼？」這兩者最大的區別在於 BOM 是 JavaScript 與瀏覽器之間溝通的窗口，各種屬性方法的操作不涉及網頁文件內容。而 DOM 則是讓 JavaScript 用來控制、改變網頁節點與內容的標準。接下來的兩個章節，筆者將分別介紹 <em>document</em> 有哪些屬性及方法可以對 DOM 進行操作。</p>
+<p><br></p>
+
+<h2 id="act2">常見屬性</h2>
+<h2 id="act3">常見方法</h2>
+
+
+
+<!-- 參考資料 -->
+<div class="text-refer">
+    <ul>
+        <li><a href="https://www.itread01.com/content/1546565070.html" target="_blank">BOM（瀏覽器物件模型）和DOM(文件物件模型)</a></li>
+        <li><a href="https://www.happycoding.today/posts/43" target="_blank">JavaScript入門系列：BOM和DOM筆記</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10214769" target="_blank">JavaScript 初心者筆記: JS 內建物件 - 全域物件篇</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10191666" target="_blank">重新認識 JavaScript: Day 11 前端工程師的主戰場：瀏覽器裡的 JavaScript</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10235079" target="_blank">DAY 2 BOM 、 DOM 是什麼？</a></li>
+        <li><a href="https://ithelp.ithome.com.tw/articles/10202689" target="_blank">Day03-深入理解網頁架構：DOM</a></li>
+        <li><a href="https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb" target="_blank">瀏覽器的物件模型：Bom vs Dom</a></li>
+        <li><a href="https://pydoing.blogspot.com/2011/10/javascript-window.html" target="_blank">程式語言教學誌</a></li>
+        <li><a href="https://www.fooish.com/javascript/dom/node-properties.html" target="_blank">JavaScript DOM Node Properties (DOM 節點物件的屬性)</a></li>
+    </ul>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

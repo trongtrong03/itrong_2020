@@ -596,19 +596,63 @@ function demoText() {
 
 <h4>clearInterval()、clearTimeout()：</h4>
 <p>同樣屬於計時事件，不過 <em>clearInterval()</em> 和 <em>clearTimeout()</em> 則是分別用來取消 <em>setInterval()</em>、<em>setTimeout()</em> 的動作。基本上 <em>setInterval()</em>、<em>setTimeout()</em> 會經由變數宣告，因此 <em>clearInterval()</em>、<em>clearTimeout()</em> 通常只要指定該變數即可。</p>
+<p>例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var intervalID;
+var n = 11;
+ 
+function run() {
+    var t = document.getElementById("demo");
+    if (n != 0) {
+        n = n - 1;
+        t.innerHTML = n;
+    }
+    intervalID = window.setTimeout(run, 1000);
+}
+ 
+function stop() {
+    window.clearTimeout(intervalID);
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 <p><br></p>
 
 <h4>scroll()：</h4>
-https://pydoing.blogspot.com/2011/10/javascript-window-scroll.html
+<p><em>scroll()</em> 方法可令網頁捲軸偏移至指定的位置，其語法結構為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">window.scroll(x-coord, y-coord);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="abmQMrd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: scroll-1">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/abmQMrd">
+        JS-learn: scroll-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><em>x-coord</em>、<em>y-coord</em> 值的單位為像素（<em>px</em>）。</p>
+<p>此外，與捲軸偏移有關的方法尚有 <em>scrollTo()</em> 與 <em>scrollBy()</em>，其中 <em>scrollTo()</em> 的效果等同 <em>scroll()</em>；而 <em>scrollBy()</em> 中的 <em>x</em>、<em>y</em> 值則是在捲軸原本的 <em>x-coord</em>、<em>y-coord</em> 位置分別加上 <em>x</em>、<em>y</em> 的值。</p>
+<p><br></p>
 
-
-
-
-
-
-
-
-
+<h4>moveTo()、moveBy()：</h4>
+<p>這兩個方法的偏移對象是新開的瀏覽器視窗，裡頭的參數分別代表的是螢幕的 <em>x</em>、<em>y</em> 值。<em>moveTo()</em> 用來使視窗移動到螢幕畫面的指定位置；而 <em>moveBy()</em> 則是依新開視窗在螢幕上當前的位置再做 <em>x</em>、<em>y</em> 方向的偏移。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="320" data-theme-id="dark" data-default-tab="js,result" data-user="itrong" data-slug-hash="ZEpmNGK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS-learn: moveTo">
+        <span>See the Pen <a href="https://codepen.io/itrong/pen/ZEpmNGK">
+        JS-learn: moveTo</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>其實還有許多 <em>window</em> 的方法，因為個人較鮮少使用所以就略過不寫在筆記裡了，而關於 BOM 的文章心得同時亦在此暫告一段落，下一篇文章的主題將聚焦在 DOM 身上。</p>
 
 <!-- 參考資料 -->
 <div class="text-refer">
@@ -619,6 +663,7 @@ https://pydoing.blogspot.com/2011/10/javascript-window-scroll.html
         <li><a href="https://ithelp.ithome.com.tw/articles/10191666" target="_blank">重新認識 JavaScript: Day 11 前端工程師的主戰場：瀏覽器裡的 JavaScript</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10235079" target="_blank">DAY 2 BOM 、 DOM 是什麼？</a></li>
         <li><a href="https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb" target="_blank">瀏覽器的物件模型：Bom vs Dom</a></li>
+        <li><a href="https://pydoing.blogspot.com/2011/10/javascript-window.html" target="_blank">程式語言教學誌</a></li>
         <!-- <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN web docs</a></li>
         <li><a href="http://www.kangting.tw/2013/12/javascript-10.html" target="_blank">JavaScript 快速入門（10/10）－ 使用內建物件</a></li> -->
     </ul>

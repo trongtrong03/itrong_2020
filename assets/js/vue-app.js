@@ -401,6 +401,18 @@ const jsData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 9,
+        href: 'js_learn_10',
+        title: 'Javascript 學習筆記（十）：物件模型---DOM',
+        time: '2019.11.05',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
     // {
     //     id: 9,
     //     href: 'js_vue_intro',
