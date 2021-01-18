@@ -59,7 +59,7 @@
                     <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
                         <i class="fab fa-codepen"></i>
                     </a>
-                    <a class="ig" href="https://www.instagram.com/hiker_trong/" title="instagram" target="_blank">
+                    <a class="ig" href="https://www.instagram.com/trongtrong.hiker/" title="instagram" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
@@ -94,7 +94,7 @@
 </div>
 
 <h2 id="act1">DOM 簡介</h2>
-<p>DOM 全名為 Document Object Model，直譯成中文一般都稱之為「文件物件模型」。在前一篇文章曾說到瀏覽器物件模型（BOM），其核心物件 <em>window</em> 底下還包含其他許多子物件，這之中包含了 <em>document</em>，而這個 <em>document</em> 其實就是 DOM。我們可由下圖了解 BOM 與 DOM 之間的關聯性：</p>
+<p>DOM 全名為 Document Object Model，直譯成中文一般都稱之為「文件物件模型」。在前一篇文章曾說到瀏覽器物件模型（BOM），其核心物件 <em>window</em> 底下還包含其他許多子物件，這之中也包含了 <em>document</em>，而這個 <em>document</em> 其實就是 DOM。我們可由下圖了解 BOM 與 DOM 之間的關聯性：</p>
 <figure>
     <img src="../images/js/learn-dom-1.jpg">
 </figure>
@@ -118,10 +118,28 @@
 <h4>2. 兄弟：</h4>
 <p>兄弟關係則是指同一層水平方向之間的節點，指定對象節點的前一個節點為 Previous，後一個則是 Next。</p>
 <p><br></p>
-<p>總結來說，DOM 乃是由 W3C 制定的其中一種介面定義，目的是規範百家爭鳴的瀏覽器們能遵循其規則去設計瀏覽器，DOM 透過節點組成樹狀的文件結構，提供給 JavaScript 存取或改變文件的風格、內容，甚至是結構。所以回到多數人關心的問題：「BOM 與 DOM 的差異是什麼？」這兩者最大的區別在於 BOM 是 JavaScript 與瀏覽器之間溝通的窗口，各種屬性方法的操作不涉及網頁文件內容。而 DOM 則是讓 JavaScript 用來控制、改變網頁節點與內容的標準。接下來的兩個章節，筆者將分別介紹 <em>document</em> 有哪些屬性及方法可以對 DOM 進行操作。</p>
+<p>總結來說，DOM 乃是由 W3C 制定的其中一種介面定義，目的是規範百家爭鳴的瀏覽器們能遵循其規則去設計瀏覽器，DOM 透過節點組成樹狀的文件結構，提供給 JavaScript 存取或改變文件的風格、內容，甚至是結構。所以回到多數人關心的問題：「BOM 與 DOM 的差異是什麼？」這兩者最大的區別在於 BOM 是 JavaScript 與瀏覽器之間溝通的窗口，各種屬性方法的操作不涉及網頁文件內容。而 DOM 則是讓 JavaScript 用來控制、改變網頁節點與內容的標準。</p>
+<p>根據 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document_Object_Model" target="_blank">MDN Web Docs</a> 的敘述，DOM 是 HTML、XML、SVG 等文件類型的程式介面，因此我們可以說我們常常使用 JavaScript 存取 DOM，但 DOM 本身卻不是 JavaScript 的一部份。接下來的兩個章節，筆者將以 JavaScript 的面向，分別介紹 <em>document</em> 有哪些常見的屬性及方法可以對 DOM 進行操作。</p>
 <p><br></p>
 
 <h2 id="act2">常見屬性</h2>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1"></div>
+        <div class="t-f3">用途</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>width</em></div>
+        <div class="t-f3">回傳螢幕的總寬度。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>XXX</em></div>
+        <div class="t-f3">XXXXXXXXX。</div>
+    </div>
+</div>
+<p></p>
+
+
 <h2 id="act3">常見方法</h2>
 
 
@@ -129,14 +147,12 @@
 <!-- 參考資料 -->
 <div class="text-refer">
     <ul>
-        <li><a href="https://www.itread01.com/content/1546565070.html" target="_blank">BOM（瀏覽器物件模型）和DOM(文件物件模型)</a></li>
         <li><a href="https://www.happycoding.today/posts/43" target="_blank">JavaScript入門系列：BOM和DOM筆記</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10214769" target="_blank">JavaScript 初心者筆記: JS 內建物件 - 全域物件篇</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10191666" target="_blank">重新認識 JavaScript: Day 11 前端工程師的主戰場：瀏覽器裡的 JavaScript</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10235079" target="_blank">DAY 2 BOM 、 DOM 是什麼？</a></li>
         <li><a href="https://ithelp.ithome.com.tw/articles/10202689" target="_blank">Day03-深入理解網頁架構：DOM</a></li>
         <li><a href="https://medium.com/ck100pro/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E7%89%A9%E4%BB%B6%E6%A8%A1%E5%9E%8B-bom-vs-dom-914552c81cdb" target="_blank">瀏覽器的物件模型：Bom vs Dom</a></li>
-        <li><a href="https://pydoing.blogspot.com/2011/10/javascript-window.html" target="_blank">程式語言教學誌</a></li>
         <li><a href="https://www.fooish.com/javascript/dom/node-properties.html" target="_blank">JavaScript DOM Node Properties (DOM 節點物件的屬性)</a></li>
     </ul>
 </div>
