@@ -57,24 +57,89 @@
 <p><br></p>
 
 <h2 id="act2">常見屬性</h2>
+<p>以下列出一些常見的對象屬性介紹簡表，然後會再對其中幾個屬性作補充說明。</p>
 <div class="text-flex">
     <div class="f-title">
         <div class="t-f1"></div>
         <div class="t-f3">用途</div>
     </div>
     <div>
-        <div class="t-f1"><em>width</em></div>
-        <div class="t-f3">回傳螢幕的總寬度。</div>
+        <div class="t-f1"><em>document.width</em></div>
+        <div class="t-f3">取得網頁的寬度。</div>
     </div>
     <div>
-        <div class="t-f1"><em>XXX</em></div>
-        <div class="t-f3">XXXXXXXXX。</div>
+        <div class="t-f1"><em>document.title</em></div>
+        <div class="t-f3">取得網頁的標題內容。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.bgColor</em></div>
+        <div class="t-f3">設定網頁的背景顏色。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.fgColor</em></div>
+        <div class="t-f3">設定網頁的前景顏色（文字顏色）。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.linkColor</em></div>
+        <div class="t-f3">設定網頁超連結的顏色。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.alinkColor</em></div>
+        <div class="t-f3">設定滑鼠經過網頁超連結時的顏色。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.vlinkColor</em></div>
+        <div class="t-f3">設定點擊過的網頁超連結顏色。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.URL</em></div>
+        <div class="t-f3">取得網頁的網址。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.cookie</em></div>
+        <div class="t-f3">查詢或設定網頁中的所有 cookie。</div>
+    </div>
+    <div>
+        <div class="t-f1"><em>document.domain</em></div>
+        <div class="t-f3">查詢網頁的域名。</div>
     </div>
 </div>
-<p></p>
-https://www.wibibi.com/info.php?tid=238
+<p><br></p>
+
+<h4>document.width</h4>
+<p>取得 HTML 網頁中 <em>&lt;body&gt;</em> 元素的寬度。然而在現今主流瀏覽器已不支援這個屬性，若要取得網頁文件的寬度可使用以下三種替代方案：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">document.body.clientWidth              /* &lt;body&gt; 的寬度 */
+document.documentElement.clientWidth   /* &lt;html&gt; 的寬度 */
+window.innerWidth                      /* 視窗的寬度 */</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<h4>document.title</h4>
+<p>取得網頁文件的標題內容，此處的標題指的是 <em>&lt;head&gt;</em> 中的 <em>&lt;title&gt;</em> 屬性，也就是瀏覽器上方網頁頁籤裡的名稱。</p>
+<p><br></p>
+
+<h4>document.bgColor</h4>
+<p>可用來設定網頁文件的背景顏色。例如：</p>
+<pre class="text-pre"><code class="javascript">function demo(){
+    document.bgColor="#CCC";
+}
+demo();</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>除了透過 <em>document</em> 指定對象屬性外，也可以經由 <em>body</em> 與 <em>location</em> 這兩個子對象以進一步取得對象屬性。</p>
+
+<!-- https://www.wibibi.com/info.php?tid=238
 https://www.w3school.com.cn/htmldom/coll_form_elements.asp
 https://www.w3school.com.cn/jsref/dom_obj_document.asp
+https://blog.xuite.net/trcy/vie/17670722-->
 
 <h2 id="act3">常見方法</h2>
 
