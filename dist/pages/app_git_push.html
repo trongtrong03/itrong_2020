@@ -73,158 +73,155 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-3 }).title"></h1>
+                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-5 }).title"></h1>
                     <h6 class="notes-tags">
-                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-3 }).time"></time>
+                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-5 }).time"></time>
                     </h6>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
 <h2>前言</h2>
-<p>上一篇我們已經掌握 Git 是如何進行版本控制的了，從這篇開始學習如何在本地端的專案裡使用 Git 進行版本控制。個人使用的作業系統為 Windows，儘管對 Git 操作而言影響不大，但如果是非 Git 的系統操作就會以 Windows 作記（若你是 Mac 或 Linux 系統的使用者只能說聲抱歉啦）。</p>
+<p>除了在本機端版控檔案外，同步推送到遠端儲存庫進行備份也是 Git 價值所在之一，本篇文章將來談談如何把自己電腦裡的專案備份到遠端儲存庫中，這裡主要會使用到兩種指令：<em>remote</em> 與 <em>push</em>，分別用來處理遠端的操作，以及將檔案推送至遠端儲存庫上。</p>
 <p><br></p>
 
 <!-- 大綱 -->
 <div class="text-catalog">
     <ul>
-        <li><a href="#act1">前置部署</a></li>
-        <li><a href="#act2">建立版本庫</a></li>
-        <li><a href="#act3">提交流程-Bash</a></li>
-        <li><a href="#act4">提交流程-Tortoisegit</a></li>
+        <li><a href="#act1">remote</a></li>
+        <li><a href="#act2">push</a></li>
+        <li><a href="#act3">補充</a></li>
     </ul>
 </div>
 
-<h2 id="act1">前置部署</h2>
-<p>為了方便操作，首先我們創建一個內容包含三個記事本檔案的資料夾「demo」，當作實務練習的對象。當然要用已經存在的專案也可以，版控流程都是一樣的，與資料夾內容無關。</p>
+<h2 id="act1">remote</h2>
+<p>在前一篇文章 <a href="app_git_github.html" target="_blank" v-text="getAppIndex({ a_list, index: a_list.length-4 }).title"></a> 裡，我們已透過 GitHub 建立帳戶並新增了一個可提供本機端 Git 專案進行遠端備份的遠端儲存庫，接下來我們將透過 <em>remote</em> 指令將這個遠端儲存庫與本機端欲同步備份的專案進行連結。</p>
 <figure>
-    <img src="../images/app/git-init-1.jpg">
-    <figcaption>demo 資料夾裡包含 1.txt、2.txt、3.txt 三個檔案。</figcaption>
+    <img src="../images/app/git-github-4.jpg">
+    <figcaption>於 GitHub 建立的全新遠端儲存庫。</figcaption>
 </figure>
-<p>在 demo 資料夾內點擊右鍵，選擇「Git Bash Here」叫出 Git 內建的命令提示字元視窗。</p>
+
+<p>首先，我們可以先在專案 Git Bash 視窗中輸入以下指令：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git remove -v</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
 <figure>
-    <img src="../images/app/git-init-2.jpg">
+    <img src="../images/app/git-remote-1.jpg">
 </figure>
-<figure>
-    <img src="../images/app/git-init-3.jpg">
-</figure>
+<p>這個指令並非必要的流程，其目的是用來檢視目前所在專案版控資料中所有的遠端資料庫，由於目前這個專案還沒有添加任何遠端儲存庫，因此指令送出後得到的回饋是一片空白。</p>
 <p><br></p>
 
-<h2 id="act2">建立版本庫</h2>
-<p>在專案還沒建立版本庫之前，任何有關 Git 的指令皆無效，因此我們必須先在專案資料夾裡建立版本庫，其指令語法為：</p>
+<p>首次將專案與目的遠端儲存庫連結，我們得確認該遠端儲存庫的 HTTPS 網址或 SSH 金鑰，在 GitHub 中通常已顯示在指定遠端儲存庫頁面上且容易找到，本次練習我們以 HTTPS 的方式進行連結。</p>
+<figure>
+    <img src="../images/app/git-remote-2.jpg">
+</figure>
+<p>複製其網址，並貼入到底下指令 URL 位置：</p>
 <div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">$git init</code></pre>
+<pre class="text-pre"><code class="shell">$git remove add origin URL</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><em>$</em> 是 Bash 的執行緒代號，如果是用 Windows 命令提示字元下指令的話不用加這個字符。版本庫建立完成後，demo 資料夾會生成一個「.git」的隱藏資料夾。「.git」資料夾將用來存取每一次版本提交的內容。</p>
-<p>另外要注意的是，Git 指令有大小寫之分。</p>
+<p>例如：</p>
 <figure>
-    <img src="../images/app/git-init-4.jpg">
+    <img src="../images/app/git-remote-3.jpg">
 </figure>
-<p>隱藏資料夾在作業系統預設狀態下為不可見，Windows 使用者可以在工具列中「檢視」頁籤找到「隱藏的項目」的項目，將其核選方塊勾選即可。</p>
+<p>再次輸入 <em>reomote -v</em> 指令，查看目前專案遠端儲存庫的資訊：</p>
 <figure>
-    <img src="../images/app/git-init-5.jpg">
+    <img src="../images/app/git-remote-4.jpg">
 </figure>
-<p><br></p>
-<p>若要用 Tortoisegit 操作，則在右鍵快速選單中選擇「Git Create repository here...」功能即可。</p>
-<figure>
-    <img src="../images/app/git-init-6.jpg">
-</figure>
+<p>可以發現指令返回的結果多了一筆我們從 GitHub 新增的遠端儲存庫，其主機名稱為「origin」。也就是說，原本 <em>remote add</em> 那一串指令裡有一個 <em>origin</em> 的字串，指的便是新增遠端儲存庫的主機名稱，這個名稱可以隨個人偏好或團隊要求而變更。</p>
 <p><br></p>
 
-<h2 id="act3">提交流程-Bash</h2>
-<figure>
-    <img src="../images/app/git-process-1.jpg">
-</figure>
-<p>還記得這張流程圖嗎？建立版本庫後，該專案就可以開始執行 Git 版控的步驟，目前 demo 專案資料夾裡的檔案所在位置為「Working directory」（工作區域）。從流程圖中我們可以看到檔案從工作區域要進入到最後階段（Repository）分別要經過添加（add） 和提交（commit）的動作，而這同時也是我們提交至版本庫分別要下的指令。</p>
-<p><br></p>
-<h5 class="text-step">將工作區域檔案添加至暫存區域（Ataging area）</h5>
+<h2 id="act2">push</h2>
+<p>建立好遠端與本機端儲存庫的連結後，我們就可以將專案版控同步備份到遠端上了，其核心指令為 <em>push</em>，因此我們在看 Git 相關中文文件時，常常會看到作者將同步備份的行為稱作「推送」。</p>
 <div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">$git add .</code></pre>
+<pre class="text-pre"><code class="shell">$git push -u origin master</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><em>add</em> 是 Git 將工作區域的檔案「添加」到暫存區域的動作，其指令參數有很多種，詳細留到以後再獨立成篇介紹。這裡先使用最簡單灑脫的參數 <em>.</em>，意即將所有檔案通通添加到暫存區域。</p>
+<p><em>origin</em> 指的是主機名稱，而 <em>master</em> 則是指 Git 版控樹狀節點結構中的主分支。如果嫌字太多麻煩，也可以用 <em>--all</em> 指令取代：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$git push -all</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>按下確認鍵，此時 GitHub 會要求使用者輸入他的帳號密碼，倘若資料皆正確便可成功執行推送......原本是這樣沒錯。</p>
+<figure>
+    <img src="../images/app/git-remote-5.jpg">
+</figure>
+<p>然而，自 2021 年 8 月 13 日起，GitHub 資安政策有了改變，HTTPS 不再支援密碼驗證的機制，使用者若要與遠端儲存庫進行推送、拉取動作，必須先向 GitHub 申請 Token。申請 Token 的流程會再另外撰文說明，這裡先直接看成功完成推送後的結果：</p>
+<figure>
+    <img src="../images/app/git-remote-6.jpg">
+    <figcaption>推送成功。</figcaption>
+</figure>
+<p><br></p>
+<figure>
+    <img src="../images/app/git-remote-7.jpg">
+</figure>
+<p>返回 GitHub 遠端儲存庫的網頁，確認本機端的檔案已成功推送上去，如此便完成了本機端與遠端儲存庫的同步備份工作。</p>
+<p><br></p>
+<p>也許有些人會好奇或有需求：一個本機端版控的專案能否同時擁有多個遠端儲存庫？答案是可以的，添加指令一樣是透過 <em>remote add</em> 去執行，但要注意的是遠端主機名稱不能重複（假設專案連結的遠端儲存庫已存在 <em>origin</em> 的主機名稱，那你新增的名稱就不能叫做 <em>origin</em>），以下是增加多筆遠端儲存庫後的示範畫面：</p>
+<figure>
+    <img src="../images/app/git-remote-8.jpg">
+</figure>
+<p>推送資料時再指定主機名稱對象即可，例如我要將檔案推送至 <em>origin2</em>，指令就這樣下：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git push -u origin2 master</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>使用者可能以為 <em>push --all</em> 會將版控檔案推送到全部的遠端儲存庫，經實際測試後得到的結果並不然。<em>push --all</em> 指令會以前次使用者推送遠端儲存庫為依據執行推送。</p>
 <p><br></p>
 
-<h5 class="text-step">將暫存區域檔案提交至版本庫（Repository）</h5>
+<h2 id="act3">補充</h2>
+<p>以下來補充一些有關遠端儲存庫的指令操作：</p>
+<h4>顯示遠端儲存庫主機名稱：</h4>
 <div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">$git commit -m "c1"</code></pre>
+<pre class="text-pre"><code class="shell">$ git remote</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p><em>commit</em> 則是將暫存區域內的檔案「提交」到版本庫的命令，<em>-m</em> 中的 m 是 message 的意思，我們需要在其後方用雙引號撰寫此次提交版本的訊息，例如範例中「c1」。Git 的 Commit Message 最好以清楚易讀為原則，以方便未來檢視提交日誌時，能更一目了然各個提交版本的目的是什麼。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-7.jpg">
-</figure>
-<p><em>add</em> 和 <em>commit</em> 依序執行完就算是完成本地端版本庫的一次版控流程了，假如想確認檔案是否有紮紮實實地進入版控，我們可以用兩種方式確認。</p>
-<p><br></p>
-<p>第一個方法是 <em>git status</em> 指令，它可以查看目前檔案的狀態，如果你的檔案已是最新版本，它會返回「nothing to commit, working tree clean」的訊息。</p>
-<div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">$git status</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<figure>
-    <img src="../images/app/git-init-8.jpg">
-</figure>
-<p><br></p>
-<p>第二種方法則是 <em>git log</em>，這個指令可以列出版本庫的所有 Commit 記錄，是 Git 裡非常重要且也是相當好用的功能。</p>
-<div class="text-code is-bash">
-<pre class="text-pre"><code class="shell">$git log</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<figure>
-    <img src="../images/app/git-init-9.jpg">
-</figure>
 <p><br></p>
 
-<h2 id="act4">提交流程-Tortoisegit</h2>
-<p>看完了 Bash 本地端版控流程，我們接著看看 Tortoisegit 要如何操作。</p>
-<figure>
-    <img src="../images/app/git-init-10.jpg">
-</figure>
-<p>在功能選單中點擊「Add」。</p>
+<h4>刪除遠端儲存庫：</h4>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git remote rm 名稱</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git remote rm origin</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 <p><br></p>
-<figure>
-    <img src="../images/app/git-init-11.jpg">
-</figure>
-<p>Tortoisegit 會列出目前工作區域內的檔案，我們將要加入追蹤的檔案勾選起來（預設是全選）。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-12.jpg">
-</figure>
-<p>成功將檔案添加到暫存區域！接下來可以點擊「Commit」按鈕，執行暫存區域檔案提交的動作。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-13.jpg">
-</figure>
-<p>輸入 Message 訊息，以「c1」作為範例。輸入完成後按下「Commit」。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-14.jpg">
-</figure>
-<p>完成版控。</p>
-<p>Tortoisegit 的好處是每一次執行面板都會貼心地引導使用者下一步可以執行的動作，例如 Commit 完成後，它接著繼續提示使用者可以將本地端版本庫「Push」（推送）到遠端儲存庫上。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-15.jpg">
-</figure>
-<p>如果要確認 Commit 記錄，可以從 Tortoisegit 右側選單裡找到「Show log」（顯示歷史記錄）的功能。</p>
-<p><br></p>
-<figure>
-    <img src="../images/app/git-init-16.jpg">
-</figure>
-<p>歷史記錄面板裡不僅列出 Commit 的圖形鏈，下方也有詳細列出每一次提交記錄的檔案狀態變更的資訊。</p>
-<p><br></p>
-<p>以上就是在自己工作電腦的專案建立 Git 並進行提交版本控制的基本流程了，基本上每一次版控都會需要 <em>add</em> 然後 <em>commit</em>，最後再上傳至遠端儲存庫儲存，以防電腦損壞而無法救回資料，或是方便其他專案團隊成員協同作業，我們將本機檔案上傳的動作在 Git 稱之為 <em>push</em>（推送），而從遠端將檔案下載下來（更新成最新版本）的行為則叫做 <em>pull</em>（拉取），筆者將於下一篇筆記作介紹。</p>
+
+<h4>更改遠端儲存庫主機名稱：</h4>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git remote rename 舊名 新名</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git remote rename origin2 itrong</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
