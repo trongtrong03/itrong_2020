@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a class="ig" href="https://www.instagram.com/trongtrong.hiker/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getAppIndex({ a_list, index: a_list.length-7 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getAppIndex({ a_list, index: a_list.length-7 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>先前已經介紹過如何將本機端版控專案推送到遠端儲存庫上，本篇則是要說明如何將遠端儲存庫最新的資料同步到本機端，在 Git 操作中主要有以下這些作法：<em>fetch</em>、<em>pull</em> 與 <em>clone</em>。其中，<em>fetch</em> 與 <em>pull</em> 作用相似，如果與本機端專案連接的遠端儲存庫有較新的版本，透過這兩種指令可以將較新的版本拉取下來。但如果今天工作電腦本身沒有該遠端儲存庫的專案時，我們則要使用 <em>clone</em> 指令，以下我們一一來觀看。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">fetch</a></li>
+        <li><a href="#act2">pull</a></li>
+        <li><a href="#act3">clone</a></li>
+        <li><a href="#act4">同步衝突</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">fetch</h2>
+<p></p>
+<p>無論是推還是拉的動作，都會很頻繁地在專案 Git 版控過程中被使用到，尤其是在多人維護的大型專案中，接手維護的人員第一件要做的事情就是確認自己本機端裡的檔案是否與遠端儲存庫的版本相同。</p>
+<figure>
+    <img src="../images/app/git-pull-1.jpg">
+    <figcaption>用 <em>log</em> 指令查詢本機端檔案的版控提交記錄。</figcaption>
+</figure>
+<figure>
+    <img src="../images/app/git-pull-2.jpg">
+    <figcaption>GitHub 遠端儲存庫上的版本記錄。</figcaption>
+</figure>
+<p>經過比對可以看出遠端儲存庫的版本較新，因此當我們需要對專案執行維護之前，需先將遠端儲存庫較新的版本更新下來，此刻先展示的指令是 <em>fetch</em>，Git 指令為：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git fetch origin master</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>如果沒有特別指名分支的話，省略只打 <em>git fetch</em> 也可以，為求完整性，練習時仍明確輸入遠端對象的主機及其主分支名稱。</p>
+<p>當 Git 確定本機端當前舊版本檔案與遠端對應版本資料一致，就會自動將較新的版本同步至使用的工作電腦內。假如舊版本的檔案與遠端對應版本的資料比對有出入，則系統視窗會返回相關的錯誤提示訊息，導致無法執行同步工作，此為「衝突」情況，有關衝突的解決方法後面再提。</p>
+<figure>
+    <img src="../images/app/git-pull-3.jpg">
+</figure>
+<p><em>fetch</em> 完成後，你可能會發現本機端檔案似乎沒有任何變化，利用 <em>log</em> 指令去查詢，返回的結果也沒有較新的 <em>c5</em> 版本...</p>
+<figure>
+    <img src="../images/app/git-pull-4.jpg">
+    <figcaption>本機端的版控記錄仍停留在 <em>c4</em>。</figcaption>
+</figure>
+<p>這是因為 <em>fetch</em> 指令會先與本機端版本庫記錄比對後，將較新的提交版本暫存在 <em>.git/FETCH_HEAD</em> 檔案中，而不會直接馬上與本機端儲存庫進行合併（Merge），畢竟有些開發者可能只是要確認遠端儲存庫的內容，並不是真的要將較新版本的資料同步更新到本機端儲存庫內。</p>
+<p><br></p>
+
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git log -p master..origin/master</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們可以用這個指令，去比對新舊版本之間變更的地方：</p>
+<figure>
+    <img src="../images/app/git-pull-5.jpg">
+    <figcaption>在 <em>c5</em> 版本中，<em>1.txt</em> 加入了「**test**」這行文字。</figcaption>
+</figure>
+<p><br></p>
+
+<p>我們使用 <em>merge</em> 指令，將較新版本的資料與本機端主分支進行「合併」：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git merge origin/master</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>合併完成並用 <em>log</em> 查看版本記錄日誌：</p>
+<figure>
+    <img src="../images/app/git-pull-6.jpg">
+    <figcaption>本機端的版控日誌已更新至 <em>c5</em>。</figcaption>
+</figure>
+<p><br></p>
+
+<h2 id="act2">pull</h2>
+<p>再來看看 <em>pull</em> 的用法，這次 GitHub 遠端儲存庫上最新的提交版控記錄為 <em>c6</em>，而本機端則是 <em>c5</em>。</p>
+<figure>
+    <img src="../images/app/git-pull-7.jpg">
+</figure>
+<figure>
+    <img src="../images/app/git-pull-8.jpg">
+</figure>
+<p><br></p>
+<p>Git 指令的語法和 <em>fetch</em> 基本上一樣，只是 <em>fetch</em> 改成 <em>pull</em>：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git pull origin master</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>實際執行畫面：</p>
+<figure>
+    <img src="../images/app/git-pull-9.jpg">
+</figure>
+<p><br></p>
+<p>和 <em>fetch</em> 不同的是，<em>pull</em> 這個指令會直接將遠端儲存庫較新的版本直接合併到本機端的主支中，我們透過 <em>log</em> 指令便一目了然：</p>
+<figure>
+    <img src="../images/app/git-pull-10.jpg">
+</figure>
+<p>由此可知 <em>pull</em> 同時執行了 <em>fetch</em> 與 <em>merge</em> 的動作，而多數使用者在拉取遠端儲存庫檔案時，使用 <em>pull</em> 的頻率更甚於透過 <em>fetch</em> 指令。</p>
+<p><br></p>
+
+<h2 id="act3">clone</h2>
+<p>同樣是向遠端儲存庫拉取檔案，<em>fetch</em> 與 <em>pull</em> 與其說是下載，不如說更趨近於本機端專案更新檔案的行為。倘若工作電腦不存在該專案，就無法用 <em>fetch</em>、<em>pull</em> 指令取得檔案，此時正確的執行指令為 <em>clone</em>。</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git clone [REPO].git</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>例如：</p>
+<div class="text-code is-bash">
+<pre class="text-pre"><code class="shell">$ git clone https://github.com/trongtrong03/GitDemo.git</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>實際操作結果：</p>
+<figure>
+    <img src="../images/app/git-pull-11.jpg">
+</figure>
+<p><br></p>
+
+<h2 id="act4">同步衝突</h2>
+
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../app.html'"></button>
+                        <button id="sideCatalog" title="Catalog"></button>
+                        <a href="#wrap" id="sideTop" title="Top"></a>
+                        <button id="sideList" title="List"></button>
+                    
+                    
+                    
+    
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterApp" :key="item.id">
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                        
+                        
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+
+                
+            </section>
+        </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>Stylus</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+</body>
+</html>

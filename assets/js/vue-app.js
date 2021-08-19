@@ -614,7 +614,7 @@ const appData = [
     {
         id: 4,
         href: 'app_git_push',
-        title: 'Git 筆記（四）：將本機端版本庫推送至遠端儲存庫',
+        title: 'Git 筆記（四）：將本機端版本庫推送資料至遠端儲存庫',
         time: '2021.08.15',
         tag1: true,
         tag1_name: 'git',
@@ -632,6 +632,18 @@ const appData = [
         tag1_name: 'git',
         tag2: true,
         tag2_name: 'GitHub',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 5,
+        href: 'app_git_pull',
+        title: 'Git 筆記（六）：從遠端儲存庫下載或同步資料至本機端',
+        time: '2021.08.18',
+        tag1: true,
+        tag1_name: 'git',
+        tag2: false,
+        tag2_name: '',
         img: false,
         img_name: ''
     },
