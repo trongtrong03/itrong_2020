@@ -451,6 +451,21 @@ const jsData = [
     // },
 ]
 
+const jpData = [
+    {
+        id: 0,
+        href: 'xxx',
+        title: 'xxxxxx',
+        time: '20xx.xx.xx',
+        tag1: false,
+        tag1_name: 'false',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
+]
+
 const miscData = [
     {
         id: 0,
@@ -2141,6 +2156,7 @@ var wrap = new Vue({
         h_list: htmlData.reverse(),
         c_list: cssData.reverse(),
         j_list: jsData.reverse(),
+        jp_list: jpData.reverse(),
         m_list: miscData.reverse(),
         a_list: appData.reverse(),
         r_list: resData,
@@ -2167,6 +2183,10 @@ var wrap = new Vue({
 
         getJsIndex({ j_list = [], index = 0 }) {
             return j_list[index] || {}
+        },
+
+        getJpIndex({ jp_list = [], index = 0 }) {
+            return jp_list[index] || {}
         },
 
         getMiscIndex({ m_list = [], index = 0 }) {
@@ -2286,6 +2306,13 @@ var wrap = new Vue({
         filterJs: function() {
             var search = this;
             return this.j_list.filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            });
+        },
+
+        filterJp: function() {
+            var search = this;
+            return this.jp_list.filter(function(item) {
                 return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },

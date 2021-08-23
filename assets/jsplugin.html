@@ -6,7 +6,7 @@
         @@include("_header.html", { "js": "active" })
         <main>
             <section class="container-wrap">
-                <h1>JavaScript</h1>
+                <h1>JS plugins</h1>
                 <div class="search-wrap">
                     <input id="searchInput" type="text" placeholder="Search..." list="data" v-model="query">
                     <datalist id="data">
@@ -16,10 +16,10 @@
                     </datalist>
                     <button id="cleanBtn" :class="{ 'is-active' : cleanActive}" @click="resetSearchInput"></button>
                 </div>
-                <button class="btn-plugin" title="Plugin" onclick="javascript:location.href='@@webRoot/jsplugin.html'"></button>
+                <button class="btn-js" title="Javascript" onclick="javascript:location.href='@@webRoot/javascript.html'"></button>
                 <div class="notes-wrap">
                     <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterJs" :key="item.id">
+                        <li class="notes-item" v-for="item in filterJp" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
                                 <hgroup>
                                     <h6 class="notes-tags">

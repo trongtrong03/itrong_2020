@@ -102,6 +102,7 @@ main {
 }
 
 .container-wrap {
+    position: relative;
     max-width: 60rem;
     background-color: #FFF;
     margin: 0 auto;
@@ -343,5 +344,52 @@ main {
         content: '\f077';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
+    }
+}
+
+.btn-plugin {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #FFF;
+    background-color: $second;
+    border-radius: 0.5rem;
+    transition: background-color .3s;
+    &::before {
+        content: '\f5fc';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+    &:hover {
+        background-color: $href;
+    }
+}
+
+.btn-js {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    color: $second;
+    margin: 0;
+    padding: 0;
+    transition: color .3s;
+    &::before {
+        content: '\f3b9';
+        font-family: 'Font Awesome 5 Brands';
+    }
+    &:hover {
+        color: $href;
     }
 }
