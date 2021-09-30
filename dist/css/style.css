@@ -9581,7 +9581,16 @@ main {
 }
 
 .btn-plugin:hover {
-  background-color: #40a8c4;
+  background-color: #CF5341;
+}
+
+@media only screen and (max-width: 480px) {
+  .btn-plugin {
+    top: .75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+  }
 }
 
 .btn-js {
@@ -9606,7 +9615,17 @@ main {
 }
 
 .btn-js:hover {
-  color: #40a8c4;
+  color: #CF5341;
+}
+
+@media only screen and (max-width: 480px) {
+  .btn-js {
+    top: .75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+    border-radius: 0.25rem;
+  }
 }
 
 header {
@@ -10096,6 +10115,19 @@ footer {
   padding: 1rem 0;
 }
 
+.notes-list.is-jsp {
+  *zoom: 1;
+}
+
+.notes-list.is-jsp:before, .notes-list.is-jsp:after {
+  content: "";
+  display: table;
+}
+
+.notes-list.is-jsp:after {
+  clear: both;
+}
+
 .index .notes-list {
   padding: 0;
 }
@@ -10136,6 +10168,7 @@ footer {
 .notes-item a figure {
   flex: 1;
   max-width: 8.5rem;
+  margin-bottom: 0.5rem;
   padding: 0 1rem 0 3rem;
 }
 
@@ -10143,6 +10176,39 @@ footer {
   display: block;
   width: 100%;
   border-radius: .25rem;
+}
+
+.is-jsp .notes-item {
+  width: calc(25% - 12px);
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  float: left;
+}
+
+.is-jsp .notes-item a {
+  display: block;
+  border-bottom: 0;
+  padding: 0;
+}
+
+.is-jsp .notes-item a hgroup h2 {
+  font-size: 1rem;
+}
+
+.is-jsp .notes-item a figure {
+  max-width: none;
+  background-color: #40a8c5;
+  padding: 0;
+}
+
+.is-jsp .notes-item a figure img {
+  border-radius: 0;
+  transform: scale(0.8, 0.8);
+  transition: transform .3s;
+}
+
+.is-jsp .notes-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .notes-item:hover {
@@ -10157,9 +10223,30 @@ footer {
   color: #81D8D0;
 }
 
+.is-jsp .notes-item:hover {
+  transform: scale(1, 1);
+}
+
+.is-jsp .notes-item:hover a {
+  border-top: 0;
+}
+
+.is-jsp .notes-item:hover a figure img {
+  transform: scale(1, 1);
+}
+
 @media only screen and (max-width: 1280px) {
   .notes-item a figure {
     padding-right: 0;
+  }
+  .is-jsp .notes-item {
+    width: calc(33.33% - (32px / 3));
+  }
+  .is-jsp .notes-item:nth-child(4n) {
+    margin-right: 16px;
+  }
+  .is-jsp .notes-item:nth-child(3n) {
+    margin-right: 0;
   }
 }
 
@@ -10167,11 +10254,27 @@ footer {
   .notes-item a hgroup h2 {
     font-size: 1.25rem;
   }
+  .is-jsp .notes-item {
+    width: calc(50% - 8px);
+  }
+  .is-jsp .notes-item:nth-child(3n) {
+    margin-right: 16px;
+  }
+  .is-jsp .notes-item:nth-child(2n) {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .notes-item a hgroup h2 {
     font-size: 1.125rem;
+  }
+  .is-jsp .notes-item {
+    width: 100%;
+    margin-right: 0;
+  }
+  .is-jsp .notes-item:nth-child(4n) {
+    margin-right: 0;
   }
 }
 
@@ -10193,6 +10296,10 @@ footer {
 
 .notes-tags span::before {
   content: '#';
+}
+
+.is-jsp .notes-tags {
+  color: #aaa;
 }
 
 .notes-time {

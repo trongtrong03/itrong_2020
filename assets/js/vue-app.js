@@ -454,15 +454,57 @@ const jsData = [
 const jpData = [
     {
         id: 0,
-        href: 'xxx',
-        title: 'xxxxxx',
-        time: '20xx.xx.xx',
-        tag1: false,
-        tag1_name: 'false',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: ''
+        href: 'jsp_jq_accordion',
+        title: '兩層式摺疊列表（Accordion）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-accordion'
+    },
+    {
+        id: 1,
+        href: 'jsp_jq_htabs',
+        title: '水平切換頁籤（Tabs）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-htabs'
+    },
+    {
+        id: 2,
+        href: 'jsp_jq_particleground',
+        title: '粒子特效（Particleground）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-particleground'
+    },
+    {
+        id: 3,
+        href: 'jsp_jq_vlnewsticker',
+        title: '垂直切換跑馬燈（News Ticker）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-vlnewsticker'
+    },
+    {
+        id: 4,
+        href: 'jsp_jq_hlnewsticker',
+        title: '水平鍵字效果跑馬燈（News Ticker）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-hlnewsticker'
+    },
+    {
+        id: 5,
+        href: 'jsp_jq_imgcomparison',
+        title: '兩張影像的拖曳比較（Image Comparison）',
+        tag: true,
+        tag_name: 'jQuery',
+        img: true,
+        img_name: 'jq-plugin-imgcomparison'
     },
 ]
 
@@ -2156,7 +2198,7 @@ var wrap = new Vue({
         h_list: htmlData.reverse(),
         c_list: cssData.reverse(),
         j_list: jsData.reverse(),
-        jp_list: jpData.reverse(),
+        jsp_list: jpData.reverse(),
         m_list: miscData.reverse(),
         a_list: appData.reverse(),
         r_list: resData,
@@ -2185,8 +2227,8 @@ var wrap = new Vue({
             return j_list[index] || {}
         },
 
-        getJpIndex({ jp_list = [], index = 0 }) {
-            return jp_list[index] || {}
+        getJspIndex({ jsp_list = [], index = 0 }) {
+            return jsp_list[index] || {}
         },
 
         getMiscIndex({ m_list = [], index = 0 }) {
@@ -2292,56 +2334,69 @@ var wrap = new Vue({
         filterHtml: function() {
             var search = this;
             return this.h_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterCss: function() {
             var search = this;
             return this.c_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterJs: function() {
             var search = this;
             return this.j_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
-        filterJp: function() {
+        filterJsp: function() {
             var search = this;
-            return this.jp_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+            return this.jsp_list.filter(function(item) {
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterMisc: function() {
             var search = this;
             return this.m_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterApp: function() {
             var search = this;
             return this.a_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag1_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag2_name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterRes: function() {
             var search = this;
             return this.r_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.tag.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.tag.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
 
         filterHik: function() {
             var search = this;
             return this.hk_list.filter(function(item) {
-                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || item.name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
+                return (item.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1 || 
+                    item.name.toLowerCase().indexOf(search.query.toLowerCase()) !== -1);
             });
         },
         

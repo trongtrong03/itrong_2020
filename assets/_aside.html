@@ -18,6 +18,11 @@
         <a href="#wrap" id="sideTop" title="Top"></a>
         <button id="sideList" title="List"></button>
     }
+    @@if (context.jsp===true ) {
+        <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/jsplugin.html'"></button>
+        <a href="#wrap" id="sideTop" title="Top"></a>
+        <button id="sideList" title="List"></button>
+    }
     @@if (context.app===true ) {
         <button id="sideBack" title="Back" onclick="javascript:location.href='@@webRoot/app.html'"></button>
         <button id="sideCatalog" title="Catalog"></button>
@@ -52,6 +57,11 @@
         }
         @@if (context.js===true ) {
         <li v-for="item in filterJs" :key="item.id">
+            <a :href="item.href + '.html'" v-text="item.title"></a>
+        </li>
+        }
+        @@if (context.jsp===true ) {
+        <li v-for="item in filterJsp" :key="item.id">
             <a :href="item.href + '.html'" v-text="item.title"></a>
         </li>
         }

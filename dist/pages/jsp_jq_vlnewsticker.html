@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="page">
+<head>
+    <title>iTrong work studio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- icon -->
+    <link href="../images/favicon.ico" rel="shortcut icon">
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <article id="wrap">
+        <header>
+            <figure class="logo">
+                <a href="../index.html">
+                    <span>iTrong <b>work studio</b></span>
+                </a>
+            </figure>
+            <button class="nav-btn" @click="navActive = !navActive"></button>
+            <nav :class="{ 'is-active' : navActive}">
+                <ul>
+                    <li>
+                        <a  href="../index.html"><b>HOME</b></a>
+                    </li>
+                    <li>
+                        <a  href="../html.html"><b>HTML</b></a>
+                    </li>
+                    <li>
+                        <a  href="../css.html"><b>CSS</b></a>
+                    </li>
+                    <li>
+                        <a  class="active"  href="../javascript.html"><b>JavaScript</b></a>
+                    </li>
+                    <li>
+                        <a  href="../app.html"><b>Applications</b></a>
+                    </li>
+                    <li>
+                        <a  href="../misc.html"><b>Miscellaneous Notes</b></a>
+                    </li>
+                    <li>
+                        <a  href="../resource.html"><b>Resources</b></a>
+                    </li>
+                    <li>
+                        <a  href="../hiking.html"><b>Hiking</b></a>
+                    </li>
+                </ul>
+                <div class="nav-bottom">
+                    <a href="###" class="nav-profile" title="My Profile" @click="pfActive = !pfActive">
+                        <i class="far fa-user"></i>
+                    </a>
+                    <a href="https://github.com/trongtrong03" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="codepen" href="https://codepen.io/itrong/" title="CodePen" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                    <a class="ig" href="https://www.instagram.com/trongtrong.hiker/" title="instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- <a class="line" href="#0" title="Line" @click="btnOpenL"></a> -->
+                    <a class="msg" href="../contact.html" title="Contact me">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </div>
+                <button class="nav-close" @click="navActive = !navActive"></button>
+            </nav>
+        </header>
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-4 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<figure>
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-4 }).img_name + '.jpg'">
+</figure>
+
+<p>引用文件：<br>
+    <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jQuery</a>
+</p>
+
+<p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;div class="news-wrap"&gt;
+    &lt;ul class="news-item"&gt;
+        &lt;li&gt;&lt;a href="#0"&gt;標題A&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#0"&gt;標題B&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#0"&gt;標題C&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.js</em> 文件內或 <em>&lt;script&gt;</em> 元素中：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var news = null;
+function newsTicker() {
+  $(".news-item")
+    .filter(function(item) {
+        return !$(this).is(news);
+    })
+    .each(function() {
+        $(this)
+        .find("li:first")
+        .slideUp(function() {
+            var newsitem = $(this).closest(".news-item");
+            $(this)
+                .appendTo(newsitem)
+                .slideDown();
+        });
+    });
+}
+setInterval(newsTicker, 5000);
+
+$(function() {  
+    $(".news-item").hover(
+        function() {
+            news = $(this);
+        },
+        function() {
+            news = null;
+        }
+    ); // set timeout
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>僅列出此效果必要的 CSS，請將以下程式碼內容複製至 <em>.css</em> 文件內或 <em>&lt;style&gt;</em> 元素中：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="scss">.news-list {
+    height: 6rem;
+    overflow: hidden;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="vbOvJP" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/vbOvJP">
+  jq-newsticker</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<!-- Content end -->
+                </div>
+                <aside class="side-bar">
+                    <button id="sideHome" title="Home" onclick="javascript:location.href='../index.html'"></button>
+                    
+                    
+                    
+                    
+                        <button id="sideBack" title="Back" onclick="javascript:location.href='../jsplugin.html'"></button>
+                        <a href="#wrap" id="sideTop" title="Top"></a>
+                        <button id="sideList" title="List"></button>
+                    
+                    
+                    
+                    
+    
+                </aside>
+
+                <div class="text-list">
+                    <ul>
+                        
+                        
+                        
+                        
+                        <li v-for="item in filterJsp" :key="item.id">
+                            <a :href="item.href + '.html'" v-text="item.title"></a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                    <button class="text-close"></button>
+                </div>
+
+                
+            </section>
+        </main>
+        <div class="profile-wrap" :class="{ 'is-active' : pfActive}">
+            <div class="profile-main">
+                <div class="profile-content">
+                    <div class="profile-photo">
+                        <h2>壯壯</h2>
+                    </div>
+                    <div class="profile-article">
+                        <hgroup>
+                            <h2>Basic</h2>
+                            <p>西元 1989 出生，台灣人，現居台中</p>
+                            <div>
+                                <b>興趣</b>
+                                <ul class="removeTextNodes">
+                                    <li>創作</li>
+                                    <li>登山</li>
+                                    <li>慢跑</li>
+                                    <li>籃球</li>
+                                    <li>網球</li>
+                                    <li>手工藝</li>
+                                    <li>水族</li>
+                                    <li>狗</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Education</h2>
+                            <p>國立彰化師範大學 資訊管理系 畢業</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Work Experience</h2>
+                            <p>
+                                <time>2013.06 ~ 2016.03</time>
+                                <span>里陽數位科技 ｜ 前端切版設計師</span>
+                            </p>
+                            <p>
+                                <time>2016.04 ~ 現在</time>
+                                <span>BBIN ｜ 網頁前端工程師</span>
+                            </p>
+                            <p>
+                                <time>2018.04 ~ 現在</time>
+                                <span>Kiwigo 奇果，創意設計 ｜ 接案前端工程師</span>
+                            </p>
+                            <!-- <p><a href="../work.html"><i class="fas fa-link"></i> 專案集錦</a></p> -->
+                        </hgroup>
+                        <hgroup>
+                            <h2>Competency</h2>
+                            <div>
+                                <b>程式語言</b>
+                                <ul class="removeTextNodes">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>前端框架</b>
+                                <ul class="removeTextNodes">
+                                    <li>Sass</li>
+                                    <li>Stylus</li>
+                                    <li>jQuery</li>
+                                    <li>Vue</li>
+                                    <li>Gulp</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <b>工具</b>
+                                <ul class="removeTextNodes">
+                                    <li>Git</li>
+                                    <li>Sublime Text</li>
+                                    <li>VSCode</li>
+                                    <li>Photoshop</li>
+                                    <li>Illustrator</li>
+                                    <li>XD</li>
+                                </ul>
+                            </div>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Introduction</h2>
+                            <p>登頂的過程總是辛苦難熬的，如何在種種負面因子糾纏下與自己對話，戰勝一場場與自身心態的較量，這就是我的爬山哲學。</p>
+                            <p>這也反映在我對職場工作的堅持──只要勇於付出，儘管不是每一座山巔都有大景可看，但成長開拓的痕跡不會只是虛有其表。</p>
+                            <p>「也許你在頂尖看不到我，但我肯定仍走在通往頂尖的路上。」</p>
+                        </hgroup>
+                        <hgroup>
+                            <h2>Contact</h2>
+                            <p>trongtrong03@gmail.com</p>
+                        </hgroup>
+                    </div>
+                </div>
+            </div>
+            <button class="profile-close" @click="pfActive = !pfActive"></button>
+        </div>
+        <div class="particles-bg"></div>
+        <footer>Copyright © 2014-2020 iTrong All Rights Reserved.</footer>
+        <div class="overlay" :class="{'is-active' : listActive, 'is-active' : navActive }" @click="navActive = !navActive"></div>
+    </article>
+    <script src="../js/jquery.particleground.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/vue-app.js"></script>
+
+    
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/jquery.copiq.min.js"></script>
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+
+        // copy
+        $('.text-copy').copiq({
+            parent: '.text-code',
+            content: '.text-pre',
+            onSuccess: function($element, source, selection) {
+            $('span', $element).text($element.attr("data-text-copied"));
+                setTimeout(function() {
+                    $('span', $element).text($element.attr("data-text"));
+                }, 2000);
+            }
+        });
+    </script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    
+</body>
+</html>

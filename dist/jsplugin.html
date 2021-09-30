@@ -84,20 +84,18 @@
                 </div>
                 <button class="btn-js" title="Javascript" onclick="javascript:location.href='./javascript.html'"></button>
                 <div class="notes-wrap">
-                    <ul class="notes-list">
-                        <li class="notes-item" v-for="item in filterJp" :key="item.id">
+                    <ul class="notes-list is-jsp">
+                        <li class="notes-item" v-for="item in filterJsp" :key="item.id">
                             <a :href="'pages/' + item.href + '.html'">
+                                <figure v-if="item.img">
+                                    <img :src="'images/js/plugin/' + item.img_name + '.jpg'">
+                                </figure>
                                 <hgroup>
                                     <h6 class="notes-tags">
-                                        <span v-if="item.tag1" v-text="item.tag1_name"></span>
-                                        <span v-if="item.tag2" v-text="item.tag2_name"></span>
+                                        <span v-if="item.tag" v-text="item.tag_name"></span>
                                     </h6>
                                     <h2 v-text="item.title"></h2>
-                                    <time class="notes-time" v-text="item.time"></time>
                                 </hgroup>
-                                <figure v-if="item.img">
-                                    <img :src="'images/js/' + item.img_name + '.jpg'">
-                                </figure>
                             </a>
                         </li>
                     </ul>
