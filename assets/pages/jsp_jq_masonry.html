@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-9 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<figure class="is-cover">
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-9 }).img_name + '.jpg'">
+</figure>
+
+<p>Plugin 來源：<a href="https://masonry.desandro.com/layout.html" target="_blank">Masonry</a></p>
+
+<p>Plugin 所需文件：<br>
+    <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jquery.js</a>
+    <br>
+    <a href="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" target="_blank">masonry.js</a>
+</p>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;div class="grid-wrap"&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;img src="img01"&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;img src="img02"&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;img src="img..."&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>引用 JS 文件：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"&gt;&lt;/script&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.js</em> 文件內或 <em>&lt;script&gt;</em> 元素中：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(function() {
+    $('.grid-wrap').masonry({
+        itemSelector: '.grid-item',
+        // columnWidth: 160,
+        gutter: 8       // 項目間距
+    });
+    $('.grid-item').each(function(i){
+        setTimeout(function(){
+            $('.grid-item').eq(i).addClass('is-visible');
+        }, 200 * i);
+    });
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>僅列出此效果必要的 CSS，請將以下程式碼內容複製至 <em>.css</em> 文件內或 <em>&lt;style&gt;</em> 元素中：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="scss">.grid-item {
+    opacity: 0;
+    &.is-visible {
+        animation: Pop-in 600ms ease-in forwards;
+    }
+}
+
+@keyframes Pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotateY(90deg);
+    }
+    60% {
+        transform: scale(1.4);
+    }
+    90% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+    }
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="MMGRVg" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/MMGRVg">
+  jq-plugin: masonry</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "jsp": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

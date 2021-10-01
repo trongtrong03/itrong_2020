@@ -73,32 +73,49 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-3 }).title"></h1>
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-11 }).title"></h1>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
 <figure class="is-cover">
-    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-3 }).img_name + '.jpg'">
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-11 }).img_name + '.jpg'">
 </figure>
-<p>Plugin 來源：<a href="http://jnicol.github.io/particleground/" target="_blank">Particleground</a></p>
 
 <p>Plugin 所需文件：<br>
     <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jquery.js</a>
-    <br>
-    <a href="https://jnicol.github.io/particleground/js/jquery.particleground.min.js" target="_blank">particleground.js</a>
 </p>
 <p><br></p>
 
 <p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
 <div class="text-code is-html">
-<pre class="text-pre"><code class="html">&lt;div id="particles"&gt;&lt;/div&gt;</code></pre>
+<pre class="text-pre"><code class="html">&lt;div class="page-wrap"&gt;
+    &lt;div class="page-content"&gt;
+        &lt;p&gt;title01&lt;/p&gt;
+        &lt;p&gt;title02&lt;/p&gt;
+        &lt;p&gt;title03&lt;/p&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;p&gt;titleN&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="page-nav"&gt;&lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="hidden" id="allPage" /&gt;
+        &lt;input type="hidden" id="showPage" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
 </div>
-<p>引用 JS 文件：</p>
+<p>下方兩個 <em>input</em> 供作程式腳本判斷用途，請勿刪除。此外，<em>.page-content</em> 中的項目元素可以依照個人需求替換成其他元素，不僅如此，平行元素間也可以插入不同的元素，例如：</p>
 <div class="text-code is-html">
-<pre class="text-pre"><code class="html">&lt;script src="https://jnicol.github.io/particleground/js/jquery.particleground.min.js"&gt;&lt;/script&gt;</code></pre>
+<pre class="text-pre"><code class="html">&lt;div class="page-content"&gt;
+    &lt;p&gt;title01&lt;/p&gt;
+    &lt;div&gt;title02&lt;/div&gt;
+    &lt;p&gt;title03&lt;/p&gt;
+    &lt;div&gt;title04&lt;/div&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;p&gt;titleN&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -107,35 +124,45 @@
 
 <p>將以下程式碼內容複製至 <em>.js</em> 文件內或 <em>&lt;script&gt;</em> 元素中：</p>
 <div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">$(function(){
-    $('#particles').particleground({
-        dotColor: '#FFF',
-        lineColor: '#FFF',
-    });
-});</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p><br></p>
-
-<p>可調用參數：</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">dotColor: '#FFF',     // 網點的顏色。
-lineColor: '#FFF',      // 網線的顏色。
-minSpeedX: 0.1,     // X軸的動畫最小速度。
-maxSpeedX: 0.7,     // X軸的動畫最大速度。
-minSpeedY: 0.1,     // Y軸的動畫最小速度。
-maxSpeedY: 0.7,     // Y軸的動畫最大速度。
-directionX: 'center',   // 可以是 'center'，'left' 或者 'right' 之一。 'center' 表示點將從畫布的邊緣反彈。
-directionY: 'center',   // 可以是 'center'，'up' 或者 'down' 之一。 'center' 表示點將從畫布的邊緣反彈。
-density: 10000,         // 渲染密度，數值越小越密。
-particleRadius: 7,      // 網點大小。
-lineWidth: 1,       // 線寬。
-curvedLines: false,     // 曲線，true 為使用，false 為不使用。
-proximity: 100,     // 使網點之間連線的距離，數值越小則要越相近才會連線。
-parallax: true,     // 是否啟用視差跟隨效果。
-parallaxMultiplier: 5,      // 數值越小，視差跟隨的效果就越極端。</code></pre>
+<pre class="text-pre"><code class="javascript">$(function() {
+    var show_per_page = 5;  // 一頁顯示幾筆項目
+    var number_of_items = $(".page-content").children().length;
+    var number_of_pages = Math.ceil(number_of_items/show_per_page);
+    $("#allPage").val(0);
+    $("#showPage").val(show_per_page);
+    var navigation_html = "&lt;a class='previous_link' href='javascript:previous();'&gt;Prev&lt;/a&gt;";
+    var current_link = 0;
+    while(number_of_pages &gt; current_link){
+        navigation_html += "&lt;a class='page_link' href='javascript:go_to_page(" + current_link +")' longdesc='" + current_link +"'&gt;"+ (current_link + 1) +"&lt;/a&gt;";
+        current_link++;
+    }
+    navigation_html += "&lt;a class='next_link' href='javascript:next();'&gt;Next&lt;/a&gt;";
+    $(".page-nav").html(navigation_html);
+    $(".page-nav .page_link:first").addClass("active");
+    $(".page-content").children().css("display", "none");
+    $(".page-content").children().slice(0, show_per_page).css("display", "block");
+});
+function previous(){
+    new_page = parseInt($("#allPage").val()) - 1;
+    if($(".active").prev(".page_link").length==true){
+        go_to_page(new_page);
+    }
+}
+function next(){
+    new_page = parseInt($("#allPage").val()) + 1;
+    if($(".active").next(".page_link").length==true){
+        go_to_page(new_page);
+    }
+    
+}
+function go_to_page(page_num){
+    var show_per_page = parseInt($("#showPage").val());
+    start_from = page_num * show_per_page;
+    end_on = start_from + show_per_page;
+    $(".page-content").children().css("display", "none").slice(start_from, end_on).css("display", "block");
+    $(".page_link[longdesc=" + page_num +"]").addClass("active").siblings(".active").removeClass("active");
+    $("#allPage").val(page_num);
+}</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -143,9 +170,9 @@ parallaxMultiplier: 5,      // 數值越小，視差跟隨的效果就越極端�
 <p><br></p>
 
 <p>Example：</p>
-<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="ywdxdZ" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/itrong/pen/ywdxdZ">
-  jq: plugin-particleground</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="zVRLPx" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/zVRLPx">
+  jq-plugin: pageination</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <!-- Content end -->

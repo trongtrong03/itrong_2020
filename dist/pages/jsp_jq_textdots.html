@@ -73,32 +73,29 @@
         <main>
             <section class="text-wrap">
                 <hgroup class="text-head">
-                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-3 }).title"></h1>
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-12 }).title"></h1>
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
 <figure class="is-cover">
-    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-3 }).img_name + '.jpg'">
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-12 }).img_name + '.jpg'">
 </figure>
-<p>Plugin 來源：<a href="http://jnicol.github.io/particleground/" target="_blank">Particleground</a></p>
+
+<p>Plugin 來源：<a href="http://dotdotdot.frebsite.nl/" target="_blank">dotdotdot</a></p>
 
 <p>Plugin 所需文件：<br>
     <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jquery.js</a>
     <br>
-    <a href="https://jnicol.github.io/particleground/js/jquery.particleground.min.js" target="_blank">particleground.js</a>
+    <a href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/3.0.0/jquery.dotdotdot.js" target="_blank">jquery.dotdotdot.js</a>
 </p>
+<p><a href="https://cdnjs.com/libraries/jQuery.dotdotdot" target="_blank">jQuery.dotdotdot</a> 提供多個不同版本，請依據自身使用的 jQuery 版本引用相對應的腳本文件即可。</p>
 <p><br></p>
 
 <p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
 <div class="text-code is-html">
-<pre class="text-pre"><code class="html">&lt;div id="particles"&gt;&lt;/div&gt;</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p>引用 JS 文件：</p>
-<div class="text-code is-html">
-<pre class="text-pre"><code class="html">&lt;script src="https://jnicol.github.io/particleground/js/jquery.particleground.min.js"&gt;&lt;/script&gt;</code></pre>
+<pre class="text-pre"><code class="html">&lt;div class="dot-text"&gt;
+    &lt;p&gt;文字內容&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
     <span>COPY</span>
 </button>
@@ -107,10 +104,9 @@
 
 <p>將以下程式碼內容複製至 <em>.js</em> 文件內或 <em>&lt;script&gt;</em> 元素中：</p>
 <div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">$(function(){
-    $('#particles').particleground({
-        dotColor: '#FFF',
-        lineColor: '#FFF',
+<pre class="text-pre"><code class="javascript">$(function() {
+    $(".dot-text").dotdotdot({
+        watch: "window"
     });
 });</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -119,35 +115,15 @@
 </div>
 <p><br></p>
 
-<p>可調用參數：</p>
-<div class="text-code is-js">
-<pre class="text-pre"><code class="javascript">dotColor: '#FFF',     // 網點的顏色。
-lineColor: '#FFF',      // 網線的顏色。
-minSpeedX: 0.1,     // X軸的動畫最小速度。
-maxSpeedX: 0.7,     // X軸的動畫最大速度。
-minSpeedY: 0.1,     // Y軸的動畫最小速度。
-maxSpeedY: 0.7,     // Y軸的動畫最大速度。
-directionX: 'center',   // 可以是 'center'，'left' 或者 'right' 之一。 'center' 表示點將從畫布的邊緣反彈。
-directionY: 'center',   // 可以是 'center'，'up' 或者 'down' 之一。 'center' 表示點將從畫布的邊緣反彈。
-density: 10000,         // 渲染密度，數值越小越密。
-particleRadius: 7,      // 網點大小。
-lineWidth: 1,       // 線寬。
-curvedLines: false,     // 曲線，true 為使用，false 為不使用。
-proximity: 100,     // 使網點之間連線的距離，數值越小則要越相近才會連線。
-parallax: true,     // 是否啟用視差跟隨效果。
-parallaxMultiplier: 5,      // 數值越小，視差跟隨的效果就越極端。</code></pre>
-<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
-    <span>COPY</span>
-</button>
-</div>
-<p><br></p>
-
 <p>Example：</p>
-<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="ywdxdZ" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/itrong/pen/ywdxdZ">
-  jq: plugin-particleground</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="WqMZGp" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/WqMZGp">
+  jq-plugin: dotdotdot-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
+<p><br></p>
+
+<p>在最新 CSS3 技術中，已有 <em>-webkit-line-clamp</em> 屬性可以達到類似需求，不過如果需要考量瀏覽器支援性的問題，以 JavaScript 套件處理仍是較佳的方案。</p>
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">

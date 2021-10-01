@@ -72,7 +72,9 @@
             figure {
                 max-width: none;
                 background-color: #40a8c5;
+                border-radius: 0.5rem;
                 padding: 0;
+                overflow: hidden;
                 img {
                     border-radius: 0;
                     transform: scale(.8, .8);

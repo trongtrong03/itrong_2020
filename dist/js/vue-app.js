@@ -290,6 +290,18 @@ const cssData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 19,
+        href: 'css_textoverflow',
+        title: '如何處理單行與多行的文字溢出',
+        time: '2021.01.03',
+        tag1: true,
+        tag1_name: 'CSS',
+        tag2: true,
+        tag2_name: 'CSS3',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const jsData = [
@@ -401,18 +413,20 @@ const jsData = [
         img: false,
         img_name: ''
     },
-    {
-        id: 9,
-        href: 'js_learn_10',
-        title: 'Javascript 學習筆記（十）：物件模型---DOM',
-        time: '2019.11.05',
-        tag1: false,
-        tag1_name: 'false',
-        tag2: false,
-        tag2_name: 'false',
-        img: false,
-        img_name: ''
-    },
+    // {
+    //     id: 9,
+    //     href: 'js_learn_10',
+    //     title: 'Javascript 學習筆記（十）：物件模型---DOM',
+    //     time: '2019.11.05',
+    //     tag1: false,
+    //     tag1_name: 'false',
+    //     tag2: false,
+    //     tag2_name: 'false',
+    //     img: false,
+    //     img_name: ''
+    // },
+
+
     // {
     //     id: 9,
     //     href: 'js_vue_intro',
@@ -456,55 +470,92 @@ const jpData = [
         id: 0,
         href: 'jsp_jq_accordion',
         title: '兩層式摺疊列表（Accordion）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-accordion'
     },
     {
         id: 1,
         href: 'jsp_jq_htabs',
         title: '水平切換頁籤（Tabs）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-htabs'
     },
     {
         id: 2,
         href: 'jsp_jq_particleground',
         title: '粒子特效（Particleground）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-particleground'
     },
     {
         id: 3,
         href: 'jsp_jq_vlnewsticker',
         title: '垂直切換跑馬燈（News Ticker）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-vlnewsticker'
     },
     {
         id: 4,
         href: 'jsp_jq_hlnewsticker',
         title: '水平鍵字效果跑馬燈（News Ticker）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-hlnewsticker'
     },
     {
         id: 5,
         href: 'jsp_jq_imgcomparison',
         title: '兩張影像的拖曳比較（Image Comparison）',
-        tag: true,
         tag_name: 'jQuery',
-        img: true,
         img_name: 'jq-plugin-imgcomparison'
+    },
+    {
+        id: 6,
+        href: 'jsp_jq_vtabs',
+        title: '垂直切換頁籤（Tabs）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-vtabs'
+    },
+    {
+        id: 7,
+        href: 'jsp_jq_mixitup',
+        title: '項目篩選（MixItUp）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-mixitup'
+    },
+    {
+        id: 8,
+        href: 'jsp_jq_masonry',
+        title: '瀑布流（Masonry Grid）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-masonry'
+    },
+    {
+        id: 9,
+        href: 'jsp_jq_copy',
+        title: '複製區域文字（Copy）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-copy'
+    },
+    {
+        id: 10,
+        href: 'jsp_jq_pagination',
+        title: '分頁效果（Pagination）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-pagination'
+    },
+    {
+        id: 11,
+        href: 'jsp_jq_textdots',
+        title: '文字溢出省略符號（Text Dots）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-textdots'
+    },
+    {
+        id: 12,
+        href: 'jsp_jq_datepicker',
+        title: '日曆選擇工具（Calendar Picker）',
+        tag_name: 'jQuery',
+        img_name: 'jq-plugin-datepicker'
     },
 ]
 

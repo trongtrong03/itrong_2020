@@ -151,6 +151,30 @@
                         </ul>
                     </div>
                 </section>
+                <!-- Plugins -->
+                <section>
+                    <h3 class="mb-16">
+                        <span>Plugins</span>
+                        <a href="jsplugin.html">MORE</a>
+                    </h3>
+                    <div class="notes-wrap">
+                        <ul class="notes-list is-jsp">
+                            <li class="notes-item" v-for="item in jsp_list.slice(0, 8)">
+                                <a :href="'pages/' + item.href + '.html'">
+                                    <figure>
+                                        <img :src="'images/js/plugin/' + item.img_name + '.jpg'">
+                                    </figure>
+                                    <hgroup>
+                                        <h6 class="notes-tags">
+                                            <span v-text="item.tag_name"></span>
+                                        </h6>
+                                        <h2 v-text="item.title"></h2>
+                                    </hgroup>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
                 <!-- Hiking -->
                 <h2>Hiking <a href="hiking.html">More</a></h2>
                 <section>

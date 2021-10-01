@@ -77,12 +77,13 @@
                 </hgroup>
                 <div class="text-content">
 <!-- Content start -->
-<figure>
+<figure class="is-cover">
     <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-2 }).img_name + '.jpg'">
 </figure>
-<p>引用文件：<br>
-    <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jQuery</a>
+<p>Plugin 所需文件：<br>
+    <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jquery.js</a>
 </p>
+<p><br></p>
 
 <p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
 <div class="text-code is-html">
@@ -116,7 +117,6 @@
         $(this).siblings().removeClass("is-active");
         $(".tabs-content").siblings().removeClass("is-active");  
         $(".tabs-content").eq($(this).index()).addClass("is-active");
-        $(".receive-content").removeClass("is-active");
     });
 });</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -127,7 +127,12 @@
 
 <p>僅列出此效果必要的 CSS，請將以下程式碼內容複製至 <em>.css</em> 文件內或 <em>&lt;style&gt;</em> 元素中：</p>
 <div class="text-code is-css">
-<pre class="text-pre"><code class="scss">.tabs-content {
+<pre class="text-pre"><code class="scss">.tabs-item {
+    display: inline-block;
+    &.is-active {}
+}
+
+.tabs-content {
     display: none;
     &.is-active {
         display: block;

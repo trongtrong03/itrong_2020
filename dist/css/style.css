@@ -9628,6 +9628,14 @@ main {
   }
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-16 {
+  margin-bottom: 1rem;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -10198,7 +10206,9 @@ footer {
 .is-jsp .notes-item a figure {
   max-width: none;
   background-color: #40a8c5;
+  border-radius: 0.5rem;
   padding: 0;
+  overflow: hidden;
 }
 
 .is-jsp .notes-item a figure img {
@@ -10757,6 +10767,23 @@ footer {
 .text-content > figure figcaption a {
   color: #40a8c4;
   text-decoration: underline;
+}
+
+.text-content > figure.is-cover {
+  background-color: #f2f2f2;
+  padding: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .text-content figure.is-cover {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .text-content figure.is-cover {
+    padding: 0;
+  }
 }
 
 .text-flex {
