@@ -293,7 +293,7 @@ const cssData = [
     {
         id: 19,
         href: 'css_textoverflow',
-        title: '如何處理單行與多行的文字溢出',
+        title: '實現單行與多行的文字溢出省略符',
         time: '2021.01.03',
         tag1: true,
         tag1_name: 'CSS',
@@ -2110,6 +2110,15 @@ const resData = [
         tag: 'material',
         img: true,
         img_name: 'screenshot'
+    },
+    {
+        id: 98,
+        href: 'http://nullice.com/limitPNG/',
+        title: 'limitPNG',
+        desc: '非常出色的圖片壓縮工具，可根據自身需求，對圖片進行有無損、高低畫質的壓縮作業。',
+        tag: 'media',
+        img: true,
+        img_name: 'limitpng'
     },
 ]
 
