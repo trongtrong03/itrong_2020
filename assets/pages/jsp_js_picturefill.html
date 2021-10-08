@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-14 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<figure class="is-cover">
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-14 }).img_name + '.jpg'">
+</figure>
+
+<p>Plugin 來源：<a href="https://scottjehl.github.io/picturefill/" target="_blank">Picturefill</a></p>
+<p><em>&lt;picture&gt;</em> 是 HTML5 新增的元素標籤，可依據裡頭設定不同的媒體（media）類型，顯示相對應的影像內容，大多廣泛運用在 RWD 設計上。不過由於是 HTML5 才訂立的標準，舊版本瀏覽器普遍不支援這個標籤，而 Picturefill.js 的用途即是要讓舊瀏覽器也能識別該標籤。</p>
+
+<p>Plugin 所需文件：<br>
+    <a href="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js" target="_blank">picturefill.js</a>
+</p>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;picture&gt;
+    &lt;source srcset="large.jpg" media="(min-width: 960px)"&gt;
+    &lt;source srcset="middle.jpg" media="(min-width: 768px)"&gt;
+    &lt;source srcset="small.jpg" media="(max-width: 480px)"&gt;
+    &lt;!--[if IE 9]&gt;&lt;video style="display: none;"&gt;&lt;![endif]--&gt;
+    &lt;img src="default.jpg"&gt;
+&lt;/picture&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>引用 JS 文件：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js"&gt;&lt;/script&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "jsp": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
