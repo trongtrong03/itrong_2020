@@ -91,6 +91,7 @@
         <li><a href="#act2">appearance</a></li>
         <li><a href="#act3">resize</a></li>
         <li><a href="#act4">placeholder</a></li>
+        <li><a href="#act5">autofill</a></li>
     </ul>
 </div>
 
@@ -289,6 +290,53 @@ input:-moz-placeholder { /* CSS */ }</code></pre>
         </p>
     </code>
 </div>
+<p><br></p>
+
+<h2 id="act5">autofill</h2>
+<p>相信這是不少開發者都會遇到的問題：在 Chrome 瀏覽器裡的表單輸入內容時，輸入框會自動變色，如下圖：</p>
+<figure>
+    <img src="../images/css/input-style-3.jpg">
+</figure>
+<p>此為瀏覽器 autoFill 功能，一般預設情況下，瀏覽器為方便使用者操作，會記錄使用者歷史輸入內容，以方便之後使用者再次輸入相同內容時，可直接通過快速選取，省去重新打一樣字串的動作。但是這樣的操作，瀏覽器會在該輸入框內自動帶入填充的樣式，這在一些經過設計的表單畫面上看起來不甚雅觀。而這其實是可以透過 CSS 去改變樣式的，其屬性名稱為 <em>autofill</em>：</p>
+<div class="text-code is-css">
+<pre class="text-pre"><code class="css">input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-text-fill-color: #FFF;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 1) inset;
+}</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>-webkit-text-fill-color</em> 為文字顏色，輸入框的背景色則透過 <em>-webkit-box-shadow</em> 內陰影（<em>inset</em>）的方式使色彩為白色或其它適合的指定顏色。</p>
+<div class="text-codepen">
+    <code>
+        <p class="codepen" data-height="360" data-default-tab="css,result" data-slug-hash="wvqWMGv" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/itrong/pen/wvqWMGv">
+          CSS-autofill</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </code>
+</div>
+<p><br></p>
+<p>假如屬性設置後無效，或是有其它原因使你無法單純透過 CSS 解決，那麼也可以直接從 HTML 原始碼著手：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;input type="text" autocomplete="off"&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>利用 <em>autocomplete</em> 屬性，去關閉表單自動填充字串的功能。也可以直接將該屬性下在 <em>&lt;form&gt;</em> 表單元素，如此整個表單內的輸入框皆會禁用。</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;form autocomplete="off"&gt;</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+
+
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">

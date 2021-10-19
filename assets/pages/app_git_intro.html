@@ -96,7 +96,7 @@
 
 <h2 id="act3">安裝 Git 與初始設定</h2>
 <p>本節要介紹的是安裝 Git 與其初始使用者設定的方法。</p>
-<h5 class="text-step">下載 Git 並安裝</h5>
+<h5 class="text-step">Step1. 下載 Git 並安裝</h5>
 <p>首先從<a href="https://gitforwindows.org/" target="_blank">官方網站</a>下載 Git 安裝應用程式，然後進行安裝，過程中會詢問多項選用功能的項目細節，如果你不是很了解這些功能選用的目的，建議直接按下一步至安裝完成即可。</p>
 <p>完成安裝之後，你應該可以在滑鼠右鍵開啟的呼叫選單上看見 Git 相關的功能項目：</p>
 <figure>
@@ -105,7 +105,7 @@
 <p>GUI 指的是圖形化介面，而 Bash 則是類似命令提示字元的 Linux Unix shell（命令行介面），Bash 模式對新手來說較難上手，但官方的 GUI （圖形操作介面）也不是那麼方便好用，故一般利用 GUI 進行控管的使用者，大多會再額外安裝較多使用者推薦的軟件，像是 <a href="https://tortoisegit.org/download/" target="_blank">TortoiseGit</a> 或 <a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a> 之類的非官方元件，以取代原本的 Git 提供的圖形化介面管理。</p>
 <p><br></p>
 
-<h5 class="text-step">下載 TortoiseGit</h5>
+<h5 class="text-step">Step2. 下載 TortoiseGit</h5>
 <p>假如你打算用 Bash 輸入指令的方式操作 Git，那麼可以直接進入第三步驟。若是想透過 GUI 進行管理，本步驟將分享 <a href="https://tortoisegit.org/download/" target="_blank">TortoiseGit</a> 的安裝流程，首先，進入 <a href="https://tortoisegit.org/download/" target="_blank">TortoiseGit</a> 的官方下載頁面。</p>
 <figure>
     <img src="@@webRoot/images/app/git-intro-7.jpg">
@@ -113,7 +113,7 @@
 <p>除了主程式外，它下方提供多個國家的語言包，若有需要可以一併下載。不過個人建議維持英文語系就好，畢竟大家討論 Git 指令功能時通常會講英文術語，且不見得每個人員都知曉那些術語的中文轉譯。</p>
 <p><br></p>
 
-<h5 class="text-step">設定使用者名稱與電子信箱帳號</h5>
+<h5 class="text-step">Step3. 設定使用者名稱與電子信箱帳號</h5>
 <p>這個步驟非常重要，不少人安裝完 Git 之後就迫不及待趕緊運用到專案管理上，但在這之前最好先設定使用者的名稱與電子信箱，否則後續執行提交（<em>commit</em>）指令時，Git 會發出警示訊息，要求你設定這兩項資訊。主要是因為每一次提交 Git 都會記錄此次提交版本的作者是誰，以供其他人員方便「緝凶」。</p>
 <p>設定使用者名稱與電子信箱帳號的 Git Bash 指令分別是：</p>
 <div class="text-code is-git">

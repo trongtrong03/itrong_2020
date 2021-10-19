@@ -108,7 +108,7 @@
 </div>
 <p><br></p>
 
-<h5 class="text-step">下載 <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a> 並安裝。</h5>
+<h5 class="text-step">Step1. 下載 <a href="https://rubyinstaller.org/" target="_blank">RubyInstaller</a> 並安裝。</h5>
 <figure>
     <img src="../images/css/compass-1.jpg">
 </figure>
@@ -116,7 +116,7 @@
 <p>至於下載版本部分，雖說理論上是越新越好，但倘若你有需要另外安裝其他輔助擴充套件（例如之後會撰文介紹的 Autoprefixer 自動前綴工具），則必須考量擴充套件相對 Ruby 版本的相容程度，版本太舊或太新都有可能會導致擴充套件無法順利執行編譯。在這裡筆者選擇的是 2.5.7-1 的版本，此為確保 Autoprefixer 可以正確執行的版本（2.6.5 或許也可以，但 2.7.0 開始就不相容，該套件則不支援 2.4.9 以下的版本）。</p>
 <p><br></p>
 
-<h5 class="text-step">安裝 Sass。</h5>
+<h5 class="text-step">Step2. 安裝 Sass。</h5>
 <p>呼叫你的終端機或命令提示字元（並非一定要用安裝 Ruby 附帶的 Start Command Prompt with Ruby），輸入下方指令：</p>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">gem install sass</code></pre>
@@ -133,7 +133,7 @@
 </div>
 <p><br></p>
 
-<h5 class="text-step">安裝 Compass。</h5>
+<h5 class="text-step">Step3. 安裝 Compass。</h5>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">gem install compass</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -151,7 +151,7 @@
 <p><br></p>
 
 <h2 id="act3">執行專案</h2>
-<h5 class="text-step">建立空白資料夾並移動至資料夾內。</h5>
+<h5 class="text-step">Step4. 建立空白資料夾並移動至資料夾內。</h5>
 <p>假設我們在 D 槽建立要執行 compass 編譯的專案，資料夾名稱為「demo」，其完整資料夾路徑就是 <em>D:/demo</em>。開啟終端機或命令提示字元，輸入下方指令：</p>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">d:</code></pre>
@@ -169,7 +169,7 @@
 <p>如果你覺得你的專案資料夾的路徑太長，也可以使用滑鼠拖曳的方式，直接用滑鼠壓住資料夾不放，將其拉進命令提示字元內，然後按下 <em>Enter&crarr;</em> 鍵，一樣可以令命令提示字元順利移動至該專案資料夾內。</p>
 <p><br></p>
 
-<h5 class="text-step">compass create 建立 Compass 專案</h5>
+<h5 class="text-step">Step5. compass create 建立 Compass 專案</h5>
 <p>此刻 <em>demo</em> 資料夾裡頭仍空空如也，鍵入以下指令：</p>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">compass create</code></pre>
@@ -201,7 +201,7 @@
 <p>我們可以透過添加或修改 <em>config.rb</em> 設定檔裡面的參數，變更 <em>sass</em> 與 <em>stylesheets</em> 的相關配置，又或是取消 <em>.sass-cache</em> 暫存機制，詳細說明將留到之後 <em>config.rb</em> 介紹再行敘述。</p>
 <p><br></p>
 
-<h5 class="text-step">compass watch 監控 Compass 專案</h5>
+<h5 class="text-step">Step6. compass watch 監控 Compass 專案</h5>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="bash">compass watch</code></pre>
 <button class="text-copy" data-text="COPY" data-text-copied="COPIED">
@@ -214,7 +214,7 @@
     <figcaption><em>compass watch</em> 監控中。</figcaption>
 </figure>
 <p><br></p>
-<h5 class="text-step">結束監控</h5>
+<h5 class="text-step">Step7. 結束監控</h5>
 <p>若專案已經完成或暫時告一段落，可以同時按下 <em>ctrl</em> 與 <em>C</em> 鍵結束 <em>compass watch</em>。</p>
 <figure>
     <img src="../images/css/compass-4.jpg">

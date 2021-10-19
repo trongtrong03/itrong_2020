@@ -28,7 +28,7 @@
 </div>
 
 <h2 id="act1">操作流程</h2>
-<h5 class="text-step">複製 Google Sheets 文件以建立副本。</h5>
+<h5 class="text-step">Step1. 複製 Google Sheets 文件以建立副本。</h5>
 <p>登入或註冊自己的 Google 帳戶，點擊此<a href="https://docs.google.com/spreadsheets/d/1Bn4m6iA_Xch1zzhNvo_6CoQWqOAgwwkOWJKC-phHx2Q/copy" target="_blank">試算表連結</a>並建立副本，複製一份 HTML Form Reponses 文件。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-1.jpg">
@@ -40,7 +40,7 @@
 <p>第一列是欄位名稱，可自行更改其他名稱，而這些名稱之後將與自己網頁表單裡的輸入框 <em>name</em> 屬性設定的參數名稱相對應。至於文件內第二列開始的資料屬範例資料，可以刪除。</p>
 <p><br></p>
 
-<h5 class="text-step">開啟指令碼編輯器功能。</h5>
+<h5 class="text-step">Step2. 開啟指令碼編輯器功能。</h5>
 <p>點擊「工具」→「指令碼編輯器」。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-3.jpg">
@@ -51,14 +51,14 @@
 </figure>
 <p><br></p>
 
-<h5 class="text-step">設置 <em>TO_ADDRESS</em> 參數。</h5>
+<h5 class="text-step">Step3. 設置 <em>TO_ADDRESS</em> 參數。</h5>
 <p>在第八行找到被註解起來的 <em>TO_ADDRESS</em> 程式碼，取消其註解（Ctrl + /）模式，將 <em>example@email.net</em> 改為自己用來收信的 E-mail 帳號。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-5.jpg">
 </figure>
 <p><br></p>
 
-<h5 class="text-step">儲存為新的版本。</h5>
+<h5 class="text-step">Step4. 儲存為新的版本。</h5>
 <p>點擊「檔案」→「管理版本」。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-6.jpg">
@@ -74,7 +74,7 @@
 <p>底下會蹦出版本控管的歷史紀錄表格。</p>
 <p><br></p>
 
-<h5 class="text-step">將腳本發佈到網路應用程式。</h5>
+<h5 class="text-step">Step5. 將腳本發佈到網路應用程式。</h5>
 <p>點擊「發佈」→「部署為網路應用程式...」。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-9.jpg">
@@ -99,7 +99,7 @@
 <p>將已部署為目前網路應用程式的網址記錄下來，可複製並暫時貼到記事本上。</p>
 <p><br></p>
 
-<h5 class="text-step">建立 HTML 表單。</h5>
+<h5 class="text-step">Step6. 建立 HTML 表單。</h5>
 <p>接下來就是在自己的網站建立聯絡表單的輸入項目了，或是直接用已經準備好的表單也可以，記得需使用 <em>&lt;form&gt;</em> 標籤來包覆表單的各個輸入框項目，將第五步驟尾聲產生的網址，貼上至 <em>action</em> 屬性內。</p>
 <div class="text-code is-html">
 <pre class="text-pre"><code class="html">&lt;form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbztVYKwnI3hwvQhpaoNbd2S8ROole1wxedxCALq/exec"&gt;
@@ -128,7 +128,7 @@
 <p>前面也有提過，各輸入框的 <em>name</em> 屬性名稱需與資料庫裡的欄位名稱相對應，這樣輸出的資料才會準確地傳送至正確的欄位裡。</p>
 <p><br></p>
 
-<h5 class="text-step">傳送測試。</h5>
+<h5 class="text-step">Step7. 傳送測試。</h5>
 <p>截至第六步為止，聯絡表單雛形已經建立完成，接下來就是要測試輸入的表單內容是否有成功寄到設定的信箱。</p>
 <figure>
     <img src="@@webRoot/images/html/gform-14.jpg">
@@ -150,7 +150,7 @@
 
 <h2 id="act2">補充</h2>
 <p>可能會有人和筆者一樣，不希望表單送出後離開自己的網頁，導向至純 JSON 數據的結果，其實可以透過結合 AJAX 方式改善它，以下來看看如何設定：</p>
-<h5 class="text-step">複製 AJAX 語法文件。</h5>
+<h5 class="text-step">Step1. 複製 AJAX 語法文件。</h5>
 <p>複製以下程式碼並命名為「form-submission-handler.js」，要改成別的也不反對，自己看得順眼即可。</p>
 <div class="text-code is-js">
 <pre class="text-pre"><code class="javascript">(function() {
@@ -286,7 +286,7 @@ function disableAllButtons(form) {
 </div>
 <p><br></p>
 
-<h5 class="text-step">在 HTML 表單內增加送出後的結果訊息。</h5>
+<h5 class="text-step">Step2. 在 HTML 表單內增加送出後的結果訊息。</h5>
 <p>完成 AJAX 文件引入後，接著就是在自己的 HTML 程式碼裡增加表單送出後的結果訊息，例如：</p>
 <div class="text-code is-html">
 <pre class="text-pre"><code class="html">&lt;div class="form-resault" style="display: none;"&gt;
@@ -299,7 +299,7 @@ function disableAllButtons(form) {
 <p>切記！這個結果訊息的 <em>div</em> 必須放置在設定好的 <em>&lt;form&gt;</em> 標籤裡面才有效用。<em></em></p>
 <p><br></p>
 
-<h5 class="text-step">傳送測試。</h5>
+<h5 class="text-step">Step3. 傳送測試。</h5>
 <figure>
     <img src="@@webRoot/images/html/gform-18.jpg">
 </figure>

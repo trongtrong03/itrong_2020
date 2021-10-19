@@ -663,6 +663,18 @@ const miscData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 8,
+        href: 'misc_screenshot',
+        title: '使用瀏覽器內建截圖功能來擷取網頁畫面',
+        time: '2021.10.01',
+        tag1: false,
+        tag1_name: '',
+        tag2: false,
+        tag2_name: '',
+        img: false,
+        img_name: ''
+    },
 ]
 
 const appData = [
@@ -1164,7 +1176,7 @@ const hikData = [
     {
         id: 32,
         href: 'hiking_033',
-        name: '飛鳳山',
+        name: '五指山',
         title: '小百岳 #30：五指山',
         catalog: 'sm100',
         tag: true,

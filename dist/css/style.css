@@ -10969,12 +10969,6 @@ footer {
   margin-bottom: 0 !important;
 }
 
-.text-step::before {
-  counter-increment: number;
-  content: "Step" counter(number) ".";
-  margin-right: .5rem;
-}
-
 .text-code {
   position: relative;
   background-color: #EEE;

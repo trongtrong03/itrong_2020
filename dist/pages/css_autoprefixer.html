@@ -127,7 +127,7 @@
 </div>
 <p><br></p>
 
-<h5 class="text-step">於命令提示字元輸入安裝指令</h5>
+<h5 class="text-step">Step1. 於命令提示字元輸入安裝指令</h5>
 <p>開啟工作電腦內的終端機或命令提示字元，輸入以下安裝指令：</p>
 <div class="text-code is-bash">
 <pre class="text-pre"><code class="shell">gem install autoprefixer-rails</code></pre>
@@ -137,7 +137,7 @@
 </div>
 <p><br></p>
 
-<h5 class="text-step">於 <em>config.rb</em> 設定文件加入參數。</h5>
+<h5 class="text-step">Step2. 於 <em>config.rb</em> 設定文件加入參數。</h5>
 <p><em>config.rb</em> 文件是 Compass 執行編譯作業時最重要的依賴，故我們需要將 Autoprefixer 的相關函式加入到文件裡，Compass 才能正確執行它。</p>
 <div class="text-code is-ruby">
 <pre class="text-pre"><code class="ruby">require 'autoprefixer-rails'
@@ -161,7 +161,7 @@ end</code></pre>
 </div>
 <p><br></p>
 
-<h5 class="text-step">開始或重新執行 <em>compass watch</em>。</h5>
+<h5 class="text-step">Step3. 開始或重新執行 <em>compass watch</em>。</h5>
 <p>如果編輯 <em>config.rb</em> 文件的同時忘記先把 <em>compass watch</em> 終止，記得要重新執行，修改的參數才能成功啟用。</p>
 <p>接著來輸入點什麼來測試看看...</p>
 <figure>
