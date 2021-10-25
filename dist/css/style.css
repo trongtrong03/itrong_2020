@@ -10140,6 +10140,11 @@ footer {
   padding: 0;
 }
 
+.notes-list:hover .notes-item a figure {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
 .notes-item {
   background-color: #FFF;
   transition: all .3s ease;
@@ -10178,6 +10183,7 @@ footer {
   max-width: 8.5rem;
   margin-bottom: 0.5rem;
   padding: 0 1rem 0 3rem;
+  transition: all .3s ease;
 }
 
 .notes-item a figure img {
@@ -10233,12 +10239,13 @@ footer {
   color: #81D8D0;
 }
 
-.is-jsp .notes-item:hover {
-  transform: scale(1, 1);
-}
-
 .is-jsp .notes-item:hover a {
   border-top: 0;
+}
+
+.is-jsp .notes-item:hover a figure {
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
 }
 
 .is-jsp .notes-item:hover a figure img {

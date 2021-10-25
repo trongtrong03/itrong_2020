@@ -16,6 +16,15 @@
     .index & {
         padding: 0;
     }
+    &:hover {
+        .notes-item {
+            a {
+                figure {
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
 }
 
 .notes-item {
@@ -48,6 +57,7 @@
             max-width: 8.5rem;
             margin-bottom: 0.5rem;
             padding: 0 1rem 0 3rem;
+            transition: all .3s ease;
             img {
                 display: block;
                 width: 100%;
@@ -97,10 +107,11 @@
             }
         }
         .is-jsp & {
-            transform: scale(1, 1);
+            // transform: scale(1, 1);
             a {
                 border-top: 0;
                 figure {
+                    filter: grayscale(0) !important;
                     img {
                         transform: scale(1, 1);
                     }

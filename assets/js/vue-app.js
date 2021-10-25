@@ -564,6 +564,20 @@ const jpData = [
         tag_name: 'javaScript',
         img_name: 'plugin-picturefill'
     },
+    {
+        id: 14,
+        href: 'jsp_jq_gotop',
+        title: '點擊返回網頁頂部的按鈕（Go Top）',
+        tag_name: 'jQuery',
+        img_name: 'plugin-gotop'
+    },
+    {
+        id: 15,
+        href: 'jsp_jq_placeholder',
+        title: '點擊輸入框時提示文字變色（Placeholder）',
+        tag_name: 'jQuery',
+        img_name: 'plugin-placeholder'
+    },
 ]
 
 const miscData = [
