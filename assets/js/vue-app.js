@@ -578,6 +578,20 @@ const jpData = [
         tag_name: 'jQuery',
         img_name: 'plugin-placeholder'
     },
+    {
+        id: 16,
+        href: 'jsp_jq_checkbox',
+        title: '使群組內的核選方塊為單選（Checkbox）',
+        tag_name: 'jQuery',
+        img_name: 'plugin-checkbox'
+    },
+    {
+        id: 17,
+        href: 'jsp_jq_inputconfirm',
+        title: '輸入框內容符合判定',
+        tag_name: 'jQuery',
+        img_name: 'plugin-inputconfirm'
+    },
 ]
 
 const miscData = [
