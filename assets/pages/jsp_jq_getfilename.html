@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJspIndex({ jsp_list, index: jsp_list.length-19 }).title"></h1>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<figure class="is-cover">
+    <img :src="'../images/js/plugin/' + getJspIndex({ jsp_list, index: jsp_list.length-19 }).img_name + '.jpg'">
+</figure>
+<p>Plugin 所需文件：<br>
+    <a href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" target="_blank">jquery.js</a>
+</p>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.html</em> 文件內：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;input type="file"&gt;
+&lt;p&gt;filname is &lt;span id="result"&gt;&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>將以下程式碼內容複製至 <em>.js</em> 文件內或 <em>&lt;script&gt;</em> 元素中：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(function() {
+    $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $("#result").text(fileName);
+    });
+});
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="480" data-default-tab="result" data-slug-hash="ZNbGBm" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/ZNbGBm">
+  jq-tec: get filename</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "jsp": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

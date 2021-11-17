@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-10 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-10 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>本篇主要介紹如何使用 jQuery 實現移除指定元素 <em>.class</em> 類別選擇器的幾種方法，同時也會補充純 JavaScript 的實現方式。</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">.removeClass()</a></li>
+        <li><a href="#act2">.removeAttr("class")</a></li>
+        <li><a href="#act3">.attr("class", "")</a></li>
+        <li><a href="#act4">[0].className = ""</a></li>
+        <li><a href="#act5">純 JavaScript</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">.removeClass()</h2>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).removeClass();
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="eaNOop" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/eaNOop">
+  jq-tec: remove all class-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act2">.removeAttr("class")</h2>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).removeAttr("class");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="xNGxpp" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/xNGxpp">
+  jq-tec: remove all class-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act3">.attr("class", "")</h2>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).attr("class", "");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="RmPwvO" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/RmPwvO">
+  jq-tec: remove all class-3</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act4">[0].className = ""</h2>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).attr("class", "");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="Jqdoja" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/Jqdoja">
+  jq-tec: remove all class-4</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act5">純 JavaScript</h2>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">document.getElementById('div').className = '';
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+
+<p>Example：</p>
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="Ezjamd" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/Ezjamd">
+  jq-tec: remove all class-5</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

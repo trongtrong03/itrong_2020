@@ -57,14 +57,25 @@
     li {
         display: block;
         a {
+            position: relative;
             display: block;
             width: 100%;
             line-height: 1.75;
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: $second;
-            padding: .5rem 1rem .5rem 2rem;
+            padding: 1rem 1rem 1rem 2rem;
             @include text-overflow;
             transition: padding .3s;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                max-width: 10rem;
+                height: 1px;
+                background-color: #fff;
+            }
             &:hover {
                 padding-left: 3rem;
             }
@@ -158,16 +169,35 @@
         > ul {
             height: calc(100% - 4rem);
             border: 0;
-            padding: 0 2rem;
+            padding: 0;
             @include scrollbar();
             li {
-                padding: .5rem 0;
+                position: relative;
+                padding: 0 0 0 1rem;
                 &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 2rem;
                     background-color: $red;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    max-width: 10rem;
+                    height: 1px;
+                    background-color: $first;
                 }
                 a {
-                    font-size: 1rem;
+                    position: relative;
+                    display: block;
+                    font-size: 1.5rem;
                     color: #fff;
+                    padding: 1rem 2rem;
                     &:hover {
                         color: $first;
                     }
@@ -373,16 +403,13 @@
             }
         }
         &.is-cover {
+            max-width: 30rem;
             background-color: #f2f2f2;
-            padding: 4rem;
+            // margin: 0 auto;
+            padding: 2rem;
         }
     }
     @include MQ(max-768) {
-        figure {
-            &.is-cover {
-                padding: 2rem;
-            }
-        }
     }
     @include MQ(max-480) {
         figure {

@@ -10412,17 +10412,29 @@ footer {
 }
 
 .text-list li a {
+  position: relative;
   display: block;
   width: 100%;
   line-height: 1.75;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #444;
-  padding: .5rem 1rem .5rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   overflow: hidden;
   transition: padding .3s;
+}
+
+.text-list li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 10rem;
+  height: 1px;
+  background-color: #fff;
 }
 
 .text-list li a:hover {
@@ -10529,7 +10541,7 @@ footer {
 .text-catalog.is-popup > ul {
   height: calc(100% - 4rem);
   border: 0;
-  padding: 0 2rem;
+  padding: 0;
   overflow-y: auto;
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
@@ -10549,16 +10561,36 @@ footer {
 }
 
 .text-catalog.is-popup > ul li {
-  padding: .5rem 0;
+  position: relative;
+  padding: 0 0 0 1rem;
 }
 
 .text-catalog.is-popup > ul li::before {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
   background-color: #CF5341;
+  transform: translateY(-50%);
+}
+
+.text-catalog.is-popup > ul li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: 10rem;
+  height: 1px;
+  background-color: #81D8D0;
 }
 
 .text-catalog.is-popup > ul li a {
-  font-size: 1rem;
+  position: relative;
+  display: block;
+  font-size: 1.5rem;
   color: #fff;
+  padding: 1rem 2rem;
 }
 
 .text-catalog.is-popup > ul li a:hover {
@@ -10777,14 +10809,9 @@ footer {
 }
 
 .text-content > figure.is-cover {
+  max-width: 30rem;
   background-color: #f2f2f2;
-  padding: 4rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .text-content figure.is-cover {
-    padding: 2rem;
-  }
+  padding: 2rem;
 }
 
 @media only screen and (max-width: 480px) {

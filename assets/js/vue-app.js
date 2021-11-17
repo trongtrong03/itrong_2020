@@ -425,6 +425,30 @@ const jsData = [
     //     img: false,
     //     img_name: ''
     // },
+    {
+        id: 10,
+        href: 'js_jq_removeclass',
+        title: '移除指定元素所有 Class 的幾種方法',
+        time: '2019.11.04',
+        tag1: true,
+        tag1_name: 'jQuery',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
+    {
+        id: 11,
+        href: 'js_jq_filter',
+        title: 'jQuery 選取器的 filters 介紹',
+        time: '2019.11.05',
+        tag1: true,
+        tag1_name: 'jQuery',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
 
 
     // {
@@ -591,6 +615,20 @@ const jpData = [
         title: '輸入框內容符合判定',
         tag_name: 'jQuery',
         img_name: 'plugin-inputconfirm'
+    },
+    {
+        id: 18,
+        href: 'jsp_jq_getfilename',
+        title: '取得 Input file 上傳項目的名稱',
+        tag_name: 'jQuery',
+        img_name: 'plugin-getfilename'
+    },
+    {
+        id: 19,
+        href: 'jsp_jq_getfilename',
+        title: '取得 Input file 上傳項目的名稱',
+        tag_name: 'jQuery',
+        img_name: 'plugin-getfilename'
     },
 ]
 
@@ -2166,6 +2204,42 @@ const resData = [
         tag: 'media',
         img: true,
         img_name: 'limitpng'
+    },
+    {
+        id: 99,
+        href: 'https://hackmd.io/home',
+        title: 'HackMD',
+        desc: '用即時協作的 Markdown 編輯器書寫文件，讓你快速協作、輕鬆紀錄想法、隨時共享知識。',
+        tag: 'webfront',
+        img: true,
+        img_name: 'hackmd'
+    },
+    {
+        id: 100,
+        href: 'https://tw.eagle.cool/',
+        title: 'Eagle',
+        desc: 'Eagle 可以輕鬆收集及整理設計工作的「案例、靈感、截圖、圖片、影片、音訊、情緒板」等各種素材，激發更多創意靈感，讓工作變得更有效率！',
+        tag: 'media',
+        img: true,
+        img_name: 'eagle'
+    },
+    {
+        id: 101,
+        href: 'https://www.foundertype.com/index.php/Index/ftXplorer/',
+        title: '字加',
+        desc: '字加是一款字體獲取工具、字體使用工具、字體管理工具，旨在提供更高效、更便捷的用字服務。',
+        tag: 'material',
+        img: true,
+        img_name: 'ftxplorer'
+    },
+    {
+        id: 102,
+        href: 'http://mp3gain.sourceforge.net/download.php',
+        title: 'MP3Gain',
+        desc: 'MP3Gain 是一款能批次調整 MP3 音量大小的軟體，在無損音質的狀態下將所有歌曲的音軌音量平衡。Window10 使用者建議下載 full-1.2.5 的版本才能正常使用。',
+        tag: 'media',
+        img: true,
+        img_name: 'mp3gain'
     },
 ]
 
