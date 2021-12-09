@@ -439,8 +439,8 @@ const jsData = [
     },
     {
         id: 11,
-        href: 'js_jq_filter',
-        title: 'jQuery 選取器的 filters 介紹',
+        href: 'js_jq_selectors',
+        title: 'jQuery 選擇器（selector）介紹',
         time: '2019.11.05',
         tag1: true,
         tag1_name: 'jQuery',

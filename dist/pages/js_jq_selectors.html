@@ -326,6 +326,23 @@ $("input:checked")</code></pre>
 <p><br></p>
 
 <h2 id="act6">補充</h2>
+<p>儘管 jQuery 提供開發者非常便捷的選擇器直觀易懂地去選取指定元素，但其效能問題在高階開發環境中則被視為相當重要的議題，一派開發者認為，過多條件的選擇器將會造成網頁運作的負擔。因此，在使用 jQuery 選擇器之前，不妨先考慮以下幾點事項：</p>
+<div class="text-ol">
+    <ol>
+        <li>利用 ID 選擇器取代其他選擇器</li>
+        <li>盡量少用 Class 選擇器</li>
+        <li>減少不必要的選擇器</li>
+        <li>盡量使用 Javascript 原生選取方法</li>
+    </ol>
+</div>
+<p>前三項淺顯易懂故不再多提，關於第四項，以下簡單舉一個例子：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var item = document.getElementById("demoID");
+$(item).css("color", "#F00");</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
 <!-- Content end -->
                 </div>
                 <aside class="side-bar">
