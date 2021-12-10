@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-12 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-12 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<p>jQuery 中的 <em>.clone()</em> 是一種將指定元素進行複製（拷貝、克隆）的方法，其基本的用法為在選擇器後方直接使用 <em>.clone()</em>：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$("p").clone();
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當然不會單單只有複製對象這麼簡單而已，我們可以透過其他方法，像是 <em>.append()</em>，令對象實行複製至選擇器指定的對象目標內。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$("button").click(function(){
+    $("body").append($("p").clone());
+});
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>實際運用範例：</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="pQjJOM" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/pQjJOM">
+  jq-learn-clone</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p>儘管指定元素有成功被複製，但其實這個函式操作上存在著一個明顯的問題：當重複點擊按紐（<em>button</em>）執行複製事件時，複製的數量將會呈現倍數增加，意即 1 筆變 2 筆、2 筆變 4 筆、4 變成 8...，而非多數人預想「執行一次複製只會複製一筆資料」的狀況。那麼，要怎樣解決這樣的情況呢？</p>
+<p>其實解決方法也不少，一種是我們可以將要複製的對象所在的元素區域與指定複製的區域分開，如此一來 <em>.clone()</em> 就不會抓取到新複製出來的對象，例如：</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="NWaRrgq" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/NWaRrgq">
+  jq-learn-clone-2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p>另一種方式則是給複製對象加上 ID 值，並且透過變數累計次數的方式，使每一個複製出來的對象都加上累進數字的 ID 值，而 <em>.clone()</em> 就只會複製原先特定的 ID 對象：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">var count = 1;
+$("button").click(function(){
+    $("body").append($("#test")
+             .clone()
+             .attr('id','test'+count));
+    count += 1;
+});
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="eQpNoJ" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/eQpNoJ">
+  jq-learn-clone2</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p>當然，一個網頁不宜有過多無意義的 ID 元素，如果非必要，盡量複製對象仍以「類別選擇器」（<em>.class</em>）為主比較好。</p>
+<p><br></p>
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>

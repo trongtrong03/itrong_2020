@@ -449,6 +449,18 @@ const jsData = [
         img: false,
         img_name: ''
     },
+    {
+        id: 12,
+        href: 'js_jq_clone',
+        title: 'jQuery 複製（.clone）方法介紹與應用',
+        time: '2019.11.05',
+        tag1: true,
+        tag1_name: 'jQuery',
+        tag2: false,
+        tag2_name: 'false',
+        img: false,
+        img_name: ''
+    },
 
 
     // {
