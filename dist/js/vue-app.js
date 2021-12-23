@@ -464,7 +464,7 @@ const jsData = [
     {
         id: 13,
         href: 'js_learn_conditional',
-        title: '條件（三元）運算子介紹（Conditional operator）',
+        title: '條件運算子、展開運算子、其餘運算子介紹',
         time: '2020.01.03',
         tag1: true,
         tag1_name: 'JavaScript',
