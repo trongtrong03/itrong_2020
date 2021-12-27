@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="page">
+@@include("../_head.html")
+<body>
+    <article id="wrap">
+        @@include("../_header.html", { "js": "active" })
+        <main>
+            <section class="text-wrap">
+                <hgroup class="text-head">
+                    <h1 v-text="getJsIndex({ j_list, index: j_list.length-15 }).title"></h1>
+                    <h6 class="notes-tags">
+                        <time class="notes-time" v-text="getJsIndex({ j_list, index: j_list.length-15 }).time"></time>
+                    </h6>
+                </hgroup>
+                <div class="text-content">
+<!-- Content start -->
+<h2>前言</h2>
+<p>jQuery 的事件處理函式（Events）大抵上可分為兩種：呼叫包含參數值的函式，這種一般稱之為「綁定事件處理函式」，例如 <em>.css()</em>、<em>.val()</em> 等。另一種則是呼叫不帶參數值的函式，像是 <em>.click()</em>、<em>.change()</em> 等，它們主要用來觸發事件，其中也包含觸發那些綁定事件處理的函式。本篇的內容將主要著重於如何使用 jQuery 事件觸發，以及彙整一些相關的概念知識，以下一塊兒來看看：</p>
+<p><br></p>
+
+<!-- 大綱 -->
+<div class="text-catalog">
+    <ul>
+        <li><a href="#act1">以事件名稱觸發</a></li>
+        <li><a href="#act2">.on()</a></li>
+        <li><a href="#act3">.off()</a></li>
+        <li><a href="#act4">.one()</a></li>
+        <li><a href="#act5">.ready()</a></li>
+        <li><a href="#act6">觸發事件列表</a></li>
+    </ul>
+</div>
+
+<h2 id="act1">以事件名稱觸發</h2>
+<p>以下是最基本的事件觸發方法：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$('button').click();
+// 觸發所有按鈕的 click 事件</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>但實務上比較少人會直接這樣用，一個事件的觸發通常要有以下三個步驟：指定目標對象、指派事件，然後傳遞函式，如果要用白話文表示，即「誰，在什麼情境下，做了哪些事情」。舉例來說：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$('button').click(function () {
+    $(this).addClass('is-active');
+    $('body').css('background-color', 'red');
+})</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當按鈕（對象）被點擊（事件）的時候，其本身添加類別選擇器（<em>.is-active</em>），並且 <em>body</em> 樣式中的背景色屬性值填入紅色。後兩句就是整起觸發事件的傳遞函式。</p>
+<p>儘管直接透過事件名稱觸發是很常見的編寫方式，但這個寫法僅能在「目標元素於 DOM 渲染完就已經存在」時才有作用，假如網頁已經載入完成，目標元素仍不存在於 DOM 結構中，則無法觸發事件。至於什麼樣的情況會導致事件觸發前的目標元素來不及載入呢？舉一個很常見的例子：當元素對象是 DOM 渲染之後才產生的。例如透過 <em>.clone()</em> 或 <em>.append()</em> 這類方法經由觸發後新產生的元素，就無法再用事件名稱觸發的方式去執行函式。</p>
+<p>如果要讓新產生的元素也能觸發事件，我們需要使用第二種方法，也是比較推薦的寫法。</p>
+<p><br></p>
+
+<h2 id="act2">.on()</h2>
+<p><em>.on()</em> 方法是 jQuery 1.7 版本新增的語法，用來統一該版本之前的 <em>.bind()</em>、<em>.delegate()</em> 與 <em>.live()</em> 事件方法。上述這些方法在以前主要就是給目前及未來新增的元素得以運行指派的觸發事件函式（除了 <em>.bind()</em> 不是，它的用途比較類似 <em>.click()</em>），而 <em>.on()</em> 統一且有效地取代它們，並簡化了 jQuery 函式庫。簡而言之，<em>.on()</em> 可以用來綁定事件處理在已經存在或還沒存在的 DOM 元素。</p>
+<p><em>.on()</em> 的寫法有兩種，第一種是：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$('#btn').on('click', function () {
+    $('body').css('background-color', 'red');
+})</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>click</em> 可以依需求替換成其他觸發事件方法，例如 <em>keyup</em>、<em>change</em>、<em>focus</em> ...等。-而 <em>.on()</em> 運作原理其實就源自於 JavaScript 的 <em>addEventListener</em> 事件監聽方法，<em>addEventListener</em> 的語法為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">Element.addEventListener(event, function, useCapture);</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>像前面 <em>.on()</em> 的例子就等同於：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">document.getElementById('btn').addEventListener('click', function(){
+    ...
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>（如果想知道更多關於 <em>addEventListener</em> 事件監聽的介紹，可參考這篇：<a href="https://blog.csdn.net/weixin_41796631/article/details/82986378" target="_blank">JS .addEventListener( ) 事件监听器：监听元素的事件，并设置事件发生时触发的函数，以及事件流（冒泡、捕获）</a>）</p>
+<p><br></p>
+
+<p>另一種寫法則是：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(document).on('click mouseover', 'button', function () {
+    $("body").toggleClass("red");
+});
+// document 可以是任何選擇器（selector）對象，button 在語句中代表的是 childSelector</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>這個寫法的好處在於可以一次給指定目標對象綁定多個觸發事件，像上面的例子就同時綁定了 <em>click</em> 與 <em>mouseover</em> 兩個事件。</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="wvrpayR" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/wvrpayR">
+  jq-learn: .on()</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act3">.off()</h2>
+<p>有 on 就有 off，作為同樣在 jQuery 1.7 版本新增的語法，<em>.off()</em> 主要用來移除透過 <em>.on()</em> 方法添加的觸發事件。以下我們直接透過實例來了解 <em>.off()</em> 的運作：</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="NWaXGNW" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/NWaXGNW">
+  jq-learn: .off()</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><em>#toggle</em> 是添加 <em>.on()</em> 觸發事件的按鈕，當我們點擊它時，<em>body</em> 會輪流切換 <em>.red</em> 樣式，使背景色在紅色與無色之間循環變色。但是當我們點擊賦予 <em>.off()</em> 觸發事件的 <em>#off</em> 按鈕，使 <em>#toggle</em> 按鈕的 <em>.on()</em> 事件失效後，我們再次點擊 <em>#toggle</em> 就會發現其觸發事件裡包含的函式已不再被觸發。</p>
+<p>在前一章我們已經知道 <em>.on()</em> 是 <em>.bind()</em>、<em>.delegate()</em>、<em>.live()</em> 的替代方法，而 <em>.off()</em> 則是整合了 <em>.unbind()</em>、<em>.undelegate()</em>、<em>.die()</em>，其實就是對應 <em>.on()</em> 所取代之三種語法的反向操作。</p>
+<p>由於移除事件影響的範圍很廣，往往都是直接把事件觸發底下的所有函式也直接移除掉了，就實務而言，並不是很常見的應用。</p>
+<p><br></p>
+
+<h2 id="act4">.one()</h2>
+<p>假如有個需求是只想要觸發事件一次，之後就不再觸發，那麼可以使用 <em>.one()</em> 方法。這個方法會再觸發後執行 <em>bind</em> 的動作，然後自動轉為 <em>unbind</em>。</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="OJxzMVX" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/OJxzMVX">
+  jq-learn: .one()</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><br></p>
+
+<h2 id="act5">.ready()</h2>
+<p>再來要講的是 <em>.ready()</em>，這是新手開發者乃至資深工程師都容易會疏漏的細節。儘管我們寫 jQuery 的時候，就算直接寫事件函式通常都能在網頁加載後也跟著讀取完成，但原則上最好還是確保 DOM 完全載入後再開始執行事件。而在 jQuery 用來處理這方面問題的方法就是 <em>.ready()</em> 事件。</p>
+<p>語法：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(document).ready(function() {
+    ...
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>或是這樣寫也可以：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(function() {
+    ...
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>還有一種比較少見的下法：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$().ready(function) {
+    ...
+});</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<h4>V.S. window.onload：</h4>
+<p>在部分 jQuery 教學文件中有提到，<em>.ready()</em> 方法不應與 JavaScript 的 <em>window.onload</em> 一起使用。當這兩者同時存在於一個頁面上時，它們執行順序是不一樣的。在 jQuery 3.0.0 以前的版本，<em>.ready()</em> 會優先於 <em>window.onload</em> 執行；然而包含及在 3.0.0 之後的版本，則是 <em>window.onload</em> 較先執行。</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="abLEvaK" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/abLEvaK">
+  jq .ready V.S js .onload</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p>（請打開 Console 頁籤檢視結果。）</p>
+<p>此外，兩者還有一顯著的差異，也就是單一網頁上執行的數量不同。<em>window.onload</em> 不能同時寫很多個，倘若有超過一個以上的 <em>window.onload</em> 方法存在於頁面中，最終只會執行順序最後的那一個。而 <em>.ready()</em> 就沒有這個限制，不僅一個網頁可以寫很多個，而且也能通通得到執行。</p>
+<p><br></p>
+
+<h2 id="act6">觸發事件列表</h2>
+<p>由於 jQuery 提供觸發事件的方法也不少，如果要全部操作一遍，所需篇幅將會極長，因此本篇最後僅用列表稍微筆記事件方法，日後再慢慢詳記補齊。</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1">類型</div>
+        <div class="t-f9">事件名稱</div>
+    </div>
+    <div>
+        <div class="t-f1">瀏覽器</div>
+        <div class="t-f9">error、resize、scroll</div>
+    </div>
+    <div>
+        <div class="t-f1">文件</div>
+        <div class="t-f9">load、unload、ready</div>
+    </div>
+    <div>
+        <div class="t-f1">鍵盤</div>
+        <div class="t-f9">keydown、keyup、keypress</div>
+    </div>
+    <div>
+        <div class="t-f1">滑鼠</div>
+        <div class="t-f9">click、dblclick、hover、mousedown、mouseenter、mouseleave、mouseup、、mousemove、mouseout、mouseover、toggle</div>
+    </div>
+    <div>
+        <div class="t-f1">表單</div>
+        <div class="t-f9">blur、change、focus、focusin、focusout、select、submit、reset</div>
+    </div>
+</div>
+
+<!-- https://powerkaifu.github.io/2020/10/07/lesson-jq-05.events/ -->
+
+<!-- Content end -->
+                </div>
+                @@include("../_aside.html", { "js": true, "pages": true })
+            </section>
+        </main>
+        @@include("../_footer.html")
+    </article>
+    @@include("../_js.html", { "inside": true })
+</body>
+</html>
