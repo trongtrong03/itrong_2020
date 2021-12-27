@@ -1347,6 +1347,18 @@ const hikData = [
         date: '2020.12.12',
         img_name: '20201212_1'
     },
+    {
+        id: 38,
+        href: 'hiking_039',
+        name: '獅頭山',
+        title: '小百岳 #29：獅頭山',
+        catalog: 'sm100',
+        tag: true,
+        site: '苗栗縣南庄鄉',
+        height: '492m',
+        date: '2020.12.12',
+        img_name: '20201212_2'
+    },
 ]
 
 const resData = [

@@ -27,8 +27,9 @@
         <li><a href="#act4">html()</a></li>
         <li><a href="#act5">text()</a></li>
         <li><a href="#act6">val()</a></li>
-        <li><a href="#act7">attr()、removeAttr()</a></li>
-        <li><a href="#act8">prop()</a></li>
+        <li><a href="#act7">data()</a></li>
+        <li><a href="#act8">attr()、removeAttr()</a></li>
+        <li><a href="#act9">prop()</a></li>
     </ul>
 </div>
 
@@ -124,12 +125,173 @@ $("p").removeClass("red-color");
 
 <h2 id="act6">val()</h2>
 <p>前面介紹到 <em>.html()</em> 與 <em>.text()</em> 可用來設置或取得指定元素裡的內容。然而，這並不包含部份表單元素，也就是 <em>input</em>、<em>select</em>...等，如果想針對這些元素設置或取得其參數值，則需要使用 <em>.val()</em> 方法。</p>
+<p>以下是取得 <em>input</em> 的 <em>value</em> 值範例：</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="LYzOGZY" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/LYzOGZY">
+  jq-learn: .val()-1</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p>當然也可以反向將參數值傳入到指定的目標表單元素中，譬如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$("input").val("123456");
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>另外，經過測試，像 <em>textarea</em>、<em>button</em> 這類表單元素的值是直接寫在內容而非 <em>value</em> 屬性，因此可以被 <em>.html()</em>、<em>.text()</em> 取得它們元素標籤內的內容。至於像 <em>input</em> 或 <em>select</em> 裡的 <em>option</em>，它們的值是放在 <em>value</em> 屬性之中，所以無法直接用 <em>.html()</em>、<em>.text()</em> 取得。</p>
+
 <p><br></p>
 
-<h2 id="act7">attr()、removeAttr()</h2>
+<h2 id="act7">data()</h2>
+<p>隨著 HTML5 普及，新增的全域屬性 <em>data</em> 也被廣泛運用在開發上。<em>data</em> 可以給元素標籤添加其特有的屬性名稱，以供 JavaScript 腳本交換資訊。而 jQuery 若想對 <em>data</em> 屬性進行操作，其語法規則為：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).data(name, value);
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>其中 <em>name</em> 代表的是 <em>data</em> 屬性的名稱，例如我們在 HTML 給予元素的 <em>data</em> 屬性為 <em>data-color</em>，那麼 <em>color</em> 就是 jQuery 要索取的 <em>name</em>，而 <em>value</em> 則是要傳入的參數。倘若只有設置 <em>name</em> 值，即表示要取得該 <em>data</em> 屬性名稱的值。例如：</p>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="qBPVbqB" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/qBPVbqB">
+  jq-learn: .data()</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
 <p><br></p>
 
-<h2 id="act8">prop()</h2>
+<h2 id="act8">attr()、removeAttr()</h2>
+<p>前面林林總總介紹了許多取得屬性的方法，那 jQuery 是否存在著一個有如萬用鑰匙般，試圖開哪一扇門就開哪一扇門──想取得元素什麼屬性就取得該屬性的方法呢？答案是有的，這個屬性叫做 <em>.attr()</em> 方法（也就是 Attribute 的縮寫）。不管是 <em>.addClass()</em> 也好，<em>.val()</em>、<em>.data()</em> 也罷，它們本質上操作的對象都是元素標籤的其中一種屬性，但無論是全域（<em>class</em>）、獨有（<em>value</em>），還是自定義（<em>data</em>）的，通通都可以透過 <em>.attr()</em> 方法取得該屬性的值，並傳入新的參數值給它。</p>
+<p><em>.attr()</em> 的語法結構與 <em>.data()</em> 雷同：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(selector).attr(attribute, value);
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>當沒有傳入 <em>value</em> 參數值的時候，則表示單純要獲取該指定對象所擁有 <em>attribute</em> 屬性當前的值。以下我們來看看一些範例：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$('a.link').attr('href', 'https://www.google.com.tw/');
+// a.link 的 href 屬性值傳入 https://www.google.com.tw/
+
+#('h1').attr('class', 'title');
+// h1 的 class 屬性值傳入 title
+
+$('input:checkbox').attr('checked', true);
+// input[type='checkbox'] 的 checked 屬性值為 true
+
+$('li').attr('data-key', 3);
+// li 的 data-key 屬性值傳入 3
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>需要注意的是，如果新的 <em>value</em> 值傳入該屬性之前已存在既定的值，原本的屬性值會直接被取代，而非附加在其後。</p>
+<p>此外，<em>.attr()</em> 也可以同時設置複數個屬性的值，寫法如下：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$("img").attr({
+    "src": "../images/img_1.jpg",
+    "class": "large",
+    "width": "300"
+});
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><br></p>
+<p>反向思考，如果要移除屬性值該怎麼做？方法有兩種，第一種是利用給予空值的方式，將原本屬性中的值給覆蓋掉，例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">#('h1').attr('class', '');
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>另一種方式則是使用 <em>.removeAttr()</em> 方法，直接移除指定元素對象的屬性。例如：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">#('h1').removeAttr('class');
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="OJxOOoM" data-user="itrong" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/itrong/pen/OJxOOoM">
+  jq-learn: .removeAttr()</a> by Trong (<a href="https://codepen.io/itrong">@itrong</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<p><em>.removeAttr()</em> 無法像 <em>.removeClass()</em> 指定一或數個值去移除元素對象中符合名稱的值，這是因為 <em>.removeAttr()</em> 會將指定屬性整個從整個 DOM 結構移除。</p>
+
+<p><br></p>
+<h2 id="act9">prop()</h2>
+<p>最後要介紹的是 <em>.prop()</em> 方法（Property），它的用法其實和 <em>.attr()</em> 差不多，也是可以用來取得或設置指定對象元素的屬性並賦予參數值。例如前面 <em>.attr()</em> 示範的例子，我們也可以透過 <em>.prop()</em> 設置：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$('a.link').prop('href', 'https://www.google.com.tw/');
+// a.link 的 href 屬性值傳入 https://www.google.com.tw/
+
+#('h1').prop('class', 'title');
+// h1 的 class 屬性值傳入 title
+
+$('input:checkbox').prop('checked', true);
+// input[type='checkbox'] 的 checked 屬性值為 true
+
+$('li').prop('data-key', 3);
+// li 的 data-key 屬性值傳入 3
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>既然 jQuery 創造了這兩種性質這麼相近的方法，<em>.attr()</em> 與 <em>.prop()</em> 的差別究竟在哪裡呢？答案在於各自回傳值的資料型別。前者返回的值資料型別結果是字串，因為其取值是基於 HTML 上的元素的屬性，工作原理相當於 JavaScript 的 <em>setAttribute()</em> 方法，會將值轉換成字串。後者 <em>.prop()</em> 則是對我們用 JacaScript 或 jQuery 獲取到的 DOM 元素屬性物件取值，屬性物件中有多少屬性，就能獲取多少值，回傳的結果可以是任何資料型別，像是字串、數字或布林值。</p>
+<p>以下我們用 <em>input</em> 的 <em>checkbox</em> 做範例，就能明顯區別出兩個方法回傳值的不同：</p>
+<div class="text-code is-html">
+<pre class="text-pre"><code class="html">&lt;input type="checkbox" class="c1" checked="true" /&gt;
+&lt;input type="checkbox" class="c2" checked="false" /&gt;
+&lt;input type="checkbox" class="c3" /&gt;
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p>我們設置了三個 <em>checkbox</em>，並分別設置 <em>checked</em> 屬性為 <em>true</em>、<em>false</em>，以及不設置。然後接著用 <em>.attr()</em>、<em>.prop()</em> 方法去檢索它們：</p>
+<div class="text-code is-js">
+<pre class="text-pre"><code class="javascript">$(".c1").attr(checked);    // 回傳的值為 checked
+$(".c1").prop(checked);    // 回傳的值為 true
+
+$(".c2").attr(checked);    // 回傳的值為 checked
+$(".c2").prop(checked);    // 回傳的值為 true
+
+$(".c3").attr(checked);    // 回傳的值為 undefined
+$(".c3").prop(checked);    // 回傳的值為 false
+</code></pre>
+<button class="text-copy" data-text="COPY" data-text-copied="COPIED">
+    <span>COPY</span>
+</button>
+</div>
+<p><em>.attr()</em> 方法會去取指定對象的 <em>checked</em> 屬性，若有則回傳字串，若無則返回 <em>undefined</em>。相反地，<em>.prop()</em> 取該元素屬性的 <em>checked</em> 值，返回 <em>true</em> 或 <em>false</em> 的結果。</p>
+<p><br></p>
+<p>我們用一張簡表來總的兩個方法的異同：</p>
+<div class="text-flex">
+    <div class="f-title">
+        <div class="t-f1"></div>
+        <div class="t-f3">.attr()</div>
+        <div class="t-f3">.prop()</div>
+    </div>
+    <div>
+        <div class="t-f1">定義</div>
+        <div class="t-f3">HTML 的屬性</div>
+        <div class="t-f3">DOM 屬性物件</div>
+    </div>
+    <div>
+        <div class="t-f1">資料型別</div>
+        <div class="t-f3">字串</div>
+        <div class="t-f3">任何型別</div>
+    </div>
+</div>
 <!-- Content end -->
                 </div>
                 @@include("../_aside.html", { "js": true, "pages": true })
