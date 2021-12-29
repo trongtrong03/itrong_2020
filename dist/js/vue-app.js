@@ -1371,6 +1371,18 @@ const hikData = [
         date: '2020.12.12',
         img_name: '20201212_2'
     },
+    {
+        id: 39,
+        href: 'hiking_040',
+        name: '石壁山',
+        title: '小百岳 #55：石壁山',
+        catalog: 'sm100',
+        tag: true,
+        site: '雲林縣古坑鄉',
+        height: '1751m',
+        date: '2021.01.02',
+        img_name: '20210102'
+    },
 ]
 
 const resData = [
